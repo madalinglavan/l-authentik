@@ -103,9 +103,93 @@
             </ul>
         </div>
     </header>
+    <h2 class="menu-text">Meniu</h2>
+    <section id="menu">
+        
+        <div class="dish" id="sarmale">
+            <img src="img/sarmale.png" alt="Sarmale">
+            <div class="dish-info">
+                <h3>Sarmale</h3>
+                <p>Sarmalele sunt un preparat tradițional românesc, constând în carne de porc amestecată cu orez și condimente, împachetată în foi de varză murată.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
 
-    <section id="main">
-        <!-- Continutul sectiunii aici -->
+        <div class="dish" id="mamaliga">
+            <img src="img/Mămăligă.png" alt="Mămăligă">
+            <div class="dish-info">
+                <h3>Mămăligă</h3>
+                <p>Mămăliga este un acompaniament tradițional românesc, făcut din porumb măcinat grosier, fiert în apă cu sare.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+        <div class="dish" id="sarmale">
+            <img src="img/sarmale.png" alt="Sarmale">
+            <div class="dish-info">
+                <h3>Sarmale</h3>
+                <p>Sarmalele sunt un preparat tradițional românesc, constând în carne de porc amestecată cu orez și condimente, împachetată în foi de varză murată.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+
+        <div class="dish" id="mamaliga">
+            <img src="img/Mămăligă.png" alt="Mămăligă">
+            <div class="dish-info">
+                <h3>Mămăligă</h3>
+                <p>Mămăliga este un acompaniament tradițional românesc, făcut din porumb măcinat grosier, fiert în apă cu sare.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+        <div class="dish" id="sarmale">
+            <img src="img/sarmale.png" alt="Sarmale">
+            <div class="dish-info">
+                <h3>Sarmale</h3>
+                <p>Sarmalele sunt un preparat tradițional românesc, constând în carne de porc amestecată cu orez și condimente, împachetată în foi de varză murată.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+
+        <div class="dish" id="mamaliga">
+            <img src="img/Mămăligă.png" alt="Mămăligă">
+            <div class="dish-info">
+                <h3>Mămăligă</h3>
+                <p>Mămăliga este un acompaniament tradițional românesc, făcut din porumb măcinat grosier, fiert în apă cu sare.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+        <div class="dish" id="sarmale">
+            <img src="img/sarmale.png" alt="Sarmale">
+            <div class="dish-info">
+                <h3>Sarmale</h3>
+                <p>Sarmalele sunt un preparat tradițional românesc, constând în carne de porc amestecată cu orez și condimente, împachetată în foi de varză murată.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+
+        <div class="dish" id="mamaliga">
+            <img src="img/Mămăligă.png" alt="Mămăligă">
+            <div class="dish-info">
+                <h3>Mămăligă</h3>
+                <p>Mămăliga este un acompaniament tradițional românesc, făcut din porumb măcinat grosier, fiert în apă cu sare.</p>
+                <p class="price">Preț: x eur</p>
+            </div>
+        </div>
+        
+        <!-- Alte preparate -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Adăugăm interactivitate pentru meniu
+                var dishes = document.querySelectorAll('.dish');
+    
+                dishes.forEach(dish => {
+                    dish.addEventListener('click', function() {
+                        // Simulăm afișarea detaliilor sau comandarea preparatului
+                        alert("Detalii despre " + dish.querySelector('h3').innerText);
+                    });
+                });
+            });
+        </script>
     </section>
 
 

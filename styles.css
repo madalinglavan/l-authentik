@@ -311,6 +311,90 @@ nav ul a {
     color: #666;
 }
 
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+section#menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creează 5 coloane egale */
+    gap: 20px; /* Spațiu între elementele gridului */
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #00000092;
+}
+
+.dish {
+    width:100%;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background-color: #f2f2f2;
+}
+
+.dish:hover {
+    transform: scale(1.05);
+}
+
+.dish img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dish-info {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dish-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dish-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e44d26;
+}
+
+/* Animatie pentru click */
+.dish:active {
+    transform: scale(0.95);
+}
+.menu-text{
+    width: 100%;
+    display: flex;
+    color: red;
+    text-shadow: 1px 1px 7px #610000;
+    text-align: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .footer-content{
@@ -409,5 +493,16 @@ nav ul a {
     }
     .footer-content h2 a{
         font-size: .7rem;
+    }
+    section#menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creează 5 coloane egale */
+        gap: 20px; /* Spațiu între elementele gridului */
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .dish-info p {
+        font-size: .7rem;
+        color: #666;
     }
 }
