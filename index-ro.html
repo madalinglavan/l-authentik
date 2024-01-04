@@ -4,24 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f26a888174.js" crossorigin="anonymous"></script>
     <title>Restro-Bar</title>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo"></div>
+            <div class="logo"><a href="index-ro.html"><img src="img/L`authentik.png" alt=""></a></div>
             <div class="nav-name">
-                <a href="index-ro.html"><h1>L'Authentik</h1></a>
-                <a href="index-ro.html"><h2>Restro-bar <img src="img/L`authentik cocktail.png" alt=""></h2></a>
+                <a href="index.html"><h1>L'Authentik</h1></a>
+                <a href="index.html"><h2>Restro-bar <img src="img/L`authentik cocktail.png" alt=""></h2></a>
             </div>
             <ul>
-                <li><a href="index.html">acasa</a></li>
-                <li><a href="">despre noi</a></li>
+                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+                <script>
+                   function toggleMenu() {
+    var navMenu = document.getElementById('navMenu');
+    if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+        navMenu.style.display = 'block';
+        slideRight(navMenu);
+    } else {
+        slideLeft(navMenu);
+    }
+}
+
+function slideRight(element) {
+    var position = -100;
+    var interval = setInterval(function () {
+        if (position >= 0) {
+            clearInterval(interval);
+        } else {
+            position += 5;
+            element.style.left = position + '%';
+        }
+    }, 10);
+}
+
+function slideLeft(element) {
+    var position = 0;
+    var interval = setInterval(function () {
+        if (position <= -100) {
+            element.style.display = 'none';
+            clearInterval(interval);
+        } else {
+            position -= 5;
+            element.style.left = position + '%';
+        }
+    }, 10);
+}
+
+                </script>
             </ul>
         </nav>
 
-        <div class="mobile-menu">
-
+        <div class="mobile-menu" id="navMenu">
+            <div class="close-icon" onclick="toggleMenu()"><i class="fa-solid fa-times" style="color: #ffffff;"></i></div>
+            <ul>
+                <li><a href="#">Acasă</a></li>
+                <li><a href="#">Meniu</a></li>
+                <li><a href="#">Rezervări</a></li>
+                <li><a href="#">Despre Noi</a></li>
+                <li><a href="#">Galerie Foto</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
     </header>
     .
