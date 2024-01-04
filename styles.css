@@ -2,6 +2,15 @@
     margin: 0;
     padding: 0;
 }
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
 body {
     width: 100%;
@@ -262,7 +271,7 @@ nav ul a {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -290,14 +299,14 @@ nav ul a {
 }
 
 .greeting {
-    text-align: right;
+    text-align: center;
     margin-bottom: 20px;
     font-size: 18px;
     color: #333;
 }
 
 .encouragement {
-    text-align: left;
+    text-align: center;
     font-size: 16px;
     color: #666;
 }
@@ -382,5 +391,23 @@ nav ul a {
     .top-nav{
         height: 3vh;
        
+    }
+    .contact-form {
+        text-align: center;
+        justify-content: center;
+        max-width:fit-content;  
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        line-height: .7;
+        
+    }
+    .footer-content h2 a{
+        font-size: .7rem;
     }
 }
