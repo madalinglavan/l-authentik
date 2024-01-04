@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f26a888174.js" crossorigin="anonymous"></script>
+    <title>Restro-Bar</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"></div>
+            <div class="nav-name">
+                <a href="index.html"><h1>L'Authentik</h1></a>
+                <a href="index.html"><h2>Restro-bar <img src="img/L`authentik cocktail.png" alt=""></h2></a>
+            </div>
+            <ul>
+                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+                <script>
+                    function toggleMenu() {
+                        var navMenu = document.getElementById('navMenu');
+                        if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+                            navMenu.style.display = 'block';
+                            slideDown(navMenu);
+                        } else {
+                            slideUp(navMenu);
+                        }
+                    }
+            
+                    function slideDown(element) {
+                        var height = -100;
+                        var interval = setInterval(function () {
+                            if (height >= 0) {
+                                clearInterval(interval);
+                            } else {
+                                height += 5;
+                                element.style.marginTop = height + '%';
+                            }
+                        }, 10);
+                    }
+            
+                    function slideUp(element) {
+                        var height = 0;
+                        var interval = setInterval(function () {
+                            if (height <= -100) {
+                                element.style.display = 'none';
+                                clearInterval(interval);
+                            } else {
+                                height -= 5;
+                                element.style.marginTop = height + '%';
+                            }
+                        }, 10);
+                    }
+                    function toggleMenu() {
+    var navMenu = document.getElementById('navMenu');
+    if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+        navMenu.style.display = 'block';
+        slideDown(navMenu);
+    } else {
+        slideUp(navMenu);
+    }
+}
+
+function slideUp(element) {
+    var height = 0;
+    var interval = setInterval(function () {
+        if (height <= -100) {
+            element.style.display = 'none';
+            clearInterval(interval);
+        } else {
+            height -= 5;
+            element.style.marginTop = height + 'px';
+        }
+    }, 10);
+}
+                </script>
+            </ul>
+        </nav>
+
+        <div class="mobile-menu" id="navMenu">
+            <div class="close-icon" onclick="toggleMenu()"><i class="fa-solid fa-times" style="color: #ffffff;"></i></div>
+            <ul>
+                <li><a href="#">Acasă</a></li>
+                <li><a href="#">Meniu</a></li>
+                <li><a href="#">Rezervări</a></li>
+                <li><a href="#">Despre Noi</a></li>
+                <li><a href="#">Galerie Foto</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    .
+</body>
+</html>
