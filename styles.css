@@ -24,23 +24,45 @@ header {
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     height: 4vh;
-    background-color: rgb(174, 0, 0);
+    background-color: rgb(192, 0, 0);
 }
 .left-top-nav{
     display: flex;
+    margin-left: 10px;
 }
 .right-top-nav{
     display: flex;
-    
+    margin-right: 10px;
 }
 .socialnetwork{
     display: flex;
+    margin-right: 10px;
     align-items: center;
     list-style-type: none;
 }
+.socialnetwork a{
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    color: #fff;
+    list-style-type: none;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.socialnetwork li{
+    margin-right: 10px;
+}
+.socialnetwork li a {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-right: 10px;
+
+}
+
 .l-authentik-adress,
 .mail-adress {
     cursor: pointer;
@@ -53,6 +75,7 @@ header {
     text-align: center;
     align-items: center;
     justify-content: start;
+    
 }
 .l-authentik-adress i,
 .mail-adress i{
@@ -263,4 +286,11 @@ nav ul a {
         color: orange;
         font-size: 0.8rem;
     }
+
+    .l-authentik-adress h3,
+    .mail-adress h3,
+    .socialnetwork li a p{
+        display: none;
+    }
+
 }
