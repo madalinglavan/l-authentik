@@ -26,7 +26,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 4vh;
+    height: 5vh;
     background-color: rgb(192, 0, 0);
 }
 .left-top-nav{
@@ -39,54 +39,63 @@ header {
 }
 .socialnetwork{
     display: flex;
-    margin-right: 10px;
     align-items: center;
     list-style-type: none;
 }
 .socialnetwork a{
     cursor: pointer;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
     list-style-type: none;
     text-decoration: none;
-    margin-right: 10px;
+    font-size: 1rem;
 }
-.socialnetwork li{
-    margin-right: 10px;
+.socialnetwork li:hover{
+    background-color: #000;
 }
+
 .socialnetwork li a {
     display: flex;
     text-align: center;
     align-items: center;
     margin-right: 10px;
-
+    font-size: .8rem;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .l-authentik-adress,
 .mail-adress {
     cursor: pointer;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
     margin-right: 30px;
-    font-size: .8rem;
+    font-size: .6rem;
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: start;
     
 }
+.l-authentik-adress:hover,
+.mail-adress:hover{
+    background-color: #000;
+}
 .l-authentik-adress i,
 .mail-adress i{
-    color: red;
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-right: 10px;
+
+}
+.l-authentik-adress i:hover,
+.mail-adress i:hover{
+   background-color: #000;
 
 }
 .mail-adress h3 a{
     cursor: pointer;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
     list-style-type: none;
@@ -109,6 +118,7 @@ nav ul a {
     color: #fff;
     margin-left: 10px;
     text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .logo {
@@ -177,8 +187,8 @@ nav ul a {
     left: -100%;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    background-image: url(img/background1.jpg);
+    background-color: rgba(0, 0, 0, 0.774);
+    background-image: url(img/);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -214,8 +224,8 @@ nav ul a {
 }
 
 .mobile-menu ul a:hover {
-    color: #000;
-    text-shadow: 2px 2px 3px rgb(255, 255, 255);
+    color: #ea0000;
+    text-shadow: 2px 2px 3px rgb(255, 0, 0);
 }
 
 .close-icon {
@@ -231,16 +241,93 @@ nav ul a {
     color: #fff;
 }
 
+.contact-form {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #d22f19;
+}
+
+#confirmation-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+}
+
+.greeting {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.encouragement {
+    text-align: left;
+    font-size: 16px;
+    color: #666;
+}
 
 
 
+.footer-content{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgb(192, 0, 0);
+    height: 5vh;
+  }
+  .footer-content a {
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    text-shadow: 3px 3px 4px #000000;
+    transition: transform 1.6s ease-out, color 0.5s ease-out, text-shadow 0.5s ease-out;
+}
+    .footer-content h2 a{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: .9rem;    
+    }
 
-
-
-
-
-
-
+    .footer-content h2 a:hover{
+        background-color: #000;
+    }
 
 
 
@@ -292,5 +379,8 @@ nav ul a {
     .socialnetwork li a p{
         display: none;
     }
-
+    .top-nav{
+        height: 3vh;
+       
+    }
 }

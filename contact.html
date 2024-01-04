@@ -30,26 +30,15 @@
                         </div>
                         <div class="mail-adress">
                             <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon"></i>
-                            <h3><a href="mailto:kadaco2022@yahoo.com">kadaco2022@yahoo.com</a></h3>
-                            <script>
-                                var mailIcon = document.getElementById('mail-icon');
-                                var mailAddress = document.querySelector('.mail-adress h3 a');
-                        
-                                mailIcon.addEventListener('click', openMailClient);
-                                mailAddress.addEventListener('click', openMailClient);
-                        
-                                function openMailClient() {
-                                    var mailtoLink = encodeURIComponent(mailAddress.href);
-                                    window.open(mailtoLink, '_blank');
-                                }
-                            </script>
+                            <h3><a href="contact.html">kadaco2022@yahoo.com</a></h3>
+                            
                         </div>
             </div>
             <div class="right-top-nav">
                 <div class="socialnetwork">
-                    <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i><p>facebook</p></a></li>
-                    <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i><p>tik-tok</p></a></li>
-                    <li><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i><p>telefon</p></a></li>
+                    <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
+                    <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
+                    <li><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>comanda acum</p></a></li>
 
                 </div>
             </div>
@@ -112,9 +101,42 @@
         </div>
     </header>
 
-    <!-- Adaugarea unei sectiuni, potrivit descrierii tale -->
-    <section id="main">
-        <!-- Continutul sectiunii aici -->
-    </section>
+    
+    <div class="contact-form">
+        <div class="greeting">
+            Salut! Suntem bucuroși să te auzim. <br> Surprinde-ne cu mesajul tău!
+        </div>
+        <form action="send_email.php" method="post">
+            <div class="form-group">
+                <label for="nume">Nume:</label>
+                <input type="text" id="nume" name="nume" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mesaj">Mesaj:</label>
+                <textarea id="mesaj" name="mesaj" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Trimite">
+            </div>
+        </form>
+        <div id="confirmation-message"></div>
+        <div class="encouragement">
+            Avem încredere în creativitatea ta! Așteptăm cu nerăbdare să citim mesajul tău.
+        </div>
+    </div>
+
+
+
+    
+    <div class="footer-content">
+        <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
+        <h2><a href="index-ro.html"> L'Authentik© 2024 Toate drepturile rezervate</a></h2>
+        <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
+            
+    </div>
 </body>
 </html>
