@@ -66,6 +66,93 @@ function slideLeft(element) {
             </ul>
         </div>
     </header>
-    .
+    <section id="main">
+        <div class="submenu">
+            <a href="#oferte">Oferte</a>
+            <a href="#zile-onomastice">Zile Onomastice</a>
+            <a href="#altceva">Altceva</a>
+        </div>
+
+        <div id="oferte" class="section-home">
+            <h2>Oferte Speciale</h2>
+            <p class="animated-text">Descoperă ofertele noastre irezistibile!</p>
+        </div>
+
+        <div id="zile-onomastice" class="section-home">
+            <h2>Zile Onomastice</h2>
+            <p class="animated-text">Sărbătorește onomastica cu preparate alese!</p>
+        </div>
+
+        <div id="altceva" class="section-home">
+            <h2>Altceva</h2>
+            <p class="animated-text">Text atractiv pentru altceva.</p>
+        </div>
+
+
+        <script>
+            function toggleMenu() {
+                var navMenu = document.getElementById('navMenu');
+                if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+                    navMenu.style.display = 'block';
+                    slideRight(navMenu);
+                } else {
+                    slideLeft(navMenu);
+                }
+            }
+        
+            function slideRight(element) {
+                var position = -100;
+                var interval = setInterval(function () {
+                    if (position >= 0) {
+                        clearInterval(interval);
+                    } else {
+                        position += 5;
+                        element.style.left = position + '%';
+                    }
+                }, 10);
+            }
+        
+            function slideLeft(element) {
+                var position = 0;
+                var interval = setInterval(function () {
+                    if (position <= -100) {
+                        element.style.display = 'none';
+                        clearInterval(interval);
+                    } else {
+                        position -= 5;
+                        element.style.left = position + '%';
+                    }
+                }, 10);
+            }
+        
+            document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll('.section-home');
+    const submenuLinks = document.querySelectorAll('.submenu a');
+
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetSectionId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetSectionId);
+
+            sections.forEach(section => {
+                section.classList.remove('active');
+                // Ascunde textul pentru celelalte secțiuni
+                const otherText = section.querySelector('.animated-text');
+                if (!section.classList.contains('active')) {
+                    otherText.classList.add('inactive');
+                }
+            });
+
+            targetSection.classList.add('active');
+            // Afișează textul pentru secțiunea activată
+            const activeText = targetSection.querySelector('.animated-text');
+            activeText.classList.remove('inactive');
+        });
+    });
+});
+
+        </script>
+    </section>
 </body>
 </html>
