@@ -1,85 +1,139 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     width: 100%;
     height: 100vh;
-    background: rgb(251,208,63);
-    background: radial-gradient(circle, rgba(251,208,63,1) 0%, rgba(252,106,70,1) 100%);
+    background: radial-gradient(circle, rgba(251, 208, 63, 1) 0%, rgba(252, 106, 70, 1) 100%);
     background-image: url(img/o\ seara\ de\ colectie\ 2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-header{
+header {
     width: 100%;
     height: fit-content;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0, 0, 0);
     margin-left: 50%;
     transform: translate(-50%);
 }
-nav{
+.top-nav{
     display: flex;
-    justify-content:space-between;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 4vh;
+    background-color: rgb(174, 0, 0);
 }
-nav ul{
+.left-top-nav{
+    display: flex;
+}
+.right-top-nav{
+    display: flex;
+    
+}
+.socialnetwork{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+.l-authentik-adress,
+.mail-adress {
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    color: #fff;
+    margin-right: 30px;
+    font-size: .8rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: start;
+}
+.l-authentik-adress i,
+.mail-adress i{
+    color: red;
+    font-size: 2rem;
+    margin-right: 10px;
+
+}
+.mail-adress h3 a{
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    color: #fff;
+    list-style-type: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
     margin-top: 20px;
 }
 
-nav ul a{
+nav ul a {
     text-decoration: none;
     color: #fff;
     margin-left: 10px;
     text-transform: uppercase;
 }
 
-.logo{
+.logo {
     margin-top: 10px;
     width: 125px;
     height: auto;
 }
-.logo img{
+
+.logo img {
     width: 100%;
     margin: 10px;
 }
-.nav-name{
+
+.nav-name {
     margin-top: 10px;
     display: flex;
     height: 100px;
     justify-content: center;
 }
-.nav-name:hover{
-    background-image: url(img/hover.png);
-    background-position: left;
-    background-size: contain;
-    background-repeat: no-repeat;
+
+.nav-name:hover {
 }
-.nav-name a{
+
+.nav-name a {
     text-decoration: none;
 }
-.nav-name a h1{
+
+.nav-name a h1 {
     margin-top: 30px;
     color: #fff;
     font-size: 2rem;
     text-shadow: 2px 2px 1px #333;
 }
-.nav-name h2{
+
+.nav-name h2 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    color:orange;
+    color: orange;
     font-size: 1.2rem;
 }
-.nav-name h2 img{
+
+.nav-name h2 img {
     width: 50px;
     height: 70px;
     margin-left: 20px;
 }
+
 .burger-icon {
     display: flex;
     position: relative;
@@ -90,7 +144,8 @@ nav ul a{
     height: fit-content;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-  }  
+}
+
 /* Stilurile pentru meniul mobil */
 .mobile-menu {
     display: none;
@@ -104,7 +159,8 @@ nav ul a{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 10; /* Setează z-index la o valoare specifică */
+    z-index: 10;
+    /* Setează z-index la o valoare specifică */
     transition: left 0.5s ease-in-out;
 }
 
@@ -118,11 +174,13 @@ nav ul a{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.297);
     padding: 20px;
-    box-sizing: border-box; /* Asigură că padding-ul nu afectează dimensiunile reale */
+    box-sizing: border-box;
+    list-style-type: none;
 }
 
 .mobile-menu ul li {
-    margin-bottom: 15px; /* Adaugă spațiu între elementele listei */
+    margin-bottom: 15px;
+    /* Adaugă spațiu între elementele listei */
 }
 
 .mobile-menu ul a {
@@ -150,77 +208,59 @@ nav ul a{
     color: #fff;
 }
 
-/* Stilurile pentru secțiuni */
-.submenu {
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
 
-.submenu a {
-    text-decoration: none;
-    color: #fff;
-}
 
-.section-home {
-    padding: 20px;
-    text-align: center;
-    display: none;
-}
 
-.section-home.active {
-    display: block;
-}
 
-.section-home h2,
-.section-home p {
-    color: #fff;
-}
 
-.animated-text {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
 
-.section-home.active .animated-text {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.animated-text.inactive {
-    display: none;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 @media screen and (max-width: 768px) {
-
-    .logo{
+    .logo {
         width: 65px;
         height: auto;
     }
-    .logo img{
+
+    .logo img {
         width: 100%;
         margin: 10px;
     }
-    .nav-name a h1{
+
+    .nav-name a h1 {
         margin-top: 20px;
         color: #fff;
         text-shadow: 2px 2px 1px #333;
         font-size: 1rem;
     }
-    .nav-name h2{
+
+    .nav-name h2 {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
-        color:orange;
-        font-size: .8rem;
+        color: orange;
+        font-size: 0.8rem;
     }
-
-
-
-
 }

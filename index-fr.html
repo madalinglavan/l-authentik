@@ -18,40 +18,40 @@
             <ul>
                 <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
                 <script>
-                   function toggleMenu() {
-    var navMenu = document.getElementById('navMenu');
-    if (navMenu.style.display === 'none' || navMenu.style.display === '') {
-        navMenu.style.display = 'block';
-        slideRight(navMenu);
-    } else {
-        slideLeft(navMenu);
-    }
-}
+                    function toggleMenu() {
+                        var navMenu = document.getElementById('navMenu');
+                        if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+                            navMenu.style.display = 'block';
+                            slideRight(navMenu);
+                        } else {
+                            slideLeft(navMenu);
+                        }
+                    }
 
-function slideRight(element) {
-    var position = -100;
-    var interval = setInterval(function () {
-        if (position >= 0) {
-            clearInterval(interval);
-        } else {
-            position += 5;
-            element.style.left = position + '%';
-        }
-    }, 10);
-}
+                    function slideRight(element) {
+                        var position = -100;
+                        var interval = setInterval(function () {
+                            if (position >= 0) {
+                                clearInterval(interval);
+                            } else {
+                                position += 5;
+                                element.style.left = position + '%';
+                            }
+                        }, 10);
+                    }
 
-function slideLeft(element) {
-    var position = 0;
-    var interval = setInterval(function () {
-        if (position <= -100) {
-            element.style.display = 'none';
-            clearInterval(interval);
-        } else {
-            position -= 5;
-            element.style.left = position + '%';
-        }
-    }, 10);
-}
+                    function slideLeft(element) {
+                        var position = 0;
+                        var interval = setInterval(function () {
+                            if (position <= -100) {
+                                element.style.display = 'none';
+                                clearInterval(interval);
+                            } else {
+                                position -= 5;
+                                element.style.left = position + '%';
+                            }
+                        }, 10);
+                    }
                 </script>
             </ul>
         </nav>
@@ -66,6 +66,10 @@ function slideLeft(element) {
             </ul>
         </div>
     </header>
-    .
+
+    <!-- Adaugarea unei sectiuni, potrivit descrierii tale -->
+    <section id="main">
+        <!-- Continutul sectiunii aici -->
+    </section>
 </body>
 </html>
