@@ -20,6 +20,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 header {
@@ -89,25 +90,21 @@ header {
 }
 .l-authentik-adress:hover,
 .mail-adress:hover{
-    background-color: #000;
+    background-color: #0096fa00;
 }
 .l-authentik-adress i,
 .mail-adress i{
-    font-size: 1.2rem;
-    margin-right: 10px;
+    font-size: 1rem;
+    margin-right: 5px;
 
 }
-.l-authentik-adress i:hover,
-.mail-adress i:hover{
-   background-color: #000;
 
-}
 .mail-adress h3 a{
     cursor: pointer;
-    font-family:Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
     list-style-type: none;
+    text-decoration: none;
 }
 
 nav {
@@ -127,7 +124,6 @@ nav ul a {
     color: #fff;
     margin-left: 10px;
     text-transform: uppercase;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 .logo {
@@ -155,18 +151,20 @@ nav ul a {
 }
 
 .nav-name a h1 {
-    margin-top: 30px;
+    margin-top: 20px;
     color: #fff;
     font-size: 2rem;
     text-shadow: 2px 2px 1px #333;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-name h2 {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 5px;
     color: orange;
     font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .nav-name h2 img {
@@ -175,7 +173,7 @@ nav ul a {
     margin-left: 20px;
 }
 .nav-big-screens {
-    background-color: #333;
+
     overflow: hidden;
 }
 
@@ -189,10 +187,14 @@ nav ul a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: .8rem;
+    text-shadow:3px 6px 3px rgb(255, 255, 255);
 }
 
 .nav-big-screens li a:hover {
-    background-color: #555;
+    color: rgb(255, 255, 255);
+    text-shadow: 6px 15px 6px rgb(255, 255, 255);
+    color:#d22f19;
 }
 
 .burger-icon{
@@ -230,7 +232,6 @@ nav ul a {
 
 .mobile-menu ul li {
     margin-bottom: 15px;
-    /* Adaugă spațiu între elementele listei */
 }
 
 .mobile-menu ul a {
@@ -332,7 +333,7 @@ h1 {
 
 section#menu {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creează 5 coloane egale */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px; /* Spațiu între elementele gridului */
     justify-content: space-around;
     padding: 20px;
@@ -386,21 +387,10 @@ section#menu {
 .dish:active {
     transform: scale(0.95);
 }
-.menu-text{
-    width: 100%;
-    display: flex;
-    color: red;
-    text-shadow: 1px 1px 7px #610000;
-    text-align: center;
-    justify-content: center;
-    font-size: 2rem;
-}
+
 .main-container-1-ads{
     width: 100%;
-    background-image: url(img/L`authentik.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
 }
@@ -408,9 +398,8 @@ section#menu {
     position: relative;
     overflow: hidden;
     width: 50%;
-    
     height: 200px;
-    background-color: #f2f2f2;
+    background-color: #f2f2f256;
 }
 
 .image-slider {
@@ -446,7 +435,7 @@ section#menu {
     max-width: 40%;
     padding: 20px;
     text-align: left;
-    color: #333;
+    color: #000000;
 }
 
 .text-description h2 {
@@ -597,7 +586,7 @@ section#menu {
         display: none;
     }
     .top-nav{
-        height: 3vh;
+        height: 4vh;
        
     }
     .contact-form {
@@ -627,13 +616,13 @@ section#menu {
     }
     .dish-info p {
         font-size: .7rem;
-        color: #666;
+        color: #ffffff;
     }
     .container-1-ads {
         position: relative;
         overflow: hidden;
         width: 100%;
-        height: 200px;
+        height: 120px;
         background-color: #f2f2f2;
     }
     
@@ -654,4 +643,36 @@ section#menu {
     
 }
 
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav-name a h1 {
+        margin-top: 20px;
+        color: #fff;
+        font-size: 1.3rem;
+        text-shadow: 2px 2px 1px #333;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .nav-name h2 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+        color: orange;
+        font-size: .9rem;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    section#menu {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Creează 5 coloane egale */
+        gap: 20px; /* Spațiu între elementele gridului */
+        justify-content: space-around;
+        padding: 20px;
+    }
+}
+@media screen and (min-width: 1025px) {
+    section#menu {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* Creează 5 coloane egale */
+        gap: 20px; /* Spațiu între elementele gridului */
+        justify-content: space-around;
+        padding: 20px;
+}
