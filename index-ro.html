@@ -9,7 +9,7 @@
 </head>
 <body>
     <video id="video-background" autoplay muted loop >
-        <source src="video/video-background.mp4" type="video/mp4">
+        <source src="video/video-background2.mp4" type="video/mp4">
     </video>
     <header>
         <div class="top-nav">
@@ -104,14 +104,52 @@
         </div>
     </header>
 
-    <section id="main">
-        <!-- Continutul sectiunii aici -->
-    </section>
-
-
-
-
-
+    <div class="container-1-ads">
+        <div class="image-slider">
+            <img src="img/background l-authentik.jpg" alt="Imagine 1">
+            <img src="img/background1.jpg" alt="Imagine 2">
+            <img src="img/background2.jpg" alt="Imagine 3">
+        </div>
+        <div class="slider-btns">
+            <div class="slider-btn" onclick="changeSlide(0)"></div>
+            <div class="slider-btn" onclick="changeSlide(1)"></div>
+            <div class="slider-btn" onclick="changeSlide(2)"></div>
+        </div>
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelector('.image-slider');
+            const buttons = document.querySelectorAll('.slider-btn');
+        
+            function changeSlide(index) {
+                currentSlide = index;
+                updateSlider();
+            }
+        
+            function updateSlider() {
+                slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+        
+                buttons.forEach((button, index) => {
+                    if (index === currentSlide) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+            }
+        
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.children.length;
+                updateSlider();
+            }
+        
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+                updateSlider();
+            }
+        
+            setInterval(nextSlide, 7000);
+        </script>
+    </div>
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>

@@ -131,8 +131,7 @@ nav ul a {
 }
 
 .logo {
-    margin-top: 10px;
-    width: 125px;
+    width: 85px;
     height: auto;
 }
 
@@ -191,18 +190,14 @@ nav ul a {
 /* Stilurile pentru meniul mobil */
 .mobile-menu {
     display: none;
-    position: absolute;
+    position: relative;
     top: 0;
     left: -100%;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.774);
-    background-image: url(img/);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     z-index: 10;
-    /* Setează z-index la o valoare specifică */
     transition: left 0.5s ease-in-out;
 }
 
@@ -382,12 +377,91 @@ section#menu {
     font-size: 2rem;
 }
 
+.container-1-ads {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Ajustează în funcție de înălțimea dorită */
+    background-color: #f2f2f2;
+}
 
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
 
+.slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
 
+.slide.active {
+    opacity: 1;
+    animation: fadeIn 3s ease-in-out;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
+.text-description {
+    max-width: 40%;
+    padding: 20px;
+    text-align: left;
+    color: #333;
+}
 
+.text-description h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.text-description p {
+    font-size: 1.2em;
+}
+
+.image-container {
+    max-width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-btns {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 1;
+}
+
+.slider-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #aaa;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.slider-btn.active {
+    background-color: #ff0000;
+}
 
 
 
