@@ -93,7 +93,6 @@
             </ul>
         </nav>
         <div class="mobile-menu" id="navMenu">
-            <div class="close-icon" onclick="toggleMenu()"><i class="fa-solid fa-times" style="color: #ffffff;"></i></div>
             <ul>
                 <li><a href="index-ro.html">Acasă</a></li>
                 <li><a href="menu.html">Meniu</a></li>
@@ -106,28 +105,44 @@
 
     <div class="container-1-ads">
         <div class="image-slider">
-            <img src="img/background l-authentik.jpg" alt="Imagine 1">
-            <img src="img/background1.jpg" alt="Imagine 2">
-            <img src="img/background2.jpg" alt="Imagine 3">
+            <div class="slide active">
+                <div class="text-description">
+                    <h2>Descoperă autenticitatea gustului</h2>
+                    <p>Savorați preparatele noastre proaspete și delicioase.</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/sarmale.jpg" alt="Preparat 1">
+                </div>
+            </div>
+            <div class="slide">
+                <div class="text-description">
+                    <h2>Bucură-te de o experiență culinară unică</h2>
+                    <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/Mămăligă.png" alt="Preparat 2">
+                </div>
+            </div>
+            <!-- Adaugă mai multe slide-uri aici -->
         </div>
         <div class="slider-btns">
             <div class="slider-btn" onclick="changeSlide(0)"></div>
             <div class="slider-btn" onclick="changeSlide(1)"></div>
-            <div class="slider-btn" onclick="changeSlide(2)"></div>
+            <!-- Adaugă mai multe butoane după nevoie -->
         </div>
         <script>
             let currentSlide = 0;
             const slides = document.querySelector('.image-slider');
             const buttons = document.querySelectorAll('.slider-btn');
-        
+
             function changeSlide(index) {
                 currentSlide = index;
                 updateSlider();
             }
-        
+
             function updateSlider() {
                 slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-        
+
                 buttons.forEach((button, index) => {
                     if (index === currentSlide) {
                         button.classList.add('active');
@@ -135,19 +150,28 @@
                         button.classList.remove('active');
                     }
                 });
+
+                const slideElements = document.querySelectorAll('.slide');
+                slideElements.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
             }
-        
+
             function nextSlide() {
                 currentSlide = (currentSlide + 1) % slides.children.length;
                 updateSlider();
             }
-        
+
             function prevSlide() {
                 currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
                 updateSlider();
             }
-        
-            setInterval(nextSlide, 7000);
+
+            setInterval(nextSlide, 10000);
         </script>
     </div>
 
