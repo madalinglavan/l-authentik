@@ -80,8 +80,8 @@ header {
     font-family:Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
-    margin-right: 30px;
-    font-size: .6rem;
+    margin-right: 10px;
+    font-size: .8rem;
     display: flex;
     text-align: center;
     align-items: center;
@@ -105,6 +105,7 @@ header {
     color: #fff;
     list-style-type: none;
     text-decoration: none;
+    font-size: .7rem;
 }
 
 nav {
@@ -489,7 +490,13 @@ section#menu {
     background-color: #ff0000;
 }
 
-
+.menu-text{
+    width: 100%;
+    text-align: center;
+    color: rgb(238, 95, 95);
+    text-shadow: 2px 3px 2px rgb(39, 17, 17);
+    font-size: 3rem;
+}
 
 
 
@@ -545,7 +552,7 @@ section#menu {
     .burger-icon {
         display: flex;
         position: relative;
-        margin-top: 10px;
+        margin-top: 30px;
         right: 10px;
         font-size: 2rem;
         width: fit-content;
@@ -577,7 +584,7 @@ section#menu {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
-        color: orange;
+        color: rgb(255, 174, 0);
         font-size: 0.8rem;
     }
 
@@ -585,6 +592,7 @@ section#menu {
     .socialnetwork li a p{
         display: none;
     }
+   
     .top-nav{
         height: 4vh;
        
@@ -608,15 +616,32 @@ section#menu {
         font-size: .7rem;
     }
     section#menu {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Creează 5 coloane egale */
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
         gap: 20px; /* Spațiu între elementele gridului */
         justify-content: space-around;
         padding: 20px;
     }
+    .dish {
+        display: flex;
+        text-align: center;
+        width:100%;
+        float:end;
+        margin: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        background-color: #f2f2f2;
+    }
+    .dish-info{
+    background-color: rgb(255, 255, 255);
+    }
+    .dish img{
+        width: 40%;
+    }
     .dish-info p {
         font-size: .7rem;
-        color: #ffffff;
+    
     }
     .container-1-ads {
         position: relative;
@@ -640,8 +665,63 @@ section#menu {
         opacity: 0;
         transition: opacity 0.1s ease-in-out;
     }
+    .l-authentik-adress{
+        font-size: .6rem;
+    }
+    .text-description {
+        max-width: 40%;
+        
+        text-align: left;
+        color: #000000;
+    }
+    
+    .text-description h2 {
+        font-size: .9rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .text-description p {
+        font-size: .7em;
+        text-align: center;
+    }
+    
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .nav-name a h1 {
@@ -662,17 +742,77 @@ section#menu {
     }
     section#menu {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* Creează 5 coloane egale */
+        grid-template-columns: repeat(2, 1fr); /* Creează 5 coloane egale */
         gap: 20px; /* Spațiu între elementele gridului */
         justify-content: space-around;
         padding: 20px;
     }
+    .dish {
+        display: flex;
+        text-align: center;
+        width:100%;
+        float:end;
+        margin: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        background-color: #f2f2f2;
+    }
+    .dish-info{
+    background-color: rgb(255, 255, 255);
+    }
+    .dish img{
+        width: 40%;
+    }
+    .dish-info p {
+        font-size: .7rem;
+    
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1025px) {
     section#menu {
         display: grid;
-        grid-template-columns: repeat(6, 1fr); /* Creează 5 coloane egale */
+        grid-template-columns: repeat(3, 1fr); /* Creează 5 coloane egale */
         gap: 20px; /* Spațiu între elementele gridului */
         justify-content: space-around;
         padding: 20px;
+}
+.dish {
+    display: flex;
+    
+}
+.dish-info{
+background-color: rgb(255, 255, 255);
+}
+.dish img{
+    width: 40%;
+}
+.dish-info p {
+    font-size: .7rem;
+
+}
 }
