@@ -13,8 +13,11 @@
   }
 
 body {
-    width: 100%;
+    width: 98%;
+    margin-left: 50%;
+    transform: translate(-50%);
     height: 100vh;
+    padding: 10px;
     background: radial-gradient(circle, rgba(251, 208, 63, 1) 0%, rgba(252, 106, 70, 1) 100%);
     background-image: url(img/o\ seara\ de\ colectie\ 2.png);
     background-position: center;
@@ -26,7 +29,7 @@ body {
 header {
     width: 100%;
     height: fit-content;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.712);
     margin-left: 50%;
     transform: translate(-50%);
 }
@@ -37,7 +40,7 @@ header {
     justify-content: space-between;
     width: 100%;
     height: 4vh;
-    background-color: #d22f19;
+    background-color:#5001019d;
 }
 .left-top-nav{
     display: flex;
@@ -55,7 +58,7 @@ header {
 }
 
 .socialnetwork a,
-.mail-adress {
+.mail-adress  {
     cursor: pointer;
     text-shadow: 2px 2px 4px #000000;
     font-size: 1rem;
@@ -68,6 +71,9 @@ header {
 .mail-adress i{
     font-size: 1.3rem;
 }
+.mail-adress a{
+    text-decoration: none;
+}
 
 
 .socialnetwork li i,
@@ -76,7 +82,7 @@ header {
 .l-authentik-address h3,
 .mail-adress h3,
 .socialnetwork li a {
-    margin-right: 10px;
+ 
     transition: transform 0.3s, background-color 0.3s;
 }
 .l-authentik-address i{
@@ -109,7 +115,8 @@ header {
 .l-authentik-address{
     display: flex;
     cursor: pointer;
-    color: #fff;
+    color: #ffffff;
+    text-shadow: 2px 4px 5px black;
     list-style-type: none;
     text-decoration: none;
     font-size: .7rem;
@@ -198,9 +205,6 @@ nav ul a {
 
 .nav-big-screens li {
     cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 2px 2px 4px #000000;
-    color: #fff;
     font-size: 1rem;
     margin-right: 10px;
     display: flex;
@@ -214,7 +218,7 @@ nav ul a {
 .nav-big-screens a {
     text-decoration: none;
     color: #fff;
-    text-shadow: 1px 4px 3px white;
+    text-shadow: 5px 1px 6px rgb(204, 204, 204);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -547,9 +551,9 @@ section#menu {
 .footer-content{
     width: 100%;
     display: flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     align-items: center;
-    background-color: rgb(192, 0, 0);
+    background-color:#5001019d;
     height: 5vh;
   }
   .footer-content a {
@@ -649,14 +653,14 @@ section#menu {
         color: #ffffff;
         text-shadow: 3px 1px 5px rgb(0, 0, 0);
         margin-right: -10px;
-        background-color: #00000048;
-        box-shadow: 2px 2px 20px 4px rgb(255, 255, 255);
+        background-color: #00000062;
+        box-shadow: 2px 2px 20px 4px rgb(255, 251, 0);
     }
    
     .top-nav{
         height: 4vh;
         margin-top: 3px;
-        background-color:#d22f19;
+        
        
     }
     .contact-form {
@@ -728,7 +732,7 @@ section#menu {
         transition: opacity 0.1s ease-in-out;
     }
     .l-authentik-address h3{
-        font-size: .6rem;
+        font-size: .5rem;
         text-transform: uppercase;
     }
     .text-description {
@@ -833,6 +837,9 @@ section#menu {
     }
     .socialnetwork a,
 .mail-adress, .socialnetwork li a p{
+    font-size: .7rem;
+}
+.nav-big-screens li{
     font-size: .7rem;
 }
 }
