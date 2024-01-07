@@ -19,17 +19,16 @@ body {
     transform: translate(-50%);
     height: 100vh;
     padding: 10px;
-    background-image: url(img/);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     font-family: 'Noto Sans', sans-serif;
 }
 
 header {
     width: 100%;
     height: fit-content;
-    background-color: rgba(0, 0, 0, 0.952);
+    background-image: url(img/o\ seara\ de\ colectie\ 2.png);
+    background-size:cover;
+    background-position:top;
+    background-repeat: no-repeat;
     margin-left: 50%;
     transform: translate(-50%);
 }
@@ -40,7 +39,7 @@ header {
     justify-content: space-between;
     width: 100%;
     height: 4vh;
-    background-color: #f52500;
+
 }
 .left-top-nav{
     display: flex;
@@ -70,6 +69,7 @@ header {
 }
 .mail-adress i{
     font-size: 1.3rem;
+    margin: 10px;
 }
 .mail-adress a{
     text-decoration: none;
@@ -254,40 +254,47 @@ nav ul a {
     width: 100%;
     height: 85vh;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.774);
     z-index: 10;
     transition: top 0.5s ease-in-out;
 }
 
 .mobile-menu ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     background-image: url(img/L`authentik\ cocktail.png);
-    background-position:left;
+    background-size: 40%;
+    background-position:0% 60% ; 
     background-repeat: no-repeat;
-    padding: 20px;
     box-sizing: border-box;
     list-style-type: none;
+    
+}
+.mobile-menu ul li a {
+    
+    width: 100%;
+    float: right;
+    text-align: right;
 }
 
 .mobile-menu ul li {
     margin-bottom: 15px;
+    
 }
 
 .mobile-menu ul a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
+    text-shadow: 0px 0px 13px rgb(0, 0, 0);
+    border-radius: 12px;
     font-size: 2.2rem;
     transition: color 0.3s ease-in-out;
+    text-transform: uppercase;
 }
 
 .mobile-menu ul a:hover {
     color: #ea0000;
-    text-shadow: 2px 2px 3px rgb(255, 0, 0);
+    
 }
 
 .close-icon {
@@ -379,9 +386,7 @@ section#menu {
     gap: 20px; 
     justify-content: space-around;
     padding: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color:#333 ;
 }
 .menu-text{
     width: 100%;
@@ -427,7 +432,7 @@ section#menu {
 
 .dish-info p {
     font-size: 1rem;
-    color: #000000;
+    color: #ffffff;
     text-shadow: 1px 0 5px rgb(138, 16, 0);
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -437,8 +442,7 @@ section#menu {
 .dish .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #00be8f;
-    text-shadow: 11px 0px 11px rgb(253, 132, 132);
+    text-shadow: 11px 0px 11px rgb(0, 0, 0);
 }
 
 
@@ -689,29 +693,25 @@ section#menu {
         font-size: .7rem;
     }
     section#menu {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        text-align: center;
-        overflow: scroll;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px; 
         justify-content: space-around;
         padding: 20px;
     }
     .dish {
-        width:100%;
-        height: auto;
-        margin: 5px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         
     }
     .dish-info{
         background-color: rgb(146, 0, 0);
     }
     .dish img{
-        width: 40%;
+        width: 60%;
     }
     .dish-info p {
         font-size: .7rem;
@@ -720,8 +720,6 @@ section#menu {
     .dish .price {
         font-size: 1.2rem;
         font-weight: bold;
-        color: #00be8f;
-        text-shadow: 0px 0px 6px rgb(140, 148, 31);
     }
     .container-1-ads {
         position: relative;
@@ -825,23 +823,21 @@ section#menu {
     }
     section#menu {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px; 
         justify-content: space-around;
         padding: 20px;
     }
     .dish {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
-        width:100%;
-        float:end;
-        margin: 5px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-        background-color: #f2f2f2;
+        
     }
     .dish img{
-        width: 40%;
+        width: 60%;
     }
     .dish-info p {
         font-size: .8rem;
@@ -883,18 +879,22 @@ section#menu {
 @media screen and (min-width: 1025px) {
     section#menu {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px; 
         justify-content: space-around;
         padding: 20px;
 }
 .dish {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
 }
 
 .dish img{
-    width: 40%;
+    width: 60%;
 }
 .dish-info p {
     font-size: 1rem;
