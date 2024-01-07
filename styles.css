@@ -37,6 +37,7 @@ header {
     justify-content: space-between;
     width: 100%;
     height: 4vh;
+    background-color: #d22f19;
 }
 .left-top-nav{
     display: flex;
@@ -204,21 +205,36 @@ nav ul a {
     margin-right: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
     transition: transform 0.3s;
 }
 
 .nav-big-screens a {
     text-decoration: none;
     color: #fff;
+    text-shadow: 1px 4px 3px white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
 }
 
 .nav-big-screens li:hover {
-    background-color: #0096fa00;
     transform: scale(1.1);
+    
+}
+.nav-big-screens a:hover{
+    color: #f1f1f1;
+    text-shadow: 5px  white;
+    text-decoration: solid;
 }
 
 .nav-big-screens li:active {
     transform: scale(0.9);
+    padding: 2px;
 }
 
 .burger-icon{
@@ -628,15 +644,19 @@ section#menu {
     .socialnetwork .order-now p{
         display: flex;
         text-transform: uppercase;
-        font-size: .9rem;
+        font-size: .6rem;
         font-family: 'Bungee Spice', cursive; 
         color: #ffffff;
-        text-shadow: 3px 1px 5px rgb(2, 0, 0);
+        text-shadow: 3px 1px 5px rgb(0, 0, 0);
         margin-right: -10px;
+        background-color: #00000048;
+        box-shadow: 2px 2px 20px 4px rgb(255, 255, 255);
     }
    
     .top-nav{
         height: 4vh;
+        margin-top: 3px;
+        background-color:#d22f19;
        
     }
     .contact-form {
@@ -713,7 +733,6 @@ section#menu {
     }
     .text-description {
         max-width: 40%;
-        
         text-align: left;
         color: #000000;
     }
