@@ -17,34 +17,45 @@
     <header>
         <div class="top-nav">
             <div class="left-top-nav">
-               
-                        <div class="l-authentik-adress">
-                            <i class="fa-solid fa-location-dot" style="color: #ffffff;" id="location-icon"></i>
-                            <h3 id="address">Bd de Dixmude 35, 1000 Bruxelles</h3>
-                            <script>
-                                var locationIcon = document.getElementById('location-icon');
-                                var addressElement = document.getElementById('address');
-                        
-                                locationIcon.addEventListener('click', openGoogleMaps);
-                                addressElement.addEventListener('click', openGoogleMaps);
-                        
-                                function openGoogleMaps() {
-                                    var address = encodeURIComponent(addressElement.innerText);
-                                    var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + address;
-                                    window.open(mapsUrl, '_blank');
-                                }
-                            </script>
-                        </div>
+                <div class="l-authentik-address">
+                    <i  class="fa-solid fa-location-dot" style="color: #ffffff;" id="location-icon"></i>
+                    <h3 id="address">Bd de Dixmude 30, 1000 Bruxelles</h3>
+                    <script>
+                        var locationIcon = document.getElementById('location-icon');
+                        var addressElement = document.getElementById('address');
+                
+                        locationIcon.addEventListener('click', openGoogleMaps);
+                        addressElement.addEventListener('click', openGoogleMaps);
+                
+                        function openGoogleMaps() {
+                            var address = encodeURIComponent(addressElement.innerText);
+                            var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + address;
+                            window.open(mapsUrl, '_blank');
+                        }
+                    </script>
+                </div>
+                
                         
                         
             </div>
             <div class="right-top-nav">
                 <div class="socialnetwork">
                     <div class="mail-adress">
-                        <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon"></i>
+                        <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon" onclick="openContactPage()"></i>
                         <h3><a href="contact.html">kadaco2022@yahoo.com</a></h3>
+                        <script>
+                            var mailIcon = document.getElementById('mail-icon');
                         
+                            mailIcon.addEventListener('click', openContactPage);
+                        
+                            function openContactPage() {
+                                window.location.href = 'contact.html';
+                            }
+                        </script>
                     </div>
+                    
+                    
+                    
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
                     <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
                     <li><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>comanda acum</p></a></li>

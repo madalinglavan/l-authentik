@@ -43,63 +43,73 @@ header {
     display: flex;
     margin-left: 10px;
 }
-.right-top-nav{
+.right-top-nav {
     display: flex;
     margin-right: 10px;
 }
-.socialnetwork{
+
+.socialnetwork {
     display: flex;
     align-items: center;
     list-style-type: none;
 }
-.socialnetwork a{
+
+.socialnetwork a,
+.mail-adress {
     cursor: pointer;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    color: #fff;
+    margin-right: 10px;
+    font-size: .8rem;
+    display: flex;
+    align-items: center; 
+    justify-content: start;
+}
+
+.socialnetwork li {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    color: #fff;
+    margin-right: 10px;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+}
+
+.socialnetwork li i,
+.l-authentik-address i,
+.mail-adress i,
+.socialnetwork li h3,
+.l-authentik-address h3,
+.mail-adress h3,
+.socialnetwork li a {
+    margin-right: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.socialnetwork li a,
+.mail-adress h3 a {
+    cursor: pointer;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
     list-style-type: none;
     text-decoration: none;
-    font-size: 1rem;
-}
-.socialnetwork li:hover{
-    background-color: #000;
+    font-size: .7rem;
 }
 
-.socialnetwork li a {
+.socialnetwork li i:active,
+.l-authentik-address i:active,
+.mail-adress i:active,
+.socialnetwork li h3:active,
+.l-authentik-address h3:active,
+.mail-adress h3:active,
+.socialnetwork li a:active {
+    transform: scale(0.9);
+}
+.l-authentik-address{
     display: flex;
-    text-align: center;
-    align-items: center;
-    margin-right: 10px;
-    font-size: .8rem;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.l-authentik-adress,
-.mail-adress {
-    cursor: pointer;
-    font-family:Arial, Helvetica, sans-serif;
-    text-shadow: 2px 2px 4px #000000;
-    color: #fff;
-    margin-right: 10px;
-    font-size: .8rem;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: start;
-    
-}
-.l-authentik-adress:hover,
-.mail-adress:hover{
-    background-color: #0096fa00;
-}
-.l-authentik-adress i,
-.mail-adress i{
-    font-size: 1rem;
-    margin-right: 5px;
-
-}
-
-.mail-adress h3 a{
     cursor: pointer;
     text-shadow: 2px 2px 4px #000000;
     color: #fff;
@@ -155,7 +165,7 @@ nav ul a {
     margin-top: 20px;
     color: #fff;
     font-size: 2rem;
-    text-shadow: 2px 2px 1px #333;
+    text-shadow: 2px 2px 1px #adadad;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -173,36 +183,46 @@ nav ul a {
     height: 70px;
     margin-left: 20px;
 }
-.nav-big-screens {
-
-    overflow: hidden;
+.nav-big-screens{
+    display: flex;
+}
+.nav-big-screens ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-big-screens li {
-    float: left;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    color: #fff;
+    font-size: 1rem;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
 }
 
-.nav-big-screens li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+.nav-big-screens a {
     text-decoration: none;
-    font-size: .8rem;
-    text-shadow:3px 6px 3px rgb(255, 255, 255);
+    color: #fff;
 }
 
-.nav-big-screens li a:hover {
-    color: rgb(255, 255, 255);
-    text-shadow: 6px 15px 6px rgb(255, 255, 255);
-    color:#d22f19;
+.nav-big-screens li:hover {
+    background-color: #0096fa00;
+    transform: scale(1.1);
+}
+
+.nav-big-screens li:active {
+    transform: scale(0.9);
 }
 
 .burger-icon{
     display: none;
 }
 
-/* Stilurile pentru meniul mobil */
+
 .mobile-menu {
     display: none;
     position: relative;
@@ -335,7 +355,7 @@ h1 {
 section#menu {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; /* Spațiu între elementele gridului */
+    gap: 20px; 
     justify-content: space-around;
     padding: 20px;
     background-color: #00000092;
@@ -384,7 +404,7 @@ section#menu {
     color: #e44d26;
 }
 
-/* Animatie pentru click */
+
 .dish:active {
     transform: scale(0.95);
 }
@@ -526,7 +546,7 @@ section#menu {
     }
 
     .footer-content h2 a:hover{
-        background-color: #000;
+       
     }
 
 
@@ -559,6 +579,14 @@ section#menu {
         height: fit-content;
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
+        transition: transform 0.3s;
+    }
+    .burger-icon:hover {
+        transform: scale(1.1);
+    }
+    
+    .burger-icon:active {
+        transform: scale(0.9);
     }
     .nav-big-screens{
         display: none;
@@ -619,7 +647,7 @@ section#menu {
         display: flex;
         flex-direction: column;
         overflow: scroll;
-        gap: 20px; /* Spațiu între elementele gridului */
+        gap: 20px; 
         justify-content: space-around;
         padding: 20px;
     }
@@ -665,7 +693,7 @@ section#menu {
         opacity: 0;
         transition: opacity 0.1s ease-in-out;
     }
-    .l-authentik-adress{
+    .l-authentik-address{
         font-size: .6rem;
     }
     .text-description {
@@ -686,7 +714,9 @@ section#menu {
         text-align: center;
     }
     
-    
+    .l-authentik-address i{
+        font-size: 1rem;
+    }
 }
 
 
@@ -742,8 +772,8 @@ section#menu {
     }
     section#menu {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Creează 5 coloane egale */
-        gap: 20px; /* Spațiu între elementele gridului */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; 
         justify-content: space-around;
         padding: 20px;
     }
@@ -796,8 +826,8 @@ section#menu {
 @media screen and (min-width: 1025px) {
     section#menu {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Creează 5 coloane egale */
-        gap: 20px; /* Spațiu între elementele gridului */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; 
         justify-content: space-around;
         padding: 20px;
 }
