@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -17,7 +19,6 @@
     <header>
         <div class="top-nav">
             <div class="left-top-nav">
-               
                 <div class="l-authentik-address">
                     <i  class="fa-solid fa-location-dot" style="color: #ffffff;" id="location-icon"></i>
                     <h3 id="address">Bd de Dixmude 30, 1000 Bruxelles</h3>
@@ -43,22 +44,23 @@
                 <div class="socialnetwork">
                     <div class="mail-adress">
                         <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon" onclick="openContactPage()"></i>
-                        <h3><a href="contact.html">kadaco2022@yahoo.com</a></h3>
+                        <a href="contact.html"><h3>e-mail</h3></a>
+                        <script>
+                            var mailIcon = document.getElementById('mail-icon');
+                        
+                            mailIcon.addEventListener('click', openContactPage);
+                        
+                            function openContactPage() {
+                                window.location.href = 'contact.html';
+                            }
+                        </script>
                     </div>
                     
-                    <script>
-                        var mailIcon = document.getElementById('mail-icon');
                     
-                        mailIcon.addEventListener('click', openContactPage);
-                    
-                        function openContactPage() {
-                            window.location.href = 'contact.html';
-                        }
-                    </script>
                     
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
                     <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
-                    <li><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>comanda acum</p></a></li>
+                    <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
 
                 </div>
             </div>
@@ -128,6 +130,10 @@
             </ul>
         </div>
     </header>
+
+
+
+    
     <h2 class="menu-text">Meniu</h2>
     <section id="menu">
         
