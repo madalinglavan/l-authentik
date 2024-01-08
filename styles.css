@@ -613,7 +613,19 @@ section#menu {
     background-color: #2c3e50;
 }
 
+#publicitate {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
 
+#publicitate img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 
 
