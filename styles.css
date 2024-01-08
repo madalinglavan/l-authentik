@@ -25,12 +25,7 @@ body {
 header {
     width: 100%;
     height: fit-content;
-    background-image: url(img/o\ seara\ de\ colectie\ 2.png);
-    background-size:cover;
-    background-position:top;
-    background-repeat: no-repeat;
-    margin-left: 50%;
-    transform: translate(-50%);
+    background-color: #8b3613;
 }
 .top-nav{
     display: flex;
@@ -553,64 +548,7 @@ section#menu {
     background-color: #ff0000;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
-
-.category {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-}
-
-.products-container {
-    display: none;
-}
-
-.product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-}
-
-.price {
-    font-weight: bold;
-    color: #e74c3c;
-}
-
-.add-to-cart {
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.add-to-cart:hover {
-    background-color: #27ae60;
-}
-
-.subcategory {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #34495e;
-    color: #fff;
-    text-align: center;
-}
-
-.subcategory:hover {
-    background-color: #2c3e50;
-}
 
 #publicitate {
     overflow: hidden;
@@ -624,6 +562,109 @@ section#menu {
     width: 100%;
     height: auto;
     display: block;
+}
+/* Stiluri pentru Menu */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category {
+    background-color: #963f16;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.products-container {
+    display: none;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.price {
+    font-weight: bold;
+    color: #963f16;
+}
+
+.add-to-cart {
+    background-color: #963f16;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #8b3613;
+}
+
+.container-2-ads {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.image-slider {
+    width: 60%;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.active {
+    display: block;
+}
+
+.text-description {
+    background-color: #963f16;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.text-description h2 {
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+}
+
+.slider-btns {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn {
+    width: 20px;
+    height: 20px;
+    background-color: #963f16;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 /* Stiluri pentru meniul mobil 2 */
 .mobile-menu-2 {
@@ -661,6 +702,13 @@ section#menu {
     opacity: 0.8;
 }
 
+.menu-icon {
+    color: rebeccapurple;
+    position:absolute;
+    top: 220px; /* Ajustați această valoare pentru a seta înălțimea dorită de la partea superioară a ecranului */
+    right: 40px; /* Ajustați această valoare pentru a seta distanța dorită de la partea dreaptă a ecranului */
+    z-index: 1000; /* Asigurați-vă că are un z-index suficient de mare pentru a se suprapune peste conținut */
+}
 
 
 
@@ -671,7 +719,7 @@ section#menu {
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-    background-color: #f52500;
+    background-color: #963f16;
     height: 5vh;
   }
   .footer-content a {
