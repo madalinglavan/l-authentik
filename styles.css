@@ -565,7 +565,7 @@ section#menu {
 }
 
 .product {
-
+    
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 10px;
@@ -574,13 +574,14 @@ section#menu {
 }
 
 .product img {
-    margin-left: 15%;
-    width: 300px;
-    height: 300px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    width: 200px;
+    height: 200px;
     align-items: center;
     border-radius: 4px;
-    border-radius: 50%;
-    box-shadow: -30px 0 0 10px rgba(78, 35, 35, 0.11);
+    border-radius: 50px;
+    box-shadow: -10px 0 0 1px rgba(109, 22, 0, 0.726);
 }
 
 .price {
@@ -598,7 +599,23 @@ section#menu {
     border-radius: 4px;
     cursor: pointer;
 }
-
+.product button a{ 
+    text-decoration: none;
+}
+.container-afisare-produse-aleatorii {
+    padding: -20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(160, 0, 0);
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    height: fit-content;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
 
 
 
@@ -816,16 +833,7 @@ section#menu {
     .slider-btns {
         bottom: 5px;
     }
-    .product img {
-        margin-left: 15%;
-        width: 150px;
-        height: 150px;
-        align-items: center;
-        border-radius: 4px;
-        border-radius: 50%;
-        box-shadow: -30px 0 0 10px rgba(78, 35, 35, 0.11);
-    }
-    
+
     
 }
 
@@ -959,20 +967,6 @@ section#menu {
 .nav-big-screens li{
     font-size: .7rem;
 }
-.product img {
-    margin-left: 15%;
-    width: 150px;
-    height: 150px;
-    align-items: center;
-    border-radius: 4px;
-    border-radius: 50%;
-    box-shadow: -30px 0 0 10px rgba(78, 35, 35, 0.11);
-}
-
-
-
-
-
 
 }
 

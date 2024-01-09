@@ -126,79 +126,273 @@
             </ul>
         </div>
     </header>
-<div class="main-container-1-ads">
-    <div class="container-1-ads">
-        <div class="image-slider">
-            <div class="slide active">
-                <div class="text-description">
-                    <h2>Descoperă autenticitatea gustului</h2>
-                    <p>Savorați preparatele noastre proaspete și delicioase.</p>
+
+
+    <div class="main-container-1-ads">
+        <div class="container-1-ads">
+            <div class="image-slider">
+                <div class="slide active">
+                    <div class="text-description">
+                        <h2>Descoperă autenticitatea gustului</h2>
+                        <p>Savorați preparatele noastre proaspete și delicioase.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/sarmale.jpg" alt="Preparat 1">
+                    </div>
                 </div>
-                <div class="image-container">
-                    <img src="img/sarmale.jpg" alt="Preparat 1">
+                <div class="slide">
+                    <div class="text-description">
+                        <h2>Bucură-te de o experiență culinară unică</h2>
+                        <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/Mămăligă.png" alt="Preparat 2">
+                    </div>
                 </div>
+
             </div>
-            <div class="slide">
-                <div class="text-description">
-                    <h2>Bucură-te de o experiență culinară unică</h2>
-                    <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
-                </div>
-                <div class="image-container">
-                    <img src="img/Mămăligă.png" alt="Preparat 2">
-                </div>
+            <div class="slider-btns">
+                <div class="slider-btn" onclick="changeSlide(0)"></div>
+                <div class="slider-btn" onclick="changeSlide(1)"></div>
+ 
             </div>
-            <!-- Adaugă mai multe slide-uri aici -->
+            <script>
+                let currentSlide = 0;
+                const slides = document.querySelector('.image-slider');
+                const buttons = document.querySelectorAll('.slider-btn');
+
+                function changeSlide(index) {
+                    currentSlide = index;
+                    updateSlider();
+                }
+
+                function updateSlider() {
+                    slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+
+                    buttons.forEach((button, index) => {
+                        if (index === currentSlide) {
+                            button.classList.add('active');
+                        } else {
+                            button.classList.remove('active');
+                        }
+                    });
+
+                    const slideElements = document.querySelectorAll('.slide');
+                    slideElements.forEach((slide, index) => {
+                        if (index === currentSlide) {
+                            slide.classList.add('active');
+                        } else {
+                            slide.classList.remove('active');
+                        }
+                    });
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slides.children.length;
+                    updateSlider();
+                }
+
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+                    updateSlider();
+                }
+
+                setInterval(nextSlide, 10000);
+            </script>
         </div>
-        <div class="slider-btns">
-            <div class="slider-btn" onclick="changeSlide(0)"></div>
-            <div class="slider-btn" onclick="changeSlide(1)"></div>
-            <!-- Adaugă mai multe butoane după nevoie -->
-        </div>
-        <script>
-            let currentSlide = 0;
-            const slides = document.querySelector('.image-slider');
-            const buttons = document.querySelectorAll('.slider-btn');
-
-            function changeSlide(index) {
-                currentSlide = index;
-                updateSlider();
-            }
-
-            function updateSlider() {
-                slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-
-                buttons.forEach((button, index) => {
-                    if (index === currentSlide) {
-                        button.classList.add('active');
-                    } else {
-                        button.classList.remove('active');
-                    }
-                });
-
-                const slideElements = document.querySelectorAll('.slide');
-                slideElements.forEach((slide, index) => {
-                    if (index === currentSlide) {
-                        slide.classList.add('active');
-                    } else {
-                        slide.classList.remove('active');
-                    }
-                });
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.children.length;
-                updateSlider();
-            }
-
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
-                updateSlider();
-            }
-
-            setInterval(nextSlide, 10000);
-        </script>
     </div>
-</div>
+
+
+    <div class="container-afisare-produse-aleatorii">
+        <!-- Aici va fi afișat produsul aleatoriu -->
+    </div>
+
+    <div class="container">
+        <div class="category" data-target="antreuri">Antreuri</div>
+        <div class="products-container" id="antreuri-products">
+            <div class="product">
+                <img src="img/mamaliga cu branza.jpg" alt="Mămăligă cu brânză">
+                <h3>Mămăligă cu brânză</h3>
+                <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc.</p>
+                <span class="price">25 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            <div class="product">
+                <img src="img/sarmale.jpg" alt="Sarmale cu mămăligă">
+                <h3>Sarmale cu mămăligă</h3>
+                <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!</p>
+                <span class="price">35 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            
+            <div class="product">
+                <img src="img/ciorba de burta.jpg" alt="Ciorbă de burtă">
+                <h3>Ciorbă de burtă</h3>
+                <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.</p>
+                <span class="price">30 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            
+     
+        </div>
+
+        <div class="category" data-target="fel_principal">Fel Principal</div>
+        <div class="products-container" id="fel_principal-products">
+            <div class="product">
+                <img src="img/mici-la-gratar-traditional.jpg" alt="Mici la Grătar">
+                <h3>Mici la Grătar</h3>
+                <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
+                <span class="price">40 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            
+            <div class="product">
+                <img src="img/cotlet-nou-nou.png" alt="Cotlet de Porc cu Cartofi Prajiti">
+                <h3>Cotlet de Porc cu Cartofi Prajiti</h3>
+                <p>Cotlet de porc suculent, gătit la cuptor, servit alături de cartofi prăjiți crocanți. Un fel principal delicios și hrănitor.</p>
+                <span class="price">45 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            <div class="product">
+                <img src="img/piept-de-pui-cu-sos-de-ciuperci-si-smantana-diva-in-bucatarie-o.jpg" alt="Piept de Pui cu Sos de Ciuperci">
+                <h3>Piept de Pui cu Sos de Ciuperci</h3>
+                <p>Piept de pui fraged, gătit la grătar, acoperit cu un sos delicios de ciuperci. Acompaniat de garnitură de orez. O opțiune sănătoasă și gustoasă.</p>
+                <span class="price">38 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            
+            
+          
+        </div>
+        <div class="category" data-target="desert">Desert</div>
+        <div class="products-container" id="desert-products">
+            <div class="product">
+                <img src="img/i145619-papanasi.jpeg" alt="Papanasi">
+                <h3>Papanasi</h3>
+                <p>Delicioși papanasi rumeni, serviți cu dulceață și smântână. Un desert tradițional românesc care îți va răsfăța papilele gustative.</p>
+                <span class="price">25 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+            
+            <div class="product">
+                <img src="img/cozonac.jpg" alt="Cozonac">
+                <h3>Cozonac</h3>
+                <p>Bucată de cozonac pufoasă, cu stafide și nuci, îmbibată cu arome delicioase. Perfect pentru momentele dulci alături de cei dragi.</p>
+                <span class="price">30 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+        
+            <div class="product">
+                <img src="img/clatite.jpg" alt="Clătite cu Gem și Smântână">
+                <h3>Clătite cu Gem și Smântână</h3>
+                <p>Clătite subțiri, umplute cu gem și servite cu smântână proaspătă. Un desert ușor și delicios, potrivit pentru orice ocazie.</p>
+                <span class="price">20 Lei</span>
+                <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+            </div>
+         
+        </div>
+
+
+    <div class="category" data-target="bauturi-calde">Băuturi Calde</div>
+    <div class="products-container" id="bauturi-calde-products">
+        <div class="product" data-target="bauturi-calde-product-1">
+            <img src="img/cafea.jpg" alt="Cafea">
+            <h3>Cafea</h3>
+            <p>Cafea proaspătă, preparată cu boabe de cea mai bună calitate.</p>
+            <span class="price">10 Lei</span>
+            <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+        </div>
+        <!-- Alte produse pentru băuturi calde aici -->
+    </div>
+    
+    <div class="category" data-target="bauturi-reci">Băuturi Reci</div>
+    <div class="products-container" id="bauturi-reci-products">
+        <div class="product" data-target="bauturi-reci-product-1">
+            <img src="img/suc portocale.png" alt="Suc de Portocale">
+            <h3>Suc de Portocale</h3>
+            <p>Suc natural de portocale, presat la rece.</p>
+            <span class="price">12 Lei</span>
+            <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+        </div>
+
+    </div>
+    <div class="category" data-target="cocktailuri">Cocktailuri</div>
+    <div class="products-container" id="cocktailuri-products">
+        <div class="product" data-target="cocktailuri-product-1">
+            <img src="img/mojito.jpg" alt="Mojito">
+            <h3>Mojito</h3>
+            <p>Cocktail racoritor cu menta, lamaie, zahar, gheata si rom.</p>
+            <span class="price">20 Lei</span>
+            <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+        </div>
+
+    </div>
+    <div class="category" data-target="bauturi-alcoolice">Băuturi Alcoolice</div>
+    <div class="products-container" id="bauturi-alcoolice-products">
+        <!-- Vin -->
+        <div class="product" data-target="vin-product-1">
+            <!-- Detalii pentru vin -->
+            <img src="img/vin.jpg" alt="Vin">
+            <h3>Vin</h3>
+            <p>Descriere produs pentru vin.</p>
+            <span class="price">XX Lei</span>
+            <button class="add-to-cart"><a href="menu.html">meniu</a></button>
+        </div>
+        <!-- Adaugă mai multe produse pentru vin aici -->
+    </div>  
+    <script>
+// Funcția pentru a afișa un produs aleatoriu
+function showRandomProduct() {
+    // Obține toate produsele din categorie
+    const products = document.querySelectorAll('.products-container .product');
+
+    // Alege primul produs aleatoriu
+    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+    randomProductContainer.innerHTML = '';
+    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+    randomProductContainer.appendChild(initialRandomProduct);
+    randomProductContainer.style.display = 'block';
+
+    // Actualizează produsul la fiecare 5 secunde
+    setInterval(() => {
+        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+
+        // Afișează produsul aleatoriu în containerul dedicat
+        randomProductContainer.innerHTML = '';
+        randomProductContainer.appendChild(randomProduct);
+
+        // Cresc indexul pentru a alege următorul produs la următorul apel
+        currentIndex = (currentIndex + 1) % products.length;
+
+        // Ascunde containerul după 5 secunde
+        setTimeout(() => {
+            randomProductContainer.style.display = 'none';
+        }, 5000);
+    }, 5000); // Intervalul total este de 5 secunde (actualizare la fiecare 5 secunde)
+}
+
+// Apelează funcția când pagina se încarcă
+document.addEventListener('DOMContentLoaded', () => {
+    showRandomProduct();
+});
+
+    </script>
+    <script>
+        // Obține numele paginii curente
+        const currentPage = window.location.pathname.split('/').pop();
+      
+        // Verifică dacă pagina curentă este index.html
+        if (currentPage === 'index.html') {
+          // Obține container-ul și adaugă clasa pentru ascundere
+          const containerToHide = document.querySelector('.container');
+          containerToHide.style.display = 'none';
+        }
+      </script>
+    </div>
+
+
+
+
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
