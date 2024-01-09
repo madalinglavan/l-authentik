@@ -40,6 +40,7 @@
                         
                         
             </div>
+            
             <div class="right-top-nav">
                 <div class="socialnetwork">
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
@@ -66,7 +67,9 @@
             <div class="nav-name">
                 <a href="index.html"><h1>L'Authentik</h1></a>
                 <a href="index.html"><h2>Resto-bar <img src="img/L`authentik cocktail.png" alt=""></h2></a>
+                
             </div>
+            
             <div class="nav-big-screens">
                 <ul>
                     <li><a href="index-ro.html">Acasă</a></li>
@@ -127,6 +130,7 @@
         </div>
     </header>
 
+   
 
     <div class="main-container-1-ads">
         <div class="container-1-ads">
@@ -202,10 +206,17 @@
         </div>
     </div>
 
+    <div class="wrap-container-afisare-produse-aleatorii">
+        <div class="container-afisare-produse-aleatorii">
+            <!-- Aici va fi afișat produsul aleatoriu -->
+        </div>
+        <div class="container-afisare-produse-aleatorii">
+            <!-- Aici va fi afișat produsul aleatoriu -->
+        </div>
+</div>
 
-    <div class="container-afisare-produse-aleatorii">
-        <!-- Aici va fi afișat produsul aleatoriu -->
-    </div>
+
+   
 
     <div class="container">
         <div class="category" data-target="antreuri">Antreuri</div>
@@ -377,17 +388,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
     </script>
-    <script>
-        // Obține numele paginii curente
-        const currentPage = window.location.pathname.split('/').pop();
+
       
-        // Verifică dacă pagina curentă este index.html
-        if (currentPage === 'index.html') {
-          // Obține container-ul și adaugă clasa pentru ascundere
-          const containerToHide = document.querySelector('.container');
-          containerToHide.style.display = 'none';
-        }
-      </script>
     </div>
 
 
@@ -400,5 +402,32 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
             
     </div>
+
+
+
+
+
+
+
+
+    <script>
+        // Obține numele paginii curente
+        const currentPage = window.location.pathname.split('/').pop();
+      
+        // Verifică dacă pagina curentă este index.html
+        if (currentPage === 'index-ro.html') {
+          // Obține container-ul și adaugă clasa pentru ascundere
+          const containerToHide = document.querySelector('.container');
+      
+          // Verifică dacă container-ul există înainte de a încerca să îi setezi stilul
+          if (containerToHide) {
+            containerToHide.style.display = 'none';
+            console.log('Container ascuns cu succes!');
+          } else {
+            console.log('Containerul nu a fost găsit!');
+          }
+        }
+      </script>
+      
 </body>
 </html>
