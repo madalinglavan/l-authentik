@@ -613,6 +613,7 @@ section#menu {
     width: 100%;
     padding: 0;
     height: 20vh;
+    margin-top: 10px;
 }
 .advertising{
     width:20%;
@@ -632,88 +633,106 @@ section#menu {
 
 
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0;
+                    padding: 0;
+                }
 
-.category {
-    display: flex;
-    color: #000000;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-top: -40px;
-}
+                .category {
+                    display: flex;
+                    color: #000000;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    margin-top: -40px;
+                }
 
-.products-container {
-    position: relative;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
+                .products-container {
+                    position: relative;
+                    display: flex;
+                    margin: 0;
+                    padding: 0;
+                }
 
-.product {
-    display: flex;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
+                .product {
+                    display: flex;
+                    text-align: center;
+                    border-bottom: 1px solid #ccc;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                }
 
-.product p {
-    width: 40%;
-    max-height: 20vh;
-    font-size: 0.9rem;
-    margin: 0;
-    padding: 0;
-}
+                .product p {
+                    width:max-content;
+                    max-height: 20vh;
+                    font-size: 0.9rem;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    justify-items: center;
+                    align-items: center;
+                    text-align: center;
+                    
+                }
 
-.product img {
-    max-height: 20vh;
-    width: 25%;
-    border-radius: 4px;
-    box-shadow: -10px 0 0 1px rgba(109, 22, 0, 0.726);
-    margin: 0;
-    padding: 0;
-}
+                .product img {
+                    max-height: 20vh;
+                    width: 20%;
+                    border-radius: 4px;
+                    box-shadow: -10px 0 0 1px rgba(109, 22, 0, 0.726);
+                    margin: 0;
+                    padding: 0;
+                    
+                }
 
-.price {
-    color: #27ae60;
-    font-weight: bold;
-    margin-top: 15px;
-    display: block;
-    font-size: 2rem;
-}
+                .price {
+                    color: #700000;
+                    font-weight: bold;
+                    margin-top: 15px;
+                    display: block;
+                    font-size: 1rem;
+                    
+                }
 
-.add-to-cart {
-    background-color: #3498db;
-    color: #000000;
-    text-decoration: none;
-    list-style-type: none;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    max-height: 20vh;
-    margin: 0;
-}
+                .add-to-cart {
+                    position: absolute;
+                    top:0;
+                    left: 0px;
+                    background-color: #0f97a9;
+                    color: #000000;
+                    width: fit-content;
+                    border: none;   
+                    border-radius: 4px;
+                    cursor: pointer;
+                    
+                }
+                .add-to-cart a{
+                    text-decoration: none;
+                    list-style-type: none;
+                    font-size: .8rem;
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+                .add-to-cart:hover{
+                    background-color: #3f0000;
+                    color: #fff;
+                }
 
-.product h3 {
-    color: #000000;
-    width: 200px;
-    background-color: rgb(230, 249, 20);
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
+                .product h3 {
+                    color: #000000;
+                    min-width: 300px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                }
 
-.product button a {
-    text-decoration: none;
-}
+                .product button a {
+                    text-decoration: none;
+                }
 }
 
 .main-container-1-ads {
@@ -1004,7 +1023,35 @@ section#menu {
     .slider-btns {
         bottom: 5px;
     }
-
+    .container-afisare-produse-aleatorii {
+        .product h3 {
+            min-width: 120px;
+            font-size: .6rem;
+        }
+       
+        .add-to-cart a{
+            font-size: .4rem;
+           
+        }
+        .product p {
+            font-size: .5rem;
+        }
+        .product img{
+           width: 30%;
+           box-shadow: none;
+           border-radius: 50%;
+        }
+       
+    
+    }
+    .advertising{
+        display: none;
+    }
+    .container-afisare-produse-aleatorii {
+        width: 100%;
+        display: flex;
+        max-height: 20vh;
+    }
     
 }
 
@@ -1076,7 +1123,21 @@ section#menu {
 .nav-big-screens li{
     font-size: .7rem;
 }
+.container-afisare-produse-aleatorii {
+    .product h3 {
+        min-width: 200px;
+        font-size: .8rem;
+    }
+   
+    .add-to-cart a{
+        font-size: .6rem;
+       
+    }
+    .product p {
+        font-size: .6rem;
+    }
 
+}
 }
 
 
@@ -1127,4 +1188,5 @@ section#menu {
     font-size: 1rem;
 
 }
+
 }
