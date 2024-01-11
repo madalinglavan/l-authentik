@@ -13,9 +13,6 @@
     <title>L'Authentik Resto-Bar</title>
 </head>
 <body>
-    <video id="video-background" autoplay muted loop >
-        <source src="video/video-background.mp4" type="video/mp4">
-    </video>
     <header>
         <div class="top-nav">
             <div class="left-top-nav">
@@ -208,10 +205,10 @@
 
     <div class="wrap-container-afisare-produse-aleatorii">
         <div class="container-afisare-produse-aleatorii">
-            <!-- Aici va fi afișat produsul aleatoriu -->
+            
         </div>
         <div class="container-afisare-produse-aleatorii">
-            <!-- Aici va fi afișat produsul aleatoriu -->
+           
         </div>
 </div>
 
@@ -313,7 +310,7 @@
             <span class="price">10 Lei</span>
             <button class="add-to-cart"><a href="menu.html">meniu</a></button>
         </div>
-        <!-- Alte produse pentru băuturi calde aici -->
+        
     </div>
     
     <div class="category" data-target="bauturi-reci">Băuturi Reci</div>
@@ -340,49 +337,50 @@
     </div>
     <div class="category" data-target="bauturi-alcoolice">Băuturi Alcoolice</div>
     <div class="products-container" id="bauturi-alcoolice-products">
-        <!-- Vin -->
+
         <div class="product" data-target="vin-product-1">
-            <!-- Detalii pentru vin -->
+
             <img src="img/vin.jpg" alt="Vin">
             <h3>Vin</h3>
             <p>Descriere produs pentru vin.</p>
             <span class="price">XX Lei</span>
             <button class="add-to-cart"><a href="menu.html">meniu</a></button>
         </div>
-        <!-- Adaugă mai multe produse pentru vin aici -->
+  
     </div>  
     <script>
-// Funcția pentru a afișa un produs aleatoriu
+      
+let currentIndex = 0;
+
 function showRandomProduct() {
-    // Obține toate produsele din categorie
+
     const products = document.querySelectorAll('.products-container .product');
 
-    // Alege primul produs aleatoriu
     const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
     randomProductContainer.innerHTML = '';
     const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
     randomProductContainer.appendChild(initialRandomProduct);
     randomProductContainer.style.display = 'block';
 
-    // Actualizează produsul la fiecare 5 secunde
+  
     setInterval(() => {
         const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
 
-        // Afișează produsul aleatoriu în containerul dedicat
+   
         randomProductContainer.innerHTML = '';
         randomProductContainer.appendChild(randomProduct);
 
-        // Cresc indexul pentru a alege următorul produs la următorul apel
+   
         currentIndex = (currentIndex + 1) % products.length;
 
-        // Ascunde containerul după 5 secunde
+     
         setTimeout(() => {
             randomProductContainer.style.display = 'none';
         }, 5000);
-    }, 5000); // Intervalul total este de 5 secunde (actualizare la fiecare 5 secunde)
+    }, 5000); 
 }
 
-// Apelează funcția când pagina se încarcă
+
 document.addEventListener('DOMContentLoaded', () => {
     showRandomProduct();
 });
@@ -411,15 +409,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     <script>
-        // Obține numele paginii curente
+       
         const currentPage = window.location.pathname.split('/').pop();
       
-        // Verifică dacă pagina curentă este index.html
+       
         if (currentPage === 'index-ro.html') {
-          // Obține container-ul și adaugă clasa pentru ascundere
+
           const containerToHide = document.querySelector('.container');
-      
-          // Verifică dacă container-ul există înainte de a încerca să îi setezi stilul
+     
           if (containerToHide) {
             containerToHide.style.display = 'none';
             console.log('Container ascuns cu succes!');
