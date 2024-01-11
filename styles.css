@@ -738,7 +738,7 @@ section#menu {
 .main-container-1-ads {
     display: flex;
     width: 100%;
-    background-color: #5b5b5b9f;
+    background-color: #d8d8d8;
     display: flex;
     justify-content: center;
 }
@@ -792,10 +792,34 @@ section#menu {
     
 }
 
-    
-    
-
-
+    .container-despre-noi{
+        width: 100%;
+        height: 50vh;
+        background-image: url(img/L`authentik\ cocktail.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .container-despre-noi h1{
+        font-size: 2rem;
+        color: #ff0000;
+        background-color: #00000096;
+    }
+    .container-despre-noi h2{
+        font-size: 1.5rem;
+        color: #fffb00;
+        background-color: #00000096;
+    }
+    .container-despre-noi h3{
+        font-size: 2rem;
+        color: #00bfff;
+        background-color: #00000096;
+    }
 
 
 
@@ -1030,16 +1054,21 @@ section#menu {
         }
        
         .add-to-cart a{
-            font-size: .4rem;
+            font-size: .5rem;
+            text-decoration: none;
+            list-style-type: none;
+            color:#fff;
            
         }
         .product p {
-            font-size: .5rem;
+            font-size: .6rem;
+            padding: 10px;
         }
         .product img{
            width: 30%;
+           height: 80%;
            box-shadow: none;
-           border-radius: 50%;
+           border-radius: 15px;
         }
        
     
