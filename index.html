@@ -204,13 +204,8 @@
     </div>
 
     <div class="wrap-container-afisare-produse-aleatorii">
-        <div class="container-afisare-produse-aleatorii">
-            
-        </div>
-        <div class="container-afisare-produse-aleatorii">
-           
-        </div>
-</div>
+        <div class="container-afisare-produse-aleatorii"></div>
+    </div>
 
 
    
@@ -349,45 +344,46 @@
   
     </div>  
     <script>
-      
-let currentIndex = 0;
-
-function showRandomProduct() {
-
-    const products = document.querySelectorAll('.products-container .product');
-
-    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-    randomProductContainer.innerHTML = '';
-    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-    randomProductContainer.appendChild(initialRandomProduct);
-    randomProductContainer.style.display = 'block';
-
-  
-    setInterval(() => {
-        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-
-   
-        randomProductContainer.innerHTML = '';
-        randomProductContainer.appendChild(randomProduct);
-
-   
-        currentIndex = (currentIndex + 1) % products.length;
-
-     
-        setTimeout(() => {
-            randomProductContainer.style.display = 'none';
-        }, 5000);
-    }, 5000); 
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    showRandomProduct();
-});
-
+        let currentIndex = 0;
+    
+        function showRandomProduct() {
+            const products = document.querySelectorAll('.products-container .product');
+            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+            randomProductContainer.innerHTML = '';
+            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+            randomProductContainer.appendChild(initialRandomProduct);
+            randomProductContainer.style.display = 'block';
+    
+            setInterval(() => {
+                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                randomProductContainer.innerHTML = '';
+                randomProductContainer.appendChild(randomProduct);
+                currentIndex = (currentIndex + 1) % products.length;
+                setTimeout(() => {
+                    randomProductContainer.style.display = 'none';
+                }, 5000);
+            }, 5000);
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            showRandomProduct();
+        });
     </script>
-
-      
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+    
+       
+        if (currentPage === 'index-ro.html' || currentPage === 'index.html' || currentPage === 'index-fr.html') {
+            const containerToHide = document.querySelector('.container');
+            if (containerToHide) {
+                containerToHide.style.display = 'none';
+                console.log('Container ascuns cu succes!');
+            } else {
+                console.log('Containerul nu a fost găsit!');
+            }
+        }
+    </script>
+    
     </div>
 
 
@@ -406,25 +402,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-    <script>
-       
-        const currentPage = window.location.pathname.split('/').pop();
-      
-       
-        if (currentPage === 'index-ro.html') {
-
-          const containerToHide = document.querySelector('.container');
-     
-          if (containerToHide) {
-            containerToHide.style.display = 'none';
-            console.log('Container ascuns cu succes!');
-          } else {
-            console.log('Containerul nu a fost găsit!');
-          }
-        }
-      </script>
       
 </body>
 </html>
