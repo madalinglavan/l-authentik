@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f26a888174.js" crossorigin="anonymous"></script>
+    <title>L'Authentik Resto-Bar</title>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop >
+        <source src="video/video-background.mp4" type="video/mp4">
+    </video>
+    <header>
+        <div class="top-nav">
+            <div class="left-top-nav">
+                <div class="l-authentik-address">
+                    <i  class="fa-solid fa-location-dot" style="color: #ffffff;" id="location-icon"></i>
+                    <h3 id="address">Bd de Dixmude 30 <br> 1000 Bruxelles</h3>
+                    <script>
+                        var locationIcon = document.getElementById('location-icon');
+                        var addressElement = document.getElementById('address');
+                
+                        locationIcon.addEventListener('click', openGoogleMaps);
+                        addressElement.addEventListener('click', openGoogleMaps);
+                
+                        function openGoogleMaps() {
+                            var address = encodeURIComponent(addressElement.innerText);
+                            var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + address;
+                            window.open(mapsUrl, '_blank');
+                        }
+                    </script>
+                </div>
+                
+                        
+                        
+            </div>
+            <div class="right-top-nav">
+                <div class="socialnetwork">
+                    <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
+                    <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
+                    <div class="mail-adress">
+                        <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon" onclick="openContactPage()"></i>
+                        <a href="contact.html"><h3>e-mail</h3></a>
+                        <script>
+                            var mailIcon = document.getElementById('mail-icon');
+                        
+                            mailIcon.addEventListener('click', openContactPage);
+                        
+                            function openContactPage() {
+                                window.location.href = 'contact.html';
+                            }
+                        </script>
+                    </div>
+                    <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="logo"><a href="index-ro.html"><img src="img/L`authentik.png" alt=""></a></div>
+            <div class="nav-name">
+                <a href="index.html"><h1>L'Authentik</h1></a>
+                <a href="index.html"><h2>Resto-bar <img src="img/L`authentik cocktail.png" alt=""></h2></a>
+            </div>
+            <div class="nav-big-screens">
+                <ul>
+                    <li><a href="index-ro.html">Acasă</a></li>
+                    <li><a href="menu.html">Meniu</a></li>
+                    <li><a href="despre-noi.html">Despre Noi</a></li>
+                    <li><a href="galerie.html">Galerie Foto</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+           
+                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+                <script>
+                    function toggleMenu() {
+                        var navMenu = document.getElementById('navMenu');
+                        if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+                            navMenu.style.display = 'block';
+                            slideRight(navMenu);
+                        } else {
+                            slideLeft(navMenu);
+                        }
+                    }
+
+                    function slideRight(element) {
+                        var position = -100;
+                        var interval = setInterval(function () {
+                            if (position >= 0) {
+                                clearInterval(interval);
+                            } else {
+                                position += 5;
+                                element.style.left = position + '%';
+                            }
+                        }, 10);
+                    }
+
+                    function slideLeft(element) {
+                        var position = 0;
+                        var interval = setInterval(function () {
+                            if (position <= -100) {
+                                element.style.display = 'none';
+                                clearInterval(interval);
+                            } else {
+                                position -= 5;
+                                element.style.left = position + '%';
+                            }
+                        }, 10);
+                    }
+                </script>
+            </ul>
+        </nav>
+        <div class="mobile-menu" id="navMenu">
+            <ul>
+                <li><a href="index-ro.html">Acasă</a></li>
+                <li><a href="menu.html">Meniu</a></li>
+                <li><a href="despre-noi.html">Despre Noi</a></li>
+                <li><a href="galerie.html">Galerie Foto</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+    <div class="footer-content">
+        <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
+        <h2><a href="index-ro.html"> L'Authentik© 2024 Toate drepturile rezervate</a></h2>
+        <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
+            
+    </div>
+</body>
+</html>

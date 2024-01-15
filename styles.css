@@ -10,7 +10,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 100%;
+    opacity: 0%;
   }
 
 body {
@@ -821,9 +821,81 @@ section#menu {
         background-color: #00000096;
     }
 
+    .chef-presentation {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .presentation-text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate( -50%);
+        width: 70%;
+        max-height: 50%;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.356);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .presentation-text p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .about-us-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .about-us-button:hover {
+        background-color: #45a049;
+    }
 
-
-
+    .chef-presentation {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+   
+    
+    .about-us-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .about-us-button:hover {
+        background-color: #45a049;
+    }
 
 
 
