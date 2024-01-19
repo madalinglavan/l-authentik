@@ -503,12 +503,19 @@ section#menu {
 }
 
 .text-description h2 {
-    color: #333;
+    color: #ffffff;
+}
+.text-description p{
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px #c40808;
+    background-color: #000000;
+    border-radius: 5px;
 }
 
 .image-container img {
     max-width: 50%;
     max-height: 300px;
+    border-radius: 10px;
 }
 
 .slider-btns {
@@ -673,7 +680,7 @@ section#menu {
                 }
 
                 .price {
-                    color: #700000;
+                    color: #000;
                     font-weight: bold;
                     margin-top: 15px;
                     display: block;
@@ -685,7 +692,7 @@ section#menu {
                     position: absolute;
                     top:0;
                     left: 0px;
-                    background-color: #0f97a9;
+                    background-color: #63d168;
                     color: #000000;
                     width: fit-content;
                     border: none;   
@@ -721,7 +728,6 @@ section#menu {
 .main-container-1-ads {
     display: flex;
     width: 100%;
-    background-color: #00000083;
     display: flex;
     justify-content: center;
 }
@@ -732,10 +738,15 @@ section#menu {
     overflow: hidden;
     width: 90%;
     height: 15vh;
+    background-image: url(img/l-authentik\ suc\ de\ portocale.jpg);
+    background-position: center;
     box-shadow: 2px 2px 4px 4px rgb(0, 0, 0);
-    margin-top: 0;
+    margin-bottom: 20px;
     padding:20px;
     display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .image-slider {
@@ -744,9 +755,7 @@ section#menu {
     height: 100px;
     
 }
-.image-container img {
-    border-radius: 50%;
-}
+
 
 .slide {
     flex: 0 0 100%;
@@ -810,19 +819,19 @@ section#menu {
         overflow: hidden;
     }
     
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .chef-presentation img {
+        min-width: 100%;
+        height: auto;
+        object-fit: contain;
         transition: transform 0.5s ease-in-out;
     }
     
     .presentation-text {
         position: absolute;
-        bottom: 0;
         left: 50%;
         transform: translate( -50%);
-        width: 70%;
+        width: 100%;
+        bottom: 0;
         max-height: 50%;
         overflow-y: auto;
         background-color: rgba(0, 0, 0, 0.356);
@@ -830,9 +839,13 @@ section#menu {
         border-radius: 10px;
     }
     .presentation-text p {
-        font-size: 18px;
+        font-size: 1rem;
         line-height: 1.6;
         color: #ffffff;
+        text-shadow: 1px 1px 3px #ff0022;
+    }
+    .presentation-text li{
+        display: flex;
     }
     
     .about-us-button {
@@ -850,12 +863,6 @@ section#menu {
         background-color: #45a049;
     }
 
-    .chef-presentation {
-        position: relative;
-        height: 100vh;
-        overflow: hidden;
-    }
-    
     img {
         width: 100%;
         height: 100%;
@@ -1115,7 +1122,21 @@ section#menu {
         display: flex;
         max-height: 20vh;
     }
-    
+    .presentation-text {
+        position: absolute;
+        height: fit-content;
+        bottom: 0;;
+        
+    }
+    .presentation-text p {
+        font-size: .6rem;
+    }
+    .chef-presentation {
+        min-width: 100%;
+        height: fit-content;
+        object-fit: contain;
+        transition: transform 0.5s ease-in-out;
+    }
 }
 
 
