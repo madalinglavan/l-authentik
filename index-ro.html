@@ -35,11 +35,19 @@
                             window.open(mapsUrl, '_blank');
                         }
                     </script>
-                </div>
-                
-                        
-                        
+                </div> 
             </div>
+            <button id="languageToggle"  class="toggleButton">FR</button>
+            <script>
+                document.getElementById('languageToggle').addEventListener('click', function() {
+                this.classList.add('active');
+                setTimeout(() => {
+                    this.classList.remove('active');
+                    window.location.href = 'index.html';
+                }, 300);
+                });
+
+            </script>   
             
             <div class="right-top-nav">
                 <div class="socialnetwork">

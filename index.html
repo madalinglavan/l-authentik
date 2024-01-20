@@ -18,6 +18,7 @@
     </video>
     <header>
         <div class="top-nav">
+            
             <div class="left-top-nav">
                 <div class="l-authentik-address">
                     <i  class="fa-solid fa-location-dot" style="color: #ffffff;" id="location-icon"></i>
@@ -36,7 +37,18 @@
                         }
                     </script>
                 </div>                        
-            </div>         
+            </div>      
+            <button id="languageToggle"  class="toggleButton">RO</button>
+            <script>
+                document.getElementById('languageToggle').addEventListener('click', function() {
+                this.classList.add('active');
+                setTimeout(() => {
+                    this.classList.remove('active');
+                    window.location.href = 'index.html';
+                }, 300);
+                });
+
+            </script>   
             <div class="right-top-nav">
                 <div class="socialnetwork">
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>

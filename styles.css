@@ -21,15 +21,11 @@ body {
     padding: 10px;
     font-family: 'Noto Sans', sans-serif;
     background: hsla(320, 60%, 13%, 1);
-
-background: linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(161, 6, 50) 100%);
-
-background: -moz-linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(146, 6, 45) 100%);
-
-background: -webkit-linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(126, 4, 39) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#340D27", endColorstr="#ED5C86", GradientType=1 );
-}
+    background: linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(161, 6, 50) 100%);
+    background: -moz-linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(146, 6, 45) 100%);
+    background: -webkit-linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(126, 4, 39) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#340D27", endColorstr="#ED5C86", GradientType=1 );
+    }
 
 header {
     width: 100%;
@@ -852,7 +848,7 @@ section#menu {
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
-        background-color: #4CAF50;
+        background-color: #4b0013;
         color: white;
         border: none;
         border-radius: 5px;
@@ -876,17 +872,40 @@ section#menu {
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
-        background-color: #4CAF50;
         color: white;
         border: none;
         border-radius: 5px;
+       
     }
     
     .about-us-button:hover {
         background-color: #45a049;
     }
-
-
+    .toggleButton {
+        position:relative;
+        height: 25px;
+        width: 50px;
+        z-index: 2;
+        align-self: center;
+        padding: 3px;
+        border-radius: 5%;
+        font-size: 1rem;
+        box-shadow: 1px 2px 1px #290000;
+        text-shadow: 2px 2px 5px black;
+        background: linear-gradient(90deg, hsla(0, 100%, 50%, 1) 0%, hsla(50, 100%, 50%, 1) 50%, rgb(13, 0, 255) 100%);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease; 
+      }
+      
+      .toggleButton:hover {
+        background-color: #00000049;
+      }
+      .toggleButton.active {
+        transform: translateX(-300px);
+      }
+      
 
 
 
@@ -956,9 +975,9 @@ section#menu {
     .burger-icon {
         display: flex;
         position: relative;
-        margin-top: 30px;
+        margin-top: 60px;
         right: 10px;
-        font-size: 2rem;
+        font-size: 2.5rem;
         width: fit-content;
         height: fit-content;
         cursor: pointer;
@@ -1137,6 +1156,12 @@ section#menu {
     .logo{
         width: 200px;
         
+    }
+    .toggleButton{
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        margin: 10px;
     }
 }
 
