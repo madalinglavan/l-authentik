@@ -31,6 +31,7 @@ header {
     width: 100%;
     height: fit-content;
     margin-bottom: 20px;
+    background-color: #0000005b;
     
 }
 .top-nav{
@@ -154,10 +155,10 @@ nav ul a {
 
 .logo{
     position: relative;
-    width: 100px;
+    width: 200px;
     height: 15vh;
     margin: 10px;
-    background-image: url(img/L`authentik.png);
+    background-image: url(img/l-authentik.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1004,9 +1005,9 @@ section#menu {
     .burger-icon {
         display: flex;
         position: relative;
-        margin-top: 60px;
+        margin-top: 80px;
         right: 10px;
-        font-size: 2.5rem;
+        font-size: 2rem;
         width: fit-content;
         height: fit-content;
         cursor: pointer;
@@ -1038,11 +1039,11 @@ section#menu {
         text-shadow: 3px 1px 5px rgb(0, 0, 0);
         margin-right: -10px;
         background-color: #00000062;
-        box-shadow: 2px 2px 20px 4px rgb(134, 0, 0);
+        box-shadow: 2px 2px 30px 4px rgb(255, 0, 0);
     }
    
     .top-nav{
-        height: 5vh;
+        height: 10vh;
         margin-top: 3px;
         
        
@@ -1050,14 +1051,14 @@ section#menu {
     .languageMenu {
         display: none;
         position: absolute;
-        top: 65px; 
+        top: 90px; 
         right: 80px;
  
       }
   
     .toggleButton{
         position: absolute;
-        top: 45px;
+        top: 75px;
         right: 10px;
         margin: 10px;
     }
