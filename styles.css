@@ -21,7 +21,7 @@ body {
     padding: 10px;
     font-family: 'Noto Sans', sans-serif;
     background: hsla(320, 60%, 13%, 1);
-    background: linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(161, 6, 50) 100%);
+    background: linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(161, 161, 6) 100%);
     background: -moz-linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(146, 6, 45) 100%);
     background: -webkit-linear-gradient(360deg, hsla(320, 60%, 13%, 1) 0%, rgb(126, 4, 39) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#340D27", endColorstr="#ED5C86", GradientType=1 );
@@ -31,12 +31,7 @@ header {
     width: 100%;
     height: fit-content;
     margin-bottom: 20px;
-    background: hsla(320, 60%, 13%, 1);
-    background: linear-gradient(135deg, hsla(320, 60%, 13%, 1) 13%, hsla(343, 80%, 65%, 1) 100%);
-    background: -moz-linear-gradient(135deg, hsla(320, 60%, 13%, 1) 13%, hsla(343, 80%, 65%, 1) 100%);
-    background: -webkit-linear-gradient(135deg, hsla(320, 60%, 13%, 1) 13%, hsla(343, 80%, 65%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#340D27", endColorstr="#ED5C86", GradientType=1 );
-
+    
 }
 .top-nav{
     display: flex;
@@ -45,7 +40,7 @@ header {
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.356);
     width: 100%;
-    height: 4vh;
+    height: 5vh;
 
 }
 .left-top-nav{
@@ -95,7 +90,7 @@ header {
 .l-authentik-address i{
     margin-right: 10px;
     transition: transform 0.3s, background-color 0.3s;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .socialnetwork li a,
@@ -121,6 +116,8 @@ header {
 }
 .l-authentik-address{
     display: flex;
+}
+.l-authentik-address #address{
     cursor: pointer;
     color: #ffffff;
     text-shadow: 2px 4px 5px black;
@@ -157,10 +154,10 @@ nav ul a {
 
 .logo{
     position: relative;
-    width: 300px;
+    width: 100px;
     height: 15vh;
-    margin-left: 25px;
-    background-image: url(img/l-authentik.png);
+    margin: 10px;
+    background-image: url(img/L`authentik.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -224,7 +221,7 @@ nav ul a {
     top: 0;
     left: -100%;
     width: 100%;
-    height: 50vh;
+    height: 80vh;
     overflow: hidden;
     z-index: 10;
     transition: top 0.5s ease-in-out;
@@ -241,12 +238,15 @@ nav ul a {
     text-align: center;
     box-sizing: border-box;
     list-style-type: none;
+    margin-top: 50px;
+
     
 }
 .mobile-menu ul li a {
     width: 100%;
     text-align: right;
     float: right;
+    margin-top: 5px;
 }
 
 .mobile-menu ul li {
@@ -893,7 +893,8 @@ section#menu {
         box-shadow: 1px 2px 1px #290000;
         text-shadow: 2px 2px 5px black;
         background: linear-gradient(90deg, hsla(0, 100%, 50%, 1) 0%, hsla(50, 100%, 50%, 1) 50%, rgb(13, 0, 255) 100%);
-        color: #fff;
+        color: #000000;
+        font-family: 'Times New Roman', Times, serif;
         border: none;
         cursor: pointer;
         transition: transform 0.3s ease; 
@@ -903,7 +904,7 @@ section#menu {
         background-color: #00000049;
       }
       .toggleButton.active {
-        transform: translateX(-300px);
+        transform: translateX(-100px);
       }
       
 
@@ -1013,10 +1014,30 @@ section#menu {
     }
    
     .top-nav{
-        height: 4vh;
+        height: 5vh;
         margin-top: 3px;
         
        
+    }
+    
+  
+    .toggleButton{
+        position: absolute;
+        top: 45px;
+        right: 10px;
+        margin: 10px;
+    }
+    .toggleButton.active {
+        transform: translateX(-300px);
+        box-shadow: 3px 3px 5px rgb(255, 255, 255);
+      }
+      .l-authentik-address #address{
+        cursor: pointer;
+        color: #ffffff;
+        text-shadow: 2px 4px 5px black;
+        list-style-type: none;
+        text-decoration: none;
+        font-size: .5rem;
     }
     .contact-form {
         min-width: 90%;
@@ -1153,16 +1174,7 @@ section#menu {
         object-fit: contain;
         transition: transform 0.5s ease-in-out;
     }
-    .logo{
-        width: 200px;
-        
-    }
-    .toggleButton{
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        margin: 10px;
-    }
+    
 }
 
 
