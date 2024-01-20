@@ -884,6 +884,7 @@ section#menu {
     .languageMenu {
         display: none;
         position: absolute;
+        width: 90px;
         top: 20px; 
         right: 5px;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -894,22 +895,26 @@ section#menu {
         transition: transform 0.5s ease, opacity 0.5s ease; 
       }
       
-      .languageOption {
+      .languageMenu span {
+        height: 20px;
         cursor: pointer;
         margin-right: 10px;
-        font-size: 1rem;
+        font-size: .8rem;
+        box-shadow: inset 3px 3px 3px #ff0000;
+        border-radius: 10px;
+        color: #fff;
       }
       
       .toggleButton {
         position: relative;
-        height: 25px;
+        height: 20px;
         width: 50px;
         z-index: 2;
         align-self: center;
         padding: 3px;
         border-radius: 5%;
-        font-size: 1rem;
-        box-shadow: 1px 2px 1px #290000;
+        font-size: .6rem;
+        box-shadow: 1px 2px 1px #ffb700;
         text-shadow: 2px 2px 5px black;
         color: #ffffff;
         font-family: 'Times New Roman', Times, serif;
@@ -924,7 +929,7 @@ section#menu {
       }
       
       .toggleButton:hover:not(.active) {
-        background-color: #ffffff;
+        background-color: #e16200;
       }
       
       .toggleButton.active {
@@ -1058,7 +1063,7 @@ section#menu {
     }
     .toggleButton.active {
         transform: translateX(5px);
-        box-shadow: 3px 3px 5px rgb(255, 255, 255);
+        box-shadow: 3px 3px 5px rgb(0, 0, 0);
       }
       .l-authentik-address #address{
         cursor: pointer;
