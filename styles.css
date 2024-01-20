@@ -40,7 +40,7 @@ header {
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.356);
     width: 100%;
-    height: 5vh;
+    height: 6vh;
 
 }
 .left-top-nav{
@@ -239,7 +239,7 @@ nav ul a {
     box-sizing: border-box;
     list-style-type: none;
     margin-top: 50px;
-
+    
     
 }
 .mobile-menu ul li a {
@@ -881,8 +881,27 @@ section#menu {
     .about-us-button:hover {
         background-color: #45a049;
     }
-    .toggleButton {
-        position:relative;
+    .languageMenu {
+        display: none;
+        position: absolute;
+        top: 20px; 
+        right: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 5px;
+        z-index: 3;
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease; 
+      }
+      
+      .languageOption {
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 1rem;
+      }
+      
+      .toggleButton {
+        position: relative;
         height: 25px;
         width: 50px;
         z-index: 2;
@@ -892,22 +911,26 @@ section#menu {
         font-size: 1rem;
         box-shadow: 1px 2px 1px #290000;
         text-shadow: 2px 2px 5px black;
-        background: linear-gradient(90deg, hsla(0, 100%, 50%, 1) 0%, hsla(50, 100%, 50%, 1) 50%, rgb(13, 0, 255) 100%);
-        color: #000000;
+        color: #ffffff;
         font-family: 'Times New Roman', Times, serif;
         border: none;
         cursor: pointer;
         transition: transform 0.3s ease; 
       }
       
-      .toggleButton:hover {
-        background-color: #00000049;
+      .languageMenu.active {
+        transform: translateY(-10px); 
+        opacity: 1; 
       }
+      
+      .toggleButton:hover:not(.active) {
+        background-color: #ffffff;
+      }
+      
       .toggleButton.active {
         transform: translateX(-100px);
       }
       
-
 
 
 
@@ -1019,7 +1042,13 @@ section#menu {
         
        
     }
-    
+    .languageMenu {
+        display: none;
+        position: absolute;
+        top: 65px; 
+        right: 80px;
+ 
+      }
   
     .toggleButton{
         position: absolute;
@@ -1028,7 +1057,7 @@ section#menu {
         margin: 10px;
     }
     .toggleButton.active {
-        transform: translateX(-300px);
+        transform: translateX(5px);
         box-shadow: 3px 3px 5px rgb(255, 255, 255);
       }
       .l-authentik-address #address{

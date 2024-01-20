@@ -37,17 +37,6 @@
                     </script>
                 </div> 
             </div>
-            <button id="languageToggle"  class="toggleButton">FR</button>
-            <script>
-                document.getElementById('languageToggle').addEventListener('click', function() {
-                this.classList.add('active');
-                setTimeout(() => {
-                    this.classList.remove('active');
-                    window.location.href = 'index.html';
-                }, 300);
-                });
-
-            </script>   
             
             <div class="right-top-nav">
                 <div class="socialnetwork">
@@ -69,7 +58,35 @@
                     <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
                 </div>
             </div>
+            <div id="languageMenu" class="languageMenu">
+                <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
+                <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
+                
+            </div>
+            <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()">Langue</div>
+            <script>
+                function toggleLanguageMenu() {
+                var button = document.getElementById('languageToggle');
+                var menu = document.getElementById('languageMenu');
+
+                button.classList.toggle('active');
+                menu.classList.toggle('active');
+
+                if (menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+                }
+
+                function changeLanguage(targetPage) {
+                toggleLanguageMenu(); 
+                window.location.href = targetPage;
+                }
+
+              </script>
         </div>
+        
         <nav>
             <a href="index.html">
                 <div class="logo"></div>
