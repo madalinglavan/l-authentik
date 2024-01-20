@@ -7,18 +7,18 @@ body {
     width: 95%;
     margin-left: 50%;
     transform: translate(-50%);
-    height: 100vh;
+    height: fit-content;
     padding: 10px;
     font-family: 'Noto Sans', sans-serif;
-    
+    background: rgb(0, 0, 0);
+    background: radial-gradient(at left bottom, rgb(0, 0, 0), rgb(255, 102, 0));
     }
 
 header {
     width: 100%;
     height: fit-content;
-    margin-bottom: 20px;
-    background-color: #0000005b;
-    
+    background: rgba(1, 1, 1, 1.0);
+    background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(255, 0, 128));
 }
 .top-nav{
     display: flex;
@@ -28,7 +28,7 @@ header {
     background-color: rgba(0, 0, 0, 0.356);
     width: 100%;
     height: 6vh;
-
+    
 }
 .left-top-nav{
     display: flex;
@@ -141,10 +141,10 @@ nav ul a {
 
 .logo{
     position: relative;
-    width: 200px;
+    width: 100px;
     height: 15vh;
     margin: 10px;
-    background-image: url(img/l-authentik.png);
+    background-image: url(img/L`authentik.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -710,7 +710,6 @@ section#menu {
 .main-container-1-ads {
     display: flex;
     width: 100%;
-    display: flex;
     justify-content: center;
 }
 
@@ -718,11 +717,11 @@ section#menu {
 .container-1-ads {
     position: relative;
     overflow: hidden;
-    width: 90%;
-    height: 25vh;
-    background-image: url(img/l-authentik\ bautura.jpg);
-    background-position: center;
-    box-shadow: 2px 2px 4px 4px rgb(0, 0, 0);
+    width: 80%;
+    height: 33vh;
+    background-image: url(img/l-authentik\ fel\ principal\ 3.jpg);
+    background-position: right;
+    box-shadow:4px 4px 4px 5px  #000000;
     margin-bottom: 20px;
     padding:20px;
     display: flex;
@@ -919,11 +918,58 @@ section#menu {
         transform: translateX(-100px);
       }
       
-
-
-
-
-
+      .container-bine-ati-venit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    
+      }
+      
+      .bine-ati-venit {
+        display: none;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        animation: fadeInUp 1s ease-in, slideInLeft 1s ease-in;
+        background-color: #520f15a4;
+        box-shadow: 5px 5px 5px 5px rgb(107, 1, 1);
+      }
+      .bine-ati-venit h1 {
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-shadow: 2px 2px 2px #696969;
+      }
+    .bine-ati-venit p {
+        text-align: left;
+        font-size: .9rem;
+        color: #fff;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
 
 
 
@@ -944,8 +990,9 @@ section#menu {
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-    background-color: #963f16;
-    height: 5vh;
+    background: rgba(1, 1, 1, 1.0);
+    background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(255, 0, 128));
+    height: 10vh;
   }
   .footer-content a {
     color: #ffffff;
@@ -1191,7 +1238,16 @@ section#menu {
         object-fit: contain;
         transition: transform 0.5s ease-in-out;
     }
-    
+    .bine-ati-venit{
+        margin-top:0px;
+    }
+    .bine-ati-venit h1 {
+        font-size: 1rem;
+      }
+    .bine-ati-venit p {
+        font-size: .6rem;
+      }
+
 }
 
 
