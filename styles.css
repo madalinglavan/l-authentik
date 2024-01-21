@@ -759,23 +759,25 @@ section#menu {
     
     .about-us-button {
         width: 150px;
-       
-    }
-    .about-us-button a{
         margin-top: 20px;
+      }
+      
+      .about-us-button a {
+        display: block;
         padding: 10px 20px;
         font-size: 16px;
-        cursor: pointer;
-        background-color: #4b0013;
+        text-align: center;
+        text-decoration: none;
         color: white;
-        border: none;
+        background-color: #4b0013;
         border-radius: 5px;
-    }
-    
-    .about-us-button:hover {
+        transition: background-color 0.3s ease;
+      }
+      
+      .about-us-button a:hover {
         background-color: #45a049;
-    }
-
+      }
+      
     img {
         width: 100%;
         height: 100%;
@@ -947,22 +949,25 @@ section#menu {
         border-radius: 8px;
         background: rgba(1, 1, 1, 1.0);
         background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
+        margin-bottom: 10px;
       }
 
       
       .info-section {
         display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
+        justify-content: center;
+        margin-top: 10px;
       }
       
       .info-subsection {
-        flex: 0 0 25%; 
+        flex: 0 0 23%; 
+        margin: 5px;
         transition: transform 0.3s ease;
         background-color: #b83737;
+        cursor: pointer;
       }
       .info-subsection:hover {
-        transform: translateY(-20px); 
+        transform: translateY(-10px); 
         background-color: #ffcc00e1;
       }
       
@@ -970,16 +975,70 @@ section#menu {
       .info-prima-pagina-l-authentik h3 {
         color: #ffffff;
         margin: 10px;
-        font-size: 1.2rem;
-      }
-      
-      .info-prima-pagina-l-authentik p {
         font-size: 1rem;
       }
       
-   
+      .info-prima-pagina-l-authentik p {
+        font-size: .8rem;
+      }
       
-
+      .evenimente-container {
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      
+      .panou-publicitar {
+        text-align: center;
+      }
+      
+      .panou-publicitar h2 {
+        color: #4b0013;
+      }
+      
+      .panou-publicitar p {
+        margin-bottom: 10px;
+      }
+      
+      .panou-publicitar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      .panou-publicitar li {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      
+      #google-reviews {
+        margin-top: 20px;
+      }
+      #google-reviews h3{
+        color: #fff;
+      }
+      
+      #reviews-container {
+        max-height: 300px; 
+        overflow-y: auto; 
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: red;
+      }
+      
+      .review {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+      }
+      
+      .review p {
+        margin: 5px 0;
+      }
+      
 
 
 
@@ -1265,6 +1324,7 @@ section#menu {
     .presentation-text {
         position: absolute;
         bottom: 1%;
+        max-height: fit-content;
         
     }
     .presentation-text p {
@@ -1273,26 +1333,25 @@ section#menu {
     .chef-presentation {
         min-width: 100%;
         height: fit-content;
-        object-fit: contain;
+        object-fit: cover;
         transition: transform 0.5s ease-in-out;
         
     }
     
-    .info-section {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px; 
-        justify-content: space-around;
-        padding: 20px;
+    .info-subsection {
+        flex: 0 0 23%; 
+        margin: 5px;
+        transition: transform 0.3s ease;
+        background-color: #b83737;
       }
       .info-prima-pagina-l-authentik h3 {
         color: #ffffff;
         margin: 0px;
-        font-size: 1rem;
+        font-size: .6rem;
       }
       
       .info-prima-pagina-l-authentik p {
-        font-size: .6rem;
+        font-size: .5rem;
         color:#fff;
       }
 

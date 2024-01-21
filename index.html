@@ -150,7 +150,74 @@
         </div>
     </header>
        
-   
+    <div class="info-prima-pagina-l-authentik">        
+        <div class="info-section">
+            <a href="#" class="info-subsection" id="location-link">
+                <h3>Locație</h3>
+                <p>L'Authentik este situat pe Bd de Dixmude 30, 1000 Bruxelles.</p>
+              </a>
+              
+              <script>
+                var locationLink = document.getElementById('location-link');
+                locationLink.addEventListener('click', openGoogleMaps);
+              
+                function openGoogleMaps(event) {
+                  event.preventDefault(); 
+              
+                  var address = encodeURIComponent(locationLink.lastElementChild.innerText);
+                  var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + address;
+                  window.open(mapsUrl, '_blank');
+                }
+              </script>
+              
+          
+              <a href="#evenimente-l-authentik" class="info-subsection">
+                <h3>Evenimente Speciale</h3>
+                <p>Oferim posibilitatea de a crea petreceri, aniversări și alte evenimente speciale.</p>
+              </a>
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  var evenimenteLink = document.querySelector('.info-subsection[href="#evenimente-l-authentik"]');
+                  
+                  evenimenteLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+              
+                    var targetElement = document.getElementById('evenimente-l-authentik');
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                  });
+                });
+              </script>
+              
+              <a href="#reviews-container" class="info-subsection" onclick="scrollToReviews(event)">
+                <h3>Rating Google</h3>
+                <p>Restaurantul nostru are un rating de 5 stele pe Google.</p>
+              </a>
+              
+              <script>
+                function scrollToReviews(event) {
+                  event.preventDefault();
+                  
+                  var reviewsContainer = document.getElementById('reviews-container');
+              
+                  if (reviewsContainer) {
+                    reviewsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                  } else {
+                    console.error("Elementul cu id-ul 'reviews-container' nu a fost găsit.");
+                  }
+                }
+              </script>
+              
+              
+              
+          
+          <a href="link-catre-program" class="info-subsection">
+            <h3>Program de Lucru</h3>
+            <p>Luni: Închis</p>
+            <p>Marți-Vineri: 10:00–22:00</p>
+            <p>Weekend: 10:00 - 02:00</p>
+          </a>
+        </div>
+      </div>
 
     <div class="main-container-1-ads">
         
@@ -236,37 +303,7 @@
             </script>
         </div>
     </div>
-    <div class="info-prima-pagina-l-authentik">        
-        <div class="info-section">
-          <div class="info-subsection">
-            <h3>Locație</h3>
-            <p>L'Authentik este situat pe Bd de Dixmude 30, 1000 Bruxelles.</p>
-          
-            </div>
-          
-          <div class="info-subsection">
-            <h3>Evenimente Speciale</h3>
-            <p>Oferim posibilitatea de a crea petreceri, aniversări și alte evenimente speciale.</p>
-          </div>
-          
-          <div class="info-subsection">
-            <h3>Rating Google</h3>
-            <p>Restaurantul nostru are un rating de 5 stele pe Google.</p>
-          </div>
-     
-        
-       
-            <div class="info-subsection">
-              <h3>Program de Lucru</h3>
-              <p>Luni: Închis</p>
-              <p>marti-vineri:10:00–22:00 </p>
-              <p>weekend : 10:00: 02:00</p>  
-               
-               
-            </div>
-        </div>
-    </div>
-
+    
  
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
@@ -280,11 +317,29 @@
                
                 Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
             </p>
-            <div  class="about-us-button"><a href="aboutus.html">Despre Noi</a></button>
+            <div class="about-us-button">
+                <a href="aboutus.html">Despre Noi</a>
+              </div>
+              
         </div>
     </div>
     
-    </div>
+    </div><div id="evenimente-l-authentik" class="evenimente-container">
+        <div class="panou-publicitar">
+          <h2>Evenimente Speciale</h2>
+          <p>La L'Authentik, vă oferim un spațiu minunat pentru diverse evenimente speciale:</p>
+          <ul>
+            <li>Botezuri</li>
+            <li>Zile onomastice</li>
+            <li>Petreceri private</li>
+          </ul>
+          <p>Vă invităm să vă alăturați evenimentelor noastre unice și să vă bucurați de momente de neuitat într-o atmosferă autentică.</p>
+          <p>De asemenea, avem plăcerea de a găzdui muzicanți talentați din toate colțurile lumii pentru a vă încânta cu cele mai bune performanțe muzicale.</p>
+        </div>
+      </div>
+
+
+
    
     <div class="wrap-container-afisare-produse-aleatorii">
         
@@ -481,7 +536,14 @@ document.addEventListener('DOMContentLoaded', () => {
    
 
 
-
+    <div id="google-reviews">
+        <h3>Recenzii Google</h3>
+        <div id="reviews-container">
+          <!-- Aici vor fi afișate recenziile -->
+        </div>
+      </div>
+      
+      
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
