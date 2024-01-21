@@ -10,7 +10,8 @@ body {
     height: fit-content;
     padding: 10px;
     font-family: 'Noto Sans', sans-serif;
-    background-color: #000000;
+    background-color: #e1dfc9;
+    box-shadow: inset 5px 5px 5px 5px rgb(0, 0, 0);
     
     }
 
@@ -955,16 +956,28 @@ section#menu {
       
       .info-section {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         margin-top: 10px;
+      }
+      .info-section a{
+        text-decoration: none;
+        list-style-type: none;
       }
       
       .info-subsection {
         flex: 0 0 23%; 
         margin: 5px;
         transition: transform 0.3s ease;
-        background-color: #b83737;
-        cursor: pointer;
+      }
+      .info-prima-pagina-l-authentik h3 {
+        color: #ffff00;
+        margin: 0px;
+        font-size: .8rem;
+      }
+      
+      .info-prima-pagina-l-authentik p {
+        font-size: .5rem;
+        color:#fff;
       }
       .info-subsection:hover {
         transform: translateY(-10px); 
@@ -972,15 +985,7 @@ section#menu {
       }
       
     
-      .info-prima-pagina-l-authentik h3 {
-        color: #ffffff;
-        margin: 10px;
-        font-size: 1rem;
-      }
-      
-      .info-prima-pagina-l-authentik p {
-        font-size: .8rem;
-      }
+   
       
       .evenimente-container {
         background-color: #f8f8f8;
@@ -1342,10 +1347,9 @@ section#menu {
         flex: 0 0 23%; 
         margin: 5px;
         transition: transform 0.3s ease;
-        background-color: #b83737;
       }
       .info-prima-pagina-l-authentik h3 {
-        color: #ffffff;
+        color: #ffff00;
         margin: 0px;
         font-size: .6rem;
       }

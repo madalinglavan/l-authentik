@@ -153,26 +153,26 @@
     <div class="info-prima-pagina-l-authentik">        
         <div class="info-section">
             <a href="#" class="info-subsection" id="location-link">
-                <h3>Locație</h3>
-                <p>L'Authentik este situat pe Bd de Dixmude 30, 1000 Bruxelles.</p>
-              </a>
-              
-              <script>
+                <h3><i class="fa-solid fa-location-dot"></i>L'Authentik</h3>
+                <p>Descoperă drumul către autenticitate!</p>
+            </a>
+            
+            <script>
                 var locationLink = document.getElementById('location-link');
                 locationLink.addEventListener('click', openGoogleMaps);
-              
+            
                 function openGoogleMaps(event) {
-                  event.preventDefault(); 
-              
-                  var address = encodeURIComponent(locationLink.lastElementChild.innerText);
-                  var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + address;
-                  window.open(mapsUrl, '_blank');
+                    event.preventDefault();
+            
+                    var mapsUrl = 'https://www.google.com/maps/place/L\'Authentik+Resto+Bar/@50.8574589,4.310404,14z/data=!3m1!4b1!4m6!3m5!1s0x47c3c32cb78e51b3:0xfc84ad716af4e3cc!8m2!3d50.8574647!4d4.3472698!16s%2Fg%2F11kj_fk0vv?entry=ttu';
+                    window.open(mapsUrl, '_blank');
                 }
-              </script>
+            </script>
+            
               
           
               <a href="#evenimente-l-authentik" class="info-subsection">
-                <h3>Evenimente Speciale</h3>
+                <h3><i class="fa-solid fa-tag"></i>Evenimente Speciale</h3>
                 <p>Oferim posibilitatea de a crea petreceri, aniversări și alte evenimente speciale.</p>
               </a>
               <script>
@@ -189,8 +189,8 @@
               </script>
               
               <a href="#reviews-container" class="info-subsection" onclick="scrollToReviews(event)">
-                <h3>Rating Google</h3>
-                <p>Restaurantul nostru are un rating de 5 stele pe Google.</p>
+                <h3><i class="fa-regular fa-star"></i>Rating <i class="fa-brands fa-google"></i>oogle</h3>
+                <p></p>
               </a>
               
               <script>
@@ -211,7 +211,7 @@
               
           
           <a href="link-catre-program" class="info-subsection">
-            <h3>Program de Lucru</h3>
+            <h3><i class="fa-regular fa-clock"></i>Program</h3>
             <p>Luni: Închis</p>
             <p>Marți-Vineri: 10:00–22:00</p>
             <p>Weekend: 10:00 - 02:00</p>
@@ -541,6 +541,36 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="reviews-container">
           <!-- Aici vor fi afișate recenziile -->
         </div>
+        <script>
+            // Folosește cheia ta API aici
+            const apiKey = 'cheia_tale_api';
+        
+            // ID-ul locației (poti gasi in link-ul de la recenzii)
+            const placeId = 'id_locație';
+        
+            // URL-ul pentru a obține recenzii folosind API-ul Google Places
+            const reviewsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews&key=${apiKey}`;
+        
+            // Funcția pentru a adăuga recenziile pe pagină
+            function addReviewsToPage(reviews) {
+              const reviewsContainer = document.getElementById('reviews-container');
+        
+              reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.innerHTML = `<p>${review.text}</p><p>Rating: ${review.rating}</p><hr>`;
+                reviewsContainer.appendChild(reviewElement);
+              });
+            }
+        
+            // Apelarea API-ului și procesarea răspunsului
+            fetch(reviewsUrl)
+              .then(response => response.json())
+              .then(data => {
+                const reviews = data.result.reviews || [];
+                addReviewsToPage(reviews);
+              })
+              .catch(error => console.error('Eroare la obținerea recenziilor:', error));
+          </script>
       </div>
       
       
