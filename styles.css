@@ -946,11 +946,13 @@ section#menu {
         justify-content: center;
         text-align: center;
         width: 100%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        background: rgba(1, 1, 1, 1.0);
-        background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
+        box-shadow: inset 0 0 10px rgb(153, 2, 2);
         margin-bottom: 10px;
+      }
+      .info-prima-pagina-l-authentik img{
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
       }
 
       
@@ -958,6 +960,7 @@ section#menu {
         display: flex;
         justify-content: space-evenly;
         margin-top: 10px;
+        
       }
       .info-section a{
         text-decoration: none;
@@ -966,8 +969,12 @@ section#menu {
       
       .info-subsection {
         flex: 0 0 23%; 
+        height: 50px;
         margin: 5px;
         transition: transform 0.3s ease;
+        border-radius: 8px;
+        background: rgba(1, 1, 1, 1.0);
+        background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
       }
       .info-prima-pagina-l-authentik h3 {
         color: #ffff00;
@@ -1044,7 +1051,38 @@ section#menu {
         margin: 5px 0;
       }
       
-
+      .program-container {
+        display: flex;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        min-width: 100%;
+        max-height: 0;
+        background: rgba(1, 1, 1, 1.0);
+        background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        margin-bottom: 10px;
+    }
+    
+    .program-container ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .program-container ul li {
+        font-size: .9rem;
+        color: rgb(255, 230, 0);
+        text-shadow: 2px 4px 4px rgb(255, 221, 0);
+    }
+    
+    .program-container.active {
+        max-height: 25vh;
+    }
+    
+  
+    
 
 
 
@@ -1151,15 +1189,15 @@ section#menu {
     .languageMenu {
         display: none;
         position: absolute;
-        top: 100px; 
-        right: 80px;
+        top: 150px; 
+        left: 80px;
         
       }
   
     .toggleButton{
         position: absolute;
-        top: 85px;
-        right: 10px;
+        top: 140px;
+        left: 10px;
         margin: 10px;
     }
     .toggleButton.active {
@@ -1304,6 +1342,7 @@ section#menu {
            height: 100%;
            box-shadow: none;
            border-radius: 15px;
+           
         }
        
     
@@ -1358,6 +1397,11 @@ section#menu {
         font-size: .5rem;
         color:#fff;
       }
+      .program-container ul li {
+        font-size: .6rem;
+        color: rgb(255, 230, 0);
+        text-shadow: 2px 4px 4px rgb(255, 221, 0);
+    }
 
 }
 

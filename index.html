@@ -150,7 +150,8 @@
         </div>
     </header>
        
-    <div class="info-prima-pagina-l-authentik">        
+    <div class="info-prima-pagina-l-authentik">   
+        
         <div class="info-section">
             <a href="#" class="info-subsection" id="location-link">
                 <h3><i class="fa-solid fa-location-dot"></i>L'Authentik</h3>
@@ -172,8 +173,8 @@
               
           
               <a href="#evenimente-l-authentik" class="info-subsection">
-                <h3><i class="fa-solid fa-tag"></i>Evenimente Speciale</h3>
-                <p>Oferim posibilitatea de a crea petreceri, aniversări și alte evenimente speciale.</p>
+                <h3><i class="fa-solid fa-tag"></i>Evenimente</h3>
+                <p>Petreceri, aniversări și alte evenimente.</p>
               </a>
               <script>
                 document.addEventListener('DOMContentLoaded', function () {
@@ -210,15 +211,61 @@
               
               
           
-          <a href="link-catre-program" class="info-subsection">
-            <h3><i class="fa-regular fa-clock"></i>Program</h3>
-            <p>Luni: Închis</p>
-            <p>Marți-Vineri: 10:00–22:00</p>
-            <p>Weekend: 10:00 - 02:00</p>
-          </a>
-        </div>
-      </div>
+              <a href="#" class="info-subsection" id="program-link">
+                <h3><i class="fa-regular fa-clock"></i>Program</h3>
+            </a>    
+            
+           
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', function () {
+                    var programLink = document.getElementById('program-link');
+                    var programDiv = document.getElementById('program-div');
 
+                    programLink.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        programDiv.classList.toggle('active');
+                    });
+                    programDiv.classList.add('hidden');
+                    setTimeout(function () {
+                        programDiv.classList.remove('hidden');
+                    }, 100);
+                    });
+
+            </script>
+        </div>
+        
+      </div>
+      <div id="program-div" class="program-container">
+        <ul>
+            <li>Luni</li>
+            <li>Inchis</li>
+        </ul>
+        <ul>
+            <li>Marti</li>
+            <li>10:00 - 22:00</li>
+        </ul>
+        <ul>
+            <li>Miercuri</li>
+            <li>10:00 - 22:00</li>
+        </ul>
+        <ul>
+            <li>Joi</li>
+            <li>10:00 - 22:00</li>
+        </ul>
+        <ul>
+            <li>Vineri</li>
+            <li>10:00 - 02:00</li>
+        </ul>
+        <ul>
+            <li>Sambata</li>
+            <li>10:00 - 02:00</li>
+        </ul>
+        <ul>
+            <li>Duminica</li>
+            <li>10:00 - 02:00</li>
+        </ul>
+     </div>
     <div class="main-container-1-ads">
         
         <div class="container-1-ads">
