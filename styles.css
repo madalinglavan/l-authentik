@@ -21,6 +21,10 @@ header {
     margin-bottom: 5px;
     background: rgba(1, 1, 1, 1.0);
     background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
+    background-image: url(img/l-authentik\ local\ 6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .top-nav{
     display: flex;
