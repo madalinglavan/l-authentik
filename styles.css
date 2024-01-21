@@ -214,13 +214,11 @@ nav ul a {
     top: 0;
     left: -100%;
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     overflow: hidden;
     z-index: 10;
     transition: top 0.5s ease-in-out;
-    background-size:cover;
-    background-position:center; 
-    background-repeat: no-repeat;
+   
 }
 
 .mobile-menu ul {
@@ -232,19 +230,22 @@ nav ul a {
     box-sizing: border-box;
     list-style-type: none;
     margin-top: 50px;
-    
+   
     
 }
 .mobile-menu ul li a {
-    width: 100%;
-    text-align: right;
-    float: right;
+    min-width: 100%;
+    text-align: center;
     margin-top: 5px;
+    
 }
 
 .mobile-menu ul li {
-    margin-bottom: 15px;
-    
+    margin-bottom: 10px;
+    background-color: #000000b4;
+}
+.mobile-menu ul li:hover{
+    background-color: #ffcc00e1;
 }
 
 .mobile-menu ul a {
@@ -519,10 +520,18 @@ section#menu {
     cursor: pointer;
 }
 .wrap-menu-page{
-    background: rgb(250,249,255);
-    background: linear-gradient(90deg, rgba(250,249,255,1) 0%, rgba(129,6,1,1) 20%, rgba(133,1,1,1) 80%, rgba(255,255,255,1) 100%);
-     
+    background: rgba(1, 1, 1, 1.0);
+    background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
+   
 }
+.wrap-menu-page h1{
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    text-shadow: 4px 2px 4px black;
+    position: relative;
+}   
 .container-menu-page {
     max-width: 800px;
     margin: 50px auto;
@@ -532,7 +541,6 @@ section#menu {
 }
 
 .category {
-    
     box-shadow: inset 2px 2px 4px rgb(255, 255, 255);
     color: #ffffff;
     text-shadow: 2px 2px 6px black;
@@ -542,6 +550,13 @@ section#menu {
     cursor: pointer;
     border-radius: 4px;
 }
+.category:hover{
+    background-color: goldenrod;
+}
+.category:active{
+    background-color: red;
+}
+
 
 .products-container {
     display: none;
@@ -554,7 +569,7 @@ section#menu {
     border-radius: 4px;
     margin-top: 10px;
     padding: 10px;
-    background-color: #fff;
+
 }
 
 .product img {
@@ -569,7 +584,7 @@ section#menu {
 }
 
 .price {
-    color: #27ae60;
+    color:#fff;
     font-weight: bold;
     margin-top: 5px;
     display: block;
@@ -951,15 +966,10 @@ section#menu {
         justify-content: center;
         text-align: center;
         width: 100%;
-        box-shadow: inset 0 0 10px rgb(153, 2, 2);
-        margin-bottom: 10px;
+        box-shadow:  0 0 10px rgb(0, 0, 0);
+        
       }
-      .info-prima-pagina-l-authentik img{
-        width: 65px;
-        height: 65px;
-        object-fit: contain;
-      }
-
+ 
       
       .info-section {
         display: flex;
@@ -999,35 +1009,50 @@ section#menu {
     
    
       
-      .evenimente-container {
-        background-color: #f8f8f8;
+      #evenimente-l-authentik {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+    
+    .evenimente-container {
+        max-width: 800px;
         padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-      
-      .panou-publicitar {
-        text-align: center;
-      }
-      
-      .panou-publicitar h2 {
-        color: #4b0013;
-      }
-      
-      .panou-publicitar p {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .panou-publicitar h2 {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .panou-publicitar p {
+        font-size: 1em;
+        color: #555;
         margin-bottom: 10px;
-      }
-      
-      .panou-publicitar ul {
-        list-style-type: none;
+    }
+    
+    .panou-publicitar ul {
+        list-style: none;
         padding: 0;
-      }
-      
-      .panou-publicitar li {
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
+    }
+    
+    .panou-publicitar li {
+        font-size: 1em;
+        color: #555;
+    }
+    
+    .panou-publicitar li:before {
+        content: '•';
+        margin-right: 5px;
+    }
+    
+    
       
       
       #google-reviews {
@@ -1386,7 +1411,7 @@ section#menu {
         color:#fff;
       }
       .program-container ul li {
-        font-size: .6rem;
+        font-size: .7rem;
         color: rgb(255, 230, 0);
         text-shadow: 2px 4px 4px rgb(255, 221, 0);
     }
