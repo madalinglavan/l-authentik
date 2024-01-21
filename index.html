@@ -33,10 +33,39 @@
                             window.open(mapsUrl, '_blank');
                         }
                     </script>
-                </div>                        
-            </div>      
+                </div>  
+                <div id="languageMenu" class="languageMenu">
+                    <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
+                    <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
+                    
+                </div>
+                <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()"><i class="fa-solid fa-language" style="color: #ffffff;"><br>limba</i></div>
+                <script>
+                    function toggleLanguageMenu() {
+                    var button = document.getElementById('languageToggle');
+                    var menu = document.getElementById('languageMenu');
+    
+                    button.classList.toggle('active');
+                    menu.classList.toggle('active');
+    
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    } else {
+                        menu.style.display = 'block';
+                    }
+                    }
+    
+                    function changeLanguage(targetPage) {
+                    toggleLanguageMenu(); 
+                    window.location.href = targetPage;
+                    }
+    
+                  </script>                         
+            </div>    
+              
             
             <div class="right-top-nav">
+                
                 <div class="socialnetwork">
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
                     <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
@@ -56,33 +85,7 @@
                     <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
                 </div>
             </div>
-            <div id="languageMenu" class="languageMenu">
-                <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
-                <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
-                
-            </div>
-            <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()"><i class="fa-solid fa-language" style="color: #ffffff;"><br>limba</i></div>
-            <script>
-                function toggleLanguageMenu() {
-                var button = document.getElementById('languageToggle');
-                var menu = document.getElementById('languageMenu');
-
-                button.classList.toggle('active');
-                menu.classList.toggle('active');
-
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                } else {
-                    menu.style.display = 'block';
-                }
-                }
-
-                function changeLanguage(targetPage) {
-                toggleLanguageMenu(); 
-                window.location.href = targetPage;
-                }
-
-              </script>   
+            
         </div>
         
         <nav>

@@ -802,29 +802,31 @@ section#menu {
     .about-us-button:hover {
         background-color: #45a049;
     }
+
     .languageMenu {
         display: none;
         position: absolute;
-        width: 90px;
-        top: 20px; 
-        right: 5px;
+        display: flex;
+        margin-top:10px;
+        height: 30px;
+        width: 100px;
+        justify-content: space-between;
+        left: 210px;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
-        padding: 5px;
         z-index: 3;
+        cursor: pointer;
         opacity: 0;
-        transition: transform 0.5s ease, opacity 0.5s ease; 
+        color: rgb(255, 255, 255);
+        transition: transform 0.5s ease, opacity 0.5s ease;
       }
       
-      .languageMenu span {
-        height: 30px;
-        cursor: pointer;
+      .languageMenu.active {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+      .languageMenu span{ 
         margin-right: 10px;
-        font-size: .8rem;
-        box-shadow: 3px 3px 3px #fffb03;
-        border-radius: 3px;
-        color: #ffffff;
-        text-shadow: 2px 2px 5px rgb(218, 207, 4);
       }
       
       .toggleButton {
@@ -832,22 +834,18 @@ section#menu {
         height: 20px;
         width: 50px;
         z-index: 2;
+        margin-left: 10px;
         align-self: center;
         padding: 3px;
         border-radius: 5%;
-        font-size: .6rem;
-        box-shadow: 1px 2px 1px #dfa30b;
-        
-        
+        font-size: 0.6rem;
+        box-shadow: 1px 2px 1px #df0b0b;
         font-family: 'Times New Roman', Times, serif;
         border: none;
         cursor: pointer;
-        transition: transform 0.3s ease; 
-      }
-      
-      .languageMenu.active {
-        transform: translateY(-10px); 
-        opacity: 1; 
+        transition: transform 0.3s ease;
+        display: flex;
+        gap: 5px;
       }
       
       .toggleButton:hover:not(.active) {
@@ -855,9 +853,12 @@ section#menu {
       }
       
       .toggleButton.active {
-        transform: translateX(-100px);
+        transform: translateY(-1px);
       }
       
+
+      
+
      
       .main-container-1-ads {
         display: flex;
@@ -1164,7 +1165,8 @@ section#menu {
     }
 
     .mail-adress h3,
-    .socialnetwork li a p{
+    .socialnetwork li a p,
+    .l-authentik-address h3 {
         display: none;
     }
   
@@ -1184,26 +1186,8 @@ section#menu {
         height: 7vh;
         margin-top: 3px;
         
-       
-    }
-    .languageMenu {
-        display: none;
-        position: absolute;
-        top: 150px; 
-        left: 80px;
-        
-      }
-  
-    .toggleButton{
-        position: absolute;
-        top: 140px;
-        left: 10px;
-        margin: 10px;
-    }
-    .toggleButton.active {
-        transform: translateX(5px);
-        box-shadow: 3px 3px 5px rgb(0, 0, 0);
-      }
+       }
+ 
       .l-authentik-address #address{
         cursor: pointer;
         color: #ffffff;
@@ -1401,6 +1385,11 @@ section#menu {
         font-size: .6rem;
         color: rgb(255, 230, 0);
         text-shadow: 2px 4px 4px rgb(255, 221, 0);
+    }
+    .languageMenu {
+        top:65px;
+        left: 30px;
+        background-color: red;
     }
 
 }
