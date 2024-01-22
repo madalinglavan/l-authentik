@@ -488,9 +488,10 @@ nav ul a {
     font-weight: bold;
     cursor: pointer;
 }
+.total-price {
+    margin-top: 20px;
 
-
-
+}
     .chef-presentation {
         position: relative;
         height: 100vh;
