@@ -747,89 +747,119 @@ section#menu {
       .toggleButton.active {
         transform: translateY(-1px);
       }
+      .container-1-ads {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-     
-      .main-container-1-ads {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        justify-items: center;
-        
-    }
-    
-    
-    .container-1-ads {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        box-shadow:1px 1px 1px 1px  #000000;
-        background: rgba(1, 1, 1, 1.0);
-        background: radial-gradient(at right top, rgb(0, 0, 0), rgb(114, 6, 6));
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
-    .container-2-ads{
-        position: relative;
-        overflow: hidden;
-        width: 90%;
-        height: 15vh;
-        background-image: url(img/l-authentik\ suc\ de\ portocale.jpg);
-        background-position: center;
-        box-shadow: 2px 2px 4px 4px rgb(0, 0, 0);
-        margin-bottom: 20px;
-        padding:20px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .image-slider {
+    .slider-imagini {
         display: flex;
         transition: transform 0.5s ease-in-out;
-        height: 100px;
-        
+    }
+
+    .imagine {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .imagine.activa {
+        opacity: 1;
+    }
+
+    .container-imagine img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .descriere {
+        margin-top: 20px;
+    }
+
+    .descriere h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #e44d26;
+    }
+
+    .descriere p {
+        font-size: 1rem;
+        color: #777;
+    }
+
+    .butoane-slider {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .buton-slider {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #e44d26;
+        margin: 0 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .buton-slider.activ {
+        background-color: #333;
+    }
+
+    .container-2-ads .image-slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+        align-items: center; /* Așază slide-urile în centru vertical */
     }
     
-    
-    .slide {
+    .container-2-ads .slide {
         flex: 0 0 100%;
         display: flex;
+        flex-direction: column; /* Așază textul deasupra imaginii */
         justify-content: center;
         align-items: center;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
     }
     
-    .slide.active {
+    .container-2-ads .slide.active {
         opacity: 1;
         animation: fadeIn 2.5s ease-in-out;
     }
     
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    
-        
-        
-    }
-    .container-1-ads .text-description-ads{
+    .container-2-ads .text-description-ads {
         font-family: 'Times New Roman', Times, serif;
-        width: 100%;
-    }
-    .container-1-ads .slide img{
-        min-width: 100%;
+        width: 80%; /* Ajustează lățimea textului */
+        color: #fff; /* Adaugă culoarea textului */
+        text-align: center; /* Centrează textul */
     }
     
+    .container-2-ads .slide img {
+        min-width: 70%; /* Ajustează lățimea imaginii */
+        max-height: 70%; /* Menține înălțimea maximă */
+        margin-bottom: 10px; /* Spațiu între imagine și text */
+    }
+    
+    .container-2-ads .slider-btns {
+        bottom: 10px; /* Ajustează poziția butoanelor */
+    }
+    
+    /* Poți adăuga alte ajustări sau modificări după preferințe */
+    
+
+
+
     .info-prima-pagina-l-authentik {
         display: flex;
         align-items: center;
@@ -1169,41 +1199,10 @@ section#menu {
     .l-authentik-address i{
         font-size: 1rem;
     }
-    .container-1-ads, .container-2-ads {
-        display: flex;
-        width: fit-content;
-        margin: 0;
-    }
-    .text-description-ads{
-        color: #fff;
-        max-width: 50%;
-    }
-    .text-description-ads h2{
-        font-size: 1rem;
-    }
-    .text-description-ads p{
-        font-size: .6rem;
-    }
-    .slide img{
-        width: 50%;
-    }
+   
 
-    .text-description {
-        max-width: 50%;
-    }
-    .slide{
-        display: flex;
-        
-    }
-    .slide.active{
-         
-         min-width: 100%;
-         justify-content: flex-start;
-         align-items: center;
-    }
-    .slider-btns {
-        bottom: 5px;
-    }
+
+    
     .container-afisare-produse-aleatorii {
         .product h3 {
             min-width: 120px;
