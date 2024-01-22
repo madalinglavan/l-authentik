@@ -473,10 +473,11 @@ section#menu {
     background: rgba(1, 1, 1, 1.0);
     background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
     width: 100%;
+    text-align: center;
 }
 .wrap-menu-page h1{
     font-family: 'Times New Roman', Times, serif;
-
+    
     color: #fff;
     text-shadow: 4px 2px 4px black;
     position: relative;
@@ -567,14 +568,14 @@ section#menu {
         position: relative;
         height: 100vh;
         overflow: hidden;
-        margin-bottom: 20px;
+
         
     }
     
     .chef-presentation img {
         min-width: 100%;
         height: auto;
-        object-fit: contain;
+        object-fit: cover;
         transition: transform 0.5s ease-in-out;
     }
 
@@ -709,11 +710,9 @@ section#menu {
       .container-1-ads {
         width: 100%;
         max-height: 40vh;
-        margin: 20px auto;
         border-radius: 8px;
         overflow: hidden;
-        background: radial-gradient(at right top, rgb(0, 0, 0), rgb(114, 6, 6));
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.71);
+       
     }
     .container-1-ads h1{
         position: absolute;
@@ -737,6 +736,7 @@ section#menu {
 
     .imagine.activa {
         opacity: 1;
+        
     }
     .descriere {
         margin-top: 20px;
@@ -746,13 +746,15 @@ section#menu {
         font-size: 1.5rem;
         margin-bottom: 10px;
         color: #ffffff;
-        background-color: #3333336b;
+        text-shadow: 10px 7px 8px rgb(28, 9, 9);
+
     }
 
     .descriere p {
         font-size: 1rem;
-        color: #000000;
-        background-color: #b3b1b1a0;
+        color: #ffbb00;
+        text-shadow: 10px 7px 5px rgb(28, 9, 9);
+
     }
 
     .butoane-slider {
@@ -778,15 +780,16 @@ section#menu {
     .wrap-descriere-1{
         position: relative;
         min-height: 25vh;
-        max-width: 100%;
+        min-width: 100%;
         background-image: url(img/background1.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        
     }
     .wrap-descriere-2{
         height: 25vh;
-        max-width: 100%;
+        min-width: 100%;
         background-image: url(img/background2.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -794,7 +797,7 @@ section#menu {
     }
     .wrap-description-1{
         height: 25vh;
-        max-width: 100%;
+        min-width: 100%;
         background-image: url(img/background\ l-authentik.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -802,7 +805,7 @@ section#menu {
     }
     .wrap-description-2{
         height: 25vh;
-        max-width: 100%;
+        min-width: 100%;
         background-image: url(img/l-authentik\ mici\ cu\ mustar\ si\ cartofi\ prajiti.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -811,26 +814,21 @@ section#menu {
 
 
     .container-2-ads {
+        max-width: 800px;
         position: relative;
+        margin-left: 50%;
+        transform: translate(-50%);
+        max-height: 30vh;
+        border-radius: 8px;
         overflow: hidden;
-        width: 90%;
-        box-shadow: 1px 1px 1px 1px #000000;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        background-image: url("img/l-authentik-suc-de-portocale.jpg");
-        background-position: center;
-        background-size: cover;
-        height: 150px;
-        padding: 20px;
+        
     }
     
     .image-slider {
         display: flex;
         transition: transform 0.5s ease-in-out;
-        height: 100%;
+        min-width: 100%;
+        
     }
     
     .slide {
@@ -1042,6 +1040,10 @@ section#menu {
         position: absolute;
         display: flex;
         right: 25px;
+        box-shadow: 3px 3px 4px black;
+        border-radius: 8px;
+        background: rgba(1, 1, 1, 1.0);
+        background: radial-gradient(at right top, rgb(0, 0, 0), rgb(255, 0, 128));
       }
       .time, .date {
         font-size:.8rem;
@@ -1290,6 +1292,23 @@ section#menu {
         width: 100%;
         height: 25vh;
     }
+    .descriere h2 {
+        font-size: 1rem;
+    }
+
+    .descriere p {
+        font-size: .8rem;
+ 
+
+    }
+    .container-2-ads {
+        min-width: 95%;
+        position: relative;
+        margin-left: 50%;
+        transform: translate(-50%);
+        
+    }
+
 
 }
 
@@ -1361,6 +1380,23 @@ section#menu {
     }
 
 }
+.container-2-ads {
+    min-width: 95%;
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%);
+    
+}
+.presentation-text {
+    position: absolute;
+    width: 80%;
+    bottom: 20%;
+    max-height: 60%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.356);
+
+    border-radius: 10px;
+}
 }
 
 
@@ -1410,6 +1446,10 @@ section#menu {
 .dish-info p {
     font-size: 1rem;
 
+}
+.container-2-ads {
+    min-width:800px 
+    
 }
 
 }
