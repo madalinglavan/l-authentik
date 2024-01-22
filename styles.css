@@ -535,7 +535,7 @@ section#menu {
 }   
 .container-menu-page {
     max-width: 800px;
-    margin: 50px auto;
+    margin:  auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.705);
@@ -703,7 +703,7 @@ section#menu {
         height: 30px;
         width: 100px;
         justify-content: space-between;
-        left: 210px;
+        left: 80px;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         z-index: 3;
@@ -747,9 +747,6 @@ section#menu {
       .toggleButton.active {
         transform: translateY(-1px);
       }
-      
-
-      
 
      
       .main-container-1-ads {
@@ -836,7 +833,7 @@ section#menu {
     .info-prima-pagina-l-authentik {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         text-align: center;
         width: 100%;
         box-shadow:  0 0 10px rgb(0, 0, 0);
@@ -845,9 +842,10 @@ section#menu {
  
       
       .info-section {
+        width: 100%;
         display: flex;
-        justify-content: space-evenly;
-        margin-top: 10px;
+        justify-content: space-between;
+        margin-top: 5px;
         
       }
       .info-section a{
@@ -856,7 +854,7 @@ section#menu {
       }
       
       .info-subsection {
-        flex: 0 0 23%; 
+        flex: 0 0 20%; 
         height: 50px;
         margin: 5px;
         transition: transform 0.3s ease;
@@ -1289,9 +1287,7 @@ section#menu {
         text-shadow: 2px 4px 4px rgb(255, 221, 0);
     }
     .languageMenu {
-        top:65px;
-        left: 30px;
-        background-color: red;
+     
     }
 
 }
