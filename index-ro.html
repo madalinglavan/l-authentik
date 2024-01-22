@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap">
@@ -10,33 +10,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/f26a888174.js" crossorigin="anonymous"></script>
-    <title>L'Authentik Resto-Bar</title>
+    <title>L'Authentik</title>
 </head>
 <body>
-   
     <header>
         <div class="top-nav">
-            <div class="left-top-nav">
-                <div class="l-authentik-address">
-                    <i  class="fa-solid fa-location-dot" style="color: #ffffff;" id="location-icon"></i>
-                    <h3 id="address">Bd de Dixmude 30 <br> 1000 Bruxelles</h3>
-                    <script>
-                        var locationIcon = document.getElementById('location-icon');
-                        var addressElement = document.getElementById('address');
-                
-                        locationIcon.addEventListener('click', openGoogleMaps);
-                        addressElement.addEventListener('click', openGoogleMaps);
-                
-                        function openGoogleMaps() {
-                            var address = encodeURIComponent(addressElement.innerText);
-                            var mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + address;
-                            window.open(mapsUrl, '_blank');
-                        }
-                    </script>
-                </div> 
-            </div>
             
-            <div class="right-top-nav">
+            <div class="left-top-nav">
+                <div id="languageMenu" class="languageMenu">
+                    <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
+                    <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
+                    
+                </div>
+                <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()"><i class="fa-solid fa-language" style="color: #ffffff;"><br>limba</i></div>
+                <script>
+                    function toggleLanguageMenu() {
+                    var button = document.getElementById('languageToggle');
+                    var menu = document.getElementById('languageMenu');
+    
+                    button.classList.toggle('active');
+                    menu.classList.toggle('active');
+    
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    } else {
+                        menu.style.display = 'block';
+                    }
+                    }
+    
+                    function changeLanguage(targetPage) {
+                    toggleLanguageMenu(); 
+                    window.location.href = targetPage;
+                    }
+    
+                  </script>                         
+            </div>    
+              
+            
+            <div class="right-top-nav">   
                 <div class="socialnetwork">
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
                     <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
@@ -45,9 +56,7 @@
                         <a href="contact.html"><h3>e-mail</h3></a>
                         <script>
                             var mailIcon = document.getElementById('mail-icon');
-                        
                             mailIcon.addEventListener('click', openContactPage);
-                        
                             function openContactPage() {
                                 window.location.href = 'contact.html';
                             }
@@ -56,35 +65,7 @@
                     <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
                 </div>
             </div>
-            <div id="languageMenu" class="languageMenu">
-                <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
-                <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
-                
-            </div>
-            <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()">Langue</div>
-            <script>
-                function toggleLanguageMenu() {
-                var button = document.getElementById('languageToggle');
-                var menu = document.getElementById('languageMenu');
-
-                button.classList.toggle('active');
-                menu.classList.toggle('active');
-
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                } else {
-                    menu.style.display = 'block';
-                }
-                }
-
-                function changeLanguage(targetPage) {
-                toggleLanguageMenu(); 
-                window.location.href = targetPage;
-                }
-
-              </script>
         </div>
-        
         <nav>
             <a href="index.html">
                 <div class="logo"></div>
@@ -95,10 +76,10 @@
                     <li><a href="menu.html">Meniu</a></li>
                     <li><a href="despre-noi.html">Despre Noi</a></li>
                     <li><a href="galerie.html">Galerie Foto</a></li>
+                    <li><a href="aboutus.html">Despre noi</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-           
                 <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
                 <script>
                     function toggleMenu() {
@@ -110,7 +91,6 @@
                             slideLeft(navMenu);
                         }
                     }
-
                     function slideRight(element) {
                         var position = -100;
                         var interval = setInterval(function () {
@@ -122,7 +102,6 @@
                             }
                         }, 10);
                     }
-
                     function slideLeft(element) {
                         var position = 0;
                         var interval = setInterval(function () {
@@ -136,62 +115,172 @@
                         }, 10);
                     }
                 </script>
-            </ul>
         </nav>
-        <div class="mobile-menu" id="navMenu">
-            <ul>
-                <li><a href="index-ro.html">Acasă</a></li>
-                <li><a href="menu.html">Meniu</a></li>
-                <li><a href="despre-noi.html">Despre Noi</a></li>
-                <li><a href="galerie.html">Galerie Foto</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+        
     </header>
+    <div class="mobile-menu" id="navMenu">
+        <ul>
+            <li><a href="index-ro.html">Acasă</a></li>
+            <li><a href="menu.html">Meniu</a></li>
+            <li><a href="aboutus.html">Despre Noi</a></li>
+            <li><a href="galerie.html">Galerie Foto</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="info-prima-pagina-l-authentik"> 
+        <div class="info-section">
+            <a href="#" class="info-subsection" id="location-link">
+                <h3><i class="fa-solid fa-location-dot"></i> <br> L'Authentik</h3>
+                <p></p>
+                <script>
+                    var locationLink = document.getElementById('location-link');
+                    locationLink.addEventListener('click', openGoogleMaps);
+                
+                    function openGoogleMaps(event) {
+                        event.preventDefault();
+                
+                        var mapsUrl = 'https://www.google.com/maps/place/L\'Authentik+Resto+Bar/@50.8574589,4.310404,14z/data=!3m1!4b1!4m6!3m5!1s0x47c3c32cb78e51b3:0xfc84ad716af4e3cc!8m2!3d50.8574647!4d4.3472698!16s%2Fg%2F11kj_fk0vv?entry=ttu';
+                        window.open(mapsUrl, '_blank');
+                    }
+                </script>
+            </a>
+            <a href="#" class="info-subsection" id="menu-link">
+                <h3><i class="fa-regular fa-bell"></i><br>MENU</h3>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const programLink = document.getElementById("menu-link");
+                        const menuContainer = document.querySelector(".wrap-menu-page");
+    
+                        programLink.addEventListener("click", function (event) {
+                            event.preventDefault();
+    
+                           
+                            if (menuContainer.style.display === "none" || menuContainer.style.display === "") {
+                                menuContainer.style.display = "block";
+                            } else {
+                                menuContainer.style.display = "none";
+                            }
+    
+                           
+                            menuContainer.scrollIntoView({ behavior: "smooth" });
+                        });
+                    });
+    
+                </script>  
+            </a>  
 
-   
-
-    <div class="main-container-1-ads">
-        <div class="container-1-ads">
+          
+              <a href="#" class="info-subsection" id="program-link">
+                <h3><i class="fa-regular fa-clock"></i><br>Program</h3>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                         var programLink = document.getElementById('program-link');
+                         var programDiv = document.getElementById('program-div');
+     
+                         programLink.addEventListener('click', function (event) {
+                             event.preventDefault();
+                             programDiv.classList.toggle('active');
+                         });
+                         programDiv.classList.add('hidden');
+                         setTimeout(function () {
+                             programDiv.classList.remove('hidden');
+                         }, 100);
+                         });
+     
+                 </script>
+            </a>    
+            
+             <a href="#reviews-container" class="info-subsection" onclick="scrollToReviews(event)">
+                <h3><i class="fa-regular fa-star"></i><br>Recenzii</h3>
+                <p></p>
+                <script>
+                    function scrollToReviews(event) {
+                      event.preventDefault();
+                      
+                      var reviewsContainer = document.getElementById('reviews-container');
+                  
+                      if (reviewsContainer) {
+                        reviewsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+                      } else {
+                        console.error("Elementul cu id-ul 'reviews-container' nu a fost găsit.");
+                      }
+                    }
+                  </script>
+              </a>
+        </div>
+        
+      </div>
+      <div id="program-div" class="program-container">
+        <ul>
+            <li>Luni</li>
+            <li>Inchis</li>
+        </ul>
+        <ul>
+            <li>Marti</li>
+            <li>10:00 - 22:00</li>
+        </ul>
+        <ul>
+            <li>Miercuri</li>
+            <li>10:00 - 22:00</li>
+        </ul>
+        <ul>
+            <li>Joi</li>
+            <li>10:00 - 22:00</li>
+        </ul>
+        <ul>
+            <li>Vineri</li>
+            <li>10:00 - 02:00</li>
+        </ul>
+        <ul>
+            <li>Sambata</li>
+            <li>10:00 - 02:00</li>
+        </ul>
+        <ul>
+            <li>Duminica</li>
+            <li>10:00 - 02:00</li>
+        </ul>
+     </div>
+      <div class="wrap-menu-page">
+        <div class="container-2-ads">
             <div class="image-slider">
                 <div class="slide active">
-                    <div class="text-description">
-                        <h2>Descoperă autenticitatea gustului</h2>
-                        <p>Savorați preparatele noastre proaspete și delicioase.</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/sarmale.jpg" alt="Preparat 1">
+                    <div class="wrap-description-1">
+                        <div class="text-description">
+                            <h2>Descoperă savoarea autentică</h2>
+                            <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="slide">
-                    <div class="text-description">
-                        <h2>Bucură-te de o experiență culinară unică</h2>
-                        <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Mămăligă.png" alt="Preparat 2">
+                    <div class="wrap-description-2">
+                        <div class="text-description">
+                            <h2>Exploră aromele unice</h2>
+                            <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
+                        </div>
+                       
                     </div>
                 </div>
-
+   
             </div>
             <div class="slider-btns">
-                <div class="slider-btn" onclick="changeSlide(0)"></div>
-                <div class="slider-btn" onclick="changeSlide(1)"></div>
- 
+                <div class="slider-btn" onclick="changeSlide2(0)"></div>
+                <div class="slider-btn" onclick="changeSlide2(1)"></div>
+
             </div>
             <script>
                 let currentSlide = 0;
-                const slides = document.querySelector('.image-slider');
-                const buttons = document.querySelectorAll('.slider-btn');
-
+                const slides = document.querySelector('.container-2-ads .image-slider');
+                const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
+        
                 function changeSlide(index) {
                     currentSlide = index;
                     updateSlider();
                 }
-
+        
                 function updateSlider() {
                     slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-
+        
                     buttons.forEach((button, index) => {
                         if (index === currentSlide) {
                             button.classList.add('active');
@@ -199,7 +288,7 @@
                             button.classList.remove('active');
                         }
                     });
-
+        
                     const slideElements = document.querySelectorAll('.slide');
                     slideElements.forEach((slide, index) => {
                         if (index === currentSlide) {
@@ -209,21 +298,270 @@
                         }
                     });
                 }
-
+        
                 function nextSlide() {
                     currentSlide = (currentSlide + 1) % slides.children.length;
                     updateSlider();
                 }
-
+        
                 function prevSlide() {
                     currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
                     updateSlider();
                 }
-
+        
                 setInterval(nextSlide, 10000);
             </script>
         </div>
+       
+        <h1><i class="fa-solid fa-utensils"></i>&nbsp;&nbsp;Meniu L`Authentik !</h1>
+        <div class="container-menu-page">
+                <div class="category" data-target="antreuri">Antreuri</div>
+                <div class="products-container" id="antreuri-products">
+                    <div class="product">
+                        <img src="img/mamaliga cu branza.jpg" alt="Mămăligă cu brânză">
+                        <h3>Mămăligă cu brânză</h3>
+                        <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc.</p>
+                        <span class="price">25 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/l-authentik sarmale cu mamaliga.jpg" alt="Sarmale cu mămăligă">
+                        <h3>Sarmale cu mămăligă</h3>
+                        <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!</p>
+                        <span class="price">35 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                    
+                    <div class="product">
+                        <img src="img/l-authentik mancare 3.jpg" alt="Ciorbă de burtă">
+                        <h3>Ciorbă de burtă</h3>
+                        <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.</p>
+                        <span class="price">30 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                </div>
+        
+                <div class="category" data-target="fel_principal">Fel Principal</div>
+                <div class="products-container" id="fel_principal-products">
+                    <div class="product">
+                        <img src="img/l-authentik mici cu mustar si cartofi prajiti.jpg" alt="Mici la Grătar">
+                        <h3>Mici la Grătar</h3>
+                        <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
+                        <span class="price">40 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                    
+                    <div class="product">
+                        <img src="img/cotlet-nou-nou.png" alt="Cotlet de Porc cu Cartofi Prajiti">
+                        <h3>Cotlet de Porc cu Cartofi Prajiti</h3>
+                        <p>Cotlet de porc suculent, gătit la cuptor, servit alături de cartofi prăjiți crocanți. Un fel principal delicios și hrănitor.</p>
+                        <span class="price">45 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/piept-de-pui-cu-sos-de-ciuperci-si-smantana-diva-in-bucatarie-o.jpg" alt="Piept de Pui cu Sos de Ciuperci">
+                        <h3>Piept de Pui cu Sos de Ciuperci</h3>
+                        <p>Piept de pui fraged, gătit la grătar, acoperit cu un sos delicios de ciuperci. Acompaniat de garnitură de orez. O opțiune sănătoasă și gustoasă.</p>
+                        <span class="price">38 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                </div>
+                <div class="category" data-target="desert">Desert</div>
+                <div class="products-container" id="desert-products">
+                    <div class="product">
+                        <img src="img/i145619-papanasi.jpeg" alt="Papanasi">
+                        <h3>Papanasi</h3>
+                        <p>Delicioși papanasi rumeni, serviți cu dulceață și smântână. Un desert tradițional românesc care îți va răsfăța papilele gustative.</p>
+                        <span class="price">25 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/cozonac.jpg" alt="Cozonac">
+                        <h3>Cozonac</h3>
+                        <p>Bucată de cozonac pufoasă, cu stafide și nuci, îmbibată cu arome delicioase. Perfect pentru momentele dulci alături de cei dragi.</p>
+                        <span class="price">30 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                    <div class="product">
+                        <img src="img/" alt="Clătite cu Gem și Smântână">
+                        <h3>Clătite cu Gem și Smântână</h3>
+                        <p>Clătite subțiri, umplute cu gem și servite cu smântână proaspătă. Un desert ușor și delicios, potrivit pentru orice ocazie.</p>
+                        <span class="price">20 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+                </div>
+        
+                <div class="category" data-target="bauturi-calde">Băuturi Calde</div>
+                <div class="products-container" id="bauturi-calde-products">
+                    <div class="product" data-target="bauturi-calde-product-1">
+                        <img src="img/cafea.jpg" alt="Cafea">
+                        <h3>Cafea</h3>
+                        <p>Cafea proaspătă, preparată cu boabe de cea mai bună calitate.</p>
+                        <span class="price">10 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+             
+                </div>
+                
+                <div class="category" data-target="bauturi-reci">Băuturi Reci</div>
+                <div class="products-container" id="bauturi-reci-products">
+                    <div class="product" data-target="bauturi-reci-product-1">
+                        <img src="img/suc portocale.png" alt="Suc de Portocale">
+                        <h3>Suc de Portocale</h3>
+                        <p>Suc natural de portocale, presat la rece.</p>
+                        <span class="price">12 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+            
+                </div>
+                <div class="category" data-target="cocktailuri">Cocktailuri</div>
+                <div class="products-container" id="cocktailuri-products">
+                    <div class="product" data-target="cocktailuri-product-1">
+                        <img src="img/mojito.jpg" alt="Mojito">
+                        <h3>Mojito</h3>
+                        <p>Cocktail racoritor cu menta, lamaie, zahar, gheata si rom.</p>
+                        <span class="price">20 Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+            
+                </div>
+                <div class="category" data-target="bauturi-alcoolice">Băuturi Alcoolice</div>
+                <div class="products-container" id="bauturi-alcoolice-products">
+         
+                    <div class="product" data-target="vin-product-1">
+         
+                        <img src="img/vin.jpg" alt="Vin">
+                        <h3>Vin</h3>
+                        <p>Descriere produs pentru vin.</p>
+                        <span class="price">XX Lei</span>
+                        <button class="add-to-cart">Adaugă în coș</button>
+                    </div>
+     
+                </div> 
+            <h2> Suntem bucurosi sa preluam comanda dumneavoastra! </h2>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const categories = document.querySelectorAll(".category");
+                const productsContainers = document.querySelectorAll(".products-container");
+    
+                categories.forEach((category) => {
+                    category.addEventListener("click", function () {
+                        const target = category.dataset.target;
+    
+                        productsContainers.forEach(container => {
+                            container.style.display = "none";
+                        });
+    
+                        const selectedContainer = document.querySelector(`#${target}-products`);
+                        if (selectedContainer) {
+                            selectedContainer.style.display = "block";
+                        }
+                    });
+                });
+            });
+        </script>
+       
+      </div>
+ 
+      <div class="container-1-ads">
+        <div class="clock-container">
+            <div class="time" id="time"></div>&nbsp;&nbsp;
+            <div class="date" id="date"></div>
+        </div>
+        <script>
+            function updateTime() {
+              const timeElement = document.getElementById('time');
+              const dateElement = document.getElementById('date');
+        
+              const now = new Date();
+              const hours = String(now.getHours()).padStart(2, '0');
+              const minutes = String(now.getMinutes()).padStart(2, '0');
+              const seconds = String(now.getSeconds()).padStart(2, '0');
+              const day = String(now.getDate()).padStart(2, '0');
+              const month = String(now.getMonth() + 1).padStart(2, '0');
+              const year = now.getFullYear();
+        
+              const timeString = `${hours}:${minutes}:${seconds}`;
+              const dateString = `${day}/${month}/${year}`;
+        
+              timeElement.textContent = timeString;
+              dateElement.textContent = dateString;
+            }
+              setInterval(updateTime, 1000);
+              updateTime();
+        </script>   
+        <div class="slider-imagini">
+            <div class="imagine activa">
+                <div class="wrap-descriere-1">
+                    <div class="descriere">
+                        <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
+                        <p>Savorați preparatele noastre proaspete și delicioase.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="imagine">
+                <div class="wrap-descriere-2">
+                    <div class="descriere">
+                        <h2>O experiență culinară unică</h2>
+                        <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
+                    </div>
+                   
+                </div>
+            </div>
+  
+        </div>
+        <div class="butoane-slider">
+            <div class="buton-slider" onclick="schimbaImagine(0)"></div>
+            <div class="buton-slider" onclick="schimbaImagine(1)"></div>
+
+        </div>
+        <script>
+            let imagineCurenta = 0;
+            const imagini = document.querySelector('.container-1-ads .slider-imagini');
+            const butoane = document.querySelectorAll('.container-1-ads .butoane-slider');
+    
+            function schimbaImagine(index) {
+                imagineCurenta = index;
+                actualizeazaSlider();
+            }
+    
+            function actualizeazaSlider() {
+                imagini.style.transform = `translateX(${-imagineCurenta * 100}%)`;
+    
+                butoane.forEach((buton, index) => {
+                    if (index === imagineCurenta) {
+                        buton.classList.add('activ');
+                    } else {
+                        buton.classList.remove('activ');
+                    }
+                });
+    
+                const elementeImagini = document.querySelectorAll('.imagine');
+                elementeImagini.forEach((imagine, index) => {
+                    if (index === imagineCurenta) {
+                        imagine.classList.add('activa');
+                    } else {
+                        imagine.classList.remove('activa');
+                    }
+                });
+            }
+    
+            function urmatoareaImagine() {
+                imagineCurenta = (imagineCurenta + 1) % imagini.children.length;
+                actualizeazaSlider();
+            }
+    
+            function imagineAnterioara() {
+                imagineCurenta = (imagineCurenta - 1 + imagini.children.length) % imagini.children.length;
+                actualizeazaSlider();
+            }
+    
+            setInterval(() => urmatoareaImagine(), 10000);
+        </script>
     </div>
+    
+ 
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">
@@ -231,195 +569,67 @@
                 🌟 <strong>Descoperă Aromele Unice cu Chef Nastasache Constantin!</strong> 🌟<br><br>
                 Ai întâlnit vreodată un chef dedicat pasiunii sale culinare, care a transformat bucătăria într-un adevărat laborator al gustului? Prezentăm cu mândrie Chef Nastasache Constantin, un maestru în arta gastronomiei care și-a dedicat întreaga viață universului fascinant al preparatelor culinare.<br><br>
             </p>  
-                <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum!</i></a></li>
+                <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum !</i></a></li>
                 <p> 
                
                 Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
             </p>
-            <button class="about-us-button" onclick="redirectToAboutUs()">Despre Noi</button>
+            <div class="about-us-button">
+                <a href="aboutus.html">Despre Noi</a>
+            </div>      
         </div>
     </div>
+    
+    </div><div id="evenimente-l-authentik" class="evenimente-container">
+        <div class="panou-publicitar">
+          <h2>Evenimente Speciale</h2>
+          <p>La L'Authentik, vă oferim un spațiu minunat pentru diverse evenimente speciale:</p>
+          <ul>
+            <li>Botezuri</li>
+            <li>Zile onomastice</li>
+            <li>Petreceri private</li>
+          </ul>
+          <p>Vă invităm să vă alăturați evenimentelor noastre unice și să vă bucurați de momente de neuitat într-o atmosferă autentică.</p>
+          <p>De asemenea, avem plăcerea de a găzdui muzicanți talentați din toate colțurile lumii pentru a vă încânta cu cele mai bune performanțe muzicale.</p>
+        </div>
+      </div>
 
-   
+
+
    
     <div class="wrap-container-afisare-produse-aleatorii">
         
         <div class="container-afisare-produse-aleatorii"></div>
         <div class="advertising"></div>
        
-    </div>
+  
 
-
-   
-
-    <div class="container">
-        <div class="category" data-target="antreuri">Antreuri</div>
-        <div class="products-container" id="antreuri-products">
-            <div class="product">
-                
-                <h3>Mămăligă cu brânză</h3>
-                <img src="img/mamaliga cu branza.jpg" alt="Mămăligă cu brânză">
-                <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc. <span class="price">xx euro</span></p>
-                
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            <div class="product">
-                
-                <h3>Sarmale cu mămăligă</h3>
-                <img src="img/sarmale.jpg" alt="Sarmale cu mămăligă">
-                <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!<span class="price">xx euro</span></span></p>
-                
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            
-            <div class="product">
-                
-                <h3>Ciorbă de burtă</h3>
-                <img src="img/ciorba de burta.jpg" alt="Ciorbă de burtă">
-                <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.<span class="price">xx euro</span></p>
-
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            
-     
-        </div>
-
-        <div class="category" data-target="fel_principal">Fel Principal</div>
-        <div class="products-container" id="fel_principal-products">
-            <div class="product">
-                
-                <h3>Mici la Grătar</h3>
-                <img src="img/mici-la-gratar-traditional.jpg" alt="Mici la Grătar">
-                <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți! <span class="price">xx euro</span></p>
-
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            
-            <div class="product">
-               
-                <h3>Cotlet de Porc cu Cartofi Prajiti</h3>
-                <img src="img/cotlet-nou-nou.png" alt="Cotlet de Porc cu Cartofi Prajiti">
-                <p>Cotlet de porc suculent, gătit la cuptor, servit alături de cartofi prăjiți crocanți. Un fel principal delicios și hrănitor. <span class="price">xx euro</span></p>
-               
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            <div class="product">
-                
-                <h3>Piept de Pui cu Sos de Ciuperci</h3>
-                <img src="img/piept-de-pui-cu-sos-de-ciuperci-si-smantana-diva-in-bucatarie-o.jpg" alt="Piept de Pui cu Sos de Ciuperci">
-                <p>Piept de pui fraged, gătit la grătar, acoperit cu un sos delicios de ciuperci. Acompaniat de garnitură de orez. O opțiune sănătoasă și gustoasă.<span class="price">xx euro</span></p>
-                
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            
-            
-          
-        </div>
-        <div class="category" data-target="desert">Desert</div>
-        <div class="products-container" id="desert-products">
-            <div class="product">
-                
-                <h3>Papanasi</h3>
-                <img src="img/i145619-papanasi.jpeg" alt="Papanasi">
-                <p>Delicioși papanasi rumeni, serviți cu dulceață și smântână. Un desert tradițional românesc care îți va răsfăța papilele gustative.<span class="price">xx euro</span></p>
-             
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-            
-            <div class="product">
-                
-                <h3>Cozonac</h3>
-                <img src="img/cozonac.jpg" alt="Cozonac">
-                <p>Bucată de cozonac pufoasă, cu stafide și nuci, îmbibată cu arome delicioase. Perfect pentru momentele dulci alături de cei dragi.<span class="price">xx euro</span></p>
-                
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
         
-            <div class="product">
-                
-                <h3>Clătite cu Gem și Smântână</h3>
-                <img src="img/clatite.jpg" alt="Clătite cu Gem și Smântână">
-                <p>Clătite subțiri, umplute cu gem și servite cu smântână proaspătă. Un desert ușor și delicios, potrivit pentru orice ocazie.<span class="price">xx euro</span></p>
-                
-                <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-            </div>
-         
-        </div>
-
-
-    <div class="category" data-target="bauturi-calde">Băuturi Calde</div>
-    <div class="products-container" id="bauturi-calde-products">
-        <div class="product" data-target="bauturi-calde-product-1">
-            
-            <h3>Cafea</h3>
-            <img src="img/cafea.jpg" alt="Cafea">
-            <p>Cafea proaspătă, preparată cu boabe de cea mai bună calitate.<span class="price">xx euro</span></p>
-        
-            <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-        </div>
-       
-    </div>
-    
-    <div class="category" data-target="bauturi-reci">Băuturi Reci</div>
-    <div class="products-container" id="bauturi-reci-products">
-        <div class="product" data-target="bauturi-reci-product-1">
-            
-            <h3>Suc de Portocale</h3>
-            <img src="img/suc portocale.png" alt="Suc de Portocale">
-            <p>Suc natural de portocale, presat la rece.<span class="price">xx euro</span></p>
-            
-            <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-        </div>
-
-    </div>
-    <div class="category" data-target="cocktailuri">Cocktailuri</div>
-    <div class="products-container" id="cocktailuri-products">
-        <div class="product" data-target="cocktailuri-product-1">
-            
-            <h3>Mojito</h3>
-            <img src="img/mojito.jpg" alt="Mojito">
-            <p>Cocktail racoritor cu menta, lamaie, zahar, gheata si rom.<span class="price">xx euro</span></p>
-            
-            <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-        </div>
-
-    </div>
-    <div class="category" data-target="bauturi-alcoolice">Băuturi Alcoolice</div>
-    <div class="products-container" id="bauturi-alcoolice-products">
-    
-        <div class="product" data-target="vin-product-1">
-            
-            <h3>Grasă de Cotnari</h3>
-            <img src="img/vin.jpg" alt="Grasă de Cotnari">
-            <p>Descoperă rafinamentul nostru cu Grasă de Cotnari, un vin cu tradiție și aromă inconfundabilă. Acest vin unic este cunoscut pentru aromele sale bogate, echilibrate cu nuanțe subtile de fructe. Provinind din regiunea istorică Cotnari, acest vin aduce cu sine o moștenire îndelungată și o experiență de degustare aparte.</p>        
-            <button class="add-to-cart"><a href="menu.html">Vezi meniul complet</a></button>
-        </div>
-        
-      
-    </div>  
     <script>
 
 function showRandomProduct() {
 
     const products = document.querySelectorAll('.products-container .product');
 
-
+  
     const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
     randomProductContainer.innerHTML = '';
     const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
     randomProductContainer.appendChild(initialRandomProduct);
     randomProductContainer.style.display = 'block';
 
+  
     setInterval(() => {
         const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
 
-  
+     
         randomProductContainer.innerHTML = '';
         randomProductContainer.appendChild(randomProduct);
 
+      
         currentIndex = (currentIndex + 1) % products.length;
 
-
+       
         setTimeout(() => {
             randomProductContainer.style.display = 'none';
         }, 5000);
@@ -435,10 +645,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
       
     </div>
+   
 
 
-
-
+    <div id="google-reviews">
+        <h3>Recenzii Google</h3>
+        <div id="reviews-container">
+          <!-- Aici vor fi afișate recenziile -->
+        </div>
+        <script>
+            // Folosește cheia ta API aici
+            const apiKey = 'cheia_tale_api';
+        
+            // ID-ul locației (poti gasi in link-ul de la recenzii)
+            const placeId = 'id_locație';
+        
+            // URL-ul pentru a obține recenzii folosind API-ul Google Places
+            const reviewsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews&key=${apiKey}`;
+        
+            // Funcția pentru a adăuga recenziile pe pagină
+            function addReviewsToPage(reviews) {
+              const reviewsContainer = document.getElementById('reviews-container');
+        
+              reviews.forEach(review => {
+                const reviewElement = document.createElement('div');
+                reviewElement.innerHTML = `<p>${review.text}</p><p>Rating: ${review.rating}</p><hr>`;
+                reviewsContainer.appendChild(reviewElement);
+              });
+            }
+        
+            // Apelarea API-ului și procesarea răspunsului
+            fetch(reviewsUrl)
+              .then(response => response.json())
+              .then(data => {
+                const reviews = data.result.reviews || [];
+                addReviewsToPage(reviews);
+              })
+              .catch(error => console.error('Eroare la obținerea recenziilor:', error));
+          </script>
+      </div>
+      
+      
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
@@ -446,7 +693,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
             
     </div>
-
 
 
 
