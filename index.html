@@ -282,11 +282,37 @@
                 alert('Istoricul tău este gol.');
             } else {
                 // Afișează produsele într-un format mai mic
-                historyPopupContent.innerHTML = history.map(product => `<p>${product.name} - ${product.price} Lei</p>`).join('');
+                historyPopupContent.innerHTML = history.map((product, index) => `
+                    <div class="history-product">
+                        <span>Nume Produs: ${product.name}</span>
+                        <span>Pret: ${product.price} Lei</span>
+                        <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
+                    </div>`
+                ).join('');
                 historyPopup.style.display = 'block';
             }
     
             updateTotalPrice();
+        }
+    
+        function removeFromHistory(index, productPrice) {
+            let history = localStorage.getItem('istoric') || '[]';
+            history = JSON.parse(history);
+    
+            // Elimină produsul din istoric folosind indexul
+            const removedProduct = history.splice(index, 1)[0];
+    
+            // Actualizează localStorage cu noul istoric
+            localStorage.setItem('istoric', JSON.stringify(history));
+    
+            // Afișează un mesaj de alertă sau feedback
+            alert(`Ai scos ${removedProduct.name} din istoricul tău.`);
+    
+            // Recalculează și actualizează prețul total
+            updateTotalPrice();
+    
+            // Actualizează afișarea în history-popup
+            showHistory();
         }
     
         function closeHistory() {
@@ -302,6 +328,7 @@
             alert('Istoricul tău a fost golit.');
         }
     </script>
+    
     
       <div class="wrap-menu-page">
         <div class="container-2-ads">
@@ -546,6 +573,10 @@
         </script>
        
       </div>
+      <div id="history-container">
+        
+    </div>
+    
  
       <div class="container-1-ads">
         <div class="clock-container">
