@@ -9,7 +9,7 @@ body {
     transform: translate(-50%);
     height: fit-content;
     font-family: 'Noto Sans', sans-serif;
-    background-color: #a4a4a4;
+    background-color: #251212;
     box-shadow:  5px 5px 5px 15px rgb(0, 0, 0);
     
     }
@@ -678,38 +678,26 @@ nav ul a {
         position: relative;
         min-height: 25vh;
         min-width: 100%;
-        background-image: url(img/background2.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
 }
 
     .wrap-descriere-2{
         position: relative;
         min-height: 25vh;
         min-width: 100%;
-        background-image: url(img/background2.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
         
     }
     .wrap-description-1{
-        height: 25vh;
+        height: 100%;
         min-width: 100%;
-        background-image: url(img/background\ l-authentik.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
 
     }
     .wrap-description-2{
         height: 25vh;
         min-width: 100%;
-        background-image: url(img/l-authentik\ mici\ cu\ mustar\ si\ cartofi\ prajiti.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
     }
 
 
