@@ -247,7 +247,7 @@
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()">Golește Istoric</button>
+        <button onclick="clearHistory()">Golește Favorite</button>
         <div>
             <button onclick="generateCode()">Generează Cod</button>
             <div id="restaurant-code" style="display: none;"></div>
@@ -318,7 +318,7 @@
             history.push({ name: productName, price: productPrice, code: code });
             localStorage.setItem('istoric', JSON.stringify(history));
             updateTotalPrice();
-            alert(`Ai adăugat ${productName} în istoricul tău.`);
+            alert(`Ai adăugat ${productName} la favorite.`);
         }
     
         function updateTotalPrice() {
@@ -400,7 +400,7 @@
             const historyPopupContent = document.querySelector('.history-popup-content');
             historyPopupContent.innerHTML = '';
             document.getElementById('totalAmount').innerText = 0;
-            alert('Iti multumim pentru vizita, te mai asteptam!');
+            alert('L`Authentik va ureaza Pofta buna!');
         }
     
         function checkAndSubmit() {
@@ -409,7 +409,7 @@
     const comments = document.getElementById('comments').value;
 
     if (enteredCode.trim() === '' || tableNumber.trim() === '' || comments.trim() === '') {
-        alert('Te rugăm să completezi toate câmpurile obligatorii.');
+        alert('Vă rugăm să completati toate câmpurile obligatorii.');
         return;
     }
 
@@ -507,7 +507,7 @@
                         <h3>Papanasi</h3>
                         <p>Delicioși papanasi rumeni, serviți cu dulceață și smântână. Un desert tradițional românesc care îți va răsfăța papilele gustative.</p>
                         <span class="price">25 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Papanasi', 25)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Papanasi', 25)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="30">
@@ -515,7 +515,7 @@
                         <h3>Cozonac</h3>
                         <p>Bucată de cozonac pufoasă, cu stafide și nuci, îmbibată cu arome delicioase. Perfect pentru momentele dulci alături de cei dragi.</p>
                         <span class="price">30 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Cozonac', 30)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Cozonac', 30)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="20">
@@ -891,33 +891,6 @@
             
     </div>
 
-
-
-
-
-
-
-
-
-
-    <script>
-
-        const currentPage = window.location.pathname.split('/').pop();
-      
-
-        if (currentPage === 'index-ro.html') {
-         
-          const containerToHide = document.querySelector('.container');
-      
-         
-          if (containerToHide) {
-            containerToHide.style.display = 'none';
-            console.log('Container ascuns cu succes!');
-          } else {
-            console.log('Containerul nu a fost găsit!');
-          }
-        }
-      </script>
       
 </body>
 </html>
