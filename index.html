@@ -268,30 +268,33 @@
     
     <script>
         function generateCode() {
-            navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    const restaurantCoordinates = { latitude: 50.8368958, longitude: 4.2849528 };
-                    const userCoordinates = { latitude: position.coords.latitude, longitude: position.coords.longitude };
-    
-                    const distance = calculateDistance(restaurantCoordinates, userCoordinates);
-    
-                    if (distance < 1.0) {
-                        const uniqueCode = generateUniqueCode();
-                        document.getElementById('restaurant-code').innerText = `Cod unic: ${uniqueCode}`;
-                        document.getElementById('restaurant-code').style.display = 'block';
-    
-                        // Adăug codul unic în istoric
-                        addToHistory('Cod Generat', 0, uniqueCode);
-                    } else {
-                        alert('Nu sunteți în apropierea restaurantului.');
-                    }
-                },
-                function (error) {
-                    console.error(error);
-                    alert('Eroare la obținerea locației.');
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                const restaurantCoordinates = { latitude: 50.8368958, longitude: 4.2849528 };
+                const userCoordinates = { latitude: position.coords.latitude, longitude: position.coords.longitude };
+
+                const distance = calculateDistance(restaurantCoordinates, userCoordinates);
+
+                if (distance < 1.0) {
+                    const uniqueCode = generateUniqueCode();
+                    document.getElementById('restaurant-code').innerText = `Cod unic: ${uniqueCode}`;
+                    document.getElementById('restaurant-code').style.display = 'block';
+
+                    // Setează codul unic în câmpul corespunzător din formular
+                    document.getElementById('unique-code').value = uniqueCode;
+
+                    // Adăugă codul unic în istoric
+                    addToHistory('Cod Generat', 0, uniqueCode);
+                } else {
+                    alert('Nu sunteți în apropierea restaurantului.');
                 }
-            );
-        }
+            },
+            function (error) {
+                console.error(error);
+                alert('Eroare la obținerea locației.');
+            }
+        );
+    }
     
         function calculateDistance(coord1, coord2) {
             const R = 6371;
@@ -338,7 +341,7 @@
             const historyPopupContent = historyPopup.querySelector('.history-popup-content');
     
             if (history.length === 0) {
-                alert('Alege-ți produsele și adaugă-le în istoric.');
+                alert('Descoperiți deliciile noastre și adăugați favoritele!');
             } else {
                 historyPopupContent.innerHTML = history.map((product, index) => `
                     <div class="history-product">
@@ -361,7 +364,7 @@
             const removedProduct = history.splice(index, 1)[0];
             localStorage.setItem('istoric', JSON.stringify(history));
     
-            alert(`Ai scos ${removedProduct.name} din istoricul tău.`);
+            alert(` ${removedProduct.name} eliminat cu succes!`);
             updateTotalPrice();
     
             if (history.length === 0) {
@@ -397,7 +400,7 @@
             const historyPopupContent = document.querySelector('.history-popup-content');
             historyPopupContent.innerHTML = '';
             document.getElementById('totalAmount').innerText = 0;
-            alert('Istoricul tău a fost golit.');
+            alert('Iti multumim pentru vizita, te mai asteptam!');
         }
     
         function checkAndSubmit() {
@@ -413,12 +416,12 @@
             if (matchingOrder) {
                 sendOrderToKitchen(matchingOrder, tableNumber, comments);
             } else {
-                alert('Codul unic nu a fost găsit în istoric. Verifică și încearcă din nou.');
+                alert('Codul unic nu a fost găsit. Verifică și încearcă din nou.');
             }
         }
     
         function sendOrderToKitchen(order, tableNumber, comments) {
-            alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes la bucătar.`);
+            alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes. `);
         }
     </script>
     
