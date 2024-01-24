@@ -474,20 +474,8 @@ nav ul a {
     font-weight: bold;
     cursor: pointer;
 }
-.history-button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
-.close-history {
-    color: #4CAF50;
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
+
+
 .total-price {
     margin-top: 20px;
 
@@ -820,7 +808,6 @@ nav ul a {
       .info-subsection {
         flex: 0 0 20%; 
         height: 50px;
-        margin: 5px;
         transition: transform 0.3s ease;
         border-radius: 8px;
         background: rgba(1, 1, 1, 1.0);
@@ -996,9 +983,17 @@ nav ul a {
     .history-product button:hover {
         background-color: #c82333;
     }
-    
+    .history-button{
+        position: absolute;
+        left: 0;
+        top: 7%;
+    }   
 
-
+    .history-button span{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
 
 
 

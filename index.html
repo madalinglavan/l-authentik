@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="top-nav">
-            <button class="history-button" onclick="showHistory()">Vezi Istoric</button>
+            
             <div class="left-top-nav">
                 <div id="languageMenu" class="languageMenu">
                     <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
@@ -116,7 +116,7 @@
                     }
                 </script>
         </nav>
-        
+        <button class="history-button" onclick="showHistory()"><i class="fa-solid fa-cookie-bite"></i><br><span>Deliciile Mele</span></button>
     </header>
     <div class="mobile-menu" id="navMenu">
         <ul>
@@ -144,6 +144,7 @@
                     }
                 </script>
             </a>
+            
             <a href="#" class="info-subsection" id="menu-link">
                 <h3><i class="fa-regular fa-bell"></i><br>MENU</h3>
                 <script>
@@ -244,7 +245,7 @@
         <span class="close-history" onclick="closeHistory()">&times;</span>
         <div class="history-popup-content"></div>
         <div class="total-price">
-            <strong>Total: <span id="totalAmount">0</span> Lei</strong>
+            <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
         <button onclick="clearHistory()">Golește Istoric</button>
     </div>
@@ -256,7 +257,7 @@
             history.push({ name: productName, price: productPrice });
             localStorage.setItem('istoric', JSON.stringify(history));
             updateTotalPrice();
-            alert(`Ai adăugat ${productName} în istoricul tău.`);
+            alert(`Ai adăugat ${productName} în Deliciile mele.`);
         }
     
         function updateTotalPrice() {
@@ -279,13 +280,13 @@
             const historyPopupContent = historyPopup.querySelector('.history-popup-content');
     
             if (history.length === 0) {
-                alert('Istoricul tău este gol.');
+                alert(' Alege-ți produsele și adaugă-le în Deliciile mele');
             } else {
-                // Afișează produsele într-un format mai mic
+  
                 historyPopupContent.innerHTML = history.map((product, index) => `
                     <div class="history-product">
-                        <span>Nume Produs: ${product.name}</span>
-                        <span>Pret: ${product.price} Lei</span>
+                        <span>Produs: ${product.name}</span>
+                        <span>Pret: ${product.price} Euro</span>
                         <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
                     </div>`
                 ).join('');
@@ -295,26 +296,24 @@
             updateTotalPrice();
         }
     
-        function removeFromHistory(index, productPrice) {
+                function removeFromHistory(index, productPrice) {
             let history = localStorage.getItem('istoric') || '[]';
             history = JSON.parse(history);
-    
-            // Elimină produsul din istoric folosind indexul
+
             const removedProduct = history.splice(index, 1)[0];
-    
-            // Actualizează localStorage cu noul istoric
             localStorage.setItem('istoric', JSON.stringify(history));
-    
-            // Afișează un mesaj de alertă sau feedback
+
             alert(`Ai scos ${removedProduct.name} din istoricul tău.`);
-    
-            // Recalculează și actualizează prețul total
             updateTotalPrice();
-    
-            // Actualizează afișarea în history-popup
-            showHistory();
+            
+
+            if (history.length === 0) {
+                clearHistory();
+            } else {
+                showHistory();
+            }
         }
-    
+
         function closeHistory() {
             const historyPopup = document.getElementById('history-popup');
             historyPopup.style.display = 'none';
@@ -331,78 +330,6 @@
     
     
       <div class="wrap-menu-page">
-        <div class="container-2-ads">
-            <div class="image-slider">
-                <div class="slide active">
-                    <div class="wrap-description-1">
-                        <div class="text-description">
-                            <h2>Descoperă savoarea autentică</h2>
-                            <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="wrap-description-2">
-                        <div class="text-description">
-                            <h2>Exploră aromele unice</h2>
-                            <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
-                        </div>
-                       
-                    </div>
-                </div>
-   
-            </div>
-            <div class="slider-btns">
-                <div class="slider-btn" onclick="changeSlide2(0)"></div>
-                <div class="slider-btn" onclick="changeSlide2(1)"></div>
-
-            </div>
-            <script>
-                let currentSlide = 0;
-                const slides = document.querySelector('.container-2-ads .image-slider');
-                const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
-        
-                function changeSlide(index) {
-                    currentSlide = index;
-                    updateSlider();
-                }
-        
-                function updateSlider() {
-                    slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-        
-                    buttons.forEach((button, index) => {
-                        if (index === currentSlide) {
-                            button.classList.add('active');
-                        } else {
-                            button.classList.remove('active');
-                        }
-                    });
-        
-                    const slideElements = document.querySelectorAll('.slide');
-                    slideElements.forEach((slide, index) => {
-                        if (index === currentSlide) {
-                            slide.classList.add('active');
-                        } else {
-                            slide.classList.remove('active');
-                        }
-                    });
-                }
-        
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % slides.children.length;
-                    updateSlider();
-                }
-        
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
-                    updateSlider();
-                }
-        
-                setInterval(nextSlide, 10000);
-            </script>
-        </div>
-       
         <h1><i class="fa-solid fa-utensils"></i>&nbsp;&nbsp;Meniu L`Authentik !</h1>
         <div class="container-menu-page">
                 <div class="category" data-target="antreuri">Antreuri</div>
@@ -412,14 +339,14 @@
                         <h3>Mămăligă cu brânză</h3>
                         <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc.</p>
                         <span class="price">50 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 50)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 50)">Deliciile Mele</button>
                     </div>
                     
-                    <div class="product" data-price="50"> <!-- Am modificat pretul la 50 euro -->
+                    <div class="product" data-price="50"> 
                         <img src="img/l-authentik sarmale cu mamaliga.jpg" alt="Sarmale cu mămăligă">
                         <h3>Sarmale cu mămăligă</h3>
                         <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!</p>
-                        <span class="price">50 Euro</span> <!-- Am actualizat valuta la euro -->
+                        <span class="price">50 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Sarmale cu mămăligă', 50)">Adaugă în Istoric</button>
                     </div>
                     
@@ -433,11 +360,11 @@
                     
                     
                     
-                    <div class="product" data-price="40"> <!-- Am modificat pretul la 40 euro -->
+                    <div class="product" data-price="40">
                         <img src="img/l-authentik mancare 3.jpg" alt="Ciorbă de burtă">
                         <h3>Ciorbă de burtă</h3>
                         <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.</p>
-                        <span class="price">40 Euro</span> <!-- Am actualizat valuta la euro -->
+                        <span class="price">40 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Ciorbă de burtă', 40)">Adaugă în Istoric</button>
                     </div>
                     
@@ -445,11 +372,11 @@
         
                 <div class="category" data-target="fel_principal">Fel Principal</div>
                 <div class="products-container" id="fel_principal-products">
-                    <div class="product" data-price="50"> <!-- Am modificat pretul la 50 euro -->
+                    <div class="product" data-price="50">
                         <img src="img/l-authentik mici cu mustar si cartofi prajiti.jpg" alt="Mici la Grătar">
                         <h3>Mici la Grătar</h3>
                         <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
-                        <span class="price">50 Euro</span> <!-- Am actualizat valuta la euro -->
+                        <span class="price">50 Euro</span> 
                         <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 50)">Adaugă în Istoric</button>
                     </div>
                     
@@ -542,8 +469,8 @@
                         <img src="img/vin.jpg" alt="Vin">
                         <h3>Vin</h3>
                         <p>Descriere produs pentru vin.</p>
-                        <span class="price">XX Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Vin', XX)">Adaugă în Istoric</button>
+                        <span class="price">12Euro</span>
+                        <button class="add-to-history" onclick="addToHistory('Vin', 12)">Deliciile mele&nbsp;&nbsp;<i class="fa-solid fa-plus"></i></button>
                     </div>
                     
      
@@ -692,9 +619,8 @@
                 <a href="aboutus.html">Despre Noi</a>
             </div>      
         </div>
-    </div>
-    
-    </div>
+    </div> 
+</div>
     
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>
@@ -712,71 +638,45 @@
             </div>
         </div>
 
-
-
-   
     <div class="wrap-container-afisare-produse-aleatorii">
-        
         <div class="container-afisare-produse-aleatorii"></div>
         <div class="advertising"></div>
-       
-  
-
-        
-    <script>
-
-function showRandomProduct() {
-
-    const products = document.querySelectorAll('.products-container .product');
-
-  
-    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-    randomProductContainer.innerHTML = '';
-    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-    randomProductContainer.appendChild(initialRandomProduct);
-    randomProductContainer.style.display = 'block';
-
-  
-    setInterval(() => {
-        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-
-     
-        randomProductContainer.innerHTML = '';
-        randomProductContainer.appendChild(randomProduct);
-
-      
-        currentIndex = (currentIndex + 1) % products.length;
-
-       
-        setTimeout(() => {
-            randomProductContainer.style.display = 'none';
-        }, 5000);
-    }, 5000); 
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    showRandomProduct();
-});
-
-    </script>
-
-      
+            <script>
+                function showRandomProduct() {
+                const products = document.querySelectorAll('.products-container .product');
+                const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+                randomProductContainer.innerHTML = '';
+                const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                randomProductContainer.appendChild(initialRandomProduct);
+                randomProductContainer.style.display = 'block';
+                setInterval(() => {
+                    const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                    randomProductContainer.innerHTML = '';
+                    randomProductContainer.appendChild(randomProduct);
+                    currentIndex = (currentIndex + 1) % products.length;
+                    setTimeout(() => {
+                        randomProductContainer.style.display = 'none';
+                    }, 5000);
+                }, 5000); 
+                    }
+                    document.addEventListener('DOMContentLoaded', () => {
+                        showRandomProduct();
+                    });
+            </script>
     </div>
-   
-    </div>
+</div>
+
 
     <div id="google-reviews">
         <h3>Recenzii Google</h3>
-        <div id="reviews-container">
-          <!-- Aici vor fi afișate recenziile -->
-        </div>
+        <div id="reviews-container"></div>
+        <button onclick="redirectToGoogleReviews()">Vezi toate recenziile pe Google</button>
         <script>
-            // Folosește cheia ta API aici
-            const apiKey = 'cheia_tale_api';
+            // Folosește cheia API aici
+            const apiKey = 'cheia_api';
         
-            // ID-ul locației (poti gasi in link-ul de la recenzii)
-            const placeId = 'id_locație';
+            // ID-ul locației (poți găsi în link-ul de la recenzii)
+            const placeId = 'id_locatie';
         
             // URL-ul pentru a obține recenzii folosind API-ul Google Places
             const reviewsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews&key=${apiKey}`;
@@ -792,6 +692,11 @@ document.addEventListener('DOMContentLoaded', () => {
               });
             }
         
+            // Funcția pentru a redirecționa utilizatorii la pagina de recenzii de pe Google
+            function redirectToGoogleReviews() {
+              window.location.href = `https://www.google.com/maps/place/${placeId}/reviews`;
+            }
+        
             // Apelarea API-ului și procesarea răspunsului
             fetch(reviewsUrl)
               .then(response => response.json())
@@ -803,7 +708,78 @@ document.addEventListener('DOMContentLoaded', () => {
           </script>
       </div>
       
-      
+      <div class="container-2-ads">
+        <div class="image-slider">
+            <div class="slide active">
+                <div class="wrap-description-1">
+                    <div class="text-description">
+                        <h2>Descoperă savoarea autentică</h2>
+                        <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="slide">
+                <div class="wrap-description-2">
+                    <div class="text-description">
+                        <h2>Exploră aromele unice</h2>
+                        <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+        <div class="slider-btns">
+            <div class="slider-btn" onclick="changeSlide2(0)"></div>
+            <div class="slider-btn" onclick="changeSlide2(1)"></div>
+
+        </div>
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelector('.container-2-ads .image-slider');
+            const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
+    
+            function changeSlide(index) {
+                currentSlide = index;
+                updateSlider();
+            }
+    
+            function updateSlider() {
+                slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+    
+                buttons.forEach((button, index) => {
+                    if (index === currentSlide) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+    
+                const slideElements = document.querySelectorAll('.slide');
+                slideElements.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+            }
+    
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.children.length;
+                updateSlider();
+            }
+    
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+                updateSlider();
+            }
+    
+            setInterval(nextSlide, 10000);
+        </script>
+    </div>
+   
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
