@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f26a888174.js" crossorigin="anonymous"></script>
+    <title>L'Authentik</title>
+</head>
+<body>
+    <header>
+        <div class="top-nav">
+            
+            <div class="left-top-nav">
+                <div id="languageMenu" class="languageMenu">
+                    <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
+                    <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
+                    
+                </div>
+                <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()"><i class="fa-solid fa-language" style="color: #ffffff;"><br>limba</i></div>
+                <script>
+                    function toggleLanguageMenu() {
+                    var button = document.getElementById('languageToggle');
+                    var menu = document.getElementById('languageMenu');
+    
+                    button.classList.toggle('active');
+                    menu.classList.toggle('active');
+    
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    } else {
+                        menu.style.display = 'block';
+                    }
+                    }
+    
+                    function changeLanguage(targetPage) {
+                    toggleLanguageMenu(); 
+                    window.location.href = targetPage;
+                    }
+    
+                  </script>                         
+            </div>    
+              
+            
+            <div class="right-top-nav">   
+                <div class="socialnetwork">
+                    <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
+                    <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
+                    <div class="mail-adress">
+                        <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon" onclick="openContactPage()"></i>
+                        <a href="contact.html"><h3>e-mail</h3></a>
+                        <script>
+                            var mailIcon = document.getElementById('mail-icon');
+                            mailIcon.addEventListener('click', openContactPage);
+                            function openContactPage() {
+                                window.location.href = 'contact.html';
+                            }
+                        </script>
+                    </div>
+                    <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">
+                <div class="logo"></div>
+            </a>
+            <div class="nav-big-screens">
+                <ul>
+                    <li><a href="index-ro.html">Acasă</a></li>
+                    <li><a href="menu.html">Meniu</a></li>
+                    <li><a href="despre-noi.html">Despre Noi</a></li>
+                    <li><a href="galerie.html">Galerie Foto</a></li>
+                    <li><a href="aboutus.html">Despre noi</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+                <script>
+                    function toggleMenu() {
+                        var navMenu = document.getElementById('navMenu');
+                        if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+                            navMenu.style.display = 'block';
+                            slideRight(navMenu);
+                        } else {
+                            slideLeft(navMenu);
+                        }
+                    }
+                    function slideRight(element) {
+                        var position = -100;
+                        var interval = setInterval(function () {
+                            if (position >= 0) {
+                                clearInterval(interval);
+                            } else {
+                                position += 5;
+                                element.style.left = position + '%';
+                            }
+                        }, 10);
+                    }
+                    function slideLeft(element) {
+                        var position = 0;
+                        var interval = setInterval(function () {
+                            if (position <= -100) {
+                                element.style.display = 'none';
+                                clearInterval(interval);
+                            } else {
+                                position -= 5;
+                                element.style.left = position + '%';
+                            }
+                        }, 10);
+                    }
+                </script>
+        </nav>
+        <button class="history-button" onclick="showHistory()"><i class="fa-solid fa-cookie-bite"></i><br><span>Deliciile Mele</span></button>
+    </header>
+    <script>
+     
+        const parolaDeAcces = "parolaSecreta";
+        window.onload = function () {
+            const parolaIntrodusa = prompt("Introduceți parola pentru a accesa pagina:");
+            if (parolaIntrodusa !== parolaDeAcces) {
+                alert("Parolă incorectă. Acces refuzat.");
+                window.location.href = "pagina-publica.html"; 
+            }
+        };
+    </script>
+
+
+
+
+
+
+
+<!-- Container pentru afișarea comenzilor -->
+<div class="orders-container">
+    <h2>Comenzi</h2>
+    <div id="orders-list"></div>
+</div>
+
+<!-- Formular pentru preluarea comenzii -->
+<div id="order-form">
+    <label for="unique-code">Cod Unic:</label>
+    <input type="text" id="unique-code" placeholder="Introdu codul unic..." required>
+
+    <label for="table-number">Numărul Mesei:</label>
+    <input type="number" id="table-number" placeholder="Numărul Mesei..." required>
+
+    <label for="comments">Comentarii:</label>
+    <textarea id="comments" placeholder="Adaugă comentarii..." rows="4"></textarea>
+
+    <button onclick="submitOrder()">Trimite Comanda</button>
+</div>
+
+<!-- Scripturile pentru gestionarea comenzilor -->
+<script>
+    // Lista de comenzi
+    const orders = [];
+
+    // Funcție pentru afișarea comenzilor
+    function displayOrders() {
+        const ordersListContainer = document.getElementById('orders-list');
+        ordersListContainer.innerHTML = '';
+
+        orders.forEach((order, index) => {
+            const orderItem = document.createElement('div');
+            orderItem.classList.add('order-item');
+
+            const orderInfo = document.createElement('div');
+            orderInfo.classList.add('order-info');
+            orderInfo.innerText = `Masa ${order.tableNumber}: ${order.items.join(', ')}`;
+
+            const orderComments = document.createElement('div');
+            orderComments.innerText = `Comentarii: ${order.comments || 'Nicio observație.'}`;
+
+            const orderActions = document.createElement('div');
+            orderActions.classList.add('order-actions');
+
+            const orderStatus = document.createElement('div');
+            orderStatus.classList.add('order-status');
+            orderStatus.innerText = order.status || 'În așteptare';
+
+            orderActions.appendChild(orderStatus);
+
+            orderItem.appendChild(orderInfo);
+            orderItem.appendChild(orderComments);
+            orderItem.appendChild(orderActions);
+
+            ordersListContainer.appendChild(orderItem);
+        });
+    }
+
+    // Funcție pentru preluarea comenzii
+    function submitOrder() {
+        const enteredCode = document.getElementById('unique-code').value;
+        const tableNumber = document.getElementById('table-number').value;
+        const comments = document.getElementById('comments').value;
+
+        // Verificare cod unic în istoric
+        let history = localStorage.getItem('istoric') || '[]';
+        history = JSON.parse(history);
+
+        const matchingOrder = history.find(order => order.code === enteredCode);
+
+        if (matchingOrder) {
+            // Comanda a fost găsită în istoric, adăugați-o la lista de comenzi
+            const newOrder = {
+                tableNumber: tableNumber,
+                items: matchingOrder.items,
+                comments: comments,
+                status: 'În așteptare'
+            };
+
+            orders.push(newOrder);
+
+            // Afișați comenzile actualizate
+            displayOrders();
+
+            alert(`Comanda pentru Masa ${tableNumber} a fost adăugată.`);
+        } else {
+            alert('Codul unic nu a fost găsit în istoric. Verifică și încearcă din nou.');
+        }
+    }
+
+    // Inițializăm afișarea comenzilor la încărcarea paginii
+    displayOrders();
+    function submitOrder() {
+    const enteredCode = document.getElementById('unique-code').value;
+    const tableNumber = document.getElementById('table-number').value;
+    const comments = document.getElementById('comments').value;
+
+    // Verificare cod unic în istoric
+    let history = localStorage.getItem('istoric') || '[]';
+    history = JSON.parse(history);
+
+    const matchingOrder = history.find(order => order.code === enteredCode);
+
+    if (matchingOrder) {
+        // Comanda a fost găsită în istoric, adăugați-o la lista de comenzi
+        const newOrder = {
+            tableNumber: tableNumber,
+            items: matchingOrder.items,
+            comments: comments,
+            status: 'În așteptare'
+        };
+
+        orders.push(newOrder);
+
+        // Afișați comenzile actualizate
+        displayOrders();
+
+        alert(`Comanda pentru Masa ${tableNumber} a fost adăugată.`);
+    } else {
+        alert('Codul unic nu a fost găsit în istoric. Verifică și încearcă din nou.');
+    }
+}
+
+</script>
+
+</body>
+</html>

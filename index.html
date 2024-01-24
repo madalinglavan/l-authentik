@@ -73,7 +73,7 @@
             <div class="nav-big-screens">
                 <ul>
                     <li><a href="index-ro.html">Acasă</a></li>
-                    <li><a href="menu.html">Meniu</a></li>
+                    
                     <li><a href="despre-noi.html">Despre Noi</a></li>
                     <li><a href="galerie.html">Galerie Foto</a></li>
                     <li><a href="aboutus.html">Despre noi</a></li>
@@ -116,12 +116,11 @@
                     }
                 </script>
         </nav>
-        <button class="history-button" onclick="showHistory()"><i class="fa-solid fa-cookie-bite"></i><br><span>Deliciile Mele</span></button>
+
     </header>
     <div class="mobile-menu" id="navMenu">
         <ul>
             <li><a href="index-ro.html">Acasă</a></li>
-            <li><a href="menu.html">Meniu</a></li>
             <li><a href="aboutus.html">Despre Noi</a></li>
             <li><a href="galerie.html">Galerie Foto</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -143,8 +142,11 @@
                         window.open(mapsUrl, '_blank');
                     }
                 </script>
+            </a> 
+            <a href="#" class="info-subsection" id="history-button"  onclick="showHistory()">
+                <h3><i class="fa-solid fa-heart"></i><br>Favorite</h3>
             </a>
-            
+        
             <a href="#" class="info-subsection" id="menu-link">
                 <h3><i class="fa-regular fa-bell"></i><br>MENU</h3>
                 <script>
@@ -161,8 +163,6 @@
                             } else {
                                 menuContainer.style.display = "none";
                             }
-    
-                           
                             menuContainer.scrollIntoView({ behavior: "smooth" });
                         });
                     });
@@ -242,22 +242,80 @@
         </ul>
      </div>
      <div id="history-popup" class="history-popup">
-        <span class="close-history" onclick="closeHistory()">&times;</span>
+        <button onclick="closeHistoryPopup()">Închide Favorite</button>
         <div class="history-popup-content"></div>
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
         <button onclick="clearHistory()">Golește Istoric</button>
+        <div>
+            <button onclick="generateCode()">Generează Cod</button>
+            <div id="restaurant-code" style="display: none;"></div>
+        </div>
+        <div id="order-form">
+            <label for="unique-code">Cod Unic:</label>
+            <input type="text" id="unique-code" placeholder="Introdu codul unic..." required>
+    
+            <label for="table-number">Numărul Mesei:</label>
+            <input type="number" id="table-number" placeholder="Numărul Mesei..." required>
+    
+            <label for="comments">Comentarii:</label>
+            <textarea id="comments" placeholder="Adaugă comentarii..." rows="4"></textarea>
+    
+            <button onclick="checkAndSubmit()">Trimite Comanda</button>
+        </div>
     </div>
     
     <script>
-        function addToHistory(productName, productPrice) {
+        function generateCode() {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    const restaurantCoordinates = { latitude: 50.8368958, longitude: 4.2849528 };
+                    const userCoordinates = { latitude: position.coords.latitude, longitude: position.coords.longitude };
+    
+                    const distance = calculateDistance(restaurantCoordinates, userCoordinates);
+    
+                    if (distance < 1.0) {
+                        const uniqueCode = generateUniqueCode();
+                        document.getElementById('restaurant-code').innerText = `Cod unic: ${uniqueCode}`;
+                        document.getElementById('restaurant-code').style.display = 'block';
+    
+                        // Adăug codul unic în istoric
+                        addToHistory('Cod Generat', 0, uniqueCode);
+                    } else {
+                        alert('Nu sunteți în apropierea restaurantului.');
+                    }
+                },
+                function (error) {
+                    console.error(error);
+                    alert('Eroare la obținerea locației.');
+                }
+            );
+        }
+    
+        function calculateDistance(coord1, coord2) {
+            const R = 6371;
+            const dLat = (coord2.latitude - coord1.latitude) * (Math.PI / 180);
+            const dLon = (coord2.longitude - coord1.longitude) * (Math.PI / 180);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(coord1.latitude * (Math.PI / 180)) * Math.cos(coord2.latitude * (Math.PI / 180)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            const distance = R * c;
+            return distance;
+        }
+    
+        function generateUniqueCode() {
+            return Math.random().toString(36).substring(2, 8).toUpperCase();
+        }
+    
+        function addToHistory(productName, productPrice, code) {
             let history = localStorage.getItem('istoric') || '[]';
             history = JSON.parse(history);
-            history.push({ name: productName, price: productPrice });
+            history.push({ name: productName, price: productPrice, code: code });
             localStorage.setItem('istoric', JSON.stringify(history));
             updateTotalPrice();
-            alert(`Ai adăugat ${productName} în Deliciile mele.`);
+            alert(`Ai adăugat ${productName} în istoricul tău.`);
         }
     
         function updateTotalPrice() {
@@ -280,13 +338,13 @@
             const historyPopupContent = historyPopup.querySelector('.history-popup-content');
     
             if (history.length === 0) {
-                alert(' Alege-ți produsele și adaugă-le în Deliciile mele');
+                alert('Alege-ți produsele și adaugă-le în istoric.');
             } else {
-  
                 historyPopupContent.innerHTML = history.map((product, index) => `
                     <div class="history-product">
                         <span>Produs: ${product.name}</span>
                         <span>Pret: ${product.price} Euro</span>
+                        <span>Cod: ${product.code}</span>
                         <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
                     </div>`
                 ).join('');
@@ -296,28 +354,43 @@
             updateTotalPrice();
         }
     
-                function removeFromHistory(index, productPrice) {
+        function removeFromHistory(index, productPrice) {
             let history = localStorage.getItem('istoric') || '[]';
             history = JSON.parse(history);
-
+    
             const removedProduct = history.splice(index, 1)[0];
             localStorage.setItem('istoric', JSON.stringify(history));
-
+    
             alert(`Ai scos ${removedProduct.name} din istoricul tău.`);
             updateTotalPrice();
-            
-
+    
             if (history.length === 0) {
                 clearHistory();
             } else {
                 showHistory();
             }
         }
+    
+        function closeHistoryPopup() {
+        const historyPopup = document.getElementById('history-popup');
+        historyPopup.style.display = 'none';
+    }
 
-        function closeHistory() {
-            const historyPopup = document.getElementById('history-popup');
-            historyPopup.style.display = 'none';
+    let isHistoryVisible = false;
+
+    function toggleHistory() {
+        const historyPopup = document.getElementById('history-popup');
+        
+        // Invertim starea variabilei
+        isHistoryVisible = !isHistoryVisible;
+
+        if (isHistoryVisible) {
+            showHistory();
+        } else {
+            closeHistoryPopup();
         }
+    }
+
     
         function clearHistory() {
             localStorage.removeItem('istoric');
@@ -326,7 +399,29 @@
             document.getElementById('totalAmount').innerText = 0;
             alert('Istoricul tău a fost golit.');
         }
+    
+        function checkAndSubmit() {
+            const enteredCode = document.getElementById('unique-code').value;
+            const tableNumber = document.getElementById('table-number').value;
+            const comments = document.getElementById('comments').value;
+    
+            let history = localStorage.getItem('istoric') || '[]';
+            history = JSON.parse(history);
+    
+            const matchingOrder = history.find(order => order.code === enteredCode);
+    
+            if (matchingOrder) {
+                sendOrderToKitchen(matchingOrder, tableNumber, comments);
+            } else {
+                alert('Codul unic nu a fost găsit în istoric. Verifică și încearcă din nou.');
+            }
+        }
+    
+        function sendOrderToKitchen(order, tableNumber, comments) {
+            alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes la bucătar.`);
+        }
     </script>
+    
     
     
       <div class="wrap-menu-page">
@@ -338,24 +433,24 @@
                         <img src="img/mamaliga cu branza.jpg" alt="Mămăligă cu brânză">
                         <h3>Mămăligă cu brânză</h3>
                         <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc.</p>
-                        <span class="price">50 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 50)">Deliciile Mele</button>
+                        <span class="price">15 Euro</span>
+                        <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 15)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="50"> 
                         <img src="img/l-authentik sarmale cu mamaliga.jpg" alt="Sarmale cu mămăligă">
                         <h3>Sarmale cu mămăligă</h3>
                         <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!</p>
-                        <span class="price">50 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Sarmale cu mămăligă', 50)">Adaugă în Istoric</button>
+                        <span class="price">17 Euro</span>
+                        <button class="add-to-history" onclick="addToHistory('Sarmale cu mămăligă', 17)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="40">
                         <img src="img/l-authentik mici cu mustar si cartofi prajiti.jpg" alt="Mici la Grătar">
                         <h3>Mici la Grătar</h3>
                         <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
-                        <span class="price">40 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar',40)">Adaugă în Istoric</button>
+                        <span class="price">14 Euro</span>
+                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 14)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     
@@ -364,8 +459,8 @@
                         <img src="img/l-authentik mancare 3.jpg" alt="Ciorbă de burtă">
                         <h3>Ciorbă de burtă</h3>
                         <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.</p>
-                        <span class="price">40 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Ciorbă de burtă', 40)">Adaugă în Istoric</button>
+                        <span class="price">16 Euro</span>
+                        <button class="add-to-history" onclick="addToHistory('Ciorbă de burtă', 16)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
@@ -377,7 +472,7 @@
                         <h3>Mici la Grătar</h3>
                         <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
                         <span class="price">50 Euro</span> 
-                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 50)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 50)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="45">
@@ -385,7 +480,7 @@
                         <h3>Cotlet de Porc cu Cartofi Prajiți</h3>
                         <p>Cotlet de porc suculent, gătit la cuptor, servit alături de cartofi prăjiți crocanți. Un fel principal delicios și hrănitor.</p>
                         <span class="price">45 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Cotlet de Porc cu Cartofi Prajiți', 45)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Cotlet de Porc cu Cartofi Prajiți', 45)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="38">
@@ -393,7 +488,7 @@
                         <h3>Piept de Pui cu Sos de Ciuperci</h3>
                         <p>Piept de pui fraged, gătit la grătar, acoperit cu un sos delicios de ciuperci. Acompaniat de garnitură de orez. O opțiune sănătoasă și gustoasă.</p>
                         <span class="price">38 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Piept de Pui cu Sos de Ciuperci', 38)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Piept de Pui cu Sos de Ciuperci', 38)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
@@ -420,7 +515,7 @@
                         <h3>Clătite cu Gem și Smântână</h3>
                         <p>Clătite subțiri, umplute cu gem și servite cu smântână proaspătă. Un desert ușor și delicios, potrivit pentru orice ocazie.</p>
                         <span class="price">20 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Clătite cu Gem și Smântână', 20)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Clătite cu Gem și Smântână', 20)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
@@ -432,7 +527,7 @@
                         <h3>Cafea</h3>
                         <p>Cafea proaspătă, preparată cu boabe de cea mai bună calitate.</p>
                         <span class="price">10 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Cafea', 10)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Cafea', 10)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
              
@@ -445,7 +540,7 @@
                         <h3>Suc de Portocale</h3>
                         <p>Suc natural de portocale, presat la rece.</p>
                         <span class="price">12 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Suc de Portocale', 12)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Suc de Portocale', 12)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
             
@@ -457,7 +552,7 @@
                         <h3>Mojito</h3>
                         <p>Cocktail răcoritor cu mentă, lămâie, zahăr, gheață și rom.</p>
                         <span class="price">20 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mojito', 20)">Adaugă în Istoric</button>
+                        <button class="add-to-history" onclick="addToHistory('Mojito', 20)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
             
@@ -465,12 +560,12 @@
                 <div class="category" data-target="bauturi-alcoolice">Băuturi Alcoolice</div>
                 <div class="products-container" id="bauturi-alcoolice-products">
          
-                    <div class="product" data-target="vin-product-1" data-price="XX">
+                    <div class="product" data-target="vin-product-1" data-price="12">
                         <img src="img/vin.jpg" alt="Vin">
                         <h3>Vin</h3>
                         <p>Descriere produs pentru vin.</p>
                         <span class="price">12Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Vin', 12)">Deliciile mele&nbsp;&nbsp;<i class="fa-solid fa-plus"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Vin', 12)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
      

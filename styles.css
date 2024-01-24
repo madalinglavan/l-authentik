@@ -389,6 +389,7 @@ nav ul a {
 }
 
 .category {
+    
     box-shadow: inset 2px 2px 4px rgb(255, 255, 255);
     color: #ffffff;
     text-shadow: 2px 2px 6px black;
@@ -402,20 +403,21 @@ nav ul a {
     background-color: goldenrod;
 }
 .category:active{
-    background-color: red;
+    background-color: goldenrod;
 }
 
 
-.products-container {
+.container-menu-page .products-container {
+    
     display: none;
-    padding: 10px;
 }
+
+
 
 .product {
-    display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px; 
-    background-color: #9c9c9c;
+    display: flex;
+    flex-direction: column;
+    background-color: #bfadad;
     border: 1px solid #000000;
     border-radius: 4px;
     margin-top: 10px;
@@ -426,7 +428,7 @@ nav ul a {
 .product img {
     width: 300px;
     height: 200px;
-    align-items: center;
+
     border-radius: 4px;
     border-radius: 50px;
     box-shadow: -10px 0 0 1px rgba(0, 0, 0, 0.726);
@@ -435,13 +437,13 @@ nav ul a {
 }
 
 .price {
-    color:#00c5d7;
+    color:#ffffff;
     font-weight: bold;
     margin-top: 5px;
     display: block;
 }
 
-.add-to-cart {
+.add-to-history {
     background-color: #3498db;
     color: #fff;
     border: none;
@@ -807,7 +809,7 @@ nav ul a {
       
       .info-subsection {
         flex: 0 0 20%; 
-        height: 50px;
+        height: 40px;
         transition: transform 0.3s ease;
         border-radius: 8px;
         background: rgba(1, 1, 1, 1.0);
@@ -981,22 +983,94 @@ nav ul a {
     }
     
     .history-product button:hover {
-        background-color: #c82333;
+        background-color: #ffffff;
     }
-    .history-button{
-        position: absolute;
-        left: 0;
-        top: 7%;
-    }   
-
-    .history-button span{
-        font-family: 'Times New Roman', Times, serif;
-        font-size: .8rem;
-        text-transform: uppercase;
+ 
+    #restaurant-code {
+        display: none;
+    }
+    .orders-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
     }
 
+    .order-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+    }
 
+    .order-info {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 
+    .order-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .order-status {
+        font-style: italic;
+        color: #555;
+    }
+
+    .update-status-btn {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    #order-form {
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    
+    #order-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    
+    #order-form input,
+    #order-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    #order-form button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    #order-form button:hover {
+        background-color: #45a049;
+    }
+    
+    
 
 
 
@@ -1132,20 +1206,17 @@ nav ul a {
     }
     
     .info-subsection {
-        flex: 0 0 23%; 
-        margin: 5px;
+        flex: 0 0 19%; 
         transition: transform 0.3s ease;
       }
+  
       .info-prima-pagina-l-authentik h3 {
         color: #ffff00;
         margin: 0px;
-        font-size: .6rem;
+        font-size: .7rem;
       }
       
-      .info-prima-pagina-l-authentik p {
-        font-size: .5rem;
-        color:#fff;
-      }
+   
       .program-container ul li {
         font-size: .7rem;
         color: rgb(255, 230, 0);
@@ -1171,13 +1242,6 @@ nav ul a {
         margin-left: 50%;
         transform: translate(-50%);
         
-    }
-    .product {
-        display: flex;
-        flex-direction: column;
-        justify-content: center ;
-        align-items: center;
-        text-align: center;
     }
 
 
@@ -1221,11 +1285,7 @@ nav ul a {
             font-size: .8rem;
 
     }
-    
-    .add-to-cart a{
-        font-size: .6rem;
-       
-    }
+
     .product p {
         font-size: .6rem;
     }
