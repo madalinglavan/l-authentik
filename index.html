@@ -255,13 +255,13 @@
         <div id="order-form">
             <label for="unique-code">Cod Unic:</label>
             <input type="text" id="unique-code" placeholder="Introdu codul unic..." required>
-    
+        
             <label for="table-number">Numărul Mesei:</label>
             <input type="number" id="table-number" placeholder="Numărul Mesei..." required>
-    
+        
             <label for="comments">Comentarii:</label>
-            <textarea id="comments" placeholder="Adaugă comentarii..." rows="4"></textarea>
-    
+            <textarea id="comments" placeholder="Adaugă comentarii..." rows="4" required></textarea>
+        
             <button onclick="checkAndSubmit()">Trimite Comanda</button>
         </div>
     </div>
@@ -334,28 +334,28 @@
         }
     
         function showHistory() {
-            let history = localStorage.getItem('istoric') || '[]';
-            history = JSON.parse(history);
-    
-            const historyPopup = document.getElementById('history-popup');
-            const historyPopupContent = historyPopup.querySelector('.history-popup-content');
-    
-            if (history.length === 0) {
-                alert('Descoperiți deliciile noastre și adăugați favoritele!');
-            } else {
-                historyPopupContent.innerHTML = history.map((product, index) => `
-                    <div class="history-product">
-                        <span>Produs: ${product.name}</span>
-                        <span>Pret: ${product.price} Euro</span>
-                        <span>Cod: ${product.code}</span>
-                        <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
-                    </div>`
-                ).join('');
-                historyPopup.style.display = 'block';
-            }
-    
-            updateTotalPrice();
-        }
+    let history = localStorage.getItem('istoric') || '[]';
+    history = JSON.parse(history);
+
+    const historyPopup = document.getElementById('history-popup');
+    const historyPopupContent = historyPopup.querySelector('.history-popup-content');
+
+    if (history.length === 0) {
+        alert('Descoperiți deliciile noastre și adăugați favoritele!');
+    } else {
+        historyPopupContent.innerHTML = history.map((product, index) => `
+            <div class="history-product">
+                <span>Produs: ${product.name}</span>
+                <span>Pret: ${product.price} Euro</span>
+               <span>Cod: ${product.code}</span>
+                <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
+            </div>`
+        ).join('');
+        historyPopup.style.display = 'block';
+    }
+
+    updateTotalPrice();
+}
     
         function removeFromHistory(index, productPrice) {
             let history = localStorage.getItem('istoric') || '[]';
@@ -404,21 +404,26 @@
         }
     
         function checkAndSubmit() {
-            const enteredCode = document.getElementById('unique-code').value;
-            const tableNumber = document.getElementById('table-number').value;
-            const comments = document.getElementById('comments').value;
-    
-            let history = localStorage.getItem('istoric') || '[]';
-            history = JSON.parse(history);
-    
-            const matchingOrder = history.find(order => order.code === enteredCode);
-    
-            if (matchingOrder) {
-                sendOrderToKitchen(matchingOrder, tableNumber, comments);
-            } else {
-                alert('Codul unic nu a fost găsit. Verifică și încearcă din nou.');
-            }
-        }
+    const enteredCode = document.getElementById('unique-code').value;
+    const tableNumber = document.getElementById('table-number').value;
+    const comments = document.getElementById('comments').value;
+
+    if (enteredCode.trim() === '' || tableNumber.trim() === '' || comments.trim() === '') {
+        alert('Te rugăm să completezi toate câmpurile obligatorii.');
+        return;
+    }
+
+    let history = localStorage.getItem('istoric') || '[]';
+    history = JSON.parse(history);
+
+    const matchingOrder = history.find(order => order.code === enteredCode);
+
+    if (matchingOrder) {
+        sendOrderToKitchen(matchingOrder, tableNumber, comments);
+    } else {
+        alert('Codul unic nu a fost găsit. Verifică și încearcă din nou.');
+    }
+}
     
         function sendOrderToKitchen(order, tableNumber, comments) {
             alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes. `);
