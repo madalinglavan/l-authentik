@@ -17,7 +17,7 @@ body {
 
 header {
     width: 100%;
-    height: 200px;
+    height: 150px;
     margin-bottom: 5px;
     background-image: url(img/l-authentik\ local\ 6.jpg);
     background-position: center;
@@ -586,6 +586,7 @@ nav ul a {
 
       .wrap-container-1-ads{
         width: 100%;
+        height: 300px;
         background-color: #00000097;
         display: flex;
         position: relative;
@@ -594,31 +595,38 @@ nav ul a {
     }
       .container-1-ads {
         width: 100%;
-        border-radius: 8px;
+        position: absolute;
+        height: 400px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         text-align: center;
-        align-items: center;
         justify-content: start;
     }
     .container-1-ads h2{
-        margin-top: 150px;
-        position: relative;
-        font-size: 1rem;
+        position: absolute;
+        top: -150px;
+        left: 50%;
+        font-size: 1.2rem;
     }
     .container-1-ads p{
-        position: relative;
-        font-size: 1rem;
+        position:absolute;
+        top: 0px;
+        width: fit-content;
+        left: 77%;
+        font-size: 3rem;
 
     }
     .container-afisare-produse-aleatorii{
         .product{
-            width: 100%;
+            width: 50%;
             background-color: transparent;
+            text-align: left;
         }
         .product img{
-            width: 100%;
+            width: 50%;
+            height: 100px;
+            object-fit: fill;
         }
         .product h3{
             font-size: .9rem;
@@ -650,7 +658,7 @@ nav ul a {
         
     }
     .descriere {
-        margin-top: 20px;
+        margin-top: 220px;
     }
 
     .descriere h2 {
@@ -693,7 +701,10 @@ nav ul a {
         min-width: 100%;
 
 }
-
+    .container-1-ads h1{
+        position: relative;
+        color: #fff;
+    }
     .wrap-descriere-2{
         position: relative;
         min-height: 25vh;
@@ -713,9 +724,11 @@ nav ul a {
 
     }
     .wrap-container-afisare-produse-aleatorii{
-        position: relative;
+        position: absolute;
+        top: 0;
         width: 50%;
         height: 200px;
+       
 
     }
     .container-afisare-produse-aleatorii{
@@ -928,7 +941,6 @@ nav ul a {
         display: flex;
         position: relative;
         text-align: center;
-        align-items: center;
         justify-content: space-evenly;
         min-width: 100%;
         max-height: 0;
@@ -946,8 +958,8 @@ nav ul a {
     
     .program-container ul li {
         font-size: .9rem;
-        color: rgb(255, 230, 0);
-        text-shadow: 2px 4px 4px rgb(255, 221, 0);
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 4px 4px rgb(0, 0, 0);
     }
     
     .program-container.active {
@@ -1238,8 +1250,6 @@ nav ul a {
    
       .program-container ul li {
         font-size: .7rem;
-        color: rgb(255, 230, 0);
-        text-shadow: 2px 4px 4px rgb(255, 221, 0);
     }
   
 
@@ -1294,6 +1304,37 @@ nav ul a {
         font-size: 1.5rem;
         width: 100px;
       }
+      .wrap-container-1-ads{
+       display: flex;
+       flex-direction: column;
+
+      }
+      .wrap-container-afisare-produse-aleatorii{
+        position: absolute;
+        top:5px;
+        left: 5px;
+      }
+      .container-afisare-produse-aleatorii{
+        .product{
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+        }
+        .product img{
+            width: 80%;
+            height: 150px;
+            object-fit: fill;
+        }
+        .product h3{
+            font-size: .8rem;
+            color: yellow;
+            
+        }
+        .product p{
+            font-size: .6rem;
+            color: #fff;
+        }
+    }
 
 }
 
@@ -1333,6 +1374,7 @@ nav ul a {
         .product h3 {
             min-width: 200px;
             font-size: .8rem;
+
 
     }
 

@@ -18,8 +18,8 @@
             
             <div class="left-top-nav">
                 <div id="languageMenu" class="languageMenu">
-                    <span class="languageOption" onclick="changeLanguage('index-fr.html')">FR</span>
-                    <span class="languageOption" onclick="changeLanguage('index.html')">RO</span>
+                    <span class="languageOption" onclick="changeLanguage('index-fr.html')"><p class="buton-fr">FR</p></span>
+                    <span class="languageOption" onclick="changeLanguage('index.html')"><p class="buton-ro">RO</p></span>
                     
                 </div>
                 <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()"><i class="fa-solid fa-language" style="color: #ffffff;"><br>limba</i></div>
@@ -31,10 +31,10 @@
                     button.classList.toggle('active');
                     menu.classList.toggle('active');
     
-                    if (menu.style.display === 'block') {
+                    if (menu.style.display === 'flex') {
                         menu.style.display = 'none';
                     } else {
-                        menu.style.display = 'block';
+                        menu.style.display = 'flex';
                     }
                     }
     
@@ -46,7 +46,6 @@
                   </script>                         
             </div>    
               
-            
             <div class="right-top-nav">   
                 <div class="socialnetwork">
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
@@ -73,14 +72,13 @@
             <div class="nav-big-screens">
                 <ul>
                     <li><a href="index-ro.html">Acasă</a></li>
-                    
                     <li><a href="despre-noi.html">Despre Noi</a></li>
                     <li><a href="galerie.html">Galerie Foto</a></li>
                     <li><a href="aboutus.html">Despre noi</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></div>
+                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
                 <script>
                     function toggleMenu() {
                         var navMenu = document.getElementById('navMenu');
@@ -607,7 +605,8 @@
         
     </div>
     
- 
+    <div class="wrap-container-1-ads">
+       
       <div class="container-1-ads">
         <div class="clock-container">
             <div class="time" id="time"></div>&nbsp;&nbsp;
@@ -635,9 +634,11 @@
               setInterval(updateTime, 1000);
               updateTime();
         </script>   
+
         <div class="slider-imagini">
             <div class="imagine activa">
                 <div class="wrap-descriere-1">
+                    
                     <div class="descriere">
                         <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
                         <p>Savorați preparatele noastre proaspete și delicioase.</p>
@@ -703,9 +704,34 @@
     
             setInterval(() => urmatoareaImagine(), 10000);
         </script>
+        </div>
+        <div class="wrap-container-afisare-produse-aleatorii">
+            <div class="container-afisare-produse-aleatorii"></div>
+            <div class="advertising">Restaurant L`Authentik</div>
+                <script>
+                    function showRandomProduct() {
+                    const products = document.querySelectorAll('.products-container .product');
+                    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+                    randomProductContainer.innerHTML = '';
+                    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                    randomProductContainer.appendChild(initialRandomProduct);
+                    randomProductContainer.style.display = 'block';
+                    setInterval(() => {
+                        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                        randomProductContainer.innerHTML = '';
+                        randomProductContainer.appendChild(randomProduct);
+                        currentIndex = (currentIndex + 1) % products.length;
+                        setTimeout(() => {
+                            randomProductContainer.style.display = 'none';
+                        }, 5000);
+                    }, 5000); 
+                        }
+                        document.addEventListener('DOMContentLoaded', () => {
+                            showRandomProduct();
+                        });
+                </script>
+        </div>
     </div>
-    
- 
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">
@@ -741,32 +767,7 @@
             </div>
         </div>
 
-    <div class="wrap-container-afisare-produse-aleatorii">
-        <div class="container-afisare-produse-aleatorii"></div>
-        <div class="advertising"></div>
-            <script>
-                function showRandomProduct() {
-                const products = document.querySelectorAll('.products-container .product');
-                const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-                randomProductContainer.innerHTML = '';
-                const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                randomProductContainer.appendChild(initialRandomProduct);
-                randomProductContainer.style.display = 'block';
-                setInterval(() => {
-                    const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                    randomProductContainer.innerHTML = '';
-                    randomProductContainer.appendChild(randomProduct);
-                    currentIndex = (currentIndex + 1) % products.length;
-                    setTimeout(() => {
-                        randomProductContainer.style.display = 'none';
-                    }, 5000);
-                }, 5000); 
-                    }
-                    document.addEventListener('DOMContentLoaded', () => {
-                        showRandomProduct();
-                    });
-            </script>
-    </div>
+   
 </div>
 
 

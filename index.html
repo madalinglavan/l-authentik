@@ -606,32 +606,7 @@
     </div>
     
     <div class="wrap-container-1-ads">
-        <div class="wrap-container-afisare-produse-aleatorii">
-            <div class="container-afisare-produse-aleatorii"></div>
-            <div class="advertising">aici e reclama</div>
-                <script>
-                    function showRandomProduct() {
-                    const products = document.querySelectorAll('.products-container .product');
-                    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-                    randomProductContainer.innerHTML = '';
-                    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                    randomProductContainer.appendChild(initialRandomProduct);
-                    randomProductContainer.style.display = 'block';
-                    setInterval(() => {
-                        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                        randomProductContainer.innerHTML = '';
-                        randomProductContainer.appendChild(randomProduct);
-                        currentIndex = (currentIndex + 1) % products.length;
-                        setTimeout(() => {
-                            randomProductContainer.style.display = 'none';
-                        }, 5000);
-                    }, 5000); 
-                        }
-                        document.addEventListener('DOMContentLoaded', () => {
-                            showRandomProduct();
-                        });
-                </script>
-        </div>
+       
       <div class="container-1-ads">
         <div class="clock-container">
             <div class="time" id="time"></div>&nbsp;&nbsp;
@@ -659,9 +634,11 @@
               setInterval(updateTime, 1000);
               updateTime();
         </script>   
+
         <div class="slider-imagini">
             <div class="imagine activa">
                 <div class="wrap-descriere-1">
+                    
                     <div class="descriere">
                         <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
                         <p>Savorați preparatele noastre proaspete și delicioase.</p>
@@ -727,6 +704,32 @@
     
             setInterval(() => urmatoareaImagine(), 10000);
         </script>
+        </div>
+        <div class="wrap-container-afisare-produse-aleatorii">
+            <div class="container-afisare-produse-aleatorii"></div>
+            <div class="advertising">Restaurant L`Authentik</div>
+                <script>
+                    function showRandomProduct() {
+                    const products = document.querySelectorAll('.products-container .product');
+                    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+                    randomProductContainer.innerHTML = '';
+                    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                    randomProductContainer.appendChild(initialRandomProduct);
+                    randomProductContainer.style.display = 'block';
+                    setInterval(() => {
+                        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                        randomProductContainer.innerHTML = '';
+                        randomProductContainer.appendChild(randomProduct);
+                        currentIndex = (currentIndex + 1) % products.length;
+                        setTimeout(() => {
+                            randomProductContainer.style.display = 'none';
+                        }, 5000);
+                    }, 5000); 
+                        }
+                        document.addEventListener('DOMContentLoaded', () => {
+                            showRandomProduct();
+                        });
+                </script>
         </div>
     </div>
     <div class="chef-presentation" id="chefPresentation">
