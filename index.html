@@ -209,6 +209,32 @@
         </div>
         
       </div>
+      <div class="clock-container">
+        <div class="time" id="time"></div>&nbsp;&nbsp;
+        <div class="date" id="date"></div>
+    </div>
+    <script>
+        function updateTime() {
+          const timeElement = document.getElementById('time');
+          const dateElement = document.getElementById('date');
+    
+          const now = new Date();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const day = String(now.getDate()).padStart(2, '0');
+          const month = String(now.getMonth() + 1).padStart(2, '0');
+          const year = now.getFullYear();
+    
+          const timeString = `${hours}:${minutes}:${seconds}`;
+          const dateString = `${day}/${month}/${year}`;
+    
+          timeElement.textContent = timeString;
+          dateElement.textContent = dateString;
+        }
+          setInterval(updateTime, 1000);
+          updateTime();
+    </script> 
       <div id="program-div" class="program-container">
         <ul>
             <li>Luni</li>
@@ -245,9 +271,9 @@
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()">Golește Favorite</button>
+        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste</button>
         <div>
-            <button onclick="generateCode()">Generează Cod</button>
+            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
             <div id="restaurant-code" style="display: none;"></div>
         </div>
         <div id="order-form">
@@ -604,44 +630,18 @@
       <div id="history-container">
         
     </div>
-    <div class="clock-container">
-        <div class="time" id="time"></div>&nbsp;&nbsp;
-        <div class="date" id="date"></div>
-    </div>
-    <script>
-        function updateTime() {
-          const timeElement = document.getElementById('time');
-          const dateElement = document.getElementById('date');
-    
-          const now = new Date();
-          const hours = String(now.getHours()).padStart(2, '0');
-          const minutes = String(now.getMinutes()).padStart(2, '0');
-          const seconds = String(now.getSeconds()).padStart(2, '0');
-          const day = String(now.getDate()).padStart(2, '0');
-          const month = String(now.getMonth() + 1).padStart(2, '0');
-          const year = now.getFullYear();
-    
-          const timeString = `${hours}:${minutes}:${seconds}`;
-          const dateString = `${day}/${month}/${year}`;
-    
-          timeElement.textContent = timeString;
-          dateElement.textContent = dateString;
-        }
-          setInterval(updateTime, 1000);
-          updateTime();
-    </script>   
+    <h1>Bine ati venit! L`Authentik</h1>
 
-    
     <div class="wrap-container-1-ads">
       <div class="container-1-ads">
         <div class="slider-imagini">
             <div class="imagine activa">
                 <div class="wrap-descriere-1">
                     <div class="descriere">
-                        <img src="img/location red.png" alt="">
-                        <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
-                        <p>Explorati preparatele noastre proaspete și delicioase.</p>
-                        <p class="indrumare">Nu mai stați la rând - preluați-vă comanda direct din aplicație și savurați mâncarea preferată în câteva minute!</p>
+                        <img src="img/site.png" alt="Telefon mobil">
+                        <h2>Comandă direct din interiorul restaurantului!</h2>
+                        <p>La L'Authentik, vă oferim posibilitatea de a comanda rapid și ușor direct de pe telefonul mobil!</p>
+                        <a href="menu.html" class="buton-comanda">Descoperă meniul</a>
                     </div>
                 </div>
             </div>
@@ -649,7 +649,6 @@
                 <div class="wrap-descriere-2">
                     <div class="descriere">
                         <img src="img/ingredients.png" alt="">
-                        
                         <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
                         <h2>O experiență culinară unică</h2>
                     </div>
@@ -727,33 +726,36 @@
             setInterval(() => urmatoareaImagine(), 10000);
         </script>
         </div>
-        <div class="wrap-container-afisare-produse-aleatorii">
-            <div class="container-afisare-produse-aleatorii"></div>
-            <div class="advertising">Restaurant L`Authentik</div>
-                <script>
-                    function showRandomProduct() {
-                    const products = document.querySelectorAll('.products-container .product');
-                    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-                    randomProductContainer.innerHTML = '';
-                    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                    randomProductContainer.appendChild(initialRandomProduct);
-                    randomProductContainer.style.display = 'block';
-                    setInterval(() => {
-                        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                        randomProductContainer.innerHTML = '';
-                        randomProductContainer.appendChild(randomProduct);
-                        currentIndex = (currentIndex + 1) % products.length;
-                        setTimeout(() => {
-                            randomProductContainer.style.display = 'none';
-                        }, 5000);
-                    }, 5000); 
-                        }
-                        document.addEventListener('DOMContentLoaded', () => {
-                            showRandomProduct();
-                        });
-                </script>
-        </div>
+        
     </div>
+          
+<div class="wrap-container-afisare-produse-aleatorii">
+    <div class="container-afisare-produse-aleatorii"></div>
+    <div class="advertising">Restaurant L`Authentik</div>
+        <script>
+            function showRandomProduct() {
+            const products = document.querySelectorAll('.products-container .product');
+            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+            randomProductContainer.innerHTML = '';
+            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+            randomProductContainer.appendChild(initialRandomProduct);
+            randomProductContainer.style.display = 'block';
+            setInterval(() => {
+                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                randomProductContainer.innerHTML = '';
+                randomProductContainer.appendChild(randomProduct);
+                currentIndex = (currentIndex + 1) % products.length;
+                setTimeout(() => {
+                    randomProductContainer.style.display = 'none';
+                }, 5000);
+            }, 5000); 
+                }
+                document.addEventListener('DOMContentLoaded', () => {
+                    showRandomProduct();
+                });
+        </script>
+</div>
+    
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">

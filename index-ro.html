@@ -209,6 +209,32 @@
         </div>
         
       </div>
+      <div class="clock-container">
+        <div class="time" id="time"></div>&nbsp;&nbsp;
+        <div class="date" id="date"></div>
+    </div>
+    <script>
+        function updateTime() {
+          const timeElement = document.getElementById('time');
+          const dateElement = document.getElementById('date');
+    
+          const now = new Date();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const day = String(now.getDate()).padStart(2, '0');
+          const month = String(now.getMonth() + 1).padStart(2, '0');
+          const year = now.getFullYear();
+    
+          const timeString = `${hours}:${minutes}:${seconds}`;
+          const dateString = `${day}/${month}/${year}`;
+    
+          timeElement.textContent = timeString;
+          dateElement.textContent = dateString;
+        }
+          setInterval(updateTime, 1000);
+          updateTime();
+    </script> 
       <div id="program-div" class="program-container">
         <ul>
             <li>Luni</li>
@@ -245,9 +271,9 @@
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()">Golește Favorite</button>
+        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste</button>
         <div>
-            <button onclick="generateCode()">Generează Cod</button>
+            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
             <div id="restaurant-code" style="display: none;"></div>
         </div>
         <div id="order-form">
@@ -398,7 +424,7 @@
             const historyPopupContent = document.querySelector('.history-popup-content');
             historyPopupContent.innerHTML = '';
             document.getElementById('totalAmount').innerText = 0;
-            alert('L`Authentik va ureaza Pofta buna!');
+            alert('Va multumim!');
         }
     
         function checkAndSubmit() {
@@ -576,7 +602,7 @@
                     
      
                 </div> 
-            <h2> Suntem bucurosi sa preluam comanda dumneavoastra! </h2>
+           
         </div>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -604,61 +630,56 @@
       <div id="history-container">
         
     </div>
-    
-    <div class="wrap-container-1-ads">
-       
-      <div class="container-1-ads">
-        <div class="clock-container">
-            <div class="time" id="time"></div>&nbsp;&nbsp;
-            <div class="date" id="date"></div>
-        </div>
-        <script>
-            function updateTime() {
-              const timeElement = document.getElementById('time');
-              const dateElement = document.getElementById('date');
-        
-              const now = new Date();
-              const hours = String(now.getHours()).padStart(2, '0');
-              const minutes = String(now.getMinutes()).padStart(2, '0');
-              const seconds = String(now.getSeconds()).padStart(2, '0');
-              const day = String(now.getDate()).padStart(2, '0');
-              const month = String(now.getMonth() + 1).padStart(2, '0');
-              const year = now.getFullYear();
-        
-              const timeString = `${hours}:${minutes}:${seconds}`;
-              const dateString = `${day}/${month}/${year}`;
-        
-              timeElement.textContent = timeString;
-              dateElement.textContent = dateString;
-            }
-              setInterval(updateTime, 1000);
-              updateTime();
-        </script>   
+    <h1>Bine ati venit! L`Authentik</h1>
 
+    <div class="wrap-container-1-ads">
+      <div class="container-1-ads">
         <div class="slider-imagini">
             <div class="imagine activa">
                 <div class="wrap-descriere-1">
-                    
                     <div class="descriere">
-                        <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
-                        <p>Savorați preparatele noastre proaspete și delicioase.</p>
+                        <img src="img/site.png" alt="Telefon mobil">
+                        <h2>Comandă direct din interiorul restaurantului!</h2>
+                        <p>La L'Authentik, vă oferim posibilitatea de a comanda rapid și ușor direct de pe telefonul mobil!</p>
+                        <a href="menu.html" class="buton-comanda">Descoperă meniul</a>
                     </div>
                 </div>
             </div>
             <div class="imagine">
                 <div class="wrap-descriere-2">
                     <div class="descriere">
-                        <h2>O experiență culinară unică</h2>
+                        <img src="img/ingredients.png" alt="">
                         <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
+                        <h2>O experiență culinară unică</h2>
                     </div>
                    
                 </div>
             </div>
+            <div class="imagine">
+                <div class="wrap-descriere-3">
+                    <div class="descriere">
+                        <img src="img/microphone.png" alt="">
+                        <h2>Bucură-te de serile noastre muzicale!</h2>
+                        <p>La L'Authentik, promovăm tinerele talente și oferim o scenă pentru artiștii emergenți să strălucească.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="imagine">
+                <div class="wrap-descriere-3">
+                    <div class="descriere">
+                        <img src="img/o seara de colectie 2.png" alt="">
+                        <h2>Bucură-te de serile noastre muzicale!</h2>
+                        <p>La L'Authentik, promovăm tinerele talente și oferim o scenă pentru artiștii emergenți să strălucească.</p>
+                    </div>
+                </div>
+            </div>
+            
   
         </div>
         <div class="butoane-slider">
             <div class="buton-slider" onclick="schimbaImagine(0)"></div>
             <div class="buton-slider" onclick="schimbaImagine(1)"></div>
+            <div class="buton-slider" onclick="schimbaImagine(2)"></div>
 
         </div>
         <script>
@@ -705,33 +726,36 @@
             setInterval(() => urmatoareaImagine(), 10000);
         </script>
         </div>
-        <div class="wrap-container-afisare-produse-aleatorii">
-            <div class="container-afisare-produse-aleatorii"></div>
-            <div class="advertising">Restaurant L`Authentik</div>
-                <script>
-                    function showRandomProduct() {
-                    const products = document.querySelectorAll('.products-container .product');
-                    const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-                    randomProductContainer.innerHTML = '';
-                    const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                    randomProductContainer.appendChild(initialRandomProduct);
-                    randomProductContainer.style.display = 'block';
-                    setInterval(() => {
-                        const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                        randomProductContainer.innerHTML = '';
-                        randomProductContainer.appendChild(randomProduct);
-                        currentIndex = (currentIndex + 1) % products.length;
-                        setTimeout(() => {
-                            randomProductContainer.style.display = 'none';
-                        }, 5000);
-                    }, 5000); 
-                        }
-                        document.addEventListener('DOMContentLoaded', () => {
-                            showRandomProduct();
-                        });
-                </script>
-        </div>
+        
     </div>
+          
+<div class="wrap-container-afisare-produse-aleatorii">
+    <div class="container-afisare-produse-aleatorii"></div>
+    <div class="advertising">Restaurant L`Authentik</div>
+        <script>
+            function showRandomProduct() {
+            const products = document.querySelectorAll('.products-container .product');
+            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+            randomProductContainer.innerHTML = '';
+            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+            randomProductContainer.appendChild(initialRandomProduct);
+            randomProductContainer.style.display = 'block';
+            setInterval(() => {
+                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                randomProductContainer.innerHTML = '';
+                randomProductContainer.appendChild(randomProduct);
+                currentIndex = (currentIndex + 1) % products.length;
+                setTimeout(() => {
+                    randomProductContainer.style.display = 'none';
+                }, 5000);
+            }, 5000); 
+                }
+                document.addEventListener('DOMContentLoaded', () => {
+                    showRandomProduct();
+                });
+        </script>
+</div>
+    
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">
@@ -750,6 +774,17 @@
         </div>
     </div> 
 </div>
+<div class="aplicatia-noastra">
+    <p>Dragul nostru client,</p>
+    <p>La L'Authentic, ne pasă profund de confortul și bunăstarea ta. De aceea, cu bucurie și grijă, îți oferim oportunitatea să comanzi rapid prin intermediul site-ului nostru!</p>
+    <p>Comandarea este simplă și rapidă. Tot ce trebuie să faci este să accesezi site-ul nostru și să selectezi preparatele preferate din meniul nostru delicios. Apoi, doar câteva click-uri și comanda ta este înregistrată.</p>
+    <p>Este important de menționat că aplicația noastră este funcțională doar în zona localului nostru.</p>
+    <p>Ne dorim ca experiența ta să fie una plăcută și fără stres, așa că te îndrumăm ferm să profiți de această oportunitate convenabilă. Fii sigur că suntem aici pentru tine, gata să-ți oferim cele mai bune servicii și să te întâmpinăm cu mâncare proaspătă și savuroasă.</p>
+    <p>Îți mulțumim că ești alături de noi și că ne permiți să facem parte din momentele tale speciale.</p>
+    <p>Cu căldură,</p>
+    <p>Echipa L'Authentic</p>
+</div>
+
     
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>

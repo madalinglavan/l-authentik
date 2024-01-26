@@ -14,7 +14,11 @@ body {
     background-color: #720606;
     background-image: linear-gradient(94deg, #720606 0%, #000000 66%);
     }
-
+body h1{
+    color: #fff;
+    align-items: center;
+    text-align: center;
+}
 header {
     width: 100%;
     height: 150px;
@@ -591,8 +595,8 @@ nav ul a {
     }
       .container-1-ads {
         width: 100%;
-        margin-top: 60%;
-        position: absolute;
+        height: max-content;
+        position: relative;
         overflow: hidden;
         margin-top: 20px;
         display: flex;
@@ -657,8 +661,7 @@ nav ul a {
         
     }
     .descriere {
-        width: 50%;
-        margin-left: 45%;
+        width: 100%;
         height: 100%;
         position: relative;
     }
@@ -676,14 +679,13 @@ nav ul a {
 
     }
     .descriere img{
-        width: 180px;
-        height: 160px;
+        width: 350px;
+        height: 250px;
         object-fit:fill;
     }
 
     .butoane-slider {
         display: flex;
-        margin-left: 50%;
         justify-content: center;
         margin-top: 10px;
         color:black;
@@ -1239,6 +1241,7 @@ nav ul a {
             width: 130px;
             height: 100px;
         }
+
        }
     .contact-form {
         min-width: 90%;
@@ -1306,6 +1309,11 @@ nav ul a {
         font-size: .7rem;
  
 
+    }
+    .descriere img{
+        width: 250px;
+        height: 250px;
+        object-fit:fill;
     }
     .container-2-ads {
         min-width: 100%;
