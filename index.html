@@ -604,60 +604,78 @@
       <div id="history-container">
         
     </div>
+    <div class="clock-container">
+        <div class="time" id="time"></div>&nbsp;&nbsp;
+        <div class="date" id="date"></div>
+    </div>
+    <script>
+        function updateTime() {
+          const timeElement = document.getElementById('time');
+          const dateElement = document.getElementById('date');
+    
+          const now = new Date();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const day = String(now.getDate()).padStart(2, '0');
+          const month = String(now.getMonth() + 1).padStart(2, '0');
+          const year = now.getFullYear();
+    
+          const timeString = `${hours}:${minutes}:${seconds}`;
+          const dateString = `${day}/${month}/${year}`;
+    
+          timeElement.textContent = timeString;
+          dateElement.textContent = dateString;
+        }
+          setInterval(updateTime, 1000);
+          updateTime();
+    </script>   
+
     
     <div class="wrap-container-1-ads">
       <div class="container-1-ads">
-        <div class="clock-container">
-            <div class="time" id="time"></div>&nbsp;&nbsp;
-            <div class="date" id="date"></div>
-        </div>
-        <script>
-            function updateTime() {
-              const timeElement = document.getElementById('time');
-              const dateElement = document.getElementById('date');
-        
-              const now = new Date();
-              const hours = String(now.getHours()).padStart(2, '0');
-              const minutes = String(now.getMinutes()).padStart(2, '0');
-              const seconds = String(now.getSeconds()).padStart(2, '0');
-              const day = String(now.getDate()).padStart(2, '0');
-              const month = String(now.getMonth() + 1).padStart(2, '0');
-              const year = now.getFullYear();
-        
-              const timeString = `${hours}:${minutes}:${seconds}`;
-              const dateString = `${day}/${month}/${year}`;
-        
-              timeElement.textContent = timeString;
-              dateElement.textContent = dateString;
-            }
-              setInterval(updateTime, 1000);
-              updateTime();
-        </script>   
-
         <div class="slider-imagini">
             <div class="imagine activa">
                 <div class="wrap-descriere-1">
                     <div class="descriere">
-                        <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
-                        <p>Savorați preparatele noastre proaspete și delicioase.</p>
                         <img src="img/location red.png" alt="">
+                        <h2>Bine ați venit la restaurantul nostru L'Authentik</h2>
+                        <p>Explorati preparatele noastre proaspete și delicioase.</p>
+                       
+                        
+                        <p class="indrumare">Nu mai stați la rând - preluați-vă comanda direct din aplicație și savurați mâncarea preferată în câteva minute!</p>
                     </div>
                 </div>
             </div>
             <div class="imagine">
                 <div class="wrap-descriere-2">
                     <div class="descriere">
-                        <h2>O experiență culinară unică</h2>
+                        <img src="img/ingredients.png" alt="">
+                        
                         <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
+                        <h2>O experiență culinară unică</h2>
                     </div>
                    
                 </div>
             </div>
+            <div class="imagine">
+                <div class="wrap-descriere-3">
+                    <div class="descriere">
+                        <img src="img/microphone.png" alt="">
+                        <h2>Bucură-te de serile noastre muzicale!</h2>
+                        <p>La L'Authentik, promovăm tinerele talente și oferim o scenă pentru artiștii emergenți să strălucească.</p>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+            
   
         </div>
         <div class="butoane-slider">
             <div class="buton-slider" onclick="schimbaImagine(0)"></div>
             <div class="buton-slider" onclick="schimbaImagine(1)"></div>
+            <div class="buton-slider" onclick="schimbaImagine(2)"></div>
 
         </div>
         <script>

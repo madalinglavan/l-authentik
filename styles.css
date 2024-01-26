@@ -402,7 +402,7 @@ nav ul a {
     display: flex;
     flex-direction: column;
     background-color: #bfadad;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     margin-top: 10px;
     padding: 10px;
@@ -412,10 +412,9 @@ nav ul a {
 .product img {
     width: 300px;
     height: 200px;
-
     border-radius: 4px;
     border-radius: 50px;
-    box-shadow: -10px 0 0 1px rgba(0, 0, 0, 0.726);
+    box-shadow: -10px 0 0 1px rgb(255, 0, 0);
     object-fit: cover;
     object-position: center;
 }
@@ -587,7 +586,7 @@ nav ul a {
 
       .wrap-container-1-ads{
         width: 100%;
-        height: 300px;
+        height: 380px;
         background-color: #00000097;
         display: flex;
         position: relative;
@@ -596,9 +595,10 @@ nav ul a {
     }
       .container-1-ads {
         width: 100%;
+        margin-top: 60%;
         position: absolute;
-        height: 400px;
         overflow: hidden;
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -611,18 +611,17 @@ nav ul a {
 
     .container-afisare-produse-aleatorii{
         .product{
-            width: 100%;
+            width: 80%;
             background-color: transparent;
             text-align: left;
             margin-left: 50%;
             transform: translate(-50%);
         }
         .product img{
-            width: 140px;
-            height: 120px;
+            width: 180px;
+            height: 150px;
             object-fit: fill;
-            margin-left: 50%;
-            transform: translate(-50%);
+
         }
         .product h3{
             font-size: .9rem;
@@ -631,6 +630,7 @@ nav ul a {
         .product p{
             font-size: .6rem;
             color: #fff;
+            width: 60%;
         }
     }
     
@@ -661,7 +661,6 @@ nav ul a {
     }
 
     .descriere h2 {
-        margin-top: 50px;
         font-size: 1rem;
         color: #ffffff;
         text-shadow: 1px 2px 4px rgb(187, 185, 185);
@@ -675,8 +674,8 @@ nav ul a {
     }
     .descriere img{
         width: 200px;
-        height: 150px;
-        object-fit:contain;
+        height: 200px;
+        object-fit:fill;
     }
 
     .butoane-slider {
@@ -710,15 +709,18 @@ nav ul a {
     .wrap-description-1{
         min-width: 100%;
 
-
     }
     .wrap-description-2{
         min-width: 100%;
 
     }
+    .wrap-descriere-3 .descriere .img{
+        height: 100px;
+    }
     .wrap-container-afisare-produse-aleatorii{
         position: relative;
         top: 0;
+        left: 10px;
         width: 40%;
         height: 300px;
 
@@ -785,7 +787,7 @@ nav ul a {
     }
     
     .slider-btn.active {
-        color: #ff4500; /* Schimbă culoarea butonului activ, dacă dorești */
+        color: #ff4500; 
     }
     
     @keyframes fadeIn {
@@ -862,7 +864,7 @@ nav ul a {
         align-items: center;
         margin: 20px 0;
     }
-    
+
     .evenimente-container {
         width: 90%;
         padding: 20px;
@@ -959,9 +961,8 @@ nav ul a {
     }
     
     .clock-container {
-        position: absolute;
         display: flex;
-        right: 25px;
+        position: relative;
         box-shadow: 3px 3px 4px black;
         border-radius: 8px;
       }
@@ -1084,8 +1085,15 @@ nav ul a {
     #order-form button:hover {
         background-color: #45a049;
     }
-    
-    
+    .indrumare{
+        
+        
+    }
+    p.indrumare{
+        color:rgb(222, 222, 222);
+        font-family: 'Times New Roman', Times, serif;
+        font-size: .6rem;
+    }
 
 
 
