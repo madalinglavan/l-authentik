@@ -405,16 +405,12 @@ nav ul a {
     border: 1px solid #ffffff;
     border-radius: 4px;
     margin-top: 10px;
-    padding: 10px;
 
 }
 
 .product img {
     width: 300px;
     height: 200px;
-    border-radius: 4px;
-    border-radius: 50px;
-    box-shadow: -10px 0 0 1px rgb(255, 0, 0);
     object-fit: cover;
     object-position: center;
 }
@@ -610,8 +606,13 @@ nav ul a {
     }
 
     .container-afisare-produse-aleatorii{
+      
         .product{
-            width: 80%;
+            width: 100%;
+            position: relative;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
             background-color: transparent;
             text-align: left;
             margin-left: 50%;
@@ -626,11 +627,13 @@ nav ul a {
         .product h3{
             font-size: .9rem;
             color: yellow;
+            background-color: #ff0000;
         }
         .product p{
             font-size: .6rem;
-            color: #fff;
-            width: 60%;
+            background-color: #cdcdcd;
+            color: #000000;
+            width: 100%;
         }
     }
     
@@ -673,21 +676,22 @@ nav ul a {
 
     }
     .descriere img{
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 160px;
         object-fit:fill;
     }
 
     .butoane-slider {
         display: flex;
+        margin-left: 50%;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 10px;
         color:black;
     }
 
     .buton-slider {
-        width: 12px;
-        height: 12px;
+        width: 18px;
+        height: 18px;
         border-radius: 50%;
         background-color: #e44d26;
         margin: 0 8px;
@@ -1094,6 +1098,40 @@ nav ul a {
         font-family: 'Times New Roman', Times, serif;
         font-size: .6rem;
     }
+    .aplicatia-noastra {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .aplicatia-noastra p {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .aplicatia-noastra p:first-child {
+        font-weight: bold;
+    }
+    
+    .aplicatia-noastra p:last-child {
+        font-style: italic;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1196,6 +1234,12 @@ nav ul a {
         
        }
  
+       .container-afisare-produse-aleatorii {
+        .product img{
+            width: 130px;
+            height: 100px;
+        }
+       }
     .contact-form {
         min-width: 90%;
         text-align: center;
@@ -1341,17 +1385,8 @@ nav ul a {
         font-size: .7rem;
     }
     .container-afisare-produse-aleatorii {
-        .product h3 {
-            min-width: 200px;
-            font-size: .8rem;
-
 
     }
-
-    .product p {
-        font-size: .6rem;
-    }
-
 }
 .container-2-ads {
     min-width: 95%;
@@ -1369,9 +1404,6 @@ nav ul a {
     background-color: rgba(0, 0, 0, 0.356);
     border-radius: 10px;
 }
-}
-
-
 
 
 
