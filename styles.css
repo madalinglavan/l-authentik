@@ -428,12 +428,13 @@ nav ul a {
 }
 
 .add-to-history {
-    background-color: #3498db;
+    background-color: #00ff26;
     color: #fff;
     border: none;
     padding: 8px 10px;
     border-radius: 4px;
     cursor: pointer;
+    width: 50%;
 }
 .product button a{ 
     text-decoration: none;
@@ -604,29 +605,24 @@ nav ul a {
         justify-content: start;
     }
     .container-1-ads h2{
-        position: absolute;
-        top: -150px;
-        left: 50%;
+        position: relative;
         font-size: 1.2rem;
     }
-    .container-1-ads p{
-        position:absolute;
-        top: 0px;
-        width: fit-content;
-        left: 77%;
-        font-size: 3rem;
 
-    }
     .container-afisare-produse-aleatorii{
         .product{
-            width: 50%;
+            width: 100%;
             background-color: transparent;
             text-align: left;
+            margin-left: 50%;
+            transform: translate(-50%);
         }
         .product img{
-            width: 50%;
-            height: 100px;
+            width: 140px;
+            height: 120px;
             object-fit: fill;
+            margin-left: 50%;
+            transform: translate(-50%);
         }
         .product h3{
             font-size: .9rem;
@@ -658,14 +654,17 @@ nav ul a {
         
     }
     .descriere {
-        margin-top: 220px;
+        width: 50%;
+        margin-left: 45%;
+        height: 100%;
+        position: relative;
     }
 
     .descriere h2 {
+        margin-top: 50px;
         font-size: 1rem;
         color: #ffffff;
-        text-shadow: 10px 7px 8px rgb(28, 9, 9);
-
+        text-shadow: 1px 2px 4px rgb(187, 185, 185);
     }
 
     .descriere p {
@@ -673,6 +672,11 @@ nav ul a {
         color: #ffbb00;
         text-shadow: 10px 7px 5px rgb(28, 9, 9);
 
+    }
+    .descriere img{
+        width: 200px;
+        height: 150px;
+        object-fit:contain;
     }
 
     .butoane-slider {
@@ -697,38 +701,26 @@ nav ul a {
     }
     .wrap-descriere-1{
         position: relative;
-        min-height: 25vh;
-        min-width: 100%;
 
-}
-    .container-1-ads h1{
-        position: relative;
-        color: #fff;
     }
+
     .wrap-descriere-2{
         position: relative;
-        min-height: 25vh;
-        min-width: 100%;
-
-        
     }
     .wrap-description-1{
-        height: 100%;
         min-width: 100%;
 
 
     }
     .wrap-description-2{
-        height: 25vh;
         min-width: 100%;
 
     }
     .wrap-container-afisare-produse-aleatorii{
-        position: absolute;
+        position: relative;
         top: 0;
-        width: 50%;
-        height: 200px;
-       
+        width: 40%;
+        height: 300px;
 
     }
     .container-afisare-produse-aleatorii{
@@ -1254,12 +1246,12 @@ nav ul a {
   
 
     .descriere h2 {
-        font-size: .8rem;
-        
+        font-size: .9rem;
+ 
     }
 
     .descriere p {
-        font-size: .6rem;
+        font-size: .7rem;
  
 
     }
@@ -1304,39 +1296,9 @@ nav ul a {
         font-size: 1.5rem;
         width: 100px;
       }
-      .wrap-container-1-ads{
-       display: flex;
-       flex-direction: column;
-
-      }
-      .wrap-container-afisare-produse-aleatorii{
-        position: absolute;
-        top:5px;
-        left: 5px;
-      }
-      .container-afisare-produse-aleatorii{
-        .product{
-            position: relative;
-            width: 100%;
-            background-color: transparent;
-        }
-        .product img{
-            width: 80%;
-            height: 150px;
-            object-fit: fill;
-        }
-        .product h3{
-            font-size: .8rem;
-            color: yellow;
-            
-        }
-        .product p{
-            font-size: .6rem;
-            color: #fff;
-        }
+     
     }
 
-}
 
 
 
