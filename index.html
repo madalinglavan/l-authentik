@@ -363,7 +363,7 @@
         const historyPopupContent = historyPopup.querySelector('.history-popup-content');
     
         if (history.length === 0) {
-            alert('Descoperiți deliciile noastre și adăugați favoritele!');
+            alert('Descoperiți preparatele noastre și adăugați favoritele!');
         } else {
             historyPopupContent.innerHTML = history.map((product, index) => `
                 <div class="history-product">
@@ -422,7 +422,7 @@
                 const historyPopupContent = document.querySelector('.history-popup-content');
                 historyPopupContent.innerHTML = '';
                 document.getElementById('totalAmount').innerText = 0;
-                alert('Va multumim!');
+                alert('Va mai asteptam!');
             }
         
             function checkAndSubmit() {
@@ -655,7 +655,6 @@
 
         </script>
     </div>
-    
     <div class="wrap-container-1-ads">
       <div class="container-1-ads">
         <div class="slider-imagini">
@@ -671,7 +670,6 @@
                                 <li>Fă comanda când ajungi la noi.</li>
                                 <p>Vă mulțumim!</p>
                                 <p>Echipa L'Authentik</p>
-                                
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                         setTimeout(function() {
@@ -692,7 +690,6 @@
                         <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
                         <h2>O experiență culinară unică</h2>
                     </div>
-                   
                 </div>
             </div>
             <div class="imagine">
@@ -733,7 +730,6 @@
                    
                 </div>
             </div>
-    
         </div>
             <div class="butoane-slider">
                 <div class="buton-slider" onclick="schimbaImagine(0)"></div>
@@ -751,7 +747,6 @@
                         imagineCurenta = index;
                         actualizeazaSlider();
                     }
-            
                     function actualizeazaSlider() {
                         imagini.style.transform = `translateX(${-imagineCurenta * 100}%)`;
             
@@ -762,7 +757,6 @@
                                 buton.classList.remove('activ');
                             }
                         });
-            
                         const elementeImagini = document.querySelectorAll('.imagine');
                         elementeImagini.forEach((imagine, index) => {
                             if (index === imagineCurenta) {
@@ -772,7 +766,6 @@
                             }
                         });
                     }
-            
                     function urmatoareaImagine() {
                         imagineCurenta = (imagineCurenta + 1) % imagini.children.length;
                         actualizeazaSlider();
@@ -782,14 +775,12 @@
                         imagineCurenta = (imagineCurenta - 1 + imagini.children.length) % imagini.children.length;
                         actualizeazaSlider();
                     }
-            
                     setInterval(() => urmatoareaImagine(), 10000);
                 </script>
             </div>  
         </div>
     </div>
   
-    
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">
@@ -808,6 +799,101 @@
         </div>
     </div> 
 </div>
+<div class="wrap-container-afisare-produse-aleatorii">
+    <h1>quick pick</h1>
+    <div class="container-afisare-produse-aleatorii"></div>
+
+        <script>
+            function showRandomProduct() {
+            const products = document.querySelectorAll('.products-container .product');
+            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+            randomProductContainer.innerHTML = '';
+            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+            randomProductContainer.appendChild(initialRandomProduct);
+            randomProductContainer.style.display = 'block';
+            setInterval(() => {
+                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                randomProductContainer.innerHTML = '';
+                randomProductContainer.appendChild(randomProduct);
+                currentIndex = (currentIndex + 1) % products.length;
+                setTimeout(() => {
+                    randomProductContainer.style.display = 'none';
+                }, 5000);
+            }, 5000); 
+                }
+                document.addEventListener('DOMContentLoaded', () => {
+                    showRandomProduct();
+                });
+        </script>
+        <div class="container-2-ads">
+            <h1>bine ati venit</h1>
+            <div class="image-slider">
+                <div class="slide active">
+                    <div class="wrap-description-1">
+                        <div class="text-description">
+                            <h2>Descoperă savoarea autentică</h2>
+                            <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="wrap-description-2">
+                        <div class="text-description">
+                            <h2>Exploră aromele unice</h2>
+                            <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-btns">
+                <div class="slider-btn" onclick="changeSlide2(0)"></div>
+                <div class="slider-btn" onclick="changeSlide2(1)"></div>
+                <script>
+                    let currentSlide = 0;
+                    const slides = document.querySelector('.container-2-ads .image-slider');
+                    const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
+            
+                    function changeSlide(index) {
+                        currentSlide = index;
+                        updateSlider();
+                    }
+                    function updateSlider() {
+                        slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+            
+                        buttons.forEach((button, index) => {
+                            if (index === currentSlide) {
+                                button.classList.add('active');
+                            } else {
+                                button.classList.remove('active');
+                            }
+                        });
+            
+                        const slideElements = document.querySelectorAll('.slide');
+                        slideElements.forEach((slide, index) => {
+                            if (index === currentSlide) {
+                                slide.classList.add('active');
+                            } else {
+                                slide.classList.remove('active');
+                            }
+                        });
+                    }
+            
+                    function nextSlide() {
+                        currentSlide = (currentSlide + 1) % slides.children.length;
+                        updateSlider();
+                    }
+            
+                    function prevSlide() {
+                        currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+                        updateSlider();
+                    }
+                    setInterval(nextSlide, 10000);
+                </script>
+            </div>
+        </div>
+</div>
+
+   
 <div class="aplicatia-noastra">
     <p>Dragul nostru client,</p>
     <p>La L'Authentic, ne pasă profund de confortul și bunăstarea ta. De aceea, cu bucurie și grijă, îți oferim oportunitatea să comanzi rapid prin intermediul site-ului nostru!</p>
@@ -818,7 +904,6 @@
     <p>Cu căldură,</p>
     <p>Echipa L'Authentic</p>
 </div>
-
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>
         <div id="evenimente-l-authentik" class="evenimente-container">
@@ -834,8 +919,6 @@
             </div>
         </div>
 </div>
-
-
     <div id="google-reviews">
         <h3>Recenzii Google</h3>
         <div id="reviews-container"></div>
@@ -876,113 +959,13 @@
               .catch(error => console.error('Eroare la obținerea recenziilor:', error));
           </script>
       </div>
-      
-    <div class="container-2-ads">
-        <div class="image-slider">
-            <div class="slide active">
-                <div class="wrap-description-1">
-                    <div class="text-description">
-                        <h2>Descoperă savoarea autentică</h2>
-                        <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="slide">
-                <div class="wrap-description-2">
-                    <div class="text-description">
-                        <h2>Exploră aromele unice</h2>
-                        <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
-                    </div>
-                   
-                </div>
-            </div>
-
-        </div>
-        <div class="slider-btns">
-            <div class="slider-btn" onclick="changeSlide2(0)"></div>
-            <div class="slider-btn" onclick="changeSlide2(1)"></div>
-            <script>
-                let currentSlide = 0;
-                const slides = document.querySelector('.container-2-ads .image-slider');
-                const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
-        
-                function changeSlide(index) {
-                    currentSlide = index;
-                    updateSlider();
-                }
-        
-                function updateSlider() {
-                    slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-        
-                    buttons.forEach((button, index) => {
-                        if (index === currentSlide) {
-                            button.classList.add('active');
-                        } else {
-                            button.classList.remove('active');
-                        }
-                    });
-        
-                    const slideElements = document.querySelectorAll('.slide');
-                    slideElements.forEach((slide, index) => {
-                        if (index === currentSlide) {
-                            slide.classList.add('active');
-                        } else {
-                            slide.classList.remove('active');
-                        }
-                    });
-                }
-        
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % slides.children.length;
-                    updateSlider();
-                }
-        
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
-                    updateSlider();
-                }
-        
-                setInterval(nextSlide, 10000);
-            </script>
-    </div>
-       
-    </div>
-           
-<div class="wrap-container-afisare-produse-aleatorii">
-    <div class="container-afisare-produse-aleatorii"></div>
-    <div class="advertising">Restaurant L`Authentik</div>
-        <script>
-            function showRandomProduct() {
-            const products = document.querySelectorAll('.products-container .product');
-            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-            randomProductContainer.innerHTML = '';
-            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-            randomProductContainer.appendChild(initialRandomProduct);
-            randomProductContainer.style.display = 'block';
-            setInterval(() => {
-                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                randomProductContainer.innerHTML = '';
-                randomProductContainer.appendChild(randomProduct);
-                currentIndex = (currentIndex + 1) % products.length;
-                setTimeout(() => {
-                    randomProductContainer.style.display = 'none';
-                }, 5000);
-            }, 5000); 
-                }
-                document.addEventListener('DOMContentLoaded', () => {
-                    showRandomProduct();
-                });
-        </script>
-</div>
+    
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
         <h2><a href="index-ro.html"> L'Authentik© 2024 Toate drepturile rezervate</a></h2>
         <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
-            
     </div>
 
-      
 </body>
 </html>

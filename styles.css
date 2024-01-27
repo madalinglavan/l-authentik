@@ -647,37 +647,7 @@ nav ul a {
         font-size: 1.2rem;
     }
 
-    .container-afisare-produse-aleatorii{
-      
-        .product{
-            width: 100%;
-            position: relative;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            background-color: transparent;
-            text-align: left;
-            margin-left: 50%;
-            transform: translate(-50%);
-        }
-        .product img{
-            width: 180px;
-            height: 150px;
-            object-fit: fill;
-
-        }
-        .product h3{
-            font-size: .9rem;
-            color: yellow;
-            background-color: #ff0000;
-        }
-        .product p{
-            font-size: .6rem;
-            background-color: #cdcdcd;
-            color: #000000;
-            width: 100%;
-        }
-    }
+   
     
     .slider-imagini {
         min-height: 100%;
@@ -751,11 +721,11 @@ nav ul a {
         position: relative;
     }
     .wrap-description-1{
-   
+      width: 95%;
 
     }
     .wrap-description-2{
-        min-width: 100%;
+       width: 100%;
 
     }
     .wrap-descriere-3 .descriere .img{
@@ -763,25 +733,53 @@ nav ul a {
     }
     .wrap-container-afisare-produse-aleatorii{
         position: relative;
-        top: 0;
-        left: 10px;
-        width: 40%;
-        height: 300px;
-
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 450px;
+        background-color: #a18b8b;
     }
     .container-afisare-produse-aleatorii{
-        
+        width: 30%;
     }
-
+    .container-afisare-produse-aleatorii{
+      
+        .product{
+            width: 100%;
+            position: relative;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-color: #00000084;
+            text-align: left;
+        
+        }
+        .product img{
+            width: 230px;
+            height: 200px;
+            object-fit:fill;
+        }
+        .product h3{
+            font-size:1.2rem;
+            color: yellow;
+            background-color: #dc0000af;
+            text-align: center;
+        }
+        .product p{
+            font-size: .9rem;
+            text-align: center;
+            background-color: #cdcdcda6;
+            color: #000000;
+            width: 100%;
+        }
+    }
     .container-2-ads {
-        min-width: 95%;
+        width: 60%;
         position: relative;
-        margin-left: 50%;
-        transform: translate(-50%);
         border-radius: 8px;
         overflow: hidden;
         max-height: 30vh;
-        
+        background-color: red;
     }
     .presentation-text {
         position: absolute;
@@ -1337,11 +1335,7 @@ nav ul a {
        }
  
        .container-afisare-produse-aleatorii {
-        .product img{
-            width: 130px;
-            height: 100px;
-        }
-
+       
        }
     .contact-form {
         min-width: 90%;
@@ -1406,17 +1400,9 @@ nav ul a {
     }
 
     .descriere p{
-        font-size: .9rem;
- 
-
+        font-size: .8rem;
     }
-   
-    .container-2-ads {
-        min-width: 100%;
-        position: relative;
 
-        
-    }
     .languageMenu {
         display: none;
         position: absolute;
@@ -1455,6 +1441,18 @@ nav ul a {
       #img-animatie{
         height: 120px;
       }
+      .wrap-container-afisare-produse-aleatorii{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+      }
+      .container-afisare-produse-aleatorii{
+        width: 100%;
+      }
+      .container-2-ads{
+        width: 100%;
+      }
     }
 
 
@@ -1490,9 +1488,7 @@ nav ul a {
     .nav-big-screens li{
         font-size: .7rem;
     }
-    .container-afisare-produse-aleatorii {
 
-    }
 }
 
 
@@ -1540,10 +1536,6 @@ nav ul a {
 .dish-info p {
     font-size: 1rem;
 
-}
-.container-2-ads {
-    min-width:800px 
-    
 }
 
 }
