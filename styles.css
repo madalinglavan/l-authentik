@@ -215,7 +215,7 @@ nav ul a {
 
 .nav-big-screens a {
     text-decoration: none;
-    color: #ffd900;
+    color: #ffffff;
     text-shadow: 5px 4px 6px rgb(0, 0, 0);
     display: flex;
     align-items: center;
@@ -225,11 +225,11 @@ nav ul a {
 }
 
 .nav-big-screens li:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     
 }
 .nav-big-screens a:hover{
-    color: #f1f1f1;
+    color: #ffee00;
     text-shadow: 5px  white;
     text-decoration: solid;
 }
@@ -1171,20 +1171,20 @@ nav ul a {
     
 
     .reclama-favorite {
+        height: fit-content;
+        position: relative;
         display: flex;
-        margin: 50px auto;
-        max-width: 800px;
-        text-align: center;
-    }
-    
-    .img-container {
-        border-radius: 10px;
-        width: 300px;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 50%;
+        transform: translate(-50%);
     }
     
     #img-animatie {
-        width: 100%;
-        max-width: 100%;
+        width: 40%;
+        margin-left: 50%;
+        transform: translate(-50%);
+        height: 150px;
         opacity: 0;
         transition: opacity 0.8s ease-in-out;
     }
@@ -1193,6 +1193,7 @@ nav ul a {
         margin-top: 20px;
         opacity: 0;
         transition: opacity 0.8s ease-in-out 2s;
+
     }
     
     #text-animatie p {
@@ -1394,16 +1395,13 @@ nav ul a {
  
     }
 
-    .descriere p {
+    .descriere p,
+    .text-container p {
         font-size: .7rem;
  
 
     }
-    .descriere img{
-        width: 250px;
-        height: 250px;
-        object-fit:fill;
-    }
+   
     .container-2-ads {
         min-width: 100%;
         position: relative;
