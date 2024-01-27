@@ -75,7 +75,7 @@ header {
     background-color: #720606;
     background-image: linear-gradient(94deg, #720606 0%, #000000 66%);
     width: 100%;
-    height: 10vh;
+    height: fit-content;
 }
 .left-top-nav{
     display: flex;
@@ -1015,9 +1015,13 @@ nav ul a {
     }
     
     .clock-container {
+        width: fit-content;
+        background-color: rgba(255, 0, 0, 0.043);
         display: flex;
+        float: right;
         position: relative;
-        box-shadow: 3px 3px 4px black;
+        box-shadow: 1px 1px 7px rgb(133, 0, 0);
+        padding: 3px;
         border-radius: 8px;
       }
       .time, .date {
@@ -1184,7 +1188,7 @@ nav ul a {
         width: 40%;
         margin-left: 50%;
         transform: translate(-50%);
-        height: 150px;
+        height: 170px;
         opacity: 0;
         transition: opacity 0.8s ease-in-out;
     }
@@ -1198,6 +1202,9 @@ nav ul a {
     
     #text-animatie p {
         margin-bottom: 10px;
+    }
+    #text-animatie li {
+        color: #fff;
     }
     
     .buton-comanda {
@@ -1280,9 +1287,11 @@ nav ul a {
     .burger-icon {
         display: flex;
         position: absolute;
+        background-color: #960000;
         bottom: 10px;
-        right: 10px;
-        font-size: 3rem;
+        padding: 5px;
+        right: 20px;
+        font-size: 2rem;
         color: rgb(255, 230, 0);
         text-shadow: 2px 4px 4px rgb(89, 89, 89);
         width: fit-content;
@@ -1321,7 +1330,8 @@ nav ul a {
     }
    
     .top-nav{
-        height: 65px;
+        background-color: #fffb00b1;
+        padding: 5px;
         margin-top: 3px;
         
        }
@@ -1395,9 +1405,8 @@ nav ul a {
  
     }
 
-    .descriere p,
-    .text-container p {
-        font-size: .7rem;
+    .descriere p{
+        font-size: .9rem;
  
 
     }
@@ -1443,7 +1452,9 @@ nav ul a {
         font-size: 1.5rem;
         width: 100px;
       }
-     
+      #img-animatie{
+        height: 120px;
+      }
     }
 
 
