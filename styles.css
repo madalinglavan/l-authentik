@@ -507,34 +507,31 @@ nav ul a {
 }
     .chef-presentation {
         position: relative;
-        height: 100vh;
+        height: fit-content;
         overflow: hidden;
         margin-bottom: 25px;
         
     }
     
     .chef-presentation img {
-        min-width: 100%;
-        height: auto;
+        width: 100%;
+        height: 500px;
         object-fit: cover;
+        object-position: top;
         transition: transform 0.5s ease-in-out;
     }
 
     
     .presentation-text {
-        position: absolute;
-        width: 80%;
-        left: 50%;
-        transform: translate( -50%);
-        bottom: 10px;
-        max-height: 60%;
+        position: relative;
+        width: 60%;
         overflow-y: auto;
         background-color: rgba(0, 0, 0, 0.356);
         padding: 20px;
         border-radius: 10px;
     }
     .presentation-text p {
-        font-size: .8rem;
+        font-size: 1rem;
         line-height: 1.2;
         color: #ffffff;
         text-shadow: 1px 1px 3px #000000;
@@ -734,13 +731,13 @@ nav ul a {
     .wrap-container-afisare-produse-aleatorii{
         position: relative;
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
         width: 100%;
-        height: 450px;
-        background-color: #a18b8b;
+        height:fit-content;
+        
     }
     .container-afisare-produse-aleatorii{
-        width: 30%;
+        width: 100%;
     }
     .container-afisare-produse-aleatorii{
       
@@ -755,9 +752,9 @@ nav ul a {
         
         }
         .product img{
-            width: 230px;
-            height: 200px;
-            object-fit:fill;
+            width:100%;
+            height: 300px;
+            object-fit:contain;
         }
         .product h3{
             font-size:1.2rem;
@@ -768,18 +765,21 @@ nav ul a {
         .product p{
             font-size: .9rem;
             text-align: center;
-            background-color: #cdcdcda6;
-            color: #000000;
+            color: #ffffff;
             width: 100%;
         }
     }
     .container-2-ads {
-        width: 60%;
+        width: 100%;
         position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
         border-radius: 8px;
         overflow: hidden;
-        max-height: 30vh;
-        background-color: red;
+        height: auto;
+        background-color: rgba(255, 0, 0, 0.56);
     }
     .presentation-text {
         position: absolute;
@@ -1150,26 +1150,7 @@ nav ul a {
         font-family: 'Times New Roman', Times, serif;
         font-size: .6rem;
     }
-    .aplicatia-noastra {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-    
-    .aplicatia-noastra p {
-        margin-bottom: 10px;
-        font-size: 16px;
-        line-height: 1.6;
-    }
-    
-    .aplicatia-noastra p:first-child {
-        font-weight: bold;
-    }
-    
-    .aplicatia-noastra p:last-child {
-        font-style: italic;
-    }
+
     
 
     .reclama-favorite {
@@ -1357,25 +1338,28 @@ nav ul a {
     }
    
     .chef-presentation{
+        position: relative;
         display: flex;
         flex-direction: column;
+        margin-bottom: 20px;
     }
     .presentation-text {
-        position: absolute;
-        bottom: 1%;
-        max-height: fit-content;
-        
+        position: relative;
+        min-width: 100%;
+        height: fit-content;
+        object-fit: contain;
+        transition: transform 0.5s ease-in-out;
+        margin-bottom: 20px;
     }
     .presentation-text p {
         font-size: .6rem;
     }
-    .chef-presentation {
-        min-width: 100%;
-        height: fit-content;
-        object-fit: cover;
-        transition: transform 0.5s ease-in-out;
-        
+    .chef-presentation img {
+        width: 100%;
+        height: 300px;
+        object-position: top;
     }
+
     
     .info-subsection {
         flex: 0 0 19%; 
@@ -1441,17 +1425,21 @@ nav ul a {
       #img-animatie{
         height: 120px;
       }
-      .wrap-container-afisare-produse-aleatorii{
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-      }
       .container-afisare-produse-aleatorii{
         width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .container-afisare-produse-aleatorii{
+        .product img{
+            min-width: 100%;
+            object-fit: cover;
+        }
       }
       .container-2-ads{
         width: 100%;
+        min-height: 25vh;
+        margin-bottom: 20px;
       }
     }
 
