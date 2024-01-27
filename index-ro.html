@@ -154,8 +154,7 @@
     
                         programLink.addEventListener("click", function (event) {
                             event.preventDefault();
-    
-                           
+
                             if (menuContainer.style.display === "none" || menuContainer.style.display === "") {
                                 menuContainer.style.display = "block";
                             } else {
@@ -630,18 +629,61 @@
       <div id="history-container">
         
     </div>
-    <h1>Bine ati venit! L`Authentik</h1>
+    <h1>Restaurant L`Authentik</h1>
+    <div class="mesaj-intampintare">
+        <p>Bine ati venit!</p>
+        <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const paragraf = document.querySelector('.mesaj-intampintare p');
+    const text = paragraf.textContent.trim();
+    paragraf.textContent = '';
+    for (let litera of text) {
+        const literaSpan = document.createElement('span');
+        literaSpan.textContent = litera;
+        paragraf.appendChild(literaSpan);
+    }
 
+    let delay = 0.1; 
+    paragraf.querySelectorAll('span').forEach(function(literaSpan) {
+        literaSpan.style.animationDelay = `${delay}s`;
+        delay += 0.1;
+    });
+    paragraf.style.opacity = '1';
+});
+
+        </script>
+    </div>
+    
     <div class="wrap-container-1-ads">
       <div class="container-1-ads">
         <div class="slider-imagini">
             <div class="imagine activa">
                 <div class="wrap-descriere-1">
                     <div class="descriere">
-                        <img src="img/site.png" alt="Telefon mobil">
-                        <h2>Comandă direct din interiorul restaurantului!</h2>
-                        <p>La L'Authentik, vă oferim posibilitatea de a comanda rapid și ușor direct de pe telefonul mobil!</p>
-                        <a href="menu.html" class="buton-comanda">Descoperă meniul</a>
+                        <div class="reclama-favorite">
+                            <div class="img-container">
+                                <img src="img/site-1.png" alt="Telefon mobil" id="img-animatie">
+                            </div>
+                            <div class="text-container" id="text-animatie">
+                                <p>Restaurantul nostru se gândește exclusiv la confortul dumneavoastră.</p>
+                                <p>Descoperă Favoritele <i class="fa-solid fa-heart"></i> </p>
+                                <p>Creează-ți lista de favorite, apăsând butonul <i class="fa-solid fa-heart"></i> găsit în meniul nostru.</p>
+                                <p>Fă comanda când ajungi la noi.</p>
+                                <p>Vă mulțumim!</p>
+                                <p>Echipa L'Authentik</p>
+                                <a href="menu.html" class="buton-comanda" id="buton-animatie">Descoperă meniul</a>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        setTimeout(function() {
+                                            document.getElementById("img-animatie").style.opacity = "1";
+                                            document.getElementById("text-animatie").style.opacity = "1";
+                                        }, 1000);
+                                    });
+                                </script>
+                            </div>
+                            
+                        </div>
+                        
                     </div>
                 </div>
             </div>

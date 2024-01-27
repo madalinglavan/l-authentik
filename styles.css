@@ -629,7 +629,7 @@ nav ul a {
         background-color: #00000097;
         display: flex;
         position: relative;
-        justify-content: space-between;
+        justify-content: center;
 
     }
       .container-1-ads {
@@ -637,11 +637,10 @@ nav ul a {
         height: max-content;
         position: relative;
         overflow: hidden;
-        margin-top: 20px;
         display: flex;
         flex-direction: column;
         text-align: center;
-        justify-content: start;
+        justify-content: center;
     }
     .container-1-ads h2{
         position: relative;
@@ -752,7 +751,7 @@ nav ul a {
         position: relative;
     }
     .wrap-description-1{
-        min-width: 100%;
+   
 
     }
     .wrap-description-2{
@@ -775,15 +774,25 @@ nav ul a {
     }
 
     .container-2-ads {
-        max-width: 800px;
+        min-width: 95%;
         position: relative;
         margin-left: 50%;
         transform: translate(-50%);
-        max-height: 30vh;
         border-radius: 8px;
         overflow: hidden;
+        max-height: 30vh;
         
     }
+    .presentation-text {
+        position: absolute;
+        width: 80%;
+        bottom: 20%;
+        max-height: 60%;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.356);
+        border-radius: 10px;
+    }
+    
     
     .image-slider {
         display: flex;
@@ -1475,22 +1484,6 @@ nav ul a {
     .container-afisare-produse-aleatorii {
 
     }
-}
-.container-2-ads {
-    min-width: 95%;
-    position: relative;
-    margin-left: 50%;
-    transform: translate(-50%);
-    
-}
-.presentation-text {
-    position: absolute;
-    width: 80%;
-    bottom: 20%;
-    max-height: 60%;
-    overflow-y: auto;
-    background-color: rgba(0, 0, 0, 0.356);
-    border-radius: 10px;
 }
 
 
