@@ -788,16 +788,42 @@
                 🌟 <strong>Descoperă Aromele Unice cu Chef Nastasache Constantin!</strong> 🌟<br><br>
                 Ai întâlnit vreodată un chef dedicat pasiunii sale culinare, care a transformat bucătăria într-un adevărat laborator al gustului? Prezentăm cu mândrie Chef Nastasache Constantin, un maestru în arta gastronomiei care și-a dedicat întreaga viață universului fascinant al preparatelor culinare.<br><br>
             </p>  
-                <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum !</i></a></li>
-                <p> 
-               
-                Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
-            </p>
+            <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum !</i></a></li>
             <div class="about-us-button">
-                <a href="aboutus.html">Despre Noi</a>
+                <button onclick="openModal()">Despre Noi</button>
             </div>      
         </div>
-    </div> 
+    </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p> 
+                Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
+            </p>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Închide div-ul modal atunci când utilizatorul apasă în afara acestuia
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+    </script>
+        
 </div>
 <div class="wrap-container-afisare-produse-aleatorii">
 
