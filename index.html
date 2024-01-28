@@ -945,118 +945,55 @@ function openModal() {
             </div>
         </div>
 </div>
-<!-- Adăugarea galeriei -->
 <div class="galerie">
     <h1>Galerie</h1>
     <video autoplay loop src="video/video-background.mp4"></video>
-    <div class="over-video-buttons">
-        <button onclick="openPhotoGallery()">Galerie Foto</button>
-        <button onclick="openVideoGallery()">Galerie Video</button>
+    <div class="galerie-butoane">
+        <button onclick="togglePhotoGallery()">Galerie Foto</button>
+        <button onclick="toggleVideoGallery()">Galerie Video</button>
     </div>
-</div>
-
-<!-- Div pentru Galeria Foto -->
-<!-- Div pentru Galeria Foto -->
-<div id="photoModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePhotoModal()">&times;</span>
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="img/vin.jpg" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="img/background l-authentik.jpg" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="img/Highlight copy.png" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="img/ingredients.png" style="width:100%">
-            </div>
-            <div class="mySlides fade">
-                <img src="img5.jpg" style="width:100%">
-            </div>
-            <!-- Buton pentru navigarea la imaginea următoare -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="galerie-continut">
+        <div id="photoGallery" class="gallery-content">
+            <!-- Galerie Foto -->
+            <img src="img/vin.jpg" alt="Vin">
+            <img src="img/background l-authentik.jpg" alt="Background">
+            <img src="img/Highlight copy.png" alt="Highlight">
+            <img src="img/ingredients.png" alt="Ingredients">
+            <img src="img5.jpg" alt="Image 5">
+        </div>
+        <div id="videoGallery" class="gallery-content" style="display: none;">
+            <!-- Galerie Video -->
+            <video width="100%" controls>
+                <source src="video/sample-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>
-
-
-<!-- Div pentru Galeria Video -->
-<!-- Div pentru Galeria Video -->
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeVideoModal()">&times;</span>
-        <!-- Conținutul galeriei video -->
-        <video width="100%" controls>
-            <source src="video/sample-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</div>
-
-
-<script>
-    // Funcția pentru deschiderea galeriei foto
-    function openPhotoGallery() {
-        var photoModal = document.getElementById("photoModal");
-        photoModal.style.display = "block";
-        scrollToModal(photoModal);
-    }
-
-    // Funcția pentru închiderea galeriei foto
-    function closePhotoModal() {
-        var photoModal = document.getElementById("photoModal");
-        photoModal.style.display = "none";
-    }
-
-    // Funcția pentru deschiderea galeriei video
-    function openVideoGallery() {
-        var videoModal = document.getElementById("videoModal");
-        videoModal.style.display = "block";
-        scrollToModal(videoModal);
-    }
-
-    // Funcția pentru închiderea galeriei video
-    function closeVideoModal() {
-        var videoModal = document.getElementById("videoModal");
-        videoModal.style.display = "none";
-    }
-
-    // Funcția pentru a scrola la pop-up
-    function scrollToModal(modal) {
-        modal.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Funcția pentru navigarea slide-urilor
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) {
-            slideIndex = 1;
+    <script>// Funcția pentru deschiderea și închiderea galeriei foto
+        function togglePhotoGallery() {
+            var photoGallery = document.getElementById("photoGallery");
+            if (photoGallery.style.display === "block") {
+                photoGallery.style.display = "none";
+            } else {
+                photoGallery.style.display = "block";
+                document.getElementById("videoGallery").style.display = "none"; // Închide galeria video dacă este deschisă
+            }
         }
-        if (n < 1) {
-            slideIndex = slides.length;
+        
+        // Funcția pentru deschiderea și închiderea galeriei video
+        function toggleVideoGallery() {
+            var videoGallery = document.getElementById("videoGallery");
+            if (videoGallery.style.display === "block") {
+                videoGallery.style.display = "none";
+            } else {
+                videoGallery.style.display = "block";
+                document.getElementById("photoGallery").style.display = "none"; // Închide galeria foto dacă este deschisă
+            }
         }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-    }
-</script>
+        
+    </script>
+
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>
         <div id="evenimente-l-authentik" class="evenimente-container">
