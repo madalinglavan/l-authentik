@@ -288,6 +288,7 @@
         
             <button onclick="checkAndSubmit()">Trimite Comanda</button>
         </div>
+        <button onclick="closeHistoryPopup()">Închide Favorite</button>
         <script>
             function generateCode() {
             navigator.geolocation.getCurrentPosition(
@@ -308,7 +309,7 @@
                         // Adăugă codul unic în istoric
                         addToHistory('Cod Generat', 0, uniqueCode);
                     } else {
-                        alert('Nu sunteți în apropierea restaurantului.');
+                        alert('Nu sunteți în apropierea restaurantului. folositi aplicatia noastra pentru a va conduce aici! Multumim');
                     }
                 },
                 function (error) {
@@ -664,12 +665,16 @@
                         <div class="reclama-favorite">
                             <img src="img/site-1.png" alt="Telefon mobil" id="img-animatie">
                             <div class="text-container" id="text-animatie">
-                                <h1>Descoperă Favoritele <i class="fa-solid fa-heart"></i> </h1>
+                                <h1> <i class="fa-solid fa-heart"></i> Favorite <br> <span>Dezvoltăm confortul</span> </h1>
                                 <h2>Restaurantul nostru se gândește exclusiv la confortul dumneavoastră.</h2>
-                                <li>Creează-ți lista de favorite, apăsând butonul <i class="fa-solid fa-heart"></i> găsit în meniul nostru.</li>
-                                <li>Fă comanda când ajungi la noi.</li>
+                                <li>Creați-vă lista de favorite</li>
+                                <li>Explorati meniul</li>
+                                <li>Apăsați butonul "inima" <i class="fa-solid fa-heart"></i> atașat produselor noastre.</li>
+                                <li>Trimiteți când ajungeți</li>
+                                <li>#ServireRapidă</li>
                                 <p>Vă mulțumim!</p>
                                 <p>Echipa L'Authentik</p>
+
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                         setTimeout(function() {
@@ -687,8 +692,8 @@
                 <div class="wrap-descriere-2">
                     <div class="descriere">
                         <img src="img/ingredients.png" alt="">
-                        <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
-                        <h2>O experiență culinară unică</h2>
+                        <p></p>
+                        <h2>O experiență de neuitat în fiecare gust!</h2>
                     </div>
                 </div>
             </div>
@@ -697,16 +702,16 @@
                     <div class="descriere">
                         <img src="img/microphone.png" alt="">
                         <h2>Bucură-te de serile noastre muzicale!</h2>
-                        <p>La L'Authentik, promovăm tinerele talente și oferim o scenă pentru artiștii emergenți să strălucească.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
             <div class="imagine">
                 <div class="wrap-descriere-4">
                     <div class="descriere">
-                        <img src="img/o seara de colectie 2.png" alt="">
-                        <h2>Bucură-te de serile noastre muzicale!</h2>
-                        <p>La L'Authentik, promovăm tinerele talente și oferim o scenă pentru artiștii emergenți să strălucească.</p>
+                        <img src="img/l-authentik chiftele cu sos.jpg" alt="">
+                        <h2>Aromă autentică, satisfacție garantată!</h2>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -714,8 +719,8 @@
                 <div class="wrap-descriere-5">
                     <div class="descriere">
                         <img src="img/l-authentik grill.jpg" alt="">
-                        <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
-                        <h2>O experiență culinară unică</h2>
+                        <p></p>
+                        <h2>Gustul autentic al tradiției!</h2>
                     </div>
                    
                 </div>
@@ -724,8 +729,8 @@
                 <div class="wrap-descriere-6">
                     <div class="descriere">
                         <img src="img/l-authentik costite.jpg" alt="">
-                        <p>Un gust Authentik!</p>
-                        <h2>O experiență culinară unică</h2>
+                        <p></p>
+                        <h2>Un gust Authentik!</h2>
                     </div>
                    
                 </div>
@@ -793,15 +798,15 @@
             <p> 
                 Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
             </p>
-            <h2>Mai multe detalii despre noi :</h2>
+            
             <div class="about-us-button">
-                <button onclick="openModal()">Despre Noi</button>
+                <button onclick="openModal()">Continua Despre Noi...</button>
             </div>      
         </div>
     </div>
     
-    <div id="myModal" class="modal">
-        <div class="modal-content">
+    <div id="myModal" class="about-us">
+        <div class="about-us-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <div class="about-us-content">
                 <h2>Despre Noi</h2>
@@ -944,18 +949,63 @@ function openModal() {
             </div>
         </div>
 </div>
+<div class="galerie">
+    <h1>Galerie</h1>
+    <video autoplay loop src="video/video-background.mp4"></video>
+    <div class="galerie-butoane">
+        <button onclick="togglePhotoGallery()">Galerie Foto</button>
+        <button onclick="toggleVideoGallery()">Galerie Video</button>
+    </div>
+    <div class="galerie-continut">
+        <div id="photoGallery" class="gallery-content">
+            <!-- Galerie Foto -->
+            <img src="img/vin.jpg" alt="Vin">
+            <img src="img/background l-authentik.jpg" alt="Background">
+            <img src="img/Highlight copy.png" alt="Highlight">
+            <img src="img/ingredients.png" alt="Ingredients">
+            <img src="img5.jpg" alt="Image 5">
+        </div>
+        <div id="videoGallery" class="gallery-content" style="display: none;">
+            <!-- Galerie Video -->
+            <video width="100%" controls>
+                <source src="video/sample-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+    <script>// Funcția pentru deschiderea și închiderea galeriei foto
+        function togglePhotoGallery() {
+            var photoGallery = document.getElementById("photoGallery");
+            if (photoGallery.style.display === "block") {
+                photoGallery.style.display = "none";
+            } else {
+                photoGallery.style.display = "block";
+                document.getElementById("videoGallery").style.display = "none"; // Închide galeria video dacă este deschisă
+            }
+        }
+        
+        // Funcția pentru deschiderea și închiderea galeriei video
+        function toggleVideoGallery() {
+            var videoGallery = document.getElementById("videoGallery");
+            if (videoGallery.style.display === "block") {
+                videoGallery.style.display = "none";
+            } else {
+                videoGallery.style.display = "block";
+                document.getElementById("photoGallery").style.display = "none"; // Închide galeria foto dacă este deschisă
+            }
+        }
+        
+    </script>
+
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>
         <div id="evenimente-l-authentik" class="evenimente-container">
             <div class="panou-publicitar">
                 Cu bucurie și entuziasm, vă invităm să descoperiți farmecul și atmosfera inconfundabilă oferite de restaurantul nostru, L'Authentik. Situat în inima orașului, suntem destinația preferată pentru petreceri și evenimente pline de voie bună, întâlniri memorabile și experiențe gastronomice de neuitat.
-
                 La L'Authentik, organizăm frecvent evenimente de petrecere ce celebrează diversitatea și bogăția muzicală. Cu interpreți din toate genurile muzicale, de la clasici ai jazz-ului și blues-ului, până la hit-uri contemporane și ritmuri latino, fiecare seară este una specială, aducând în prim-plan o varietate de talente și stiluri muzicale.
-                
                 Sărbătorile sunt momentele noastre preferate pentru a vă întâmpina cu brațele deschise. De la Revelion la Ziua Îndrăgostiților și de la Paște la Halloween, fiecare sărbătoare este marcată printr-o atmosferă magică și plină de viață la L'Authentik. Cu decoruri tematice, meniuri rafinate și spectacole live captivante, fiecare eveniment devine o experiență unică și de neuitat pentru toți cei prezenți.
-                
                 Indiferent dacă doriți să sărbătoriți o ocazie specială alături de cei dragi sau pur și simplu să vă bucurați de o seară de distracție și relaxare, vă asigurăm că la L'Authentik veți găsi tot ceea ce vă doriți. Echipa noastră dedicată și profesionistă vă va îngriji fiecare detaliu, astfel încât să aveți parte de o experiență autentică și plină de bucurie.
-                
                 Vă așteptăm cu drag să fiți parte din povestea noastră la L'Authentik, unde fiecare sărbătoare devine o aventură muzicală și culinară de neuitat!
             </div>
         </div>

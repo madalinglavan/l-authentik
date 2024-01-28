@@ -625,7 +625,7 @@ nav ul a {
 
       .wrap-container-1-ads{
         width: 100%;
-        height: 450px;
+        height: 500px;
         background-color: #00000097;
         display: flex;
         position: relative;
@@ -1174,12 +1174,28 @@ nav ul a {
         transition: opacity 0.8s ease-in-out 2s;
 
     }
+    .text-container h1{
+        color: red;
+    }
+    .text-container h1 span{
+        color: rgb(255, 213, 0);
+        font-size: 1rem;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .text-container h2{
+        color: wheat;
+    }
     
     #text-animatie p {
-        margin-bottom: 10px;
+        
     }
     #text-animatie li {
         color: #fff;
+        text-align: start;
+        width: 80%;
+        margin-left: 50%;
+        transform: translate(-50%);
+       
     }
     
     .buton-comanda {
