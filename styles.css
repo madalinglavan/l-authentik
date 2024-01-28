@@ -530,6 +530,9 @@ nav ul a {
         padding: 20px;
         border-radius: 10px;
     }
+    .presentation-text h2{
+        color:yellow;
+    }
     .presentation-text p {
         font-size: 1rem;
         line-height: 1.2;
@@ -781,15 +784,7 @@ nav ul a {
         height: auto;
         background-color: rgba(255, 0, 0, 0.56);
     }
-    .presentation-text {
-        position: absolute;
-        width: 80%;
-        bottom: 20%;
-        max-height: 60%;
-        overflow-y: auto;
-        background-color: rgba(0, 0, 0, 0.356);
-        border-radius: 10px;
-    }
+    
     
     
     .image-slider {
@@ -1202,7 +1197,7 @@ nav ul a {
     
 
 /* Stiluri pentru div-ul modal */
-.modal {
+.about-us {
     display: none;
     position: fixed;
     z-index: 9999;
@@ -1215,7 +1210,7 @@ nav ul a {
 }
 
 /* Stiluri pentru conținutul din div-ul modal */
-.modal-content {
+.about-us-content {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
@@ -1501,6 +1496,14 @@ nav ul a {
         min-height: 25vh;
         margin-bottom: 20px;
       }
+      .about-us-content img{
+        width: 50%;
+        height: 200px;
+        margin-left: 50%;
+        transform: translate(-50%);
+    }
+    
+    
     }
 
 

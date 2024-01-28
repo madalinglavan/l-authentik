@@ -288,6 +288,7 @@
         
             <button onclick="checkAndSubmit()">Trimite Comanda</button>
         </div>
+        <button onclick="closeHistoryPopup()">Închide Favorite</button>
         <script>
             function generateCode() {
             navigator.geolocation.getCurrentPosition(
@@ -793,15 +794,15 @@
             <p> 
                 Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
             </p>
-            <h2>Mai multe detalii despre noi :</h2>
+            
             <div class="about-us-button">
-                <button onclick="openModal()">Despre Noi</button>
+                <button onclick="openModal()">Continua Despre Noi...</button>
             </div>      
         </div>
     </div>
     
-    <div id="myModal" class="modal">
-        <div class="modal-content">
+    <div id="myModal" class="about-us">
+        <div class="about-us-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <div class="about-us-content">
                 <h2>Despre Noi</h2>
@@ -817,6 +818,7 @@
                 <p>Vă mulțumim că ați ales să faceți parte din povestea noastră. La L'Authentik, fiecare oaspete este considerat parte din familia noastră și suntem aici să vă întâmpinăm cu căldură și ospitalitate în fiecare vizită.</p>
     
                 <p>Vă așteptăm cu drag să vă bucurați de bucatele noastre delicioase și de atmosfera noastră primitoare!</p>
+                <span class="close" onclick="closeModal()">&times;</span>
             </div>
         </div>
     </div>
