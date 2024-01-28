@@ -788,7 +788,12 @@
                 🌟 <strong>Descoperă Aromele Unice cu Chef Nastasache Constantin!</strong> 🌟<br><br>
                 Ai întâlnit vreodată un chef dedicat pasiunii sale culinare, care a transformat bucătăria într-un adevărat laborator al gustului? Prezentăm cu mândrie Chef Nastasache Constantin, un maestru în arta gastronomiei care și-a dedicat întreaga viață universului fascinant al preparatelor culinare.<br><br>
             </p>  
+            
             <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum !</i></a></li>
+            <p> 
+                Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
+            </p>
+            <h2>Mai multe detalii despre noi :</h2>
             <div class="about-us-button">
                 <button onclick="openModal()">Despre Noi</button>
             </div>      
@@ -798,11 +803,24 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <p> 
-                Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
-            </p>
+            <div class="about-us-content">
+                <h2>Despre Noi</h2>
+                <img src="img/l-authentik si petreaca.jpg" alt="">
+                <h1>Suntem bucurosi ca va aflati aici!</h1>
+                
+                <p>Cu o istorie bogată și o tradiție de excelență, ne străduim să aducem mereu inovație în fiecare aspect al serviciului nostru. De la selecția atentă a ingredientelor proaspete până la prezentarea impecabilă a fiecărui preparat, fiecare detaliu este atent gestionat pentru a vă oferi o experiență gastronomică autentică și rafinată.</p>
+    
+                <p>Echipa noastră de bucătari și ospătari este pasionată de ceea ce fac, iar acest entuziasm se reflectă în fiecare farfurie pe care o servim. Suntem mândri să aducem în fața dvs. un meniu diversificat, inspirat din cele mai bune tradiții culinare și adaptat gusturilor și preferințelor contemporane.</p>
+    
+                <p>Nu suntem doar un restaurant - suntem gazdele dvs. pentru cele mai speciale momente din viață. De la întâlniri romantice și petreceri de familie la evenimente corporate și serbări festive, suntem aici pentru a vă oferi o experiență memorabilă și de neuitat.</p>
+    
+                <p>Vă mulțumim că ați ales să faceți parte din povestea noastră. La L'Authentik, fiecare oaspete este considerat parte din familia noastră și suntem aici să vă întâmpinăm cu căldură și ospitalitate în fiecare vizită.</p>
+    
+                <p>Vă așteptăm cu drag să vă bucurați de bucatele noastre delicioase și de atmosfera noastră primitoare!</p>
+            </div>
         </div>
     </div>
+    
     <script>
         function openModal() {
     var modal = document.getElementById("myModal");
@@ -820,6 +838,13 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    
+    // Scrollare până la începutul div-ului modal
+    modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
     </script>

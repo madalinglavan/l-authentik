@@ -1217,11 +1217,13 @@ nav ul a {
 /* Stiluri pentru conținutul din div-ul modal */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
+    border-radius: 8px;
+    position: relative;
 }
 
 /* Stiluri pentru butonul de închidere a div-ului modal */
@@ -1239,6 +1241,27 @@ nav ul a {
     cursor: pointer;
 }
 
+/* Stiluri pentru conținutul specific despre noi */
+.about-us-content {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.about-us-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-us-content p {
+    margin-bottom: 15px;
+}
+.about-us-content img{
+    width: 50%;
+    height: 50vh;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
 
 
 
