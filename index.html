@@ -665,15 +665,15 @@
                         <div class="reclama-favorite">
                             <img src="img/site-1.png" alt="Telefon mobil" id="img-animatie">
                             <div class="text-container" id="text-animatie">
-                                <h1> <i class="fa-solid fa-heart"></i> Favorite <br> <span>Dezvoltăm confortul</span> </h1>
-                                <h2>Restaurantul nostru se gândește exclusiv la confortul dumneavoastră.</h2>
-                                <li>Creați-vă lista de favorite</li>
-                                <li>Explorati meniul</li>
-                                <li>Apăsați butonul "inima" <i class="fa-solid fa-heart"></i> atașat produselor noastre.</li>
-                                <li>Trimiteți când ajungeți</li>
+                                <h1> <i class="fa-solid fa-heart"></i> Preferate <br> <span>Confortul nostru, prioritatea dumneavoastră</span> </h1>
+                                <h2>Restaurantul nostru este dedicat oferirii confortului maxim pentru clienții noștri.</h2>
+                                <li>Creează-ți lista de preferate</li>
+                                <li>Apasă butonul "inimă" <i class="fa-solid fa-heart"></i> atașat produselor noastre.</li>
+                                <li>Trimite comanda în timp real</li>
                                 <li>#ServireRapidă</li>
-                                <p>Vă mulțumim!</p>
+                                <p>Vă mulțumim pentru alegerea făcută!</p>
                                 <p>Echipa L'Authentik</p>
+                                
 
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function() {
@@ -800,62 +800,41 @@
             </p>
             
             <div class="about-us-button">
-                <button onclick="openModal()">Continua Despre Noi...</button>
-            </div>      
-        </div>
-    </div>
-    
-    <div id="myModal" class="about-us">
-        <div class="about-us-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="about-us-content">
-                <h2>Despre Noi</h2>
-                <img src="img/l-authentik si petreaca.jpg" alt="">
-                <h1>Suntem bucurosi ca va aflati aici!</h1>
-                
-                <p>Cu o istorie bogată și o tradiție de excelență, ne străduim să aducem mereu inovație în fiecare aspect al serviciului nostru. De la selecția atentă a ingredientelor proaspete până la prezentarea impecabilă a fiecărui preparat, fiecare detaliu este atent gestionat pentru a vă oferi o experiență gastronomică autentică și rafinată.</p>
-    
-                <p>Echipa noastră de bucătari și ospătari este pasionată de ceea ce fac, iar acest entuziasm se reflectă în fiecare farfurie pe care o servim. Suntem mândri să aducem în fața dvs. un meniu diversificat, inspirat din cele mai bune tradiții culinare și adaptat gusturilor și preferințelor contemporane.</p>
-    
-                <p>Nu suntem doar un restaurant - suntem gazdele dvs. pentru cele mai speciale momente din viață. De la întâlniri romantice și petreceri de familie la evenimente corporate și serbări festive, suntem aici pentru a vă oferi o experiență memorabilă și de neuitat.</p>
-    
-                <p>Vă mulțumim că ați ales să faceți parte din povestea noastră. La L'Authentik, fiecare oaspete este considerat parte din familia noastră și suntem aici să vă întâmpinăm cu căldură și ospitalitate în fiecare vizită.</p>
-    
-                <p>Vă așteptăm cu drag să vă bucurați de bucatele noastre delicioase și de atmosfera noastră primitoare!</p>
-                <span class="close" onclick="closeModal()">&times;</span>
+                <button onclick="toggleAboutUs()">Continua Despre Noi...</button>
             </div>
+        </div>
+        <div class="about-us-container" style="display: none;">
+            <h2>Despre Noi</h2>
+            <img src="img/l-authentik si petreaca.jpg" alt="">
+            <h1>Suntem bucuroși că vă aflați aici!</h1>
+            
+            <p>Cu o istorie bogată și o tradiție de excelență, ne străduim să aducem mereu inovație în fiecare aspect al serviciului nostru. De la selecția atentă a ingredientelor proaspete până la prezentarea impecabilă a fiecărui preparat, fiecare detaliu este atent gestionat pentru a vă oferi o experiență gastronomică autentică și rafinată.</p>
+    
+            <p>Echipa noastră de bucătari și ospătari este pasionată de ceea ce fac, iar acest entuziasm se reflectă în fiecare farfurie pe care o servim. Suntem mândri să aducem în fața dvs. un meniu diversificat, inspirat din cele mai bune tradiții culinare și adaptat gusturilor și preferințelor contemporane.</p>
+    
+            <p>Nu suntem doar un restaurant - suntem gazdele dvs. pentru cele mai speciale momente din viață. De la întâlniri romantice și petreceri de familie la evenimente corporate și serbări festive, suntem aici pentru a vă oferi o experiență memorabilă și de neuitat.</p>
+    
+            <p>Vă mulțumim că ați ales să faceți parte din povestea noastră. La L'Authentik, fiecare oaspete este considerat parte din familia noastră și suntem aici să vă întâmpinăm cu căldură și ospitalitate în fiecare vizită.</p>
+    
+            <p>Vă așteptăm cu drag să vă bucurați de bucatele noastre delicioase și de atmosfera noastră primitoare!</p>
         </div>
     </div>
     
     <script>
-        function openModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-// Închide div-ul modal atunci când utilizatorul apasă în afara acestuia
-window.onclick = function(event) {
-    var modal = document.getElementById("myModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-function openModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
+        function toggleAboutUs() {
+            var aboutUsContainer = document.querySelector(".about-us-container");
+            var computedStyle = window.getComputedStyle(aboutUsContainer);
+            var displayStyle = computedStyle.getPropertyValue("display");
     
-    // Scrollare până la începutul div-ului modal
-    modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
+            if (displayStyle === "block") {
+                aboutUsContainer.style.display = "none";
+            } else {
+                aboutUsContainer.style.display = "block";
+            }
+        }
     </script>
-        
-</div>
+    
+    
 <div class="wrap-container-afisare-produse-aleatorii">
 
     <div class="container-afisare-produse-aleatorii"></div>
@@ -998,18 +977,7 @@ function openModal() {
         
     </script>
 
-    <div class="wrap-evenimente-afisare-produse">
-        <h2>Evenimente Speciale</h2>
-        <div id="evenimente-l-authentik" class="evenimente-container">
-            <div class="panou-publicitar">
-                Cu bucurie și entuziasm, vă invităm să descoperiți farmecul și atmosfera inconfundabilă oferite de restaurantul nostru, L'Authentik. Situat în inima orașului, suntem destinația preferată pentru petreceri și evenimente pline de voie bună, întâlniri memorabile și experiențe gastronomice de neuitat.
-                La L'Authentik, organizăm frecvent evenimente de petrecere ce celebrează diversitatea și bogăția muzicală. Cu interpreți din toate genurile muzicale, de la clasici ai jazz-ului și blues-ului, până la hit-uri contemporane și ritmuri latino, fiecare seară este una specială, aducând în prim-plan o varietate de talente și stiluri muzicale.
-                Sărbătorile sunt momentele noastre preferate pentru a vă întâmpina cu brațele deschise. De la Revelion la Ziua Îndrăgostiților și de la Paște la Halloween, fiecare sărbătoare este marcată printr-o atmosferă magică și plină de viață la L'Authentik. Cu decoruri tematice, meniuri rafinate și spectacole live captivante, fiecare eveniment devine o experiență unică și de neuitat pentru toți cei prezenți.
-                Indiferent dacă doriți să sărbătoriți o ocazie specială alături de cei dragi sau pur și simplu să vă bucurați de o seară de distracție și relaxare, vă asigurăm că la L'Authentik veți găsi tot ceea ce vă doriți. Echipa noastră dedicată și profesionistă vă va îngriji fiecare detaliu, astfel încât să aveți parte de o experiență autentică și plină de bucurie.
-                Vă așteptăm cu drag să fiți parte din povestea noastră la L'Authentik, unde fiecare sărbătoare devine o aventură muzicală și culinară de neuitat!
-            </div>
-        </div>
-</div>
+   
     <div id="google-reviews">
         <h3>Recenzii Google</h3>
         <div id="reviews-container"></div>
