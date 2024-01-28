@@ -50,17 +50,10 @@
                 <div class="socialnetwork">
                     <li><a href="https://www.facebook.com/RestaurantLauthentik/about?locale=fr_FR"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>facebook</p></a></li>
                     <li><a href="https://www.tiktok.com/@restaurantauthentik?lang=ro-RO"><i class="fa-brands fa-tiktok" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>tik-tok</p></a></li>
-                    <div class="mail-adress">
-                        <i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon" onclick="openContactPage()"></i>
-                        <a href="contact.html"><h3>e-mail</h3></a>
-                        <script>
-                            var mailIcon = document.getElementById('mail-icon');
-                            mailIcon.addEventListener('click', openContactPage);
-                            function openContactPage() {
-                                window.location.href = 'contact.html';
-                            }
-                        </script>
+                    <div class="mail-address">
+                        <a href="#" onclick="toggleContactForm()"><i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon"></i><h3>E-mail</h3></a>
                     </div>
+                    
                     <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
                 </div>
             </div>
@@ -69,61 +62,10 @@
             <a href="index.html">
                 <div class="logo"></div>
             </a>
-            <div class="nav-big-screens">
-                <ul>
-                    <li><a href="index-ro.html">Acasă</a></li>
-                    <li><a href="despre-noi.html">Despre Noi</a></li>
-                    <li><a href="galerie.html">Galerie Foto</a></li>
-                    <li><a href="aboutus.html">Despre noi</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-                <div class="burger-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
-                <script>
-                    function toggleMenu() {
-                        var navMenu = document.getElementById('navMenu');
-                        if (navMenu.style.display === 'none' || navMenu.style.display === '') {
-                            navMenu.style.display = 'block';
-                            slideRight(navMenu);
-                        } else {
-                            slideLeft(navMenu);
-                        }
-                    }
-                    function slideRight(element) {
-                        var position = -100;
-                        var interval = setInterval(function () {
-                            if (position >= 0) {
-                                clearInterval(interval);
-                            } else {
-                                position += 5;
-                                element.style.left = position + '%';
-                            }
-                        }, 10);
-                    }
-                    function slideLeft(element) {
-                        var position = 0;
-                        var interval = setInterval(function () {
-                            if (position <= -100) {
-                                element.style.display = 'none';
-                                clearInterval(interval);
-                            } else {
-                                position -= 5;
-                                element.style.left = position + '%';
-                            }
-                        }, 10);
-                    }
-                </script>
         </nav>
 
     </header>
-    <div class="mobile-menu" id="navMenu">
-        <ul>
-            <li><a href="index-ro.html">Acasă</a></li>
-            <li><a href="aboutus.html">Despre Noi</a></li>
-            <li><a href="galerie.html">Galerie Foto</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
+   
     <div class="info-prima-pagina-l-authentik"> 
         <div class="info-section">
             <a href="#" class="info-subsection" id="location-link">
@@ -265,6 +207,45 @@
             <li>10:00 - 02:00</li>
         </ul>
      </div>
+     <div id="contactForm" class="contact-form">
+        <div class="greeting">
+            <p>Salut! Ne bucurăm să te avem aici la L'Authentik Resto-Bar !</p>
+        </div>
+        <form action="send_email.php" method="post">
+            <div class="form-group">
+                <label for="nume">Nume:</label>
+                <input type="text" id="nume" name="nume" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mesaj">Mesaj:</label>
+                <textarea id="mesaj" name="mesaj" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Trimite">
+            </div>
+        </form>
+        <div id="confirmation-message"></div>
+        <div class="encouragement">
+            Avem încredere în creativitatea ta! Așteptăm cu nerăbdare să citim mesajul tău.
+        </div>
+        <script>
+            function toggleContactForm() {
+    var contactForm = document.getElementById('contactForm');
+
+    if (contactForm.style.display === 'block' || getComputedStyle(contactForm).display === 'block') {
+        contactForm.style.display = 'none'; // Ascundem formularul dacă este deja afișat
+    } else {
+        contactForm.style.display = 'block'; // Afișăm formularul dacă este ascuns
+    }
+}
+
+        </script>
+    </div>
+    
      <div id="history-popup" class="history-popup">
         <button onclick="closeHistoryPopup()">Închide Favorite</button>
         <div class="history-popup-content"></div>
@@ -721,8 +702,9 @@
                 <div class="wrap-descriere-5">
                     <div class="descriere">
                         <img src="img/l-authentik grill.jpg" alt="">
-                        <p></p>
+               
                         <h2>Gustul autentic al tradiției!</h2>
+                        <p>Descoperă gustul autentic al tradițiilor românești, o călătorie culinară plină de arome locale și secrete transmise din generație în generație. Bucură-te de gusturi autentice din diverse regiuni, fiecare preparat aducând povestea și bogăția tradițiilor noastre!</p>
                     </div>
                    
                 </div>
@@ -731,8 +713,9 @@
                 <div class="wrap-descriere-6">
                     <div class="descriere">
                         <img src="img/l-authentik costite.jpg" alt="">
-                        <p></p>
+                        
                         <h2>Un gust Authentik!</h2>
+                        <p>În fiecare preparat se ascunde pasiunea și bucuria noastră autentică. La noi, fiecare gust este îmbogățit de dragoste și dedicare, aducându-vă o experiență culinară autentică și memorabilă. Un gust Authentik care încântă simțurile și inima!</p>
                     </div>
                    
                 </div>
