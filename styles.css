@@ -677,6 +677,9 @@ nav ul a {
         position: relative;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .descriere h2 {
@@ -692,7 +695,8 @@ nav ul a {
 
     }
     .descriere img{
-        width: 350px;
+        position: relative;
+        width: 300px;
         height: 250px;
         object-fit:fill;
     }
@@ -1106,8 +1110,7 @@ nav ul a {
         display: flex;
         flex-direction: column;
         width: 90%;
-        margin-left: 50%;
-        transform: translate(-50%);
+
     }
     
     #img-animatie {
@@ -1135,25 +1138,21 @@ nav ul a {
         color: red;
     }
     .text-container h1 span{
-        color: rgb(255, 213, 0);
+        color: rgb(255, 255, 255);
         font-size: 1rem;
         font-family: 'Times New Roman', Times, serif;
     }
     .text-container h2{
-        color: wheat;
+        color: rgb(225, 225, 225);
+    }
+    .text-container h3{
+        color: rgb(255, 230, 0);
     }
     
     #text-animatie p {
         
     }
-    #text-animatie li {
-        color: #ffee00;  
-        position: relative;
-        display:table;
-        text-align: start;
-       
-    }
-    
+
     .buton-comanda {
         display: inline-block;
         padding: 10px 20px;
@@ -1172,7 +1171,11 @@ nav ul a {
 .about-us-container {
     display: none;
     position: relative;
-    width: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    margin-left: 50%;
+    transform: translate(-50%);
     height: fit-content;
     margin-top: 20px;
     padding: 20px;
@@ -1181,7 +1184,11 @@ nav ul a {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.about-us-container .despre-noi-imagine{ 
+    width: 50%;
+    height: 350px;
+    object-fit: fill;
+}
 /* Stiluri pentru butonul de închidere a containerului */
 .about-us-button button {
     background-color: #4CAF50;
