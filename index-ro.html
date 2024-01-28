@@ -363,7 +363,7 @@
         const historyPopupContent = historyPopup.querySelector('.history-popup-content');
     
         if (history.length === 0) {
-            alert('Descoperiți deliciile noastre și adăugați favoritele!');
+            alert('Descoperiți preparatele noastre și adăugați favoritele!');
         } else {
             historyPopupContent.innerHTML = history.map((product, index) => `
                 <div class="history-product">
@@ -422,7 +422,7 @@
                 const historyPopupContent = document.querySelector('.history-popup-content');
                 historyPopupContent.innerHTML = '';
                 document.getElementById('totalAmount').innerText = 0;
-                alert('Va multumim!');
+                alert('Va mai asteptam!');
             }
         
             function checkAndSubmit() {
@@ -655,7 +655,6 @@
 
         </script>
     </div>
-    
     <div class="wrap-container-1-ads">
       <div class="container-1-ads">
         <div class="slider-imagini">
@@ -671,7 +670,6 @@
                                 <li>Fă comanda când ajungi la noi.</li>
                                 <p>Vă mulțumim!</p>
                                 <p>Echipa L'Authentik</p>
-                                
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                         setTimeout(function() {
@@ -692,7 +690,6 @@
                         <p>Ingrediente alese cu grijă pentru gusturi rafinate.</p>
                         <h2>O experiență culinară unică</h2>
                     </div>
-                   
                 </div>
             </div>
             <div class="imagine">
@@ -733,7 +730,6 @@
                    
                 </div>
             </div>
-    
         </div>
             <div class="butoane-slider">
                 <div class="buton-slider" onclick="schimbaImagine(0)"></div>
@@ -751,7 +747,6 @@
                         imagineCurenta = index;
                         actualizeazaSlider();
                     }
-            
                     function actualizeazaSlider() {
                         imagini.style.transform = `translateX(${-imagineCurenta * 100}%)`;
             
@@ -762,7 +757,6 @@
                                 buton.classList.remove('activ');
                             }
                         });
-            
                         const elementeImagini = document.querySelectorAll('.imagine');
                         elementeImagini.forEach((imagine, index) => {
                             if (index === imagineCurenta) {
@@ -772,7 +766,6 @@
                             }
                         });
                     }
-            
                     function urmatoareaImagine() {
                         imagineCurenta = (imagineCurenta + 1) % imagini.children.length;
                         actualizeazaSlider();
@@ -782,14 +775,12 @@
                         imagineCurenta = (imagineCurenta - 1 + imagini.children.length) % imagini.children.length;
                         actualizeazaSlider();
                     }
-            
                     setInterval(() => urmatoareaImagine(), 10000);
                 </script>
             </div>  
         </div>
     </div>
   
-    
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">
@@ -797,45 +788,178 @@
                 🌟 <strong>Descoperă Aromele Unice cu Chef Nastasache Constantin!</strong> 🌟<br><br>
                 Ai întâlnit vreodată un chef dedicat pasiunii sale culinare, care a transformat bucătăria într-un adevărat laborator al gustului? Prezentăm cu mândrie Chef Nastasache Constantin, un maestru în arta gastronomiei care și-a dedicat întreaga viață universului fascinant al preparatelor culinare.<br><br>
             </p>  
-                <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum !</i></a></li>
-                <p> 
-               
+            
+            <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Rezerva Acum !</i></a></li>
+            <p> 
                 Nu rata șansa de a experimenta o călătorie culinară de neuitat cu Chef Nastasache Constantin. Rezervă acum pentru a te bucura de preparatele sale deosebite și de o atmosferă autentică în bucătăria sa.
             </p>
+            <h2>Mai multe detalii despre noi :</h2>
             <div class="about-us-button">
-                <a href="aboutus.html">Despre Noi</a>
+                <button onclick="openModal()">Despre Noi</button>
             </div>      
         </div>
-    </div> 
-</div>
-<div class="aplicatia-noastra">
-    <p>Dragul nostru client,</p>
-    <p>La L'Authentic, ne pasă profund de confortul și bunăstarea ta. De aceea, cu bucurie și grijă, îți oferim oportunitatea să comanzi rapid prin intermediul site-ului nostru!</p>
-    <p>Comandarea este simplă și rapidă. Tot ce trebuie să faci este să accesezi site-ul nostru și să selectezi preparatele preferate din meniul nostru delicios. Apoi, doar câteva click-uri și comanda ta este înregistrată.</p>
-    <p>Este important de menționat că aplicația noastră este funcțională doar în zona localului nostru.</p>
-    <p>Ne dorim ca experiența ta să fie una plăcută și fără stres, așa că te îndrumăm ferm să profiți de această oportunitate convenabilă. Fii sigur că suntem aici pentru tine, gata să-ți oferim cele mai bune servicii și să te întâmpinăm cu mâncare proaspătă și savuroasă.</p>
-    <p>Îți mulțumim că ești alături de noi și că ne permiți să facem parte din momentele tale speciale.</p>
-    <p>Cu căldură,</p>
-    <p>Echipa L'Authentic</p>
-</div>
+    </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="about-us-content">
+                <h2>Despre Noi</h2>
+                <img src="img/l-authentik si petreaca.jpg" alt="">
+                <h1>Suntem bucurosi ca va aflati aici!</h1>
+                
+                <p>Cu o istorie bogată și o tradiție de excelență, ne străduim să aducem mereu inovație în fiecare aspect al serviciului nostru. De la selecția atentă a ingredientelor proaspete până la prezentarea impecabilă a fiecărui preparat, fiecare detaliu este atent gestionat pentru a vă oferi o experiență gastronomică autentică și rafinată.</p>
+    
+                <p>Echipa noastră de bucătari și ospătari este pasionată de ceea ce fac, iar acest entuziasm se reflectă în fiecare farfurie pe care o servim. Suntem mândri să aducem în fața dvs. un meniu diversificat, inspirat din cele mai bune tradiții culinare și adaptat gusturilor și preferințelor contemporane.</p>
+    
+                <p>Nu suntem doar un restaurant - suntem gazdele dvs. pentru cele mai speciale momente din viață. De la întâlniri romantice și petreceri de familie la evenimente corporate și serbări festive, suntem aici pentru a vă oferi o experiență memorabilă și de neuitat.</p>
+    
+                <p>Vă mulțumim că ați ales să faceți parte din povestea noastră. La L'Authentik, fiecare oaspete este considerat parte din familia noastră și suntem aici să vă întâmpinăm cu căldură și ospitalitate în fiecare vizită.</p>
+    
+                <p>Vă așteptăm cu drag să vă bucurați de bucatele noastre delicioase și de atmosfera noastră primitoare!</p>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
 
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+
+// Închide div-ul modal atunci când utilizatorul apasă în afara acestuia
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    
+    // Scrollare până la începutul div-ului modal
+    modal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+    </script>
+        
+</div>
+<div class="wrap-container-afisare-produse-aleatorii">
+
+    <div class="container-afisare-produse-aleatorii"></div>
+
+        <script>
+            function showRandomProduct() {
+            const products = document.querySelectorAll('.products-container .product');
+            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
+            randomProductContainer.innerHTML = '';
+            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+            randomProductContainer.appendChild(initialRandomProduct);
+            randomProductContainer.style.display = 'block';
+            setInterval(() => {
+                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
+                randomProductContainer.innerHTML = '';
+                randomProductContainer.appendChild(randomProduct);
+                currentIndex = (currentIndex + 1) % products.length;
+                setTimeout(() => {
+                    randomProductContainer.style.display = 'none';
+                }, 5000);
+            }, 5000); 
+                }
+                document.addEventListener('DOMContentLoaded', () => {
+                    showRandomProduct();
+                });
+        </script>
+        <div class="container-2-ads">
+            <h1></h1>
+            <div class="image-slider">
+                <div class="slide active">
+                    <div class="wrap-description-1">
+                        <div class="text-description">
+                            <h2>Descoperă savoarea autentică</h2>
+                            <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="wrap-description-2">
+                        <div class="text-description">
+                            <h2>Exploră aromele unice</h2>
+                            <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-btns">
+                <div class="slider-btn" onclick="changeSlide2(0)"></div>
+                <div class="slider-btn" onclick="changeSlide2(1)"></div>
+                <script>
+                    let currentSlide = 0;
+                    const slides = document.querySelector('.container-2-ads .image-slider');
+                    const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
+            
+                    function changeSlide(index) {
+                        currentSlide = index;
+                        updateSlider();
+                    }
+                    function updateSlider() {
+                        slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+            
+                        buttons.forEach((button, index) => {
+                            if (index === currentSlide) {
+                                button.classList.add('active');
+                            } else {
+                                button.classList.remove('active');
+                            }
+                        });
+            
+                        const slideElements = document.querySelectorAll('.slide');
+                        slideElements.forEach((slide, index) => {
+                            if (index === currentSlide) {
+                                slide.classList.add('active');
+                            } else {
+                                slide.classList.remove('active');
+                            }
+                        });
+                    }
+            
+                    function nextSlide() {
+                        currentSlide = (currentSlide + 1) % slides.children.length;
+                        updateSlider();
+                    }
+            
+                    function prevSlide() {
+                        currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+                        updateSlider();
+                    }
+                    setInterval(nextSlide, 10000);
+                </script>
+            </div>
+        </div>
+</div>
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>
         <div id="evenimente-l-authentik" class="evenimente-container">
             <div class="panou-publicitar">
-            <p>La L'Authentik, vă oferim un spațiu minunat pentru diverse evenimente speciale:</p>
-            <ul>
-                <li>Botezuri</li>
-                <li>Zile onomastice</li>
-                <li>Petreceri private</li>
-            </ul>
-            <p>Vă invităm să vă alăturați evenimentelor noastre unice și să vă bucurați de momente de neuitat într-o atmosferă autentică.</p>
-            <p>De asemenea, avem plăcerea de a găzdui muzicanți talentați din toate colțurile lumii pentru a vă încânta cu cele mai bune performanțe muzicale.</p>
+                Cu bucurie și entuziasm, vă invităm să descoperiți farmecul și atmosfera inconfundabilă oferite de restaurantul nostru, L'Authentik. Situat în inima orașului, suntem destinația preferată pentru petreceri și evenimente pline de voie bună, întâlniri memorabile și experiențe gastronomice de neuitat.
+
+                La L'Authentik, organizăm frecvent evenimente de petrecere ce celebrează diversitatea și bogăția muzicală. Cu interpreți din toate genurile muzicale, de la clasici ai jazz-ului și blues-ului, până la hit-uri contemporane și ritmuri latino, fiecare seară este una specială, aducând în prim-plan o varietate de talente și stiluri muzicale.
+                
+                Sărbătorile sunt momentele noastre preferate pentru a vă întâmpina cu brațele deschise. De la Revelion la Ziua Îndrăgostiților și de la Paște la Halloween, fiecare sărbătoare este marcată printr-o atmosferă magică și plină de viață la L'Authentik. Cu decoruri tematice, meniuri rafinate și spectacole live captivante, fiecare eveniment devine o experiență unică și de neuitat pentru toți cei prezenți.
+                
+                Indiferent dacă doriți să sărbătoriți o ocazie specială alături de cei dragi sau pur și simplu să vă bucurați de o seară de distracție și relaxare, vă asigurăm că la L'Authentik veți găsi tot ceea ce vă doriți. Echipa noastră dedicată și profesionistă vă va îngriji fiecare detaliu, astfel încât să aveți parte de o experiență autentică și plină de bucurie.
+                
+                Vă așteptăm cu drag să fiți parte din povestea noastră la L'Authentik, unde fiecare sărbătoare devine o aventură muzicală și culinară de neuitat!
             </div>
         </div>
 </div>
-
-
     <div id="google-reviews">
         <h3>Recenzii Google</h3>
         <div id="reviews-container"></div>
@@ -876,113 +1000,13 @@
               .catch(error => console.error('Eroare la obținerea recenziilor:', error));
           </script>
       </div>
-      
-    <div class="container-2-ads">
-        <div class="image-slider">
-            <div class="slide active">
-                <div class="wrap-description-1">
-                    <div class="text-description">
-                        <h2>Descoperă savoarea autentică</h2>
-                        <p>Bucură-te de preparate proaspete și autentice, gătite cu pasiune.</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="slide">
-                <div class="wrap-description-2">
-                    <div class="text-description">
-                        <h2>Exploră aromele unice</h2>
-                        <p>Răsfăță-ți simțurile cu pasiune în fiecare înghițitură.</p>
-                    </div>
-                   
-                </div>
-            </div>
-
-        </div>
-        <div class="slider-btns">
-            <div class="slider-btn" onclick="changeSlide2(0)"></div>
-            <div class="slider-btn" onclick="changeSlide2(1)"></div>
-            <script>
-                let currentSlide = 0;
-                const slides = document.querySelector('.container-2-ads .image-slider');
-                const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
-        
-                function changeSlide(index) {
-                    currentSlide = index;
-                    updateSlider();
-                }
-        
-                function updateSlider() {
-                    slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-        
-                    buttons.forEach((button, index) => {
-                        if (index === currentSlide) {
-                            button.classList.add('active');
-                        } else {
-                            button.classList.remove('active');
-                        }
-                    });
-        
-                    const slideElements = document.querySelectorAll('.slide');
-                    slideElements.forEach((slide, index) => {
-                        if (index === currentSlide) {
-                            slide.classList.add('active');
-                        } else {
-                            slide.classList.remove('active');
-                        }
-                    });
-                }
-        
-                function nextSlide() {
-                    currentSlide = (currentSlide + 1) % slides.children.length;
-                    updateSlider();
-                }
-        
-                function prevSlide() {
-                    currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
-                    updateSlider();
-                }
-        
-                setInterval(nextSlide, 10000);
-            </script>
-    </div>
-       
-    </div>
-           
-<div class="wrap-container-afisare-produse-aleatorii">
-    <div class="container-afisare-produse-aleatorii"></div>
-    <div class="advertising">Restaurant L`Authentik</div>
-        <script>
-            function showRandomProduct() {
-            const products = document.querySelectorAll('.products-container .product');
-            const randomProductContainer = document.querySelector('.container-afisare-produse-aleatorii');
-            randomProductContainer.innerHTML = '';
-            const initialRandomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-            randomProductContainer.appendChild(initialRandomProduct);
-            randomProductContainer.style.display = 'block';
-            setInterval(() => {
-                const randomProduct = products[Math.floor(Math.random() * products.length)].cloneNode(true);
-                randomProductContainer.innerHTML = '';
-                randomProductContainer.appendChild(randomProduct);
-                currentIndex = (currentIndex + 1) % products.length;
-                setTimeout(() => {
-                    randomProductContainer.style.display = 'none';
-                }, 5000);
-            }, 5000); 
-                }
-                document.addEventListener('DOMContentLoaded', () => {
-                    showRandomProduct();
-                });
-        </script>
-</div>
+    
 
     <div class="footer-content">
         <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
         <h2><a href="index-ro.html"> L'Authentik© 2024 Toate drepturile rezervate</a></h2>
         <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
-            
     </div>
 
-      
 </body>
 </html>

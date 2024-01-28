@@ -945,18 +945,126 @@ function openModal() {
             </div>
         </div>
 </div>
+<!-- Adăugarea galeriei -->
+<div class="galerie">
+    <h1>Galerie</h1>
+    <video autoplay loop src="video/video-background.mp4"></video>
+    <div class="over-video-buttons">
+        <button onclick="openPhotoGallery()">Galerie Foto</button>
+        <button onclick="openVideoGallery()">Galerie Video</button>
+    </div>
+</div>
+
+<!-- Div pentru Galeria Foto -->
+<!-- Div pentru Galeria Foto -->
+<div id="photoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePhotoModal()">&times;</span>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="img/vin.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/background l-authentik.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/Highlight copy.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img/ingredients.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="img5.jpg" style="width:100%">
+            </div>
+            <!-- Buton pentru navigarea la imaginea următoare -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Div pentru Galeria Video -->
+<!-- Div pentru Galeria Video -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeVideoModal()">&times;</span>
+        <!-- Conținutul galeriei video -->
+        <video width="100%" controls>
+            <source src="video/sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
+<script>
+    // Funcția pentru deschiderea galeriei foto
+    function openPhotoGallery() {
+        var photoModal = document.getElementById("photoModal");
+        photoModal.style.display = "block";
+        scrollToModal(photoModal);
+    }
+
+    // Funcția pentru închiderea galeriei foto
+    function closePhotoModal() {
+        var photoModal = document.getElementById("photoModal");
+        photoModal.style.display = "none";
+    }
+
+    // Funcția pentru deschiderea galeriei video
+    function openVideoGallery() {
+        var videoModal = document.getElementById("videoModal");
+        videoModal.style.display = "block";
+        scrollToModal(videoModal);
+    }
+
+    // Funcția pentru închiderea galeriei video
+    function closeVideoModal() {
+        var videoModal = document.getElementById("videoModal");
+        videoModal.style.display = "none";
+    }
+
+    // Funcția pentru a scrola la pop-up
+    function scrollToModal(modal) {
+        modal.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Funcția pentru navigarea slide-urilor
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>
     <div class="wrap-evenimente-afisare-produse">
         <h2>Evenimente Speciale</h2>
         <div id="evenimente-l-authentik" class="evenimente-container">
             <div class="panou-publicitar">
                 Cu bucurie și entuziasm, vă invităm să descoperiți farmecul și atmosfera inconfundabilă oferite de restaurantul nostru, L'Authentik. Situat în inima orașului, suntem destinația preferată pentru petreceri și evenimente pline de voie bună, întâlniri memorabile și experiențe gastronomice de neuitat.
-
                 La L'Authentik, organizăm frecvent evenimente de petrecere ce celebrează diversitatea și bogăția muzicală. Cu interpreți din toate genurile muzicale, de la clasici ai jazz-ului și blues-ului, până la hit-uri contemporane și ritmuri latino, fiecare seară este una specială, aducând în prim-plan o varietate de talente și stiluri muzicale.
-                
                 Sărbătorile sunt momentele noastre preferate pentru a vă întâmpina cu brațele deschise. De la Revelion la Ziua Îndrăgostiților și de la Paște la Halloween, fiecare sărbătoare este marcată printr-o atmosferă magică și plină de viață la L'Authentik. Cu decoruri tematice, meniuri rafinate și spectacole live captivante, fiecare eveniment devine o experiență unică și de neuitat pentru toți cei prezenți.
-                
                 Indiferent dacă doriți să sărbătoriți o ocazie specială alături de cei dragi sau pur și simplu să vă bucurați de o seară de distracție și relaxare, vă asigurăm că la L'Authentik veți găsi tot ceea ce vă doriți. Echipa noastră dedicată și profesionistă vă va îngriji fiecare detaliu, astfel încât să aveți parte de o experiență autentică și plină de bucurie.
-                
                 Vă așteptăm cu drag să fiți parte din povestea noastră la L'Authentik, unde fiecare sărbătoare devine o aventură muzicală și culinară de neuitat!
             </div>
         </div>
