@@ -462,7 +462,7 @@ nav ul a {
         display: none;
         position: absolute;
         display: flex;
-        margin-top:10px;
+        margin-top:0px;
         height: 30px;
         width: 100px;
         justify-content: space-between;
@@ -489,7 +489,6 @@ nav ul a {
         height: 20px;
         width: 50px;
         z-index: 2;
-        margin-left: 10px;
         align-self: center;
         padding: 3px;
         border-radius: 5%;
@@ -501,6 +500,19 @@ nav ul a {
         transition: transform 0.3s ease;
         display: flex;
         gap: 5px;
+      }
+      .buton-fr{
+        background-color: #720606;
+        background-image: linear-gradient(94deg, #720606 0%, #000000 66%);
+        font-size: 2rem;
+        width: 100px;
+        text-align: center;
+      }
+      .buton-ro{
+        background-color: #720606;
+        background-image: linear-gradient(94deg, #720606 0%, #000000 66%);
+        font-size: 2rem;
+        width: 100px;
       }
       
       .toggleButton:hover:not(.active) {
@@ -1004,7 +1016,7 @@ nav ul a {
         width: 40%;
         margin-left: 50%;
         transform: translate(-50%);
-        height: 170px;
+        height: 100px;
         opacity: 0;
         transition: opacity 0.8s ease-in-out;
     }
@@ -1016,9 +1028,9 @@ nav ul a {
         flex-direction: column;
         text-align: center;
         align-items: center;
-        margin-top: 20px;
         opacity: 0;
         transition: opacity 0.8s ease-in-out 2s;
+        line-height: .7;
 
     }
     .text-container h1{
@@ -1031,6 +1043,7 @@ nav ul a {
     }
     .text-container h2{
         color: rgb(225, 225, 225);
+        margin: 10px;
     }
     .text-container h3{
         color: rgb(255, 230, 0);
@@ -1053,112 +1066,122 @@ nav ul a {
     .buton-comanda:hover {
         background-color: #45a049;
     }
+        
+    /* Stiluri pentru containerul despre noi */
+    .about-us-container {
+        display: none;
+        position: relative;
+        justify-content: center;
+        text-align: start;
+        width: 95%;
+        margin-left: 50%;
+        transform: translate(-50%);
+        height: fit-content;
+        padding: 20px;
+
+        border: 1px solid #888;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .about-us-container p,
+    .about-us-container h1,
+    .about-us-container h2{
+        color: #fff;
+        
+    }
+
+    .about-us-container .despre-noi-imagine{ 
+        width: 300px;
+        height: 300px;
+        object-fit: fill;
+    }
+    /* Stiluri pentru butonul de închidere a containerului */
+    .about-us-button button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .about-us-button button:hover {
+        background-color: #45a049;
+    }
+
+
+    .galerie {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .galerie h1 {
+        color: yellow;
+    }
+
+    .galerie video {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .galerie-butoane {
+        width: 100%;
+        position:relative;
+        top: -50%;
+        left: -50%;
+        transform: translate(50%, 50%);
+    }
+
+    .galerie-butoane button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #3498db;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .galerie-butoane button:hover {
+        background-color: #2980b9;
+    }
+
+    .galerie-continut {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gallery-content {
+        width: 100%;
+        height: 80vh;
+        overflow-x: scroll;
+        display: none;
+        list-style-type: none;
+        
+    }
     
-/* Stiluri pentru containerul despre noi */
-.about-us-container {
-    display: none;
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    width: 90%;
-    margin-left: 50%;
-    transform: translate(-50%);
-    height: fit-content;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fefefe;
-    border: 1px solid #888;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.about-us-container .despre-noi-imagine{ 
-    width: 50%;
-    height: 350px;
-    object-fit: fill;
-}
-/* Stiluri pentru butonul de închidere a containerului */
-.about-us-button button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.about-us-button button:hover {
-    background-color: #45a049;
-}
-
-
-.galerie {
-    position: relative;
-    width: 100%;
-    text-align: center;
-}
-
-.galerie h1 {
-    color: yellow;
-}
-
-.galerie video {
-    width: 100%;
-    height: 50vh;
-}
-
-.galerie-butoane {
-    width: 100%;
-    position:relative;
-    top: -50%;
-    left: -50%;
-    transform: translate(50%, 50%);
-}
-
-.galerie-butoane button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #3498db;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.galerie-butoane button:hover {
-    background-color: #2980b9;
-}
-
-.galerie-continut {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.gallery-content {
-    width: 100%;
-    display: none;
-}
-
-.gallery-content img,
-.gallery-content video {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-    .gallery-content {
-        width: 50%;
+    .gallery-content img,
+    .gallery-content video {
+        width: 100%;
+        margin-top: 10px; 
     }
-}
 
-@media (min-width: 992px) {
-    .gallery-content {
-        width: 33.33%;
+    @media (min-width: 768px) {
+        .gallery-content {
+            width: 50%;
+        }
     }
-}
+
+    @media (min-width: 992px) {
+        .gallery-content {
+            width: 55%;
+        }
+    }
 
 
 
@@ -1329,6 +1352,8 @@ nav ul a {
 
     .descriere p{
         font-size: .8rem;
+        width: 80%;
+        padding: 10px;
     }
 
     .languageMenu {
@@ -1356,16 +1381,8 @@ nav ul a {
         position: relative;
         
       }
-      .buton-fr{
-        background-color: green;
-        font-size: 1.5rem;
-        width: 100px;
-      }
-      .buton-ro{
-        background-color: green;
-        font-size: 1.5rem;
-        width: 100px;
-      }
+      
+     
       #img-animatie{
         height: 120px;
       }
@@ -1391,7 +1408,12 @@ nav ul a {
         margin-left: 50%;
         transform: translate(-50%);
     }
-    
+    #img-animatie{
+        height: 75px;
+    }
+    .text-container{
+        line-height: .8;
+    }
     
     }
 
