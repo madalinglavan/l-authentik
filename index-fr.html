@@ -787,7 +787,74 @@
             </div>  
         </div>
     </div>
-  
+    <div class="container-2-ads">
+        <h1></h1>
+        <div class="image-slider">
+            <div class="slide active">
+                <div class="wrap-description-1">
+                    <div class="text-description">
+                        <h2>Découvrez la saveur authentique</h2>
+                        <p>Profitez de plats frais et authentiques, préparés avec passion.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="wrap-description-2">
+                    <div class="text-description">
+                        <h2>Explorez les arômes uniques</h2>
+                        <p>Choyez vos sens avec passion à chaque bouchée.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-btns">
+            <div class="slider-btn" onclick="changeSlide2(0)"></div>
+            <div class="slider-btn" onclick="changeSlide2(1)"></div>
+            <script>
+                let currentSlide = 0;
+                const slides = document.querySelector('.container-2-ads .image-slider');
+                const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
+        
+                function changeSlide(index) {
+                    currentSlide = index;
+                    updateSlider();
+                }
+                function updateSlider() {
+                    slides.style.transform = `translateX(${-currentSlide * 100}%)`;
+        
+                    buttons.forEach((button, index) => {
+                        if (index === currentSlide) {
+                            button.classList.add('active');
+                        } else {
+                            button.classList.remove('active');
+                        }
+                    });
+        
+                    const slideElements = document.querySelectorAll('.slide');
+                    slideElements.forEach((slide, index) => {
+                        if (index === currentSlide) {
+                            slide.classList.add('active');
+                        } else {
+                            slide.classList.remove('active');
+                        }
+                    });
+                }
+        
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slides.children.length;
+                    updateSlider();
+                }
+        
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
+                    updateSlider();
+                }
+                setInterval(nextSlide, 10000);
+            </script>
+        </div>
+    </div>
     <div class="chef-presentation" id="chefPresentation">
         <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
         <div class="presentation-text">
@@ -860,74 +927,7 @@
                     showRandomProduct();
                 });
         </script>
-        <div class="container-2-ads">
-            <h1></h1>
-            <div class="image-slider">
-                <div class="slide active">
-                    <div class="wrap-description-1">
-                        <div class="text-description">
-                            <h2>Découvrez la saveur authentique</h2>
-                            <p>Profitez de plats frais et authentiques, préparés avec passion.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="wrap-description-2">
-                        <div class="text-description">
-                            <h2>Explorez les arômes uniques</h2>
-                            <p>Choyez vos sens avec passion à chaque bouchée.</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-btns">
-                <div class="slider-btn" onclick="changeSlide2(0)"></div>
-                <div class="slider-btn" onclick="changeSlide2(1)"></div>
-                <script>
-                    let currentSlide = 0;
-                    const slides = document.querySelector('.container-2-ads .image-slider');
-                    const buttons = document.querySelectorAll('.container-2-ads .slider-btn');
-            
-                    function changeSlide(index) {
-                        currentSlide = index;
-                        updateSlider();
-                    }
-                    function updateSlider() {
-                        slides.style.transform = `translateX(${-currentSlide * 100}%)`;
-            
-                        buttons.forEach((button, index) => {
-                            if (index === currentSlide) {
-                                button.classList.add('active');
-                            } else {
-                                button.classList.remove('active');
-                            }
-                        });
-            
-                        const slideElements = document.querySelectorAll('.slide');
-                        slideElements.forEach((slide, index) => {
-                            if (index === currentSlide) {
-                                slide.classList.add('active');
-                            } else {
-                                slide.classList.remove('active');
-                            }
-                        });
-                    }
-            
-                    function nextSlide() {
-                        currentSlide = (currentSlide + 1) % slides.children.length;
-                        updateSlider();
-                    }
-            
-                    function prevSlide() {
-                        currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
-                        updateSlider();
-                    }
-                    setInterval(nextSlide, 10000);
-                </script>
-            </div>
-        </div>
+        
 </div>
 <div class="galerie">
     <h1>Galerie</h1>
