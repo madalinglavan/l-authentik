@@ -15,7 +15,6 @@
 <body>
     <header>
         <div class="top-nav">
-            
             <div class="left-top-nav">
                 <div id="languageMenu" class="languageMenu">
                     <span class="languageOption" onclick="changeLanguage('index-fr.html')"><p class="buton-fr">FR</p></span>
@@ -64,7 +63,6 @@
             </a>
         </nav>
         
-
     </header>
    
     <div class="info-prima-pagina-l-authentik"> 
@@ -685,8 +683,9 @@
                 <div class="wrap-descriere-3">
                     <div class="descriere">
                         <img src="img/microphone.png" alt="">
-                        <h2>Bucură-te de serile noastre muzicale!</h2>
+                        
                         <p>Bine ai venit în lumea noastră sonoră, unde fiecare notă devine o poveste și fiecare acord aduce un zâmbet pe chipul tău! La L'Authentik, serile noastre muzicale sunt mai mult decât simple evenimente - sunt experiențe vibrante care te captivează și te fac să dansezi pe ritmurile inimii tale.</p>
+                        <h2>Bucură-te de serile noastre muzicale!</h2>
                     </div>
                 </div>
             </div>
@@ -766,7 +765,7 @@
                         imagineCurenta = (imagineCurenta - 1 + imagini.children.length) % imagini.children.length;
                         actualizeazaSlider();
                     }
-                    setInterval(() => urmatoareaImagine(), 10000);
+                    setInterval(() => urmatoareaImagine(), 7000);
                 </script>
             </div>  
         </div>
@@ -833,7 +832,7 @@
                     currentSlide = (currentSlide - 1 + slides.children.length) % slides.children.length;
                     updateSlider();
                 }
-                setInterval(nextSlide, 10000);
+                setInterval(nextSlide, 5000);
             </script>
         </div>
     </div>
@@ -911,7 +910,6 @@
 </div>
 <div class="galerie">
     <h1>Galerie</h1>
-    <img src="img/sarmale.jpg" alt="">
     <div class="galerie-butoane">
         <button onclick="togglePhotoGallery()">Galerie Foto</button>
         <button onclick="toggleVideoGallery()">Galerie Video</button>

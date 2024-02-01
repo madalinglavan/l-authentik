@@ -72,9 +72,7 @@ header {
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
-    background-color: #000000;
-    background-image: linear-gradient(94deg, #720606 0%, #000000 66%);
+    justify-content: space-between;    
     width: 100%;
     height: fit-content;
 }
@@ -164,29 +162,17 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    margin-top: 20px;
-    background-color: #0000008a;
-}
 
-nav ul a {
-    text-decoration: none;
-    color: #fff;
-    margin-left: 10px;
-    text-transform: uppercase;
-}
 
 .logo{
     position: relative;
     width: 100px;
     height: 15vh;
-    margin: 10px;
     background-image: url(img/suc\ portocale.png);
     background-position: center;
     background-size: contain;
@@ -360,6 +346,8 @@ nav ul a {
     border-radius: 4px;
     cursor: pointer;
     width: 50%;
+    margin-left: 50%;
+    transform: translate(-50%);
 }
 .product button a{ 
     text-decoration: none;
@@ -534,7 +522,7 @@ nav ul a {
 
       .wrap-container-1-ads{
         width: 100%;
-        height: 550px;
+        height: 400px;
         background-color: #00000097;
         display: flex;
         position: relative;
@@ -690,6 +678,7 @@ nav ul a {
             width: 100%;
         }
     }
+ 
     .container-2-ads {
         width: 100%;
         position: relative;
@@ -1019,7 +1008,7 @@ nav ul a {
         display: flex;
         flex-direction: column;
         width: 90%;
-
+        line-height: .8;
     }
     
     #img-animatie {
@@ -1032,16 +1021,16 @@ nav ul a {
     }
     
     .text-container {
-        width: 100%;
+        width: 90%;
+        margin-left: 50%;
+        transform: translate(-50%);
+        max-height: 250px;
         position: relative;
         display: flex;
         flex-direction: column;
-        text-align: center;
-        align-items: center;
+   
         opacity: 0;
         transition: opacity 0.8s ease-in-out 2s;
-        line-height: .7;
-
     }
     .text-container h1{
         color: red;
@@ -1053,14 +1042,9 @@ nav ul a {
     }
     .text-container h2{
         color: rgb(225, 225, 225);
-        margin: 10px;
     }
     .text-container h3{
         color: rgb(255, 230, 0);
-    }
-    
-    #text-animatie p {
-        
     }
 
     .buton-comanda {
@@ -1131,24 +1115,17 @@ nav ul a {
 
     .galerie h1 {
         position: relative;
-        top: 30px;
         color: #ffffff;
         background-color: #000000;
         text-shadow: 3px 3px 3px rgb(115, 112, 112);
     }
 
-    .galerie img {
-        width: 50%;
-        height: 30vh;
-        object-fit: cover;
-    }
 
     .galerie-butoane {
         width: 100%;
-        position:absolute;
-        top: 120px;
-        left: -50%;
-        transform: translate(50%);
+        position:relative;
+        left: 50%;
+        transform: translate(-50%);
     }
 
     .galerie-butoane button {
@@ -1193,15 +1170,10 @@ nav ul a {
     }
     @media (min-width: 768px) {
         .gallery-content {
-            width: 50%;
+            width: 80%;
         }
     }
 
-    @media (min-width: 992px) {
-        .gallery-content {
-            width: 55%;
-        }
-    }
 
 
 
@@ -1302,10 +1274,6 @@ nav ul a {
         
        }
  
-       .container-afisare-produse-aleatorii {
-       
-       }
-    
     .footer-content{
         display: flex;
         flex-direction: column;
@@ -1401,9 +1369,7 @@ nav ul a {
       }
       
      
-      #img-animatie{
-        height: 120px;
-      }
+
       .container-afisare-produse-aleatorii{
         width: 100%;
         margin-bottom: 20px;
@@ -1426,12 +1392,8 @@ nav ul a {
         margin-left: 50%;
         transform: translate(-50%);
     }
-    #img-animatie{
-        height: 75px;
-    }
-    .text-container{
-        line-height: .8;
-    }
+
+
 
     .galerie img {
         width: 60%;
@@ -1444,11 +1406,17 @@ nav ul a {
         margin-top: 10px;
         padding: auto;
     }
+    .descriere img{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        object-fit:fill;
+    }
     
     }
 
 
-
+F
 
 
 
