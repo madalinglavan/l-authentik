@@ -54,7 +54,7 @@
                         <a href="#" onclick="toggleContactForm()"><i class="fa-regular fa-envelope" style="color: #ffffff;" id="mail-icon"></i><h3>E-mail</h3></a>
                     </div>
                     
-                    <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Comanda acum</p></a></li>
+                    <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;<p>Commandez maintenant</p></a></li>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                 </script>
             </a> 
             <a href="#" class="info-subsection" id="history-button"  onclick="showHistory()">
-                <h3><i class="fa-solid fa-heart"></i><br>Favorite</h3>
+                <h3><i class="fa-solid fa-heart"></i><br>Favori</h3>
             </a>
         
             <a href="#" class="info-subsection" id="menu-link">
@@ -111,7 +111,7 @@
 
           
               <a href="#" class="info-subsection" id="program-link">
-                <h3><i class="fa-regular fa-clock"></i><br>Program</h3>
+                <h3><i class="fa-regular fa-clock"></i><br>Horaires</h3>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
                          var programLink = document.getElementById('program-link');
@@ -131,7 +131,7 @@
             </a>    
             
              <a href="#reviews-container" class="info-subsection" onclick="scrollToReviews(event)">
-                <h3><i class="fa-regular fa-star"></i><br>Recenzii</h3>
+                <h3><i class="fa-regular fa-star"></i><br>Avis</h3>
                 <p></p>
                 <script>
                     function scrollToReviews(event) {
@@ -142,7 +142,7 @@
                       if (reviewsContainer) {
                         reviewsContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
                       } else {
-                        console.error("Elementul cu id-ul 'reviews-container' nu a fost găsit.");
+                        console.error("Élément avec l'identifiant 'reviews-container' introuvable.");
                       }
                     }
                   </script>
@@ -177,99 +177,104 @@
         </script> 
     </div>
    
-      <div id="program-div" class="program-container">
+    <div id="program-div" class="program-container">
         <ul>
-            <li>Luni</li>
-            <li>Inchis</li>
+            <li>Lundi</li>
+            <li>Fermé</li>
         </ul>
         <ul>
-            <li>Marti</li>
+            <li>Mardi</li>
             <li>10:00 - 22:00</li>
         </ul>
         <ul>
-            <li>Miercuri</li>
+            <li>Mercredi</li>
             <li>10:00 - 22:00</li>
         </ul>
         <ul>
-            <li>Joi</li>
+            <li>Jeudi</li>
             <li>10:00 - 22:00</li>
         </ul>
         <ul>
-            <li>Vineri</li>
+            <li>Vendredi</li>
             <li>10:00 - 02:00</li>
         </ul>
         <ul>
-            <li>Sambata</li>
+            <li>Samedi</li>
             <li>10:00 - 02:00</li>
         </ul>
         <ul>
-            <li>Duminica</li>
+            <li>Dimanche</li>
             <li>10:00 - 02:00</li>
         </ul>
-     </div>
-     <div id="contactForm" class="contact-form">
+    </div>
+    
+    <div id="contactForm" class="contact-form">
         <div class="greeting">
-            <p>Salut! Ne bucurăm să te avem aici la L'Authentik Resto-Bar !</p>
+            <p>Salut! Nous sommes ravis de vous accueillir au L'Authentik Resto-Bar !</p>
         </div>
         <form action="send_email.php" method="post">
             <div class="form-group">
-                <label for="nume">Nume:</label>
+                <label for="nume">Nom :</label>
                 <input type="text" id="nume" name="nume" required>
             </div>
             <div class="form-group">
-                <label for="email">E-mail:</label>
+                <label for="email">E-mail :</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="mesaj">Mesaj:</label>
+                <label for="mesaj">Message :</label>
                 <textarea id="mesaj" name="mesaj" required></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" value="Trimite">
+                <input type="submit" value="Envoyer">
             </div>
         </form>
         <div id="confirmation-message"></div>
         <div class="encouragement">
-            Avem încredere în creativitatea ta! Așteptăm cu nerăbdare să citim mesajul tău.
+            Nous avons confiance en votre créativité ! Nous attendons avec impatience de lire votre message.
         </div>
+    </div>
+    
         <script>
             function toggleContactForm() {
     var contactForm = document.getElementById('contactForm');
 
     if (contactForm.style.display === 'block' || getComputedStyle(contactForm).display === 'block') {
-        contactForm.style.display = 'none'; // Ascund formularul dacă este deja afișat
+        contactForm.style.display = 'none'; 
     } else {
-        contactForm.style.display = 'block'; // Afișez formularul dacă este ascuns
+        contactForm.style.display = 'block'; 
     }
 }
 
         </script>
     </div>
     
-     <div id="history-popup" class="history-popup">
-        <button onclick="closeHistoryPopup()">Închide Favorite</button>
+    <div id="history-popup" class="history-popup">
+        <button onclick="closeHistoryPopup()">Fermer</button>
         <div class="history-popup-content"></div>
         <div class="total-price">
-            <strong>Total: <span id="totalAmount">0</span> Euro</strong>
+            <strong>Total : <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste</button>
+        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Vider</button>
         <div>
-            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
+            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Générer le Code</button>
             <div id="restaurant-code" style="display: none;"></div>
         </div>
         <div id="order-form">
-            <label for="unique-code">Cod Unic:</label>
-            <input type="text" id="unique-code" placeholder="Introdu codul unic..." required>
-        
-            <label for="table-number">Numărul Mesei:</label>
-            <input type="number" id="table-number" placeholder="Numărul Mesei..." required>
-        
-            <label for="comments">Comentarii:</label>
-            <textarea id="comments" placeholder="Adaugă comentarii..." rows="4" required></textarea>
-        
-            <button onclick="checkAndSubmit()">Trimite Comanda</button>
+            <label for="unique-code">Code Unique :</label>
+            <input type="text" id="unique-code" placeholder="Entrez le code unique..." required>
+    
+            <label for="table-number">Numéro de Table :</label>
+            <input type="number" id="table-number" placeholder="Numéro de Table..." required>
+    
+            <label for="comments">Commentaires :</label>
+            <textarea id="comments" placeholder="Ajoutez des commentaires..." rows="4" required></textarea>
+    
+            <button onclick="checkAndSubmit()">Envoyer la Commande</button>
         </div>
-        <button onclick="closeHistoryPopup()">Închide Favorite</button>
+        <button onclick="closeHistoryPopup()">Fermer les Favoris</button>
+    </div>
+    
         <script>
             function generateCode() {
             navigator.geolocation.getCurrentPosition(
@@ -290,12 +295,12 @@
                         // Adăugă codul unic în istoric
                         addToHistory('Cod Generat', 0, uniqueCode);
                     } else {
-                        alert('Nu sunteți în apropierea restaurantului. folositi aplicatia noastra pentru a va conduce aici! Multumim');
+                        alert('Vous n êtes pas à proximité du restaurant. Utilisez notre application pour vous guider ici ! Merci');
                     }
                 },
                 function (error) {
                     console.error(error);
-                    alert('Eroare la obținerea locației.');
+                    alert('Erreur lors de l obtention de la localisation.');
                 }
             );
         }
@@ -322,7 +327,7 @@
                 history.push({ name: productName, price: productPrice, code: code });
                 localStorage.setItem('istoric', JSON.stringify(history));
                 updateTotalPrice();
-                alert(`Ai adăugat ${productName} la favorite.`);
+                alert(`Vous avez ajouté ${productName} aux favoris.`);
             }
         
             function updateTotalPrice() {
@@ -345,14 +350,14 @@
         const historyPopupContent = historyPopup.querySelector('.history-popup-content');
     
         if (history.length === 0) {
-            alert('Descoperiți preparatele noastre și adăugați favoritele!');
+            alert('Découvrez nos plats et ajoutez-les à vos favoris !');
         } else {
             historyPopupContent.innerHTML = history.map((product, index) => `
                 <div class="history-product">
-                    <span>Produs: ${product.name}</span>
-                    <span>Pret: ${product.price} Euro</span>
-                   <span>Cod: ${product.code}</span>
-                    <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
+                    <span>Produit : ${product.name}</span>
+                    <span>Prix : ${product.price} Euro</span>
+                    <button onclick="removeFromHistory(${index}, ${product.price})">Supprimer</button>
+
                 </div>`
             ).join('');
             historyPopup.style.display = 'block';
@@ -368,7 +373,8 @@
                 const removedProduct = history.splice(index, 1)[0];
                 localStorage.setItem('istoric', JSON.stringify(history));
         
-                alert(` ${removedProduct.name} eliminat cu succes!`);
+                alert(`${removedProduct.name} supprimé avec succès !`);
+
                 updateTotalPrice();
         
                 if (history.length === 0) {
@@ -404,7 +410,8 @@
                 const historyPopupContent = document.querySelector('.history-popup-content');
                 historyPopupContent.innerHTML = '';
                 document.getElementById('totalAmount').innerText = 0;
-                alert('Va mai asteptam!');
+                alert('Les favoris ont été vidés !');
+
             }
         
             function checkAndSubmit() {
@@ -413,7 +420,8 @@
         const comments = document.getElementById('comments').value;
     
         if (enteredCode.trim() === '' || tableNumber.trim() === '' || comments.trim() === '') {
-            alert('Vă rugăm să completati toate câmpurile obligatorii.');
+            alert('Veuillez remplir tous les champs obligatoires.');
+
             return;
         }
     
@@ -425,12 +433,13 @@
         if (matchingOrder) {
             sendOrderToKitchen(matchingOrder, tableNumber, comments);
         } else {
-            alert('Codul unic nu a fost găsit. Verifică și încearcă din nou.');
+            alert('Le code unique n\'a pas été trouvé. Vérifiez et réessayez.');
+
         }
     }
         
             function sendOrderToKitchen(order, tableNumber, comments) {
-                alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes. `);
+                alert(`La commande pour la Table ${tableNumber} a été envoyée avec succès.`);
             }
         </script>
         
@@ -440,30 +449,30 @@
     
     
       <div class="wrap-menu-page" >
-        <h1><i class="fa-solid fa-utensils"></i>&nbsp;&nbsp;Meniu L`Authentik !</h1>
+        <h1><i class="fa-solid fa-utensils"></i>&nbsp;&nbsp;Menu L`Authentik !</h1>
         <div class="container-menu-page" >
-                <div class="category" data-target="antreuri">Antreuri</div>
+                <div class="category" data-target="antreuri">Entrées</div>
                 <div class="products-container" id="antreuri-products">
                     <div class="product" data-price="50">
                         <img src="img/mamaliga cu branza.jpg" alt="Mămăligă cu brânză">
-                        <h3>Mămăligă cu brânză</h3>
-                        <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc.</p>
+                        <h3>Polenta au fromage</h3>
+                        <p>Une portion généreuse de polenta fraîche, accompagnée de fromage fondu et de beurre. Un délice traditionnel roumain.</p>                        
                         <span class="price">15 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 15)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="50"> 
                         <img src="img/l-authentik sarmale cu mamaliga.jpg" alt="Sarmale cu mămăligă">
-                        <h3>Sarmale cu mămăligă</h3>
-                        <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!</p>
+                        <h3>Sarmale avec polenta</h3>
+                        <p>Les sarmale classiques, farcies avec un mélange de viande de porc et de riz, servies avec de la polenta et de la crème aigre. Une combinaison délicieuse !</p>
                         <span class="price">17 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Sarmale cu mămăligă', 17)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="40">
                         <img src="img/l-authentik mici cu mustar si cartofi prajiti.jpg" alt="Mici la Grătar">
-                        <h3>Mici la Grătar</h3>
-                        <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
+                        <h3>Mici la Grill</h3>
+                        <p>Une portion généreuse de mici traditionnels, grillés, accompagnés de moutarde et de pain frais. Un plat apprécié de tous !</p>
                         <span class="price">14 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 14)"><i class="fa-solid fa-heart"></i></button>
                     </div>
@@ -472,28 +481,28 @@
                     
                     <div class="product" data-price="40">
                         <img src="img/l-authentik mancare 3.jpg" alt="Ciorbă de burtă">
-                        <h3>Ciorbă de burtă</h3>
-                        <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.</p>
+                        <h3>Soupe de tripes</h3>
+                        <p>Une soupe de tripes traditionnelle, préparée avec des tripes de veau et des légumes. Une explosion d'arômes et de saveurs authentiques.</p>                        
                         <span class="price">16 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Ciorbă de burtă', 16)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
         
-                <div class="category" data-target="fel_principal">Fel Principal</div>
+                <div class="category" data-target="fel_principal">Plat Principal</div>
                 <div class="products-container" id="fel_principal-products">
                     <div class="product" data-price="50">
                         <img src="img/l-authentik mici cu mustar si cartofi prajiti.jpg" alt="Mici la Grătar">
                         <h3>Mici la Grătar</h3>
-                        <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
+                        <p>Une portion généreuse de mici traditionnels, grillés, accompagnés de moutarde et de pain frais. Un plat apprécié de tous !</p>
                         <span class="price">50 Euro</span> 
                         <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 50)"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="45">
                         <img src="img/cotlet-nou-nou.png" alt="Cotlet de Porc cu Cartofi Prajiți">
-                        <h3>Cotlet de Porc cu Cartofi Prajiți</h3>
-                        <p>Cotlet de porc suculent, gătit la cuptor, servit alături de cartofi prăjiți crocanți. Un fel principal delicios și hrănitor.</p>
+                        <h3>Côtelette de Porc avec Pommes de Terre Frites</h3>
+                        <p>Côtelette de porc juteuse, cuite au four, servie avec des pommes de terre frites croustillantes. Un plat principal délicieux et nourrissant.</p>
                         <span class="price">45 Euro</span>
                         <button class="add-to-history" onclick="addToHistory('Cotlet de Porc cu Cartofi Prajiți', 45)"><i class="fa-solid fa-heart"></i></button>
                     </div>
