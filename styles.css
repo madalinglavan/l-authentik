@@ -192,13 +192,15 @@ nav ul a {
     background-size: contain;
     background-repeat: no-repeat;
 }
-/* Stiluri pentru formularul de contact */
+
 .contact-form {
     display: none;
     position: relative;
-    top: 0px; /* Ajustați la distanța dorită de sub antet */
+    top: 0px; 
     left: 0;
-    width: 100%;
+    width: 90%;
+    margin-left: 50%;
+    transform: translate(-50%);
     padding: 20px;
     background-color: #fefefe;
     border: 1px solid #888;
@@ -206,7 +208,6 @@ nav ul a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Stiluri pentru grupurile de formulare */
 .form-group {
     margin-bottom: 20px;
 }
@@ -240,7 +241,6 @@ nav ul a {
     background-color: #d22f19;
 }
 
-/* Stiluri pentru mesajul de confirmare */
 #confirmation-message {
     margin-top: 20px;
     padding: 15px;
@@ -249,7 +249,7 @@ nav ul a {
     border-radius: 5px;
 }
 
-/* Stiluri pentru mesajul de salut */
+
 .greeting {
     text-align: center;
     margin-bottom: 20px;
@@ -257,7 +257,6 @@ nav ul a {
     color: #333;
 }
 
-/* Stiluri pentru încurajare */
 .encouragement {
     text-align: center;
     font-size: 16px;
@@ -365,7 +364,7 @@ nav ul a {
 .product button a{ 
     text-decoration: none;
 }
-  /* Stiluri pentru pop-up istoric */
+
   .history-popup {
     display: none;
     position: relative;
