@@ -794,28 +794,7 @@
             </div>  
         </div>
     </div>
-    <h1>Événements à venir</h1>
-<div class="news-l-authentik">
     
-    <div class="news-sf-valentin">
-        <h3>17 Février : La Célébration de la Saint-Valentin</h3>
-        <p>Rejoignez-nous ce samedi pour célébrer l'amour et le romantisme en l'honneur de la Saint-Valentin. Une occasion parfaite pour partager des moments inoubliables avec vos proches. Nous vous invitons à vous joindre à nous dans une atmosphère d'amour et de joie.</p>
-        <img src="img/sf valentin l`authentik.png" alt="">
-    </div>
-    
-    <div class="news-dragobetele">
-        <h3>Célébration de Dragobete : Traditions et Joies de l'Amour</h3>
-        <p>Dans l'esprit de Dragobete, nous célébrerons l'amour et les traditions roumaines. Rejoignez-nous pour découvrir et participer à des activités empreintes de romantisme et de couleur. Nous vous invitons à célébrer ensemble cette journée spéciale.</p>
-        <video controls src="video/video-background.mp4"></video>
-    </div>
-    
-    <div class="news-pastele">
-        <h3>La Célébration de Pâques chez les Roumains - Traditions et Joies</h3>
-        <p>Nous vous invitons à vous joindre à nous pour célébrer la fête de Pâques, une occasion de joie et de réflexion dans les traditions roumaines. Nous marquerons cette fête avec des événements spéciaux, des plats traditionnels et des moments de communion. Soyez partie intégrante de cette célébration exceptionnelle.</p>
-        <img src="img/sf valentin l`authentik.png" alt="">
-    </div>
-    
-</div>
 
     <div class="container-2-ads">
         <h1></h1>
@@ -976,38 +955,85 @@
         </div>
         <div id="videoGallery" class="gallery-content" style="display: none;">
             <!-- Galerie Video -->
-            <video width="100%" controls>
+            <video width="100%" height="100%" controls>
                 <source src="video/video-background.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
     </div>
 </div>
-    <script>
-        function togglePhotoGallery() {
-            var photoGallery = document.getElementById("photoGallery");
-            if (photoGallery.style.display === "block") {
-                photoGallery.style.display = "none";
-            } else {
-                photoGallery.style.display = "block";
-                document.getElementById("videoGallery").style.display = "none";
-            }
-        }
-        
 
-        function toggleVideoGallery() {
-            var videoGallery = document.getElementById("videoGallery");
-            if (videoGallery.style.display === "block") {
-                videoGallery.style.display = "none";
-            } else {
-                videoGallery.style.display = "block";
-                document.getElementById("photoGallery").style.display = "none";
-            }
+<script>
+    function togglePhotoGallery() {
+        var photoGallery = document.getElementById("photoGallery");
+        if (photoGallery.style.display === "block") {
+            photoGallery.style.display = "none";
+        } else {
+            photoGallery.style.display = "block";
+            document.getElementById("videoGallery").style.display = "none";
         }
-        
-    </script>
+    }
 
-   
+    function toggleVideoGallery() {
+        var videoGallery = document.getElementById("videoGallery");
+        if (videoGallery.style.display === "block") {
+            videoGallery.style.display = "none";
+        } else {
+            videoGallery.style.display = "block";
+            document.getElementById("photoGallery").style.display = "none";
+        }
+    }
+</script>
+
+  <div class="wrap-news-l-authentik">
+    <h1>Événements à venir</h1>
+    <div class="news-l-authentik">
+        
+        <div class="news-sf-valentin">
+            <h3>17 Février : La Célébration de la Saint-Valentin</h3>
+            <p>Rejoignez-nous ce samedi pour célébrer l'amour et le romantisme en l'honneur de la Saint-Valentin. Une occasion parfaite pour partager des moments inoubliables avec vos proches. Nous vous invitons à vous joindre à nous dans une atmosphère d'amour et de joie.</p>
+            <img src="img/sf_valentin_l_authentik.png" alt="">
+        </div>
+        
+        <div class="news-dragobetele">
+            <h3>Célébration de Dragobete : Traditions et Joies de l'Amour</h3>
+            <p>Dans l'esprit de Dragobete, nous célébrerons l'amour et les traditions roumaines. Rejoignez-nous pour découvrir et participer à des activités empreintes de romantisme et de couleur. Nous vous invitons à célébrer ensemble cette journée spéciale.</p>
+            <video controls src="video/video-background.mp4"></video>
+        </div>
+        
+        <div class="news-pastele">
+            <h3>La Célébration de Pâques chez les Roumains - Traditions et Joies</h3>
+            <p>Nous vous invitons à vous joindre à nous pour célébrer la fête de Pâques, une occasion de joie et de réflexion dans les traditions roumaines. Nous marquerons cette fête avec des événements spéciaux, des plats traditionnels et des moments de communion. Soyez partie intégrante de cette célébration exceptionnelle.</p>
+            <img src="img/sf_valentin_l_authentik.png" alt="">
+        </div>
+        
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const newsContainers = document.querySelectorAll('.news-l-authentik > div');
+
+        newsContainers.forEach(container => {
+            const title = container.querySelector('h3');
+            const paragraph = container.querySelector('p');
+            const media = container.querySelector('img') || container.querySelector('video');
+
+            title.addEventListener('click', function () {
+                if (paragraph.style.display === 'none' || paragraph.style.display === '') {
+                    paragraph.style.display = 'block';
+                    if (media) {
+                        media.style.display = 'block';
+                    }
+                } else {
+                    paragraph.style.display = 'none';
+                    if (media) {
+                        media.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+</script>
     <div id="google-reviews">
         <h3>Avis Google</h3>
 
