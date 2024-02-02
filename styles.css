@@ -1122,6 +1122,7 @@ nav {
     .galerie-butoane {
         width: 100%;
         text-align: center;
+        display: flex;
     }
     
     .galerie-butoane button {
@@ -1129,10 +1130,12 @@ nav {
         margin: 0 10px;
         font-size: 16px;
         cursor: pointer;
-        background-color: #3498db;
+        background-color: #720606;
+    background-image: linear-gradient(94deg, #720606 0%, #810000 66%);
         border: none;
         color: #fff;
         border-radius: 5px;
+        width: 100%;
         transition: background-color 0.3s ease;
     }
     
@@ -1149,7 +1152,7 @@ nav {
     
     .gallery-content {
         width: 100%;
-        max-height: 90vh;
+        max-height: 80vh;
         overflow-x: auto;
         display: none;
         list-style-type: none;
@@ -1191,7 +1194,8 @@ nav {
     .news-pastele {
         position: relative;
         width: 100%;
-        background-color: #d6d6d6;
+        background-color: #bfadad;
+        color:#fff;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1298,6 +1302,7 @@ nav {
         color: #ffffff;
         text-shadow: 3px 1px 5px rgb(0, 0, 0);
         margin-right: -10px;
+        padding: 3px;
         background-color: #00000062;
         border-radius: 10px;
         box-shadow: 2px 2px 15px 4px rgb(255, 225, 1);
