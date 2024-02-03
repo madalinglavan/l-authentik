@@ -898,7 +898,21 @@ nav {
         margin: 0 auto;
         display: none;
     }
-    
+        #history-popup button{
+        color: rgb(255, 255, 255);
+        font-family: 'Times New Roman', Times, serif;
+        padding: 5px;
+        font-size: 1rem;
+        text-shadow: 1px 1px 3px black;
+        height: 50px;
+        background-color: #ff1100;
+    }
+    .butoane-comanda{
+        display: flex;
+        width: 100%;
+        position: relative;
+        justify-content: space-between;
+    }
     .history-product {
         border: 1px solid #ccc;
         margin-bottom: 10px;
@@ -938,7 +952,6 @@ nav {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
-        background-color: #fff;
     }
 
     .order-info {

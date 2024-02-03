@@ -251,15 +251,18 @@
     </div>
     
      <div id="history-popup" class="history-popup">
-        <button onclick="closeHistoryPopup()">Închide Favorite</button>
+       
         <div class="history-popup-content"></div>
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste</button>
-        <div>
-            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
-            <div id="restaurant-code" style="display: none;"></div>
+        <div class="butoane-comanda">
+            <div>
+                <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
+                <div id="restaurant-code" style="display: none;"></div>
+            </div>
+                <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste tot</button>
+                
         </div>
         <div id="order-form">
             <label for="unique-code">Cod Unic:</label>
