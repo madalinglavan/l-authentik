@@ -1270,53 +1270,6 @@ nav {
         font-family: 'Times New Roman', Times, serif;
     }
 
-    .sbc {
-        width: 100%;
-        height: 50vh;
-        display: flex;
-        justify-content: space-between;
-        background-color: #f0f0f0;
-        overflow: hidden;
-    }
-
-    .sbc-box {
-        width: 49%;
-        height: 50vh;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .sbc-box a {
-        display: block;
-        text-align: center;
-        line-height: 50vh;
-        text-decoration: none;
-        font-size: 1.5rem;
-        color: #333;
-        text-shadow: 2px 2px 2px #fff;
-    }
-
-    #sbc-box1 {
-        background-color: #d04143;
-        background-image: linear-gradient(270deg, #d04143 0%, #ffef00 55%, #0084ff 100%);
-
-    }
-
-    #sbc-box2 {
-        background-color: #d04143;
-background-image: linear-gradient(270deg, #d04143 0%, #ffef00 55%, #000000 100%);
-
-
-    }
-
-    #sbc-box1.active {
-        transform: translateX(100%);
-    }
-
-    #sbc-box2.active {
-        transform: translateX(-100%);
-    }
-
-
 
 
 
