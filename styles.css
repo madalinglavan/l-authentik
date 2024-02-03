@@ -647,18 +647,13 @@ nav {
     .container-afisare-produse-aleatorii{
       
         .product{
-            width: 100%;
+            min-width: 100%;
             position: relative;
-            justify-content: center;
             text-align: center;
-            align-items: center;
-            background-color: #00000084;
-            text-align: left;
-        
         }
         .product img{
-            width:100%;
-            height: 300px;
+            min-width:50%;
+            height: fit-content;
             object-fit:contain;
         }
         .product h3{
@@ -753,11 +748,7 @@ nav {
 
     .info-prima-pagina-l-authentik {
         display: flex;
-        align-items: center;
-        justify-content: space-evenly;
         text-align: center;
-        justify-content: center;
-        justify-items: center;
         width: 100%;
         height: 100px;
         box-shadow:  0 0 10px rgb(0, 0, 0);
@@ -769,7 +760,8 @@ nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin: 15px
+        margin: 10px;
+        
       }
       .info-section a{
         text-decoration: none;
@@ -782,7 +774,18 @@ nav {
         transition: transform 0.3s ease;
         border-radius: 8px;
         background: rgba(1, 1, 1, 1.0);
-        background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
+        background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(255, 0, 0));
+      }
+      .info-section h3 i{
+        margin-top:3px;
+        font-size: 1.5rem;
+        color: rgb(255, 255, 255);
+        text-shadow: 2px 3px 2px rgb(0, 0, 0);
+      }
+      .info-section a h3{
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        margin-top: 3px;
       }
       .info-prima-pagina-l-authentik h3 {
         color: #ffffff;
@@ -794,11 +797,13 @@ nav {
       }
       
       .info-prima-pagina-l-authentik p {
-        font-size: .5rem;
+
         color:#fff;
       }
-      .info-subsection:hover {
-        transform: translateY(-10px);  
+      .info-subsection:hover{
+        transform: translateY(-15px); 
+        height: 70px;
+        background-image: none;
       }
       
      
@@ -1198,7 +1203,7 @@ nav {
     .news-pastele {
         position: relative;
         width: 100%;
-        background-color: #bfadad;
+        background-color: #bfadad37;
         color:#fff;
         padding: 20px;
         border-radius: 10px;
@@ -1217,7 +1222,12 @@ nav {
         border-radius: 8px;
         margin-top: 15px;
     }
-
+    .news-sf-valentin h3,
+    .news-dragobetele h3,
+    .news-pastele h3 {
+        color: red;
+        padding: 10px;
+    }
 
 
 
@@ -1369,8 +1379,7 @@ nav {
       }
   
       .info-prima-pagina-l-authentik h3 {
-        color: #ffff00;
-        margin: 0px;
+        
         font-size: .7rem;
       }
       
@@ -1418,18 +1427,6 @@ nav {
       }
       
      
-
-      .container-afisare-produse-aleatorii{
-        width: 100%;
-        margin-bottom: 20px;
-        position: relative;
-      }
-      .container-afisare-produse-aleatorii{
-        .product img{
-            min-width: 100%;
-            object-fit: cover;
-        }
-      }
       .container-2-ads{
         width: 100%;
         min-height: 25vh;
@@ -1445,12 +1442,13 @@ nav {
 
 
     .galerie img {
-        width: 60%;
-        height: 30vh;
+        width: 100%;
+        height: fit-content;
         object-fit: contain;
+       
     }
-    .gallery-content img {
-        width: 70%;
+    .gallery-content img {  
+        width: 100%;
         height: fit-content;
         margin-top: 10px;
         padding: auto;
