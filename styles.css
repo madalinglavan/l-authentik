@@ -77,8 +77,8 @@ header {
     justify-content: space-between;    
     width: 100%;
     height: fit-content;
-    background-color: #7206064e;
-    background-image: linear-gradient(94deg, #720606b1 0%, #00000096 66%);
+    padding: 5px;
+    background-color: #000000bf;
 }
 .left-top-nav{
     display: flex;
@@ -468,7 +468,6 @@ nav {
       }
       
       .toggleButton {
-
         position: relative;
         height: 20px;
         width: 50px;
@@ -477,7 +476,7 @@ nav {
         padding: 3px;
         border-radius: 5%;
         font-size: 0.7rem;
-        box-shadow: 1px 2px 1px #df0b0b;
+        box-shadow: 1px 2px 1px #ffffff;
         font-family: 'Times New Roman', Times, serif;
         border: none;
         cursor: pointer;
@@ -1093,6 +1092,9 @@ nav {
         width: 300px;
         height: 300px;
         object-fit: fill;
+        position: relative;
+        margin-left: 50%;
+        transform: translate(-50%);
     }
     .about-us-button {
         width: fit-content;
@@ -1202,6 +1204,12 @@ nav {
     .news-dragobetele,
     .news-pastele {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
         width: 100%;
         background-color: #bfadad37;
         color:#fff;
@@ -1315,7 +1323,7 @@ nav {
         flex-direction: column;  
         align-items: center;  
         text-transform: uppercase;
-        font-size: .6rem;
+        font-size: .5rem;
         font-family: 'Bungee Spice', cursive;
         color: #ffffff;
         text-shadow: 3px 1px 5px rgb(0, 0, 0);
