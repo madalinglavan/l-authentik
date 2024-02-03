@@ -12,10 +12,11 @@ body {
     background-color: #ffffff;
     box-shadow:  5px 5px 5px 15px rgb(0, 0, 0);
     background-color: #720606;
-    background-image: linear-gradient(94deg, #720606 0%, #000000 66%);
+    background-image: linear-gradient(94deg, #b51c1c 0%, #000000 66%);
     }
 body h1{
-    color: #ffbf00;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px black;
     align-items: center;
     text-align: center;
     font-size: 1.8rem; 
@@ -63,9 +64,10 @@ header {
     width: 100%;
     height: fit-content;
     margin-bottom: 5px;
+    background-image: url(img/l-authentik\ local\ 6.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 .top-nav{
@@ -75,6 +77,8 @@ header {
     justify-content: space-between;    
     width: 100%;
     height: fit-content;
+    background-color: #7206064e;
+    background-image: linear-gradient(94deg, #720606b1 0%, #00000096 66%);
 }
 .left-top-nav{
     display: flex;
@@ -89,6 +93,9 @@ header {
     display: flex;
     align-items: center;
     list-style-type: none;
+}
+.socialnetwork .order-now i{
+    color: #fff;
 }
 
 .socialnetwork a,
@@ -173,10 +180,11 @@ nav {
     position: relative;
     width: 100px;
     height: 15vh;
-    background-image: url(img/suc\ portocale.png);
+    background-image: url(img/L`authentik.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-bottom: 20px;
 }
 
 .contact-form {
@@ -254,6 +262,7 @@ nav {
     background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
     width: 100%;
     text-align: center;
+    
 }
 .wrap-menu-page{
     display: none;
@@ -261,6 +270,8 @@ nav {
     background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
     width: 100%;
     text-align: center;
+    
+    
 }
 .wrap-menu-page h1,
 .wrap-menu-the-page h1{
@@ -270,16 +281,7 @@ nav {
     position: relative;
     margin-top: 10px;
 }   
-.wrap-menu-page h2,
-.wrap-menu-the-page h2{
-    font-family: 'Times New Roman', Times, serif;
-    color: #fffb00;
-    text-shadow: 4px 2px 4px black;
-    position: relative;
-    font-size: 1rem;
-    width: 100%;
-    top: 10px;
-} 
+
 .container-menu-page {
     max-width: 800px;
     margin:  auto;
@@ -300,10 +302,10 @@ nav {
     border-radius: 4px;
 }
 .category:hover{
-    background-color: goldenrod;
+    background-color: rgb(177, 38, 0);
 }
 .category:active{
-    background-color: goldenrod;
+    background-color: rgb(118, 0, 0);
 }
 
 
@@ -317,8 +319,9 @@ nav {
 .product {
     display: flex;
     flex-direction: column;
-    background-color: #bfadad;
+    background-color: #ffffff41;
     border: 1px solid #ffffff;
+    color: #fff;
     border-radius: 4px;
     margin-top: 10px;
 
@@ -329,6 +332,8 @@ nav {
     height: 200px;
     object-fit: cover;
     object-position: center;
+    margin-left: 50%;
+    transform: translate(-50%);
 }
 
 .price {
@@ -339,7 +344,7 @@ nav {
 }
 
 .add-to-history {
-    background-color: #00ff26;
+    background-color: #ffffff4f;
     color: #fff;
     border: none;
     padding: 8px 10px;
@@ -349,6 +354,16 @@ nav {
     margin-left: 50%;
     transform: translate(-50%);
 }
+.add-to-history i {
+    color: red;
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.add-to-history:active i {
+    transform: scale(0.8);
+}
+
 .product button a{ 
     text-decoration: none;
 }
@@ -424,27 +439,8 @@ nav {
         display: flex;
     }
     
-    .about-us-button {
-        width: fit-content;
-        margin-top: 20px;
-      }
-      
-      .about-us-button a {
-        display: block;
-        padding: 10px 20px;
-        font-size: 16px;
-        text-align: center;
-        text-decoration: none;
-        color: #eaff00;
-        background: rgba(1, 1, 1, 1.0);
-        background: radial-gradient(at left top, rgb(0, 0, 0), rgb(114, 6, 6));
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-      
-      .about-us-button a:hover {
-        color: #ffffff;
-      }
+   
+     
     .languageMenu {
         display: none;
         position: absolute;
@@ -456,7 +452,6 @@ nav {
         left: 80px;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
-        z-index: 3;
         cursor: pointer;
         opacity: 0;
         color: rgb(255, 255, 255);
@@ -466,6 +461,7 @@ nav {
       .languageMenu.active {
         transform: translateY(-10px);
         opacity: 1;
+        z-index: 3;
       }
       .languageMenu span{ 
         margin-right: 10px;
@@ -760,9 +756,12 @@ nav {
         align-items: center;
         justify-content: space-evenly;
         text-align: center;
+        justify-content: center;
+        justify-items: center;
         width: 100%;
+        height: 100px;
         box-shadow:  0 0 10px rgb(0, 0, 0);
-        
+        margin-bottom: 20px;
       }
  
       
@@ -770,8 +769,7 @@ nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 25px;
-        
+        margin: 15px
       }
       .info-section a{
         text-decoration: none;
@@ -780,14 +778,14 @@ nav {
       
       .info-subsection {
         flex: 0 0 20%; 
-        height: 40px;
+        height: 60px;
         transition: transform 0.3s ease;
         border-radius: 8px;
         background: rgba(1, 1, 1, 1.0);
         background: radial-gradient(at right bottom, rgb(0, 0, 0), rgb(114, 6, 6));
       }
       .info-prima-pagina-l-authentik h3 {
-        color: #ffff00;
+        color: #ffffff;
         margin: 0px;
         font-size: .8rem;
       }
@@ -871,11 +869,12 @@ nav {
         box-shadow: 1px 1px 7px rgb(133, 0, 0);
         padding: 3px;
         border-radius: 8px;
+        margin-bottom: 20px;
       }
       .time, .date {
         font-size:.8rem;
         font-weight: bold;
-        color: #ffdd00;
+        color: #ffffff;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
       }
     
@@ -1002,51 +1001,52 @@ nav {
     }
 
     
-
     .reclama-favorite {
-        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    
+    }
+    
+    .image-container {
         position: relative;
         display: flex;
         flex-direction: column;
-        width: 90%;
-        line-height: .8;
+        justify-content: center; 
+        align-items: center;
     }
     
     #img-animatie {
-        width: 40%;
-        margin-left: 50%;
-        transform: translate(-50%);
-        height: 100px;
+        width: 100%;
+        height: auto;
         opacity: 0;
         transition: opacity 0.8s ease-in-out;
     }
     
     .text-container {
-        width: 90%;
-        margin-left: 50%;
-        transform: translate(-50%);
-        max-height: 250px;
-        position: relative;
+        max-width: 600px;
         display: flex;
         flex-direction: column;
-   
         opacity: 0;
         transition: opacity 0.8s ease-in-out 2s;
     }
     .text-container h1{
         color: red;
     }
-    .text-container h1 span{
-        color: rgb(255, 255, 255);
-        font-size: 1rem;
+    
+    .reclama-favorite-text p {
+        margin-bottom: 10px;
+        line-height:1;
+        text-transform: uppercase;
         font-family: 'Times New Roman', Times, serif;
     }
-    .text-container h2{
-        color: rgb(225, 225, 225);
+    
+
+    
+    .reclama-favorite-text h2 {
+        color: #ffffff;
     }
-    .text-container h3{
-        color: rgb(255, 230, 0);
-    }
+
 
     .buton-comanda {
         display: inline-block;
@@ -1089,9 +1089,13 @@ nav {
         height: 300px;
         object-fit: fill;
     }
-
+    .about-us-button {
+        width: fit-content;
+        margin-top: 20px;
+      }
+      
     .about-us-button button {
-        background-color: #4CAF50;
+        background-color: #860000af;
         color: white;
         padding: 10px 20px;
         border: none;
@@ -1100,7 +1104,7 @@ nav {
     }
 
     .about-us-button button:hover {
-        background-color: #45a049;
+        background-color: #8a3200;
     }
 
     .galerie {
@@ -1131,7 +1135,7 @@ nav {
         font-size: 16px;
         cursor: pointer;
         background-color: #720606;
-    background-image: linear-gradient(94deg, #720606 0%, #810000 66%);
+        background-image: linear-gradient(94deg, #720606 0%, #810000 66%);
         border: none;
         color: #fff;
         border-radius: 5px;
@@ -1291,7 +1295,11 @@ nav {
     .l-authentik-address h3 {
         display: none;
     }
-  
+
+  .socialnetwork .order-now i{
+    position: relative;
+    margin-left: 10px;
+  }
     .socialnetwork .order-now p {
         display: flex;
         flex-direction: column;  
@@ -1303,9 +1311,8 @@ nav {
         text-shadow: 3px 1px 5px rgb(0, 0, 0);
         margin-right: -10px;
         padding: 3px;
-        background-color: #00000062;
         border-radius: 10px;
-        box-shadow: 2px 2px 15px 4px rgb(255, 225, 1);
+        box-shadow: 2px 2px 15px 4px rgb(255, 255, 255);
     }
     
  
@@ -1481,6 +1488,11 @@ nav {
         max-width: 100%;
         border-radius: 8px;
         margin-top: 15px;
+    }
+    .wrap-container-1-ads{
+        width: 100%;
+        height: 350px;
+
     }
     
     }

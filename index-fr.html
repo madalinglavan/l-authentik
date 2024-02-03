@@ -57,8 +57,10 @@
                     
                     <li class="order-now">
                         <a href="tel:+32466358168">
-                            <i class="fa-solid fa-phone" style="color: #ffffff;"></i>&nbsp;&nbsp;
+                            
+                            <i class="fa-solid fa-phone"></i>&nbsp;&nbsp;
                             <p>Commandez<br><span>maintenant</span></p>
+                            
                         </a>
                     </li>
                     
@@ -636,7 +638,7 @@
       <div id="history-container">
         
     </div>
-    <h1>Restaurant L`Authentik</h1>
+    
     <div class="mesaj-intampintare">
         <p>Bienvenue!</p>
         <script>
@@ -659,6 +661,7 @@
 });
 
         </script>
+        <h1>Restaurant L`Authentik</h1>
     </div>
     <div class="wrap-container-1-ads">
       <div class="container-1-ads">
@@ -667,29 +670,27 @@
                 <div class="wrap-descriere-1">
                     <div class="descriere">
                         <div class="reclama-favorite">
-                            <img src="img/site-1.png" alt="Telefon mobil" id="img-animatie">
+                            <div class="image-container">
+                                <img src="img/site-1.png" alt="Téléphone mobile" id="img-animatie">
+                            </div>
                             <div class="text-container" id="text-animatie">
-                                
-                                <h1> <i class="fa-solid fa-heart"></i> Produits Préférés </h1>
-                                <h2>Confort maximal pour nos clients.</h2>
-                                <p>Créez votre liste de favoris</p>
-                                <p>Appuyez sur le bouton "cœur" <i class="fa-solid fa-heart"></i> associé à nos produits.</p>
-                                <p>Envoyez la commande en temps réel</p>
-                                <p>#ServiceRapide</p>
-                                <h2>Commande avec présence obligatoire !</h2>
-                                <p>Merci beaucoup !</p>
-                                <h3>Équipe L'Authentik</h3>
-                                
-                                <script>
-                                    document.addEventListener("DOMContentLoaded", function() {
-                                        setTimeout(function() {
-                                            document.getElementById("img-animatie").style.opacity = "1";
-                                            document.getElementById("text-animatie").style.opacity = "1";
-                                        }, 1000);
-                                    });
-                                </script>
+                                <h1><i class="fa-solid fa-heart"></i> <br>Favoris</h1>
+                                <div class="reclama-favorite-text">
+                                    <p>Créez votre liste de favoris. <br>
+                                        Appuyez sur le bouton "cœur" <i class="fa-solid fa-heart"></i> attaché à nos produits. <br>
+                                        Envoyez votre commande en temps réel.</p>
+                                    <h2>Commande avec présence obligatoire !</h2>
+                                </div>
                             </div>
                         </div>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                setTimeout(function() {
+                                    document.getElementById("img-animatie").style.opacity = "1";
+                                    document.getElementById("text-animatie").style.opacity = "1";
+                                }, 1000);
+                            });
+                        </script>                        
                     </div>
                 </div>
             </div>
@@ -938,8 +939,10 @@
         </script>
         
 </div>
+
+<h1>Galerie</h1>
 <div class="galerie">
-    <h1>Galerie</h1>
+    
     <div class="galerie-butoane">
         <button onclick="togglePhotoGallery()">Galerie Foto</button>
         <button onclick="toggleVideoGallery()">Galerie Video</button>
