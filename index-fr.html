@@ -795,6 +795,99 @@
             </div>  
         </div>
     </div>
+    <div class="wrap-news-l-authentik">
+        <h1>Événements à venir</h1>
+        <div class="news-l-authentik">
+            
+            <div class="news-sf-valentin">
+                <h3>17 Février : La Célébration de la Saint-Valentin</h3>
+                <p>Rejoignez-nous ce samedi pour célébrer l'amour et le romantisme en l'honneur de la Saint-Valentin. Une occasion parfaite pour partager des moments inoubliables avec vos proches. Nous vous invitons à vous joindre à nous dans une atmosphère d'amour et de joie.</p>
+                <img src="img/sf valentin l`authentik.png" alt="">
+            </div>
+            
+            <div class="news-dragobetele">
+                <h3>Célébration de Dragobete : Traditions et Joies de l'Amour</h3>
+                <p>Dans l'esprit de Dragobete, nous célébrerons l'amour et les traditions roumaines. Rejoignez-nous pour découvrir et participer à des activités empreintes de romantisme et de couleur. Nous vous invitons à célébrer ensemble cette journée spéciale.</p>
+                <video controls src="video/dragobete.mp4"></video>
+            </div>
+            
+            <div class="news-pastele">
+                <h3>La Célébration de Pâques chez les Roumains - Traditions et Joies</h3>
+                <p>Nous vous invitons à vous joindre à nous pour célébrer la fête de Pâques, une occasion de joie et de réflexion dans les traditions roumaines. Nous marquerons cette fête avec des événements spéciaux, des plats traditionnels et des moments de communion. Soyez partie intégrante de cette célébration exceptionnelle.</p>
+                <img src="img/paste.jpg" alt="">
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const newsContainers = document.querySelectorAll('.news-l-authentik > div');
+    
+            newsContainers.forEach(container => {
+                const title = container.querySelector('h3');
+                const paragraph = container.querySelector('p');
+                const media = container.querySelector('img') || container.querySelector('video');
+    
+                title.addEventListener('click', function () {
+                    if (paragraph.style.display === 'none' || paragraph.style.display === '') {
+                        paragraph.style.display = 'block';
+                        if (media) {
+                            media.style.display = 'block';
+                        }
+                    } else {
+                        paragraph.style.display = 'none';
+                        if (media) {
+                            media.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+     <div class="chef-presentation" id="chefPresentation">
+        <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
+        <div class="presentation-text">
+            <p>
+                🌟 <strong>Découvrez les Arômes Uniques avec le Chef Nastasache Constantin !</strong> 🌟<br><br>
+                Avez-vous déjà rencontré un chef dédié à sa passion culinaire, qui a transformé la cuisine en un véritable laboratoire du goût ? Nous présentons avec fierté le Chef Nastasache Constantin, un maître dans l'art de la gastronomie qui a consacré toute sa vie à l'univers fascinant des préparations culinaires.<br><br>
+            </p>
+            
+            
+            <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Reservez maintenant !</i></a></li>
+            <p>Ne manquez pas l'occasion de vivre un voyage culinaire inoubliable avec le Chef Nastasache Constantin. Réservez dès maintenant pour savourer ses plats exceptionnels et profiter d'une atmosphère authentique dans sa cuisine.</p>
+
+            
+            <div class="about-us-button">
+                <button onclick="toggleAboutUs()">Lire À Propos de Nous...</button>
+
+            </div>
+        </div>
+        <div class="about-us-container" style="display: none;">
+            <h2>À Propos de Nous</h2>
+            <img class="despre-noi-imagine" src="img/l-authentik local 5.jpg" alt="">
+            <h1>Nous sommes l'équipe de L'Authentik !</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec une histoire riche et une tradition d'excellence, nous nous efforçons d'apporter constamment de l'innovation à chaque aspect de notre service. De la sélection minutieuse des ingrédients frais à la présentation impeccable de chaque plat, chaque détail est soigneusement géré pour vous offrir une expérience gastronomique authentique et raffinée.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Notre équipe de chefs et de serveurs est passionnée par ce qu'elle fait, et cet enthousiasme se reflète dans chaque assiette que nous servons. Nous sommes fiers de présenter devant vous un menu diversifié, inspiré des meilleures traditions culinaires et adapté aux goûts et préférences contemporains.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Nous ne sommes pas seulement un restaurant - nous sommes vos hôtes pour les moments les plus spéciaux de la vie. Des rencontres romantiques et des réunions familiales aux événements d'entreprise et aux célébrations festives, nous sommes là pour vous offrir une expérience mémorable et inoubliable.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Nous vous remercions d'avoir choisi de faire partie de notre histoire. Chez L'Authentik, chaque invité est considéré comme faisant partie de notre famille, et nous sommes là pour vous accueillir chaleureusement et avec hospitalité à chaque visite.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Nous vous attendons avec impatience pour profiter de nos délicieux plats et de notre atmosphère accueillante !</p>
+        </div>
+        
+    </div>
+    
+    <script>
+        function toggleAboutUs() {
+            var aboutUsContainer = document.querySelector(".about-us-container");
+            var computedStyle = window.getComputedStyle(aboutUsContainer);
+            var displayStyle = computedStyle.getPropertyValue("display");
+    
+            if (displayStyle === "block") {
+                aboutUsContainer.style.display = "none";
+            } else {
+                aboutUsContainer.style.display = "block";
+            }
+        }
+    </script>
     
 
     <div class="container-2-ads">
@@ -865,51 +958,7 @@
             </script>
         </div>
     </div>
-    <div class="chef-presentation" id="chefPresentation">
-        <img src="img/l-authentik chef constantin.jpg" alt="Chef Nastasache Constantin">
-        <div class="presentation-text">
-            <p>
-                🌟 <strong>Découvrez les Arômes Uniques avec le Chef Nastasache Constantin !</strong> 🌟<br><br>
-                Avez-vous déjà rencontré un chef dédié à sa passion culinaire, qui a transformé la cuisine en un véritable laboratoire du goût ? Nous présentons avec fierté le Chef Nastasache Constantin, un maître dans l'art de la gastronomie qui a consacré toute sa vie à l'univers fascinant des préparations culinaires.<br><br>
-            </p>
-            
-            
-            <li class="order-now"><a href="tel:+32466358168"><i class="fa-solid fa-phone" style="color: #ffffff;">&nbsp;&nbsp;Reservez maintenant !</i></a></li>
-            <p>Ne manquez pas l'occasion de vivre un voyage culinaire inoubliable avec le Chef Nastasache Constantin. Réservez dès maintenant pour savourer ses plats exceptionnels et profiter d'une atmosphère authentique dans sa cuisine.</p>
-
-            
-            <div class="about-us-button">
-                <button onclick="toggleAboutUs()">Lire À Propos de Nous...</button>
-
-            </div>
-        </div>
-        <div class="about-us-container" style="display: none;">
-            <h2>À Propos de Nous</h2>
-            <img class="despre-noi-imagine" src="img/l-authentik local 5.jpg" alt="">
-            <h1>Nous sommes l'équipe de L'Authentik !</h1>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avec une histoire riche et une tradition d'excellence, nous nous efforçons d'apporter constamment de l'innovation à chaque aspect de notre service. De la sélection minutieuse des ingrédients frais à la présentation impeccable de chaque plat, chaque détail est soigneusement géré pour vous offrir une expérience gastronomique authentique et raffinée.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Notre équipe de chefs et de serveurs est passionnée par ce qu'elle fait, et cet enthousiasme se reflète dans chaque assiette que nous servons. Nous sommes fiers de présenter devant vous un menu diversifié, inspiré des meilleures traditions culinaires et adapté aux goûts et préférences contemporains.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Nous ne sommes pas seulement un restaurant - nous sommes vos hôtes pour les moments les plus spéciaux de la vie. Des rencontres romantiques et des réunions familiales aux événements d'entreprise et aux célébrations festives, nous sommes là pour vous offrir une expérience mémorable et inoubliable.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Nous vous remercions d'avoir choisi de faire partie de notre histoire. Chez L'Authentik, chaque invité est considéré comme faisant partie de notre famille, et nous sommes là pour vous accueillir chaleureusement et avec hospitalité à chaque visite.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Nous vous attendons avec impatience pour profiter de nos délicieux plats et de notre atmosphère accueillante !</p>
-        </div>
-        
-    </div>
-    
-    <script>
-        function toggleAboutUs() {
-            var aboutUsContainer = document.querySelector(".about-us-container");
-            var computedStyle = window.getComputedStyle(aboutUsContainer);
-            var displayStyle = computedStyle.getPropertyValue("display");
-    
-            if (displayStyle === "block") {
-                aboutUsContainer.style.display = "none";
-            } else {
-                aboutUsContainer.style.display = "block";
-            }
-        }
-    </script>
-    
+   
     
 <div class="wrap-container-afisare-produse-aleatorii">
 
@@ -959,7 +1008,7 @@
         <div id="videoGallery" class="gallery-content" style="display: none;">
             <!-- Galerie Video -->
             <video width="100%" height="100%" controls>
-                <source src="video/video-background.mp4" type="video/mp4">
+                <source src="video/dragobete.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -988,56 +1037,7 @@
     }
 </script>
 
-  <div class="wrap-news-l-authentik">
-    <h1>Événements à venir</h1>
-    <div class="news-l-authentik">
-        
-        <div class="news-sf-valentin">
-            <h3>17 Février : La Célébration de la Saint-Valentin</h3>
-            <p>Rejoignez-nous ce samedi pour célébrer l'amour et le romantisme en l'honneur de la Saint-Valentin. Une occasion parfaite pour partager des moments inoubliables avec vos proches. Nous vous invitons à vous joindre à nous dans une atmosphère d'amour et de joie.</p>
-            <img src="img/sf valentin l`authentik.png" alt="">
-        </div>
-        
-        <div class="news-dragobetele">
-            <h3>Célébration de Dragobete : Traditions et Joies de l'Amour</h3>
-            <p>Dans l'esprit de Dragobete, nous célébrerons l'amour et les traditions roumaines. Rejoignez-nous pour découvrir et participer à des activités empreintes de romantisme et de couleur. Nous vous invitons à célébrer ensemble cette journée spéciale.</p>
-            <video controls src="video/dragobete.mp4"></video>
-        </div>
-        
-        <div class="news-pastele">
-            <h3>La Célébration de Pâques chez les Roumains - Traditions et Joies</h3>
-            <p>Nous vous invitons à vous joindre à nous pour célébrer la fête de Pâques, une occasion de joie et de réflexion dans les traditions roumaines. Nous marquerons cette fête avec des événements spéciaux, des plats traditionnels et des moments de communion. Soyez partie intégrante de cette célébration exceptionnelle.</p>
-            <img src="img/paste.jpg" alt="">
-        </div>
-        
-    </div>
-</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const newsContainers = document.querySelectorAll('.news-l-authentik > div');
-
-        newsContainers.forEach(container => {
-            const title = container.querySelector('h3');
-            const paragraph = container.querySelector('p');
-            const media = container.querySelector('img') || container.querySelector('video');
-
-            title.addEventListener('click', function () {
-                if (paragraph.style.display === 'none' || paragraph.style.display === '') {
-                    paragraph.style.display = 'block';
-                    if (media) {
-                        media.style.display = 'block';
-                    }
-                } else {
-                    paragraph.style.display = 'none';
-                    if (media) {
-                        media.style.display = 'none';
-                    }
-                }
-            });
-        });
-    });
-</script>
-
+  
     <div id="google-reviews">
         <h3>Avis Google</h3>
 
@@ -1083,9 +1083,9 @@
     
 
       <div class="footer-content">
-        <h2><a href="politica-de-confidentialitate-ro.html">Politique de Confidentialité</a></h2>
+    
         <h2><a href="index-fr.html"> L'Authentik© 2024 Tous droits réservés</a></h2>
-        <h2><a href="termeni-si-conditii-ro.html">Termes et Conditions</a></h2>
+        
     </div>
     
 

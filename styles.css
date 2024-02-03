@@ -64,7 +64,7 @@ header {
     width: 100%;
     height: fit-content;
     margin-bottom: 5px;
-    background-image: url(img/l-authentik\ local\ 6.jpg);
+   background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -335,16 +335,23 @@ nav {
     margin-left: 50%;
     transform: translate(-50%);
 }
+.product h3{
+    font-size:1.2rem;
+    color: yellow;
+    background-color: #dc0000af;
+    text-align: center;
+}
 
 .price {
-    color:#ffffff;
+    color:#fffb00;
     font-weight: bold;
+    font-size: 1.3rem;
     margin-top: 5px;
     display: block;
 }
 
 .add-to-history {
-    background-color: #ffffff4f;
+    background-color: #3d0000d2;
     color: #fff;
     border: none;
     padding: 8px 10px;
@@ -576,14 +583,14 @@ nav {
     .descriere h2 {
         font-size: 1rem;
         color: #ffffff;
-        text-shadow: 1px 2px 4px rgb(187, 185, 185);
+        text-shadow: 1px 2px 4px rgb(40, 40, 40);
     }
 
     .descriere p {
         font-size: 1rem;
-        color: #ffbb00;
-        text-shadow: 10px 7px 5px rgb(28, 9, 9);
-
+        color: #e6e5e5d9;
+        text-shadow: 1px 1px 1px rgb(99, 99, 99);
+        width: 70%;
     }
     .descriere img{
         position: relative;
@@ -709,11 +716,14 @@ nav {
     .text-description {
         width: 90%;
         margin: 0 auto;
-        color: #fff;
+        color: #ffffff;
+        background-color: rgba(7, 7, 7, 0.566);
+        width: 100%;
     }
     
     .text-description h2 {
         font-size: 1.5rem;
+        color: RED;
     }
     
     .text-description p {
@@ -1009,7 +1019,7 @@ nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
-    
+        text-align: center;
     }
     
     .image-container {
@@ -1037,8 +1047,11 @@ nav {
     .text-container h1{
         color: red;
     }
-    
+    .reclama-favorite-text{
+        position: relative;
+    }
     .reclama-favorite-text p {
+        width: 100%;
         margin-bottom: 10px;
         line-height:1;
         text-transform: uppercase;
@@ -1076,7 +1089,7 @@ nav {
         transform: translate(-50%);
         height: fit-content;
         padding: 20px;
-
+        
         border: 1px solid #888;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1233,8 +1246,10 @@ nav {
     .news-sf-valentin h3,
     .news-dragobetele h3,
     .news-pastele h3 {
-        color: red;
-        padding: 10px;
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 1px black;
+        padding: 5px;
+        font-family: 'Times New Roman', Times, serif;
     }
 
 
@@ -1439,6 +1454,10 @@ nav {
         width: 100%;
         min-height: 25vh;
         margin-bottom: 20px;
+        background-image: url(img/l-authentik\ local\ 6.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       .about-us-content img{
         width: 50%;
