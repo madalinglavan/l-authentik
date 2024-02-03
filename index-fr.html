@@ -265,10 +265,12 @@
         <div class="total-price">
             <strong>Total : <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Vider</button>
-        <div>
-            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Générer le Code</button>
-            <div id="restaurant-code" style="display: none;"></div>
+        <div class="butoane-comanda">
+            <div>
+                <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Code Unique</button>
+                <div id="restaurant-code" style="display: none;"></div>
+            </div>
+                <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Supprimer tous</button>
         </div>
         <div id="order-form">
             <label for="unique-code">Code Unique :</label>

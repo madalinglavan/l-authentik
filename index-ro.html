@@ -18,7 +18,7 @@
             <div class="left-top-nav">
                 <div id="languageMenu" class="languageMenu">
                     <span class="languageOption" onclick="changeLanguage('index-fr.html')"><p class="buton-fr">FR</p></span>
-                    <span class="languageOption" onclick="changeLanguage('index.html')"><p class="buton-ro">RO</p></span>
+                    <span class="languageOption" onclick="changeLanguage('index-ro.html')"><p class="buton-ro">RO</p></span>
                     
                 </div>
                 <div id="languageToggle" class="toggleButton" onclick="toggleLanguageMenu()"><i class="fa-solid fa-language" style="color: #ffffff;"></i><br>Limba</div>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <nav> 
-            <a href="index.html">
+            <a href="index-ro.html">
                 <div class="logo"></div>
             </a>
         </nav>
@@ -251,15 +251,17 @@
     </div>
     
      <div id="history-popup" class="history-popup">
-        <button onclick="closeHistoryPopup()">Închide Favorite</button>
+       
         <div class="history-popup-content"></div>
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
         </div>
-        <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste</button>
-        <div>
-            <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
-            <div id="restaurant-code" style="display: none;"></div>
+        <div class="butoane-comanda">
+            <div>
+                <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
+                <div id="restaurant-code" style="display: none;"></div>
+            </div>
+                <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste tot</button>
         </div>
         <div id="order-form">
             <label for="unique-code">Cod Unic:</label>
@@ -780,7 +782,7 @@
    
 
 <div class="wrap-news-l-authentik">
-    <h1>Evenimentele urmatoare</h1>
+    <h1>Evenimentele urmatoare:</h1>
     <div class="news-l-authentik">
         
         <div class="news-sf-valentin">
@@ -983,7 +985,8 @@
                 <div id="videoGallery" class="gallery-content" style="display: none;">
                     <!-- Galerie Video -->
                     <video width="100%" height="100%" controls>
-                        <source src="video/video-background.mp4" type="video/mp4">
+                        
+                        <source src="video/dragobete.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1057,9 +1060,9 @@
     
 
     <div class="footer-content">
-        <h2><a href="politica-de-confidentialitate-ro.html">Politica de Confidențialitate</a></h2>
+       
         <h2><a href="index-ro.html"> L'Authentik© 2024 Toate drepturile rezervate</a></h2>
-        <h2><a href="termeni-si-conditii-ro.html">Termeni si conditii</a></h2>
+      
     </div>
 
 </body>

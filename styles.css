@@ -64,7 +64,7 @@ header {
     width: 100%;
     height: fit-content;
     margin-bottom: 5px;
-   background-color: #fff;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,7 +78,8 @@ header {
     width: 100%;
     height: fit-content;
     padding: 5px;
-    background-color: #000000bf;
+    background-color: #720606;
+    background-image: linear-gradient(94deg, #b51c1c 0%, #000000 66%);
 }
 .left-top-nav{
     display: flex;
@@ -179,12 +180,13 @@ nav {
 .logo{
     position: relative;
     width: 100px;
-    height: 15vh;
+    height: 25vh;
     background-image: url(img/L`authentik.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .contact-form {
@@ -540,6 +542,7 @@ nav {
         flex-direction: column;
         text-align: center;
         justify-content: center;
+        margin-bottom: 20px;
     }
     .container-1-ads h2{
         position: relative;
@@ -1217,6 +1220,8 @@ nav {
 
     .wrap-news-l-authentik {
         text-align: center;
+        margin-bottom: 20px;
+        background-color: #297fb937;
     }
 
     .news-l-authentik {
@@ -1259,13 +1264,57 @@ nav {
     .news-sf-valentin h3,
     .news-dragobetele h3,
     .news-pastele h3 {
-        color: rgb(255, 255, 255);
+        color: rgb(255, 200, 0);
         text-shadow: 1px 1px 1px black;
         padding: 5px;
         font-family: 'Times New Roman', Times, serif;
     }
 
+    .sbc {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f0f0f0;
+        overflow: hidden;
+    }
 
+    .sbc-box {
+        width: 49%;
+        height: 50vh;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .sbc-box a {
+        display: block;
+        text-align: center;
+        line-height: 50vh;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: #333;
+        text-shadow: 2px 2px 2px #fff;
+    }
+
+    #sbc-box1 {
+        background-color: #d04143;
+        background-image: linear-gradient(270deg, #d04143 0%, #ffef00 55%, #0084ff 100%);
+
+    }
+
+    #sbc-box2 {
+        background-color: #d04143;
+background-image: linear-gradient(270deg, #d04143 0%, #ffef00 55%, #000000 100%);
+
+
+    }
+
+    #sbc-box1.active {
+        transform: translateX(100%);
+    }
+
+    #sbc-box2.active {
+        transform: translateX(-100%);
+    }
 
 
 
