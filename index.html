@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    
+    <script src="https://cdn.jsdelivr.net/npm/mysql@2.18.1/dist/mysql.min.js"></script>
+    <script src="database.js" defer></script>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -250,8 +251,7 @@
         </script>
     </div>
     
-     <div id="history-popup" class="history-popup">
-       
+    <div id="history-popup" class="history-popup">
         <div class="history-popup-content"></div>
         <div class="total-price">
             <strong>Total: <span id="totalAmount">0</span> Euro</strong>
@@ -261,23 +261,24 @@
                 <button onclick="generateCode()"><i class="fa-solid fa-meteor"></i>Generează Cod</button>
                 <div id="restaurant-code" style="display: none;"></div>
             </div>
-                <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Goleste tot</button>
+            <button onclick="clearHistory()"><i class="fa-solid fa-recycle"></i>Golește tot</button>
         </div>
         <div id="order-form">
             <label for="unique-code">Cod Unic:</label>
-            <input type="text" id="unique-code" placeholder="Introdu codul unic..." required>
+            <input type="text" id="unique-code" placeholder="Introduceți codul unic..." required>
         
             <label for="table-number">Numărul Mesei:</label>
             <input type="number" id="table-number" placeholder="Numărul Mesei..." required>
         
             <label for="comments">Comentarii:</label>
-            <textarea id="comments" placeholder="Adaugă comentarii..." rows="4" required></textarea>
+            <textarea id="comments" placeholder="Adăugați comentarii..." rows="4" required></textarea>
         
             <button onclick="checkAndSubmit()">Trimite Comanda</button>
         </div>
         <button onclick="closeHistoryPopup()">Închide Favorite</button>
-        <script>
-            function generateCode() {
+    </div>
+    <script>
+        function generateCode() {
             navigator.geolocation.getCurrentPosition(
                 function (position) {
                     const restaurantCoordinates = { latitude: 50.8368958, longitude: 4.2849528 };
@@ -296,7 +297,7 @@
                         // Adăugă codul unic în istoric
                         addToHistory('Cod Generat', 0, uniqueCode);
                     } else {
-                        alert('Nu sunteți în apropierea restaurantului. folositi aplicatia noastra pentru a va conduce aici! Multumim');
+                        alert('Nu sunteți în apropierea restaurantului. Folosiți aplicația noastră pentru a vă conduce aici! Mulțumim.');
                     }
                 },
                 function (error) {
@@ -305,85 +306,158 @@
                 }
             );
         }
-        
-            function calculateDistance(coord1, coord2) {
-                const R = 6371;
-                const dLat = (coord2.latitude - coord1.latitude) * (Math.PI / 180);
-                const dLon = (coord2.longitude - coord1.longitude) * (Math.PI / 180);
-                const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                    Math.cos(coord1.latitude * (Math.PI / 180)) * Math.cos(coord2.latitude * (Math.PI / 180)) *
-                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-                const distance = R * c;
-                return distance;
-            }
-        
-            function generateUniqueCode() {
-                return Math.random().toString(36).substring(2, 8).toUpperCase();
-            }
-        
-            function addToHistory(productName, productPrice, code) {
-                let history = localStorage.getItem('istoric') || '[]';
-                history = JSON.parse(history);
-                history.push({ name: productName, price: productPrice, code: code });
-                localStorage.setItem('istoric', JSON.stringify(history));
-                updateTotalPrice();
-                alert(`Ai adăugat ${productName} la favorite.`);
-            }
-        
-            function updateTotalPrice() {
-                let totalAmount = 0;
-                let history = localStorage.getItem('istoric') || '[]';
-                history = JSON.parse(history);
-        
-                history.forEach(product => {
-                    totalAmount += product.price;
-                });
-        
-                document.getElementById('totalAmount').innerText = totalAmount;
-            }
-        
-            function showHistory() {
-        let history = localStorage.getItem('istoric') || '[]';
-        history = JSON.parse(history);
     
-        const historyPopup = document.getElementById('history-popup');
-        const historyPopupContent = historyPopup.querySelector('.history-popup-content');
-    
-        if (history.length === 0) {
-            alert('Descoperiți preparatele noastre și adăugați favoritele!');
-        } else {
-            historyPopupContent.innerHTML = history.map((product, index) => `
-                <div class="history-product">
-                    <span>Produs: ${product.name}</span>
-                    <span>Pret: ${product.price} Euro</span>
-                    <button onclick="removeFromHistory(${index}, ${product.price})">Elimină</button>
-                </div>`
-            ).join('');
-            historyPopup.style.display = 'block';
+        function calculateDistance(coord1, coord2) {
+            const R = 6371;
+            const dLat = (coord2.latitude - coord1.latitude) * (Math.PI / 180);
+            const dLon = (coord2.longitude - coord1.longitude) * (Math.PI / 180);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(coord1.latitude * (Math.PI / 180)) * Math.cos(coord2.latitude * (Math.PI / 180)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            const distance = R * c;
+            return distance;
         }
     
-        updateTotalPrice();
+        function generateUniqueCode() {
+            return Math.random().toString(36).substring(2, 8).toUpperCase();
+        }
+    
+        function addToDatabase(productName, productPrice, code) {
+            // Simulăm adăugarea în baza de date
+            console.log('Adăugare în baza de date:', productName, productPrice, code);
+        }
+    
+        function addToHistory(productName, productPrice, productId) {
+    // Adăugarea în baza de date (simulare)
+    addToDatabase(productName, productPrice, productId);
+
+    // Adăugarea în stocul local
+    let history = JSON.parse(localStorage.getItem('istoric')) || [];
+    let existingProductIndex = history.findIndex(product => product.id === productId);
+    if (existingProductIndex !== -1) {
+        // Dacă produsul există deja în istoric, incrementăm doar cantitatea
+        history[existingProductIndex].quantity++;
+    } else {
+        // Dacă produsul nu există în istoric, adăugăm un nou obiect produs
+        history.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
     }
+    localStorage.setItem('istoric', JSON.stringify(history));
+
+    // Actualizarea prețului total
+    updateTotalPrice();
+// Emiterea evenimentului pentru actualizarea istoricului
+const event = new CustomEvent('historyUpdated');
+    document.dispatchEvent(event);
+
+    // Afișarea unui mesaj de confirmare
+    alert(`Ai adăugat ${productName} la favorite.`);
+}
+
+
+function updateTotalPrice() {
+    let totalAmount = 0;
+    let history = JSON.parse(localStorage.getItem('istoric')) || [];
+
+    history.forEach(product => {
+        // Adăugăm prețul fiecărui produs în funcție de cantitate
+        totalAmount += product.price;
+    });
+
+    document.getElementById('totalAmount').innerText = totalAmount;
+}
+function countProducts(history) {
+    let productCounts = {};
+    history.forEach(product => {
+        if (productCounts[product.name]) {
+            productCounts[product.name]++;
+        } else {
+            productCounts[product.name] = 1;
+        }
+    });
+    return productCounts;
+}
+
+function showHistory() {
+    let history = JSON.parse(localStorage.getItem('istoric')) || [];
+    const historyPopup = document.getElementById('history-popup');
+    const historyPopupContent = historyPopup.querySelector('.history-popup-content');
+
+    if (history.length === 0) {
+        alert('Descoperiți preparatele noastre și adăugați favoritele!');
+    } else {
+        // Apelăm funcția countProducts pentru a obține numărul de produse de același fel
+        let productCounts = countProducts(history);
+
+        // Generăm HTML-ul pentru produsele grupate
+        historyPopupContent.innerHTML = Object.entries(productCounts).map(([productName, count]) => `
+            <div class="history-product">
+                <span>${productName} (${count})</span>
+                <span>Pret: ${history.find(product => product.name === productName).price * count} Euro</span>
+                <button onclick="removeFromHistory('${productName}', ${history.find(product => product.name === productName).price}, ${count})">Elimină</button>
+            </div>`
+        ).join('');
         
-            function removeFromHistory(index, productPrice) {
-                let history = localStorage.getItem('istoric') || '[]';
-                history = JSON.parse(history);
-        
-                const removedProduct = history.splice(index, 1)[0];
-                localStorage.setItem('istoric', JSON.stringify(history));
-        
-                alert(` ${removedProduct.name} eliminat cu succes!`);
-                updateTotalPrice();
-        
-                if (history.length === 0) {
-                    clearHistory();
-                } else {
-                    showHistory();
-                }
-            }
-        
-            function closeHistoryPopup() {
+        // Afisam totalul in baza preturilor inmultite cu cantitatile corespunzatoare
+        let totalAmount = Object.entries(productCounts).reduce((total, [productName, count]) => {
+            return total + (history.find(product => product.name === productName).price * count);
+        }, 0);
+        document.getElementById('totalAmount').innerText = totalAmount;
+
+        historyPopup.style.display = 'block';
+    }
+}
+
+
+function getProductQuantity(history, productId) {
+    let quantity = 0;
+    history.forEach(product => {
+        if (product.id === productId) {
+            quantity++;
+        }
+    });
+    return quantity;
+}
+
+function removeFromHistory(productName, productPrice) {
+    let history = JSON.parse(localStorage.getItem('istoric')) || [];
+
+    // Căutăm indexul primului produs cu numele specificat în istoric
+    const index = history.findIndex(product => product.name === productName);
+
+    if (index !== -1) {
+        // Eliminăm doar produsul găsit la indexul respectiv
+        history.splice(index, 1);
+        localStorage.setItem('istoric', JSON.stringify(history));
+
+        // Actualizăm prețul total și reafisăm istoricul
+        updateTotalPrice();
+        showHistory();
+
+        // Afișăm un mesaj de confirmare
+        alert(`${productName} eliminat cu succes!`);
+    } else {
+        alert(`${productName} nu a fost găsit în istoric.`);
+    }
+}
+function updateHistory(productName, productPrice) {
+    let history = JSON.parse(localStorage.getItem('istoric')) || [];
+    let existingProduct = history.find(product => product.name === productName);
+
+    if (existingProduct) {
+        // Dacă produsul există deja în istoric, incrementăm doar cantitatea
+        existingProduct.quantity++;
+    } else {
+        // Dacă produsul nu există în istoric, adăugăm un nou obiect produs
+        history.push({ name: productName, price: productPrice, quantity: 1 });
+    }
+
+    // Salvăm istoricul actualizat în stocarea locală
+    localStorage.setItem('istoric', JSON.stringify(history));
+}
+
+
+        function closeHistoryPopup() {
             const historyPopup = document.getElementById('history-popup');
             historyPopup.style.display = 'none';
         }
@@ -392,56 +466,57 @@
     
         function toggleHistory() {
             const historyPopup = document.getElementById('history-popup');
-            
-            // Invertim starea variabilei
-            isHistoryVisible = !isHistoryVisible;
     
-            if (isHistoryVisible) {
-                showHistory();
-            } else {
+            // Verificăm dacă pop-up-ul este vizibil sau ascuns și inversăm această stare
+            if (historyPopup.style.display === 'block') {
                 closeHistoryPopup();
+                isHistoryVisible = false;
+            } else {
+                showHistory();
+                isHistoryVisible = true;
             }
         }
     
-        
-            function clearHistory() {
-                localStorage.removeItem('istoric');
-                const historyPopupContent = document.querySelector('.history-popup-content');
-                historyPopupContent.innerHTML = '';
-                document.getElementById('totalAmount').innerText = 0;
-                alert('Va mai asteptam!');
-            }
-        
-            function checkAndSubmit() {
-        const enteredCode = document.getElementById('unique-code').value;
-        const tableNumber = document.getElementById('table-number').value;
-        const comments = document.getElementById('comments').value;
-    
-        if (enteredCode.trim() === '' || tableNumber.trim() === '' || comments.trim() === '') {
-            alert('Vă rugăm să completati toate câmpurile obligatorii.');
-            return;
+        function clearHistory() {
+            localStorage.removeItem('istoric');
+            const historyPopupContent = document.querySelector('.history-popup-content');
+            historyPopupContent.innerHTML = '';
+            document.getElementById('totalAmount').innerText = 0;
+            alert('Vă mai așteptăm!');
         }
     
-        let history = localStorage.getItem('istoric') || '[]';
-        history = JSON.parse(history);
+        function checkAndSubmit() {
+            const enteredCode = document.getElementById('unique-code').value;
+            const tableNumber = document.getElementById('table-number').value;
+            const comments = document.getElementById('comments').value;
     
-        const matchingOrder = history.find(order => order.code === enteredCode);
-    
-        if (matchingOrder) {
-            sendOrderToKitchen(matchingOrder, tableNumber, comments);
-        } else {
-            alert('Codul unic nu a fost găsit. Verifică și încearcă din nou.');
-        }
-    }
-        
-            function sendOrderToKitchen(order, tableNumber, comments) {
-                alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes. `);
+            if (enteredCode.trim() === '' || tableNumber.trim() === '' || comments.trim() === '') {
+                alert('Vă rugăm să completați toate câmpurile obligatorii.');
+                return;
             }
-        </script>
-        
+    
+            let history = JSON.parse(localStorage.getItem('istoric')) || [];
+    
+            const matchingOrder = history.find(order => order.code === enteredCode);
+    
+            if (matchingOrder) {
+                submitOrder(matchingOrder, tableNumber, comments);
+            } else {
+                alert('Codul unic nu a fost găsit. Verificați și încercați din nou.');
+            }
+        }
+    
+        function submitOrder(order, tableNumber, comments) {
+            closeHistoryPopup();
+            clearHistory();
+            // Aici putem implementa logica pentru trimiterea comenzii către bucătărie
+            alert(`Comanda pentru Masa ${tableNumber} a fost trimisă cu succes.`);
+        }
+    </script>
+    
+    
     </div>
     
-   
     
     
       <div class="wrap-menu-page" >
@@ -454,7 +529,7 @@
                         <h3>Mămăligă cu brânză</h3>
                         <p>O porție generoasă de mămăligă proaspătă, acompaniată de brânză topită și unt. Un deliciu tradițional românesc.</p>
                         <span class="price">15 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 15)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Mămăligă cu brânză', 15, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="50"> 
@@ -462,7 +537,7 @@
                         <h3>Sarmale cu mămăligă</h3>
                         <p>Sarmalele clasice umplute cu amestec de carne de porc și orez, servite cu mămăligă și smântână. O combinație delicioasă!</p>
                         <span class="price">17 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Sarmale cu mămăligă', 17)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Sarmale cu mămăligă', 17, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="40">
@@ -470,7 +545,7 @@
                         <h3>Mici la Grătar</h3>
                         <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
                         <span class="price">14 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 14)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 14, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     
@@ -480,7 +555,7 @@
                         <h3>Ciorbă de burtă</h3>
                         <p>Ciorbă tradițională de burtă, preparată cu burtă de vită și legume. O explozie de arome și gusturi autentice.</p>
                         <span class="price">16 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Ciorbă de burtă', 16)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Ciorbă de burtă', 16, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
@@ -492,7 +567,7 @@
                         <h3>Mici la Grătar</h3>
                         <p>O porție generoasă de mici tradiționali, gătiți la grătar, acompaniați de muștar și pâine proaspătă. Un preparat iubit de toți!</p>
                         <span class="price">50 Euro</span> 
-                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 50)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Mici la Grătar', 50, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="45">
@@ -500,7 +575,7 @@
                         <h3>Cotlet de Porc cu Cartofi Prajiți</h3>
                         <p>Cotlet de porc suculent, gătit la cuptor, servit alături de cartofi prăjiți crocanți. Un fel principal delicios și hrănitor.</p>
                         <span class="price">45 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Cotlet de Porc cu Cartofi Prajiți', 45)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Cotlet de Porc cu Cartofi Prajiți', 45, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="38">
@@ -508,7 +583,7 @@
                         <h3>Piept de Pui cu Sos de Ciuperci</h3>
                         <p>Piept de pui fraged, gătit la grătar, acoperit cu un sos delicios de ciuperci. Acompaniat de garnitură de orez. O opțiune sănătoasă și gustoasă.</p>
                         <span class="price">38 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Piept de Pui cu Sos de Ciuperci', 38)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Piept de Pui cu Sos de Ciuperci', 38, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
@@ -519,7 +594,7 @@
                         <h3>Papanasi</h3>
                         <p>Delicioși papanasi rumeni, serviți cu dulceață și smântână. Un desert tradițional românesc care îți va răsfăța papilele gustative.</p>
                         <span class="price">25 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Papanasi', 25)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Papanasi', 25, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="30">
@@ -527,7 +602,7 @@
                         <h3>Cozonac</h3>
                         <p>Bucată de cozonac pufoasă, cu stafide și nuci, îmbibată cu arome delicioase. Perfect pentru momentele dulci alături de cei dragi.</p>
                         <span class="price">30 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Cozonac', 30)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Cozonac', 30, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                     <div class="product" data-price="20">
@@ -535,7 +610,7 @@
                         <h3>Clătite cu Gem și Smântână</h3>
                         <p>Clătite subțiri, umplute cu gem și servite cu smântână proaspătă. Un desert ușor și delicios, potrivit pentru orice ocazie.</p>
                         <span class="price">20 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Clătite cu Gem și Smântână', 20)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Clătite cu Gem și Smântână', 20, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
                 </div>
@@ -547,7 +622,7 @@
                         <h3>Cafea</h3>
                         <p>Cafea proaspătă, preparată cu boabe de cea mai bună calitate.</p>
                         <span class="price">10 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Cafea', 10)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Cafea', 10, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
              
@@ -560,7 +635,7 @@
                         <h3>Suc de Portocale</h3>
                         <p>Suc natural de portocale, presat la rece.</p>
                         <span class="price">12 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Suc de Portocale', 12)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Suc de Portocale', 12, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
             
@@ -572,7 +647,7 @@
                         <h3>Mojito</h3>
                         <p>Cocktail răcoritor cu mentă, lămâie, zahăr, gheață și rom.</p>
                         <span class="price">20 Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Mojito', 20)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Mojito', 20, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
             
@@ -585,7 +660,7 @@
                         <h3>Vin</h3>
                         <p>Descriere produs pentru vin.</p>
                         <span class="price">12Euro</span>
-                        <button class="add-to-history" onclick="addToHistory('Vin', 12)"><i class="fa-solid fa-heart"></i></button>
+                        <button class="add-to-history" onclick="addToHistory('Vin', 12, generateProductId())"><i class="fa-solid fa-heart"></i></button>
                     </div>
                     
      
@@ -593,25 +668,49 @@
            
         </div>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const categories = document.querySelectorAll(".category");
-                const productsContainers = document.querySelectorAll(".products-container");
-    
-                categories.forEach((category) => {
-                    category.addEventListener("click", function () {
-                        const target = category.dataset.target;
-    
-                        productsContainers.forEach(container => {
-                            container.style.display = "none";
-                        });
-    
-                        const selectedContainer = document.querySelector(`#${target}-products`);
-                        if (selectedContainer) {
-                            selectedContainer.style.display = "block";
-                        }
-                    });
-                });
+            let productIdCounter = 1;
+
+function generateProductId() {
+    return `product${productIdCounter++}`;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const categories = document.querySelectorAll(".category");
+    const productsContainers = document.querySelectorAll(".products-container");
+
+    categories.forEach((category) => {
+        category.addEventListener("click", function () {
+            const target = category.dataset.target;
+
+            productsContainers.forEach(container => {
+                container.style.display = "none";
             });
+
+            const selectedContainer = document.querySelector(`#${target}-products`);
+            if (selectedContainer) {
+                selectedContainer.style.display = "block";
+            }
+        });
+    });
+
+    // Adăugăm event listener pentru butoanele de adăugare la favorite din fiecare container
+    const addToHistoryButtons = document.querySelectorAll('.add-to-history');
+    addToHistoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Emiterea unui eveniment pentru actualizarea listei de favorite
+            const event = new CustomEvent('addToHistory');
+            document.dispatchEvent(event);
+        });
+    });
+
+    // Reafisăm meniul atunci când se emite evenimentul de adăugare la favorite
+    document.addEventListener('addToHistory', function() {
+        productsContainers.forEach(container => {
+            container.style.display = "block";
+        });
+    });
+});
+
         </script>
        
       </div>
@@ -622,7 +721,7 @@
     <div class="mesaj-intampintare">
         <p>Bine ati venit!</p>
         <script>
-       document.addEventListener("DOMContentLoaded", function() {
+       document.addEventListener("DOMContentLoaded", function () {
     const paragraf = document.querySelector('.mesaj-intampintare p');
     const text = paragraf.textContent.trim();
     paragraf.textContent = '';
@@ -632,8 +731,8 @@
         paragraf.appendChild(literaSpan);
     }
 
-    let delay = 0.1; 
-    paragraf.querySelectorAll('span').forEach(function(literaSpan) {
+    let delay = 0.1;
+    paragraf.querySelectorAll('span').forEach(function (literaSpan) {
         literaSpan.style.animationDelay = `${delay}s`;
         delay += 0.1;
     });
